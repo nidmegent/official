@@ -2,90 +2,137 @@
 <html lang="ja">
 
 <head>
+
+    <!--==================== META ====================-->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nidmegent | Japanese Esports Organization</title>
+    <title>Nidmegent | Official Website</title>
 
     <meta name="description"
-        content="Nidmegent Official Website - Japanese Esports Organization">
+        content="Official Website of Nidmegent Esports Organization">
 
     <meta name="theme-color" content="#ffffff">
 
-    <!-- Google Fonts -->
+    <!--==================== FONT ====================-->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <!-- Remix Icon -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+    <!--==================== REMIX ICON ====================-->
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
         rel="stylesheet">
 
-    <!-- Swiper -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!--==================== SWIPER ====================-->
 
-    <!-- CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <!--==================== CSS ====================-->
+
     <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-    <!--================ LOADER ================-->
+    <!--==================== LOADER ====================-->
 
     <div class="loader">
 
-        <div class="loader__logo">
+        <div class="loader__content">
 
-            <span>N</span>
+            <span class="loader__text">
+
+                NIDMEGENT
+
+            </span>
 
         </div>
 
     </div>
 
-    <!--================ HEADER ================-->
+    <!--==================== CURSOR ====================-->
+
+    <div class="cursor"></div>
+
+    <!--==================== HEADER ====================-->
 
     <header class="header">
 
         <div class="container">
 
+            <!-- Logo -->
+
             <a href="#" class="logo">
 
-                <img src="assets/logo/logo-white.png" alt="Nidmegent Logo">
+                <img src="assets/logo/logo.svg"
+                    alt="Nidmegent Logo">
 
             </a>
+
+            <!-- Navigation -->
 
             <nav class="nav">
 
                 <ul class="nav__list">
 
-                    <li><a href="#about">ABOUT</a></li>
+                    <li>
+                        <a href="#about">
+                            ABOUT
+                        </a>
+                    </li>
 
-                    <li><a href="#teams">TEAMS</a></li>
+                    <li>
+                        <a href="#teams">
+                            TEAMS
+                        </a>
+                    </li>
 
-                    <li><a href="#members">MEMBERS</a></li>
+                    <li>
+                        <a href="#members">
+                            MEMBERS
+                        </a>
+                    </li>
 
-                    <li><a href="#results">RESULTS</a></li>
+                    <li>
+                        <a href="#results">
+                            RESULTS
+                        </a>
+                    </li>
 
-                    <li><a href="#news">NEWS</a></li>
+                    <li>
+                        <a href="#news">
+                            NEWS
+                        </a>
+                    </li>
 
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li>
+                        <a href="#contact">
+                            CONTACT
+                        </a>
+                    </li>
 
                 </ul>
 
             </nav>
 
-            <a href="#" class="header__button">
+            <!-- Button -->
+
+            <a href="#contact" class="header__button">
 
                 JOIN US
 
             </a>
 
-            <button class="menu-btn">
+            <!-- Mobile -->
+
+            <button class="menu">
 
                 <i class="ri-menu-3-line"></i>
 
@@ -95,15 +142,18 @@
 
     </header>
 
-    <!--================ HERO ================-->
+    <!--==================== MAIN ====================-->
 
     <main>
+
+        <!--==================== HERO ====================-->
 
         <section class="hero">
 
             <!-- Video -->
 
             <video
+                class="hero__video"
                 autoplay
                 muted
                 loop
@@ -119,101 +169,120 @@
 
             <div class="hero__overlay"></div>
 
-            <!-- Background Blur -->
+            <!-- Blue Gradient -->
 
             <div class="hero__gradient"></div>
 
-            <!-- Hero Content -->
+            <!-- Grid -->
 
-            <div class="hero__content">
+            <div class="hero__grid"></div>
 
-                <p class="hero__sub">
+            <!-- Noise -->
 
-                    JAPANESE ESPORTS ORGANIZATION
+            <div class="hero__noise"></div>
 
-                </p>
+            <!-- Content -->
 
-                <h1 class="hero__title">
+            <div class="container hero__container">
 
-                    NIDMEGENT
+                <div class="hero__content">
 
-                </h1>
+                    <span class="hero__eyebrow">
 
-                <h2 class="hero__catch">
+                        JAPANESE ESPORTS ORGANIZATION
 
-                    CREATE<br>
-                    THE NEXT ERA
+                    </span>
 
-                </h2>
+                    <h1 class="hero__title">
 
-                <p class="hero__text">
+                        NIDMEGENT
 
-                    Building the future of competitive gaming,
-                    creators and community.
+                    </h1>
 
-                </p>
+                    <h2 class="hero__subtitle">
 
-                <div class="hero__buttons">
+                        CREATE<br>
+                        THE NEXT ERA
 
-                    <a href="#teams" class="btn btn-primary">
+                    </h2>
 
-                        VIEW TEAM
+                    <p class="hero__description">
 
-                    </a>
+                        We are a Japanese esports organization
+                        dedicated to competitive gaming,
+                        content creation,
+                        and building the next generation
+                        of esports culture.
 
-                    <a href="#about" class="btn btn-secondary">
+                    </p>
 
-                        ABOUT US
+                    <div class="hero__buttons">
 
-                    </a>
+                        <a href="#teams"
+                            class="btn btn-primary">
+
+                            VIEW TEAM
+
+                        </a>
+
+                        <a href="#about"
+                            class="btn btn-secondary">
+
+                            ABOUT US
+
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
 
-            <!-- Left Bottom -->
+            <!-- Bottom -->
 
-            <div class="hero__left">
+            <div class="hero__bottom">
 
-                Since 2023
+                <div class="hero__since">
 
-            </div>
+                    Since 2023
 
-            <!-- Right Bottom -->
+                </div>
 
-            <div class="hero__right">
+                <div class="hero__scroll">
 
-                Japanese Esports Organization
+                    <span>
 
-            </div>
+                        SCROLL
 
-            <!-- Scroll -->
+                    </span>
 
-            <div class="scroll">
+                    <div class="hero__line"></div>
 
-                <span>
+                </div>
 
-                    SCROLL
+                <div class="hero__location">
 
-                </span>
+                    Japanese Esports Organization
 
-                <div class="scroll-line"></div>
+                </div>
 
             </div>
 
         </section>
 
-            <!--================ ABOUT ================-->
+            <!--==================== ABOUT ====================-->
 
         <section class="about section" id="about">
 
             <div class="container">
 
-                <div class="section-head">
+                <div class="section-header">
 
-                    <span class="section-head__number">01</span>
+                    <span class="section-number">
+                        01
+                    </span>
 
-                    <h2 class="section-head__title">
+                    <h2 class="section-title">
                         WHO WE ARE
                     </h2>
 
@@ -227,9 +296,9 @@
 
                     <div class="about__left">
 
-                        <p class="about__label">
-                            ABOUT NIDMEGENT
-                        </p>
+                        <span class="about__label">
+                            ABOUT
+                        </span>
 
                     </div>
 
@@ -237,24 +306,23 @@
 
                         <h3 class="about__title">
 
-                            Creating the Next Era
+                            Creating the Future
                             of Japanese Esports.
 
                         </h3>
 
                         <p class="about__text">
 
-                            Nidmegent is a Japanese esports organization
-                            dedicated to competitive gaming,
-                            content creation,
-                            and community development.
+                            Nidmegent is a next-generation esports organization
+                            that combines competitive gaming, creative production,
+                            community development, and event management.
 
                             <br><br>
 
-                            We believe esports is more than competition.
-                            It's a culture that connects people,
-                            inspires creativity,
-                            and creates opportunities for the next generation.
+                            We don't simply aim to win tournaments.
+                            We create memorable experiences,
+                            foster talented creators,
+                            and build a community where everyone can grow together.
 
                         </p>
 
@@ -266,19 +334,172 @@
 
         </section>
 
-        <!--================ TEAMS ================-->
+        <!--==================== MISSION ====================-->
+
+        <section class="mission section">
+
+            <div class="container">
+
+                <div class="mission__wrapper">
+
+                    <div class="mission__content">
+
+                        <span class="mission__label">
+
+                            OUR MISSION
+
+                        </span>
+
+                        <h2>
+
+                            CREATE<br>
+                            THE NEXT ERA
+
+                        </h2>
+
+                    </div>
+
+                    <div class="mission__text">
+
+                        <p>
+
+                            We believe esports is more than a game.
+                            It is a culture, a career, and a place where
+                            people connect through passion.
+
+                        </p>
+
+                        <p>
+
+                            Our mission is to inspire the next generation
+                            through competition, creativity,
+                            and innovation.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--==================== VALUES ====================-->
+
+        <section class="values section">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-number">
+
+                        02
+
+                    </span>
+
+                    <h2 class="section-title">
+
+                        OUR VALUES
+
+                    </h2>
+
+                </div>
+
+                <div class="values__grid">
+
+                    <article class="value-card">
+
+                        <span>
+
+                            01
+
+                        </span>
+
+                        <h3>
+
+                            COMPETE
+
+                        </h3>
+
+                        <p>
+
+                            Always challenge ourselves
+                            and pursue excellence.
+
+                        </p>
+
+                    </article>
+
+                    <article class="value-card">
+
+                        <span>
+
+                            02
+
+                        </span>
+
+                        <h3>
+
+                            CREATE
+
+                        </h3>
+
+                        <p>
+
+                            Build exciting content
+                            and unforgettable experiences.
+
+                        </p>
+
+                    </article>
+
+                    <article class="value-card">
+
+                        <span>
+
+                            03
+
+                        </span>
+
+                        <h3>
+
+                            CONNECT
+
+                        </h3>
+
+                        <p>
+
+                            Connect players,
+                            creators,
+                            and communities.
+
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!--==================== TEAMS ====================-->
 
         <section class="teams section" id="teams">
 
             <div class="container">
 
-                <div class="section-head">
+                <div class="section-header">
 
-                    <span class="section-head__number">
-                        02
+                    <span class="section-number">
+
+                        03
+
                     </span>
 
-                    <h2 class="section-head__title">
+                    <h2 class="section-title">
 
                         OUR TEAMS
 
@@ -286,7 +507,7 @@
 
                 </div>
 
-                <div class="team-grid">
+                <div class="teams__grid">
 
                     <!-- VALORANT -->
 
@@ -294,15 +515,18 @@
 
                         <div class="team-card__image">
 
-                            <img src="assets/image/valorant.jpg"
+                            <img
+                                src="assets/images/team-valorant.jpg"
                                 alt="VALORANT Team">
 
                         </div>
 
-                        <div class="team-card__content">
+                        <div class="team-card__overlay">
 
                             <span>
+
                                 COMPETITIVE
+
                             </span>
 
                             <h3>
@@ -313,8 +537,8 @@
 
                             <p>
 
-                                Professional roster competing
-                                in tournaments across Japan.
+                                Competing at the highest level
+                                with passion and teamwork.
 
                             </p>
 
@@ -330,18 +554,19 @@
 
                     </article>
 
-                    <!-- Creator -->
+                    <!-- CREATORS -->
 
                     <article class="team-card">
 
                         <div class="team-card__image">
 
-                            <img src="assets/image/creator.jpg"
-                                alt="Creator Team">
+                            <img
+                                src="assets/images/team-creators.jpg"
+                                alt="Creators">
 
                         </div>
 
-                        <div class="team-card__content">
+                        <div class="team-card__overlay">
 
                             <span>
 
@@ -359,8 +584,7 @@
 
                                 Streaming,
                                 YouTube,
-                                social media
-                                and entertainment.
+                                SNS and live production.
 
                             </p>
 
@@ -376,18 +600,19 @@
 
                     </article>
 
-                    <!-- Staff -->
+                    <!-- STAFF -->
 
                     <article class="team-card">
 
                         <div class="team-card__image">
 
-                            <img src="assets/image/staff.jpg"
+                            <img
+                                src="assets/images/team-staff.jpg"
                                 alt="Staff">
 
                         </div>
 
-                        <div class="team-card__content">
+                        <div class="team-card__overlay">
 
                             <span>
 
@@ -403,9 +628,9 @@
 
                             <p>
 
-                                Supporting players,
-                                creators,
-                                and events.
+                                Supporting every player,
+                                creator,
+                                and event.
 
                             </p>
 
@@ -426,586 +651,3 @@
             </div>
 
         </section>
-
-        <!--================ MEMBERS ================-->
-
-        <section class="members section" id="members">
-
-            <div class="container">
-
-                <div class="section-head">
-
-                    <span class="section-head__number">
-
-                        03
-
-                    </span>
-
-                    <h2 class="section-head__title">
-
-                        MEMBERS
-
-                    </h2>
-
-                </div>
-
-                <div class="swiper memberSwiper">
-
-                    <div class="swiper-wrapper">
-
-                        <!-- Member -->
-
-                        <div class="swiper-slide">
-
-                            <article class="member-card">
-
-                                <div class="member-card__image">
-
-                                    <img src="assets/member/m1yun.png"
-                                        alt="M1yuN">
-
-                                </div>
-
-                                <div class="member-card__content">
-
-                                    <span>
-
-                                        DIRECTOR
-
-                                    </span>
-
-                                    <h3>
-
-                                        M1yuN
-
-                                    </h3>
-
-                                    <p>
-
-                                        Founder /
-                                        Director
-
-                                    </p>
-
-                                    <div class="member-card__social">
-
-                                        <a href="#">
-
-                                            <i class="ri-twitter-x-fill"></i>
-
-                                        </a>
-
-                                        <a href="#">
-
-                                            <i class="ri-youtube-fill"></i>
-
-                                        </a>
-
-                                        <a href="#">
-
-                                            <i class="ri-twitch-fill"></i>
-
-                                        </a>
-
-                                    </div>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-
-                        <!-- Member -->
-
-                        <div class="swiper-slide">
-
-                            <article class="member-card">
-
-                                <div class="member-card__image">
-
-                                    <img src="assets/member/member02.png"
-                                        alt="Player">
-
-                                </div>
-
-                                <div class="member-card__content">
-
-                                    <span>
-
-                                        PLAYER
-
-                                    </span>
-
-                                    <h3>
-
-                                        Coming Soon
-
-                                    </h3>
-
-                                    <p>
-
-                                        VALORANT
-
-                                    </p>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-
-                        <!-- Member -->
-
-                        <div class="swiper-slide">
-
-                            <article class="member-card">
-
-                                <div class="member-card__image">
-
-                                    <img src="assets/member/member03.png"
-                                        alt="Creator">
-
-                                </div>
-
-                                <div class="member-card__content">
-
-                                    <span>
-
-                                        CREATOR
-
-                                    </span>
-
-                                    <h3>
-
-                                        Coming Soon
-
-                                    </h3>
-
-                                    <p>
-
-                                        Streamer
-
-                                    </p>
-
-                                </div>
-
-                            </article>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-            <!--================ RESULTS ================-->
-
-        <section class="results section" id="results">
-
-            <div class="container">
-
-                <div class="section-head">
-
-                    <span class="section-head__number">04</span>
-
-                    <h2 class="section-head__title">
-
-                        RESULTS
-
-                    </h2>
-
-                </div>
-
-                <div class="timeline">
-
-                    <article class="timeline__item">
-
-                        <span class="timeline__year">
-
-                            2026
-
-                        </span>
-
-                        <div class="timeline__content">
-
-                            <h3>
-
-                                NovaCup
-
-                            </h3>
-
-                            <p>
-
-                                Champion
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                    <article class="timeline__item">
-
-                        <span class="timeline__year">
-
-                            2026
-
-                        </span>
-
-                        <div class="timeline__content">
-
-                            <h3>
-
-                                Kyoto Invitational
-
-                            </h3>
-
-                            <p>
-
-                                Best 4
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                    <article class="timeline__item">
-
-                        <span class="timeline__year">
-
-                            2025
-
-                        </span>
-
-                        <div class="timeline__content">
-
-                            <h3>
-
-                                Community League
-
-                            </h3>
-
-                            <p>
-
-                                Champion
-
-                            </p>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!--================ PARTNERS ================-->
-
-        <section class="partners section" id="partners">
-
-            <div class="container">
-
-                <div class="section-head">
-
-                    <span class="section-head__number">
-
-                        05
-
-                    </span>
-
-                    <h2 class="section-head__title">
-
-                        PARTNERS
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-            <div class="partner-slider">
-
-                <div class="partner-track">
-
-                    <img src="assets/logo/logo1.svg" alt="">
-                    <img src="assets/logo/logo2.svg" alt="">
-                    <img src="assets/logo/logo3.svg" alt="">
-                    <img src="assets/logo/logo4.svg" alt="">
-                    <img src="assets/logo/logo5.svg" alt="">
-
-                    <!-- Loop -->
-
-                    <img src="assets/logo/logo1.svg" alt="">
-                    <img src="assets/logo/logo2.svg" alt="">
-                    <img src="assets/logo/logo3.svg" alt="">
-                    <img src="assets/logo/logo4.svg" alt="">
-                    <img src="assets/logo/logo5.svg" alt="">
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!--================ NEWS ================-->
-
-        <section class="news section" id="news">
-
-            <div class="container">
-
-                <div class="section-head">
-
-                    <span class="section-head__number">
-
-                        06
-
-                    </span>
-
-                    <h2 class="section-head__title">
-
-                        NEWS
-
-                    </h2>
-
-                </div>
-
-                <div class="news-grid">
-
-                    <article class="news-card">
-
-                        <span>
-
-                            JUL 24, 2026
-
-                        </span>
-
-                        <h3>
-
-                            Official Website Renewed
-
-                        </h3>
-
-                        <a href="#">
-
-                            READ MORE
-
-                        </a>
-
-                    </article>
-
-                    <article class="news-card">
-
-                        <span>
-
-                            JUL 15, 2026
-
-                        </span>
-
-                        <h3>
-
-                            New Member Joined
-
-                        </h3>
-
-                        <a href="#">
-
-                            READ MORE
-
-                        </a>
-
-                    </article>
-
-                    <article class="news-card">
-
-                        <span>
-
-                            JUL 01, 2026
-
-                        </span>
-
-                        <h3>
-
-                            Tournament Announcement
-
-                        </h3>
-
-                        <a href="#">
-
-                            READ MORE
-
-                        </a>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!--================ JOIN ================-->
-
-        <section class="join section" id="contact">
-
-            <div class="container">
-
-                <div class="join__content">
-
-                    <span>
-
-                        JOIN NIDMEGENT
-
-                    </span>
-
-                    <h2>
-
-                        Become Part of
-                        The Next Era.
-
-                    </h2>
-
-                    <p>
-
-                        Players.
-                        Creators.
-                        Designers.
-                        Editors.
-                        Managers.
-
-                        <br><br>
-
-                        We're always looking
-                        for passionate people.
-
-                    </p>
-
-                    <a href="#" class="btn btn-primary">
-
-                        APPLY NOW
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!--================ FOOTER ================-->
-
-    <footer class="footer">
-
-        <div class="container">
-
-            <div class="footer-top">
-
-                <h2>
-
-                    NIDMEGENT
-
-                </h2>
-
-                <nav>
-
-                    <a href="#about">
-
-                        ABOUT
-
-                    </a>
-
-                    <a href="#teams">
-
-                        TEAM
-
-                    </a>
-
-                    <a href="#members">
-
-                        MEMBERS
-
-                    </a>
-
-                    <a href="#results">
-
-                        RESULTS
-
-                    </a>
-
-                    <a href="#news">
-
-                        NEWS
-
-                    </a>
-
-                </nav>
-
-            </div>
-
-            <div class="footer-middle">
-
-                <a href="#">
-
-                    X
-
-                </a>
-
-                <a href="#">
-
-                    YouTube
-
-                </a>
-
-                <a href="#">
-
-                    Twitch
-
-                </a>
-
-                <a href="#">
-
-                    Discord
-
-                </a>
-
-            </div>
-
-            <div class="footer-bottom">
-
-                <p>
-
-                    © 2026 Nidmegent.
-                    All Rights Reserved.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-    <!--================ JS LIBRARY ================-->
-
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!--================ SCRIPT ================-->
-
-    <script src="script.js"></script>
-
-</body>
-
-</html>
