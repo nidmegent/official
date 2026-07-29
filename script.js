@@ -530,3 +530,52 @@ filterBtns.forEach(btn=>{
     });
 
 });
+
+/*==============================
+TEAM FILTER
+==============================*/
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const teamCards = document.querySelectorAll(".team-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // ボタンのアクティブ切り替え
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        teamCards.forEach(card => {
+
+            const category = card.dataset.category;
+
+            if (filter === "all" || category === filter) {
+
+                card.style.display = "block";
+
+                gsap.fromTo(card,
+                    {
+                        opacity: 0,
+                        y: 30
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.4
+                    }
+                );
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
