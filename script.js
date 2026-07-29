@@ -486,3 +486,47 @@ window.addEventListener("resize", () => {
 
 
 console.log("NIDMEGENT WEBSITE READY");
+
+/*==================================================
+
+TEAM 2
+
+==================================================*/
+
+const filterBtns = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".team-card");
+
+filterBtns.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        filterBtns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card=>{
+
+            if(filter==="all"){
+
+                card.style.display="block";
+
+                return;
+
+            }
+
+            if(card.dataset.category===filter){
+
+                card.style.display="block";
+
+            }else{
+
+                card.style.display="none";
+
+            }
+
+        });
+
+    });
+
+});
