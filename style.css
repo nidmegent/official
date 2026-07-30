@@ -38,6 +38,8 @@ ROOT
 
     --blue-dark:#003EE6;
 
+    --red:#FF0000
+
     --shadow:
 
     0 20px 60px rgba(0,0,0,.06);
@@ -160,7 +162,7 @@ SCROLLBAR
 
 ::-webkit-scrollbar-thumb{
 
-    background:var(--blue);
+    background:var(--red);
 
     border-radius:999px;
 
@@ -2208,7 +2210,7 @@ FOOTER
 
 .footer__brand p{
 
-    color:var(--text-light);
+    color:var(--white);
 
     max-width:340px;
 
@@ -2244,7 +2246,7 @@ FOOTER
 
     margin-bottom:16px;
 
-    color:var(--text-light);
+    color:var(--white);
 
     transition:var(--transition);
 
@@ -2270,7 +2272,7 @@ FOOTER
 
     align-items:center;
 
-    color:var(--text-light);
+    color:var(--white);
 
     font-size:14px;
 
