@@ -518,3 +518,110 @@ window.addEventListener("load",()=>{
 
 console.log("%cTEAM PAGE READY",
 "color:#2962FF;font-size:18px;font-weight:bold;");
+
+/*==================================================
+
+FOOTER
+
+==================================================*/
+
+.footer{
+
+    background:#111;
+    color:#ffffff;
+
+    border-top:1px solid var(--line);
+
+}
+
+.footer__top{
+
+    display:grid;
+
+    grid-template-columns:1.3fr 2fr;
+
+    gap:80px;
+
+    padding:90px 0;
+
+}
+
+.footer__brand img{
+
+    height:42px;
+
+    width:auto;
+
+    margin-bottom:20px;
+
+}
+
+.footer__brand p{
+
+    color:var(--text-light);
+
+    max-width:340px;
+
+    line-height:1.8;
+
+}
+
+.footer__menu{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:50px;
+
+}
+
+.footer__menu h4{
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+    letter-spacing:3px;
+
+    color:var(--blue);
+
+}
+
+.footer__menu a{
+
+    display:block;
+
+    margin-bottom:16px;
+
+    color:var(--text-light);
+
+    transition:var(--transition);
+
+}
+
+.footer__menu a:hover{
+
+    color:var(--blue);
+
+    transform:translateX(5px);
+
+}
+
+.footer__bottom{
+
+    border-top:1px solid var(--line);
+
+    padding:28px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
