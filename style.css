@@ -162,12 +162,11 @@ SCROLLBAR
 
 ::-webkit-scrollbar-thumb{
 
-    background:var(--red);
+    background:var(--blue);
 
     border-radius:999px;
 
 }
-
 
 /*==============================
 SELECTION
