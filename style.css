@@ -838,7 +838,7 @@ SCROLL
 
     height:30px;
 
-    background:var(--red);
+    background:var(--blue);
 
     animation:scrollLine 2.4s infinite;
 
