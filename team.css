@@ -1119,6 +1119,44 @@ MOUSE LIGHT
 
 }
 
+/*==================================================
+
+COMMON ANIMATION
+
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+}
+
+.fade-left{
+
+    opacity:0;
+
+    transform:translateX(-60px);
+
+}
+
+.fade-right{
+
+    opacity:0;
+
+    transform:translateX(60px);
+
+}
+
+.scale-up{
+
+    opacity:0;
+
+    transform:scale(.92);
+
+}
+
 
 /*==================================================
 
