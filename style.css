@@ -2177,7 +2177,8 @@ FOOTER
 
 .footer{
 
-    background:#fff;
+    background:#111;
+    color:#fff;
 
     border-top:1px solid var(--line);
 
