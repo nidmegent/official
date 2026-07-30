@@ -81,6 +81,29 @@ button{
 
 }
 
+/*==============================
+SCROLLBAR
+==============================*/
+
+::-webkit-scrollbar{
+
+    width:9px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--blue);
+
+    border-radius:999px;
+
+}
 
 /*==================================================
 
