@@ -2389,56 +2389,30 @@ RESPONSIVE
 
 /*==================================================
 
-TEAMS 2
+team.js add css
 
 ==================================================*/
 
-.team-filter{
+.mouse-light{
 
-    display:flex;
+    position:fixed;
 
-    justify-content:center;
+    width:300px;
 
-    gap:18px;
+    height:300px;
 
-    margin:70px 0;
+    border-radius:50%;
 
-    flex-wrap:wrap;
+    pointer-events:none;
 
-}
+    background:radial-gradient(circle,
+    rgba(41,98,255,.12),
+    transparent 70%);
 
-.filter-btn{
+    transform:translate(-50%,-50%);
 
-    padding:16px 34px;
+    z-index:1;
 
-    border-radius:999px;
-
-    border:1px solid #ddd;
-
-    background:#fff;
-
-    font-weight:700;
-
-    transition:.35s;
-
-}
-
-.filter-btn:hover{
-
-    background:#2962FF;
-
-    color:#fff;
-
-    border-color:#2962FF;
-
-}
-
-.filter-btn.active{
-
-    background:#2962FF;
-
-    color:#fff;
-
-    border-color:#2962FF;
+    filter:blur(20px);
 
 }
