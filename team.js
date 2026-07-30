@@ -200,3 +200,321 @@ window.addEventListener("resize",()=>{
 });
 
 console.log("TEAM PAGE READY");
+
+/*==================================================
+
+PLAYER FILTER
+
+==================================================*/
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const playerCards = document.querySelectorAll(".player-card");
+
+if (filterButtons.length && playerCards.length) {
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            // Active Button
+            filterButtons.forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            playerCards.forEach(card => {
+
+                const category = card.dataset.category;
+
+                // 一度消す
+                gsap.to(card, {
+
+                    opacity: 0,
+
+                    y: 20,
+
+                    duration: .25,
+
+                    onComplete: () => {
+
+                        if (
+                            filter === "all" ||
+                            category === filter
+                        ) {
+
+                            card.style.display = "block";
+
+                            gsap.fromTo(card,
+
+                                {
+                                    opacity: 0,
+                                    y: 30,
+                                    scale: .98
+                                },
+
+                                {
+                                    opacity: 1,
+                                    y: 0,
+                                    scale: 1,
+                                    duration: .45,
+                                    ease: "power3.out"
+                                }
+
+                            );
+
+                        } else {
+
+                            card.style.display = "none";
+
+                        }
+
+                    }
+
+                });
+
+            });
+
+        });
+
+    });
+
+}
+
+/*==================================================
+
+TEAM STATS
+
+==================================================*/
+
+document.querySelectorAll(".stat-box h2").forEach(counter => {
+
+    const target = Number(counter.dataset.target);
+
+    if (!target) return;
+
+    ScrollTrigger.create({
+
+        trigger: counter,
+
+        start: "top 85%",
+
+        once: true,
+
+        onEnter: () => {
+
+            gsap.fromTo(counter,
+
+                {
+                    innerText: 0
+                },
+
+                {
+
+                    innerText: target,
+
+                    duration: 2,
+
+                    snap: {
+                        innerText: 1
+                    },
+
+                    ease: "power2.out",
+
+                    onUpdate() {
+
+                        counter.innerText =
+                            Math.floor(counter.innerText);
+
+                    }
+
+                }
+
+            );
+
+        }
+
+    });
+
+});
+
+/*==================================================
+
+GALLERY
+
+==================================================*/
+
+gsap.utils.toArray(".gallery-item").forEach((item,index)=>{
+
+    gsap.from(item,{
+
+        opacity:0,
+
+        y:60,
+
+        duration:.8,
+
+        delay:index*0.05,
+
+        ease:"power3.out",
+
+        scrollTrigger:{
+
+            trigger:item,
+
+            start:"top 90%"
+
+        }
+
+    });
+
+});
+
+/*==================================================
+
+SECTION TITLE
+
+==================================================*/
+
+gsap.utils.toArray(".section-title").forEach(title=>{
+
+    gsap.from(title,{
+
+        y:80,
+
+        opacity:0,
+
+        duration:1,
+
+        ease:"power4.out",
+
+        scrollTrigger:{
+
+            trigger:title,
+
+            start:"top 90%"
+
+        }
+
+    });
+
+});
+
+/*==================================================
+
+MAGNET BUTTON
+
+==================================================*/
+
+document.querySelectorAll(".btn").forEach(button=>{
+
+    button.addEventListener("mousemove",e=>{
+
+        const rect = button.getBoundingClientRect();
+
+        const x = e.clientX - rect.left - rect.width/2;
+
+        const y = e.clientY - rect.top - rect.height/2;
+
+        gsap.to(button,{
+
+            x:x*0.18,
+
+            y:y*0.18,
+
+            duration:.35
+
+        });
+
+    });
+
+    button.addEventListener("mouseleave",()=>{
+
+        gsap.to(button,{
+
+            x:0,
+
+            y:0,
+
+            duration:.35
+
+        });
+
+    });
+
+});
+
+/*==================================================
+
+MOUSE LIGHT
+
+==================================================*/
+
+const light = document.createElement("div");
+
+light.className = "mouse-light";
+
+document.body.appendChild(light);
+
+document.addEventListener("mousemove",e=>{
+
+    gsap.to(light,{
+
+        x:e.clientX,
+
+        y:e.clientY,
+
+        duration:.3,
+
+        ease:"power2.out"
+
+    });
+
+});
+
+/*==================================================
+
+REVEAL
+
+==================================================*/
+
+gsap.utils.toArray(".fade-up").forEach(el=>{
+
+    gsap.from(el,{
+
+        y:70,
+
+        opacity:0,
+
+        duration:1,
+
+        ease:"power3.out",
+
+        scrollTrigger:{
+
+            trigger:el,
+
+            start:"top 85%"
+
+        }
+
+    });
+
+});
+
+/*==================================================
+
+READY
+
+==================================================*/
+
+window.addEventListener("load",()=>{
+
+    ScrollTrigger.refresh();
+
+});
+
+console.log("%cTEAM PAGE READY",
+"color:#2962FF;font-size:18px;font-weight:bold;");
