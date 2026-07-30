@@ -342,38 +342,6 @@ document.querySelectorAll(".stat-box h2").forEach(counter => {
 
 /*==================================================
 
-GALLERY
-
-==================================================*/
-
-gsap.utils.toArray(".gallery-item").forEach((item,index)=>{
-
-    gsap.from(item,{
-
-        opacity:0,
-
-        y:60,
-
-        duration:.8,
-
-        delay:index*0.05,
-
-        ease:"power3.out",
-
-        scrollTrigger:{
-
-            trigger:item,
-
-            start:"top 90%"
-
-        }
-
-    });
-
-});
-
-/*==================================================
-
 SECTION TITLE
 
 ==================================================*/
