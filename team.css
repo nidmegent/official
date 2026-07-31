@@ -1803,5 +1803,999 @@ PLAYER CARD SNS
 }
 
 /*==================================================
-END
+TEAM RESULTS
+==================================================*/
+
+.results{
+
+    position:relative;
+
+    padding:140px 0;
+
+    background:#fff;
+
+}
+
+.team-results__subtitle{
+
+    margin-top:24px;
+
+    font-size:1.1rem;
+
+    color:var(--text-light);
+
+    max-width:640px;
+
+}
+
+/*==================================================
+FILTER
+==================================================*/
+
+.results-filter{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin:70px 0 60px;
+
+    flex-wrap:wrap;
+
+}
+
+.results-btn{
+
+    padding:14px 28px;
+
+    border:1px solid var(--border);
+
+    border-radius:999px;
+
+    background:#fff;
+
+    color:var(--text-light);
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+
+    transition:var(--transition);
+
+}
+
+.results-btn:hover{
+
+    color:var(--blue);
+
+    border-color:var(--blue);
+
+}
+
+.results-btn.active{
+
+    background:var(--blue);
+
+    color:#fff;
+
+    border-color:var(--blue);
+
+}
+
+/*==================================================
+CONTENT
+==================================================*/
+
+.results-content{
+
+    display:none;
+
+    animation:fadeResults .45s ease;
+
+}
+
+.results-content.active{
+
+    display:block;
+
+}
+
+@keyframes fadeResults{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+/*==================================================
+RESULT CARD
+==================================================*/
+
+.results-card{
+
+    padding:45px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    transition:var(--transition);
+
+}
+
+.results-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--blue);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.results-year{
+
+    display:inline-block;
+
+    margin-bottom:20px;
+
+    color:var(--blue);
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+}
+
+.results-card h3{
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    margin-bottom:28px;
+
+    letter-spacing:-.04em;
+
+}
+
+.results-card ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.results-card li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-size:1.05rem;
+
+    color:var(--text);
+
+}
+
+/*==================================================
+TEAM STATS
+==================================================*/
+
+.results-stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:24px;
+
+    margin-top:60px;
+
+}
+
+.stat-card{
+
+    padding:38px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    text-align:center;
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:var(--blue);
+
+    transform:scaleX(0);
+
+    transform-origin:left;
+
+    transition:.4s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--blue);
+
+    box-shadow:0 18px 50px rgba(0,0,0,.08);
+
+}
+
+.stat-card:hover::before{
+
+    transform:scaleX(1);
+
+}
+
+.stat-number{
+
+    display:block;
+
+    font-size:3rem;
+
+    font-weight:900;
+
+    color:var(--blue);
+
+    line-height:1;
+
+    letter-spacing:-.05em;
+
+}
+
+.stat-label{
+
+    display:block;
+
+    margin-top:14px;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    color:var(--text-light);
+
+    text-transform:uppercase;
+
+}
+
+/*==================================================
+RESULT CARD EFFECT
+==================================================*/
+
+.results-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.results-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-120px;
+
+    right:-120px;
+
+    width:240px;
+
+    height:240px;
+
+    border-radius:50%;
+
+    background:rgba(41,98,255,.05);
+
+    transition:.45s;
+
+}
+
+.results-card:hover::after{
+
+    transform:scale(1.2);
+
+}
+
+.results-card li{
+
+    padding:16px 0;
+
+    border-bottom:1px solid #f1f1f1;
+
+}
+
+.results-card li:last-child{
+
+    border-bottom:none;
+
+}
+
+.results-card li:hover{
+
+    color:var(--blue);
+
+    padding-left:12px;
+
+}
+
+/*==================================================
+RESULT ICON
+==================================================*/
+
+.results-card li{
+
+    transition:var(--transition);
+
+}
+
+.results-card li::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    display:inline-block;
+
+    margin-right:14px;
+
+    flex-shrink:0;
+
+}
+
+/*==================================================
+RESULT HISTORY
+==================================================*/
+
+.results-history{
+
+    margin-top:100px;
+
+}
+
+.history-header{
+
+    margin-bottom:60px;
+
+}
+
+.history-subtitle{
+
+    display:block;
+
+    margin-bottom:14px;
+
+    color:var(--blue);
+
+    font-size:.85rem;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+}
+
+.history-title{
+
+    font-size:clamp(2.5rem,5vw,4rem);
+
+    font-weight:900;
+
+    letter-spacing:-.04em;
+
+    line-height:1;
+
+}
+
+/*==================================================
+TIMELINE
+==================================================*/
+
+.history-list{
+
+    position:relative;
+
+    margin-top:60px;
+
+}
+
+.history-list::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:120px;
+
+    top:0;
+
+    width:2px;
+
+    height:100%;
+
+    background:var(--border);
+
+}
+
+/*==================================================
+ITEM
+==================================================*/
+
+.history-item{
+
+    display:grid;
+
+    grid-template-columns:120px 1fr;
+
+    gap:60px;
+
+    margin-bottom:70px;
+
+    position:relative;
+
+}
+
+.history-year{
+
+    font-size:2rem;
+
+    font-weight:900;
+
+    color:var(--blue);
+
+    text-align:right;
+
+    line-height:1;
+
+    position:relative;
+
+}
+
+.history-year::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-32px;
+
+    top:12px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    border:5px solid #fff;
+
+    box-shadow:0 0 0 2px var(--blue);
+
+    z-index:2;
+
+}
+
+/*==================================================
+CONTENT
+==================================================*/
+
+.history-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/*==================================================
+RESULT CARD
+==================================================*/
+
+.history-result{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:26px 30px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    transition:var(--transition);
+
+}
+
+.history-result:hover{
+
+    transform:translateX(10px);
+
+    border-color:var(--blue);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.08);
+
+}
+
+/*==================================================
+RANK
+==================================================*/
+
+.history-rank{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#f7f7f7;
+
+    font-size:1.6rem;
+
+    font-weight:900;
+
+    flex-shrink:0;
+
+}
+
+.history-result h4{
+
+    font-size:1.3rem;
+
+    font-weight:800;
+
+    margin-bottom:6px;
+
+}
+
+.history-result p{
+
+    color:var(--text-light);
+
+    font-size:.95rem;
+
+}
+
+/*==================================================
+MEDAL COLORS
+==================================================*/
+
+.history-result.champion{
+
+    border-left:5px solid #FFD700;
+
+}
+
+.history-result.second{
+
+    border-left:5px solid #C0C0C0;
+
+}
+
+.history-result.third{
+
+    border-left:5px solid #CD7F32;
+
+}
+
+.history-result.champion .history-rank{
+
+    background:#FFF8D6;
+
+}
+
+.history-result.second .history-rank{
+
+    background:#F4F4F4;
+
+}
+
+.history-result.third .history-rank{
+
+    background:#FFF0E5;
+
+}
+
+/*==================================================
+RESULT HISTORY EFFECT
+==================================================*/
+
+.history-result{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.history-result::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(41,98,255,.04),
+        transparent
+    );
+
+    transform:translateX(-100%);
+
+    transition:.6s;
+
+}
+
+.history-result:hover::before{
+
+    transform:translateX(100%);
+
+}
+
+/*==================================================
+RESULT HOVER
+==================================================*/
+
+.history-result:hover .history-rank{
+
+    transform:rotate(-8deg) scale(1.08);
+
+}
+
+.history-rank{
+
+    transition:.35s;
+
+}
+
+.history-result:hover h4{
+
+    color:var(--blue);
+
+}
+
+.history-result h4{
+
+    transition:.3s;
+
+}
+
+/*==================================================
+SCROLL ANIMATION
+==================================================*/
+
+.results-card,
+.stat-card,
+.history-item{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    animation:resultsFade .8s forwards;
+
+}
+
+.results-card{
+
+    animation-delay:.1s;
+
+}
+
+.stat-card:nth-child(1){
+
+    animation-delay:.15s;
+
+}
+
+.stat-card:nth-child(2){
+
+    animation-delay:.25s;
+
+}
+
+.stat-card:nth-child(3){
+
+    animation-delay:.35s;
+
+}
+
+.stat-card:nth-child(4){
+
+    animation-delay:.45s;
+
+}
+
+.history-item:nth-child(1){
+
+    animation-delay:.55s;
+
+}
+
+.history-item:nth-child(2){
+
+    animation-delay:.7s;
+
+}
+
+.history-item:nth-child(3){
+
+    animation-delay:.85s;
+
+}
+
+@keyframes resultsFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:none;
+
+    }
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.results-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.history-item{
+
+    grid-template-columns:90px 1fr;
+
+    gap:35px;
+
+}
+
+.history-list::before{
+
+    left:90px;
+
+}
+
+.history-year{
+
+    font-size:1.5rem;
+
+}
+
+.history-year::after{
+
+    right:-26px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.results-filter{
+
+    overflow-x:auto;
+
+    flex-wrap:nowrap;
+
+    padding-bottom:10px;
+
+}
+
+.results-filter::-webkit-scrollbar{
+
+    display:none;
+
+}
+
+.results-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.history-list::before{
+
+    display:none;
+
+}
+
+.history-item{
+
+    grid-template-columns:1fr;
+
+    gap:20px;
+
+    margin-bottom:50px;
+
+}
+
+.history-year{
+
+    text-align:left;
+
+}
+
+.history-year::after{
+
+    display:none;
+
+}
+
+.history-result{
+
+    padding:20px;
+
+    gap:18px;
+
+}
+
+.history-rank{
+
+    width:56px;
+
+    height:56px;
+
+    font-size:1.2rem;
+
+}
+
+.history-result h4{
+
+    font-size:1.05rem;
+
+}
+
+.history-result p{
+
+    font-size:.9rem;
+
+}
+
+.results-card{
+
+    padding:30px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.results{
+
+    padding:80px 0;
+
+}
+
+.results-card h3{
+
+    font-size:1.6rem;
+
+}
+
+.stat-number{
+
+    font-size:2.3rem;
+
+}
+
+.results-btn{
+
+    padding:12px 20px;
+
+    font-size:.75rem;
+
+}
+
+.team-results__subtitle{
+
+    font-size:1rem;
+
+}
+
+}
+
+/*==================================================
+END OF TEAM RESULTS
 ==================================================*/
