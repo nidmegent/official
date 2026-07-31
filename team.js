@@ -224,14 +224,38 @@ if (typeof gsap !== "undefined") {
 }
 
 `/*==================================================
-AUTO CLOSE MOBILE MENU
+ACCESSIBILITY
 ==================================================*/
 
-const navLinks = document.querySelectorAll(".nav a");
+document.querySelectorAll(".player-card").forEach(card => {
 
-navLinks.forEach(link => {
+    // キーボードフォーカス可能にする
+    card.setAttribute("tabindex", "0");
+
+    // Enterキーでプロフィールへ移動
+    card.addEventListener("keydown", (e) => {
+
+        if (e.key === "Enter") {
+
+            const link = card.querySelector(".player-link");
+
+            if (link) link.click();
+
+        }
+
+    });
+
+});
+
+/*==================================================
+CLOSE MOBILE MENU
+==================================================*/
+
+document.querySelectorAll(".nav a").forEach(link => {
 
     link.addEventListener("click", () => {
+
+        const nav = document.querySelector(".nav");
 
         if (nav.classList.contains("active")) {
 
@@ -253,78 +277,46 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const targetId = this.getAttribute("href");
 
-        if (targetId.length > 1) {
+        if (targetId === "#") return;
 
-            const target = document.querySelector(targetId);
+        const target = document.querySelector(targetId);
 
-            if (target) {
+        if (!target) return;
 
-                e.preventDefault();
+        e.preventDefault();
 
-                target.scrollIntoView({
+        target.scrollIntoView({
 
-                    behavior: "smooth",
+            behavior: "smooth",
 
-                    block: "start"
+            block: "start"
 
-                });
-
-            }
-
-        }
+        });
 
     });
 
 });
 
 /*==================================================
-KEYBOARD ACCESSIBILITY
+SCROLL TOP HEADER FIX
 ==================================================*/
 
-playerCards.forEach(card => {
+window.addEventListener("pageshow", () => {
 
-    card.setAttribute("tabindex", "0");
+    const header = document.querySelector(".header");
 
-    card.addEventListener("keydown", (e) => {
+    if (!header) return;
 
-        if (e.key === "Enter") {
+    if (window.scrollY <= 50) {
 
-            const link = card.querySelector(".player-link");
-
-            if (link) link.click();
-
-        }
-
-    });
-
-});
-
-/*==================================================
-SCROLL TO TOP EFFECT
-==================================================*/
-
-let lastScroll = 0;
-
-window.addEventListener("scroll", () => {
-
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll > lastScroll && currentScroll > 120) {
-
-        header.style.transform = "translateY(-100%)";
-
-    } else {
-
-        header.style.transform = "translateY(0)";
+        header.classList.remove("active");
 
     }
 
-    lastScroll = currentScroll;
-
 });
 
 /*==================================================
-REFRESH ON RESIZE
+WINDOW RESIZE
 ==================================================*/
 
 window.addEventListener("resize", () => {
@@ -338,20 +330,58 @@ window.addEventListener("resize", () => {
 });
 
 /*==================================================
-SAFE CHECKS
+DYNAMIC PLAYER COUNT
 ==================================================*/
 
-window.addEventListener("error", (e) => {
+const playerCount = document.querySelectorAll(".player-card").length;
 
-    console.warn("TEAM PAGE ERROR:", e.message);
+console.log(\`NIDMEGENT PLAYERS: \${playerCount}\`);
+
+/*==================================================
+FILTER EMPTY CHECK
+==================================================*/
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+        const visibleCards = [...document.querySelectorAll(".player-card")]
+            .filter(card => {
+
+                return filter === "all" ||
+                       card.dataset.category === filter;
+
+            });
+
+        console.log(\`\${filter}: \${visibleCards.length} players\`);
+
+    });
 
 });
 
 /*==================================================
-READY
+PAGE READY
 ==================================================*/
 
-console.log("%cNIDMEGENT TEAM PAGE READY",
-"color:#2962FF;font-size:14px;font-weight:bold;");
+window.addEventListener("load", () => {
 
-document.body.classList.add("page-loaded");`
+    // 初期表示アニメーション完了後にリフレッシュ
+    setTimeout(() => {
+
+        if (typeof ScrollTrigger !== "undefined") {
+
+            ScrollTrigger.refresh();
+
+        }
+
+    }, 500);
+
+    document.body.classList.add("loaded");
+
+    console.log("%cTEAM PAGE READY",
+        "color:#2962FF;font-size:16px;font-weight:bold;"
+    );
+
+});`
