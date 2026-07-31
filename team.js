@@ -1,279 +1,115 @@
 /*==================================================
-
 NIDMEGENT TEAM PAGE
-
 ==================================================*/
 
-gsap.registerPlugin(ScrollTrigger);
+document.addEventListener("DOMContentLoaded", () => {
 
-/*==================================================
+    /*==================================================
+    HEADER
+    ==================================================*/
 
-LOADER
+    const header = document.querySelector(".header");
 
-==================================================*/
+    window.addEventListener("scroll", () => {
 
-window.addEventListener("load", () => {
+        if (window.scrollY > 50) {
 
-    const loader = document.querySelector(".loader");
+            header.classList.add("active");
 
-    if (!loader) return;
+        } else {
 
-    const tl = gsap.timeline();
+            header.classList.remove("active");
 
-    tl.to(".loader__text", {
-
-        opacity: 0,
-
-        y: -40,
-
-        duration: .8,
-
-        ease: "power3.out"
-
-    })
-
-    .to(loader, {
-
-        opacity: 0,
-
-        duration: .6
-
-    })
-
-    .set(loader, {
-
-        display: "none"
+        }
 
     });
 
-});
+    /*==================================================
+    MOBILE MENU
+    ==================================================*/
 
+    const menuBtn = document.querySelector(".menu");
+    const nav = document.querySelector(".nav");
 
-/*==================================================
+    if (menuBtn && nav) {
 
-HEADER
+        menuBtn.addEventListener("click", () => {
 
-==================================================*/
-
-const header = document.querySelector(".header");
-
-window.addEventListener("scroll", () => {
-
-    if (!header) return;
-
-    if (window.scrollY > 80) {
-
-        header.classList.add("active");
-
-    } else {
-
-        header.classList.remove("active");
-
-    }
-
-});
-
-
-/*==================================================
-
-HERO ANIMATION
-
-==================================================*/
-
-if(document.querySelector(".team-hero")){
-
-    const tl = gsap.timeline({
-        delay:.3
-    });
-
-    tl.from(".team-hero__eyebrow",{
-
-        y:40,
-        opacity:0,
-        duration:.8
-
-    })
-
-    .from(".team-hero__title",{
-
-        y:70,
-        opacity:0,
-        duration:1
-
-    },"-=0.4")
-
-    .from(".team-hero__subtitle",{
-
-        y:70,
-        opacity:0,
-        duration:1
-
-    },"-=0.6")
-
-    .from(".team-hero p",{
-
-        y:40,
-        opacity:0,
-        duration:.8
-
-    },"-=0.6")
-
-    .from(".btn",{
-
-        y:30,
-        opacity:0,
-        duration:.6
-
-    },"-=0.5");
-
-}
-
-
-/*==================================================
-
-PARALLAX
-
-==================================================*/
-
-const hero = document.querySelector(".team-hero");
-
-if(hero){
-
-    hero.addEventListener("mousemove",(e)=>{
-
-        const x = (e.clientX / window.innerWidth - .5) * 20;
-
-        const y = (e.clientY / window.innerHeight - .5) * 20;
-
-        gsap.to(".team-hero__gradient",{
-
-            x,
-
-            y,
-
-            duration:1
+            nav.classList.toggle("active");
 
         });
 
+    }
+
+    /*==================================================
+    FADE UP
+    ==================================================*/
+
+    const fadeItems = document.querySelectorAll(".fade-up");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    }, {
+
+        threshold: .15
+
     });
 
-}
+    fadeItems.forEach(item => observer.observe(item));
 
+    /*==================================================
+    PLAYER FILTER
+    ==================================================*/
 
-/*==================================================
+    const buttons = document.querySelectorAll(".filter-btn");
 
-SCROLL PROGRESS
+    const cards = document.querySelectorAll(".player-card");
 
-==================================================*/
-
-const progress = document.createElement("div");
-
-progress.className = "scroll-progress";
-
-document.body.appendChild(progress);
-
-window.addEventListener("scroll",()=>{
-
-    const total =
-        document.documentElement.scrollHeight
-        - window.innerHeight;
-
-    const percent =
-        (window.scrollY / total) * 100;
-
-    progress.style.width =
-        percent + "%";
-
-});
-
-
-/*==================================================
-
-REFRESH
-
-==================================================*/
-
-window.addEventListener("resize",()=>{
-
-    ScrollTrigger.refresh();
-
-});
-
-console.log("TEAM PAGE READY");
-
-/*==================================================
-
-PLAYER FILTER
-
-==================================================*/
-
-const filterButtons = document.querySelectorAll(".filter-btn");
-const playerCards = document.querySelectorAll(".player-card");
-
-if (filterButtons.length && playerCards.length) {
-
-    filterButtons.forEach(button => {
+    buttons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            // Active Button
-            filterButtons.forEach(btn =>
-                btn.classList.remove("active")
-            );
+            buttons.forEach(btn => btn.classList.remove("active"));
 
             button.classList.add("active");
 
             const filter = button.dataset.filter;
 
-            playerCards.forEach(card => {
+            cards.forEach(card => {
 
                 const category = card.dataset.category;
 
-                // 一度消す
-                gsap.to(card, {
+                if (filter === "all" || filter === category) {
 
-                    opacity: 0,
+                    card.style.display = "flex";
 
-                    y: 20,
+                    setTimeout(() => {
 
-                    duration: .25,
+                        card.classList.remove("hide");
 
-                    onComplete: () => {
+                    }, 20);
 
-                        if (
-                            filter === "all" ||
-                            category === filter
-                        ) {
+                } else {
 
-                            card.style.display = "block";
+                    card.classList.add("hide");
 
-                            gsap.fromTo(card,
+                    setTimeout(() => {
 
-                                {
-                                    opacity: 0,
-                                    y: 30,
-                                    scale: .98
-                                },
+                        card.style.display = "none";
 
-                                {
-                                    opacity: 1,
-                                    y: 0,
-                                    scale: 1,
-                                    duration: .45,
-                                    ease: "power3.out"
-                                }
+                    }, 250);
 
-                            );
-
-                        } else {
-
-                            card.style.display = "none";
-
-                        }
-
-                    }
-
-                });
+                }
 
             });
 
@@ -281,58 +117,129 @@ if (filterButtons.length && playerCards.length) {
 
     });
 
+});
+
+/*==================================================
+MOUSE GLOW
+==================================================*/
+
+const playerCards = document.querySelectorAll(".player-card");
+
+playerCards.forEach(card => {
+
+    const glow = card.querySelector(".player-glow");
+
+    if (!glow) return;
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        glow.style.left = `${x}px`;
+        glow.style.top = `${y}px`;
+
+    });
+
+});
+
+/*==================================================
+GSAP
+==================================================*/
+
+if (typeof gsap !== "undefined") {
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    /*==============================
+    HERO
+    ==============================*/
+
+    gsap.from(".team-hero__eyebrow", {
+
+        opacity: 0,
+        y: 30,
+        duration: .8
+
+    });
+
+    gsap.from(".team-hero__title", {
+
+        opacity: 0,
+        y: 60,
+        duration: 1,
+        delay: .15
+
+    });
+
+    gsap.from(".team-hero__subtitle", {
+
+        opacity: 0,
+        y: 30,
+        duration: .8,
+        delay: .35
+
+    });
+
+    gsap.from(".team-hero__line", {
+
+        width: 0,
+        duration: .8,
+        delay: .6
+
+    });
+
+    /*==============================
+    PLAYER CARDS
+    ==============================*/
+
+    gsap.utils.toArray(".player-card").forEach((card, index) => {
+
+        gsap.from(card, {
+
+            opacity: 0,
+            y: 60,
+            duration: .8,
+
+            delay: index * .08,
+
+            ease: "power3.out",
+
+            scrollTrigger: {
+
+                trigger: card,
+
+                start: "top 85%",
+
+                toggleActions: "play none none reverse"
+
+            }
+
+        });
+
+    });
+
 }
 
-/*==================================================
-
-TEAM STATS
-
+`/*==================================================
+ACCESSIBILITY
 ==================================================*/
 
-document.querySelectorAll(".stat-box h2").forEach(counter => {
+document.querySelectorAll(".player-card").forEach(card => {
 
-    const target = Number(counter.dataset.target);
+    // キーボードフォーカス可能にする
+    card.setAttribute("tabindex", "0");
 
-    if (!target) return;
+    // Enterキーでプロフィールへ移動
+    card.addEventListener("keydown", (e) => {
 
-    ScrollTrigger.create({
+        if (e.key === "Enter") {
 
-        trigger: counter,
+            const link = card.querySelector(".player-link");
 
-        start: "top 85%",
-
-        once: true,
-
-        onEnter: () => {
-
-            gsap.fromTo(counter,
-
-                {
-                    innerText: 0
-                },
-
-                {
-
-                    innerText: target,
-
-                    duration: 2,
-
-                    snap: {
-                        innerText: 1
-                    },
-
-                    ease: "power2.out",
-
-                    onUpdate() {
-
-                        counter.innerText =
-                            Math.floor(counter.innerText);
-
-                    }
-
-                }
-
-            );
+            if (link) link.click();
 
         }
 
@@ -341,28 +248,18 @@ document.querySelectorAll(".stat-box h2").forEach(counter => {
 });
 
 /*==================================================
-
-SECTION TITLE
-
+CLOSE MOBILE MENU
 ==================================================*/
 
-gsap.utils.toArray(".section-title").forEach(title=>{
+document.querySelectorAll(".nav a").forEach(link => {
 
-    gsap.from(title,{
+    link.addEventListener("click", () => {
 
-        y:80,
+        const nav = document.querySelector(".nav");
 
-        opacity:0,
+        if (nav.classList.contains("active")) {
 
-        duration:1,
-
-        ease:"power4.out",
-
-        scrollTrigger:{
-
-            trigger:title,
-
-            start:"top 90%"
+            nav.classList.remove("active");
 
         }
 
@@ -371,42 +268,28 @@ gsap.utils.toArray(".section-title").forEach(title=>{
 });
 
 /*==================================================
-
-MAGNET BUTTON
-
+SMOOTH SCROLL
 ==================================================*/
 
-document.querySelectorAll(".btn").forEach(button=>{
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    button.addEventListener("mousemove",e=>{
+    anchor.addEventListener("click", function (e) {
 
-        const rect = button.getBoundingClientRect();
+        const targetId = this.getAttribute("href");
 
-        const x = e.clientX - rect.left - rect.width/2;
+        if (targetId === "#") return;
 
-        const y = e.clientY - rect.top - rect.height/2;
+        const target = document.querySelector(targetId);
 
-        gsap.to(button,{
+        if (!target) return;
 
-            x:x*0.18,
+        e.preventDefault();
 
-            y:y*0.18,
+        target.scrollIntoView({
 
-            duration:.35
+            behavior: "smooth",
 
-        });
-
-    });
-
-    button.addEventListener("mouseleave",()=>{
-
-        gsap.to(button,{
-
-            x:0,
-
-            y:0,
-
-            duration:.35
+            block: "start"
 
         });
 
@@ -415,74 +298,90 @@ document.querySelectorAll(".btn").forEach(button=>{
 });
 
 /*==================================================
-
-MOUSE LIGHT
-
+SCROLL TOP HEADER FIX
 ==================================================*/
 
-const light = document.createElement("div");
+window.addEventListener("pageshow", () => {
 
-light.className = "mouse-light";
+    const header = document.querySelector(".header");
 
-document.body.appendChild(light);
+    if (!header) return;
 
-document.addEventListener("mousemove",e=>{
+    if (window.scrollY <= 50) {
 
-    gsap.to(light,{
+        header.classList.remove("active");
 
-        x:e.clientX,
+    }
 
-        y:e.clientY,
+});
 
-        duration:.3,
+/*==================================================
+WINDOW RESIZE
+==================================================*/
 
-        ease:"power2.out"
+window.addEventListener("resize", () => {
+
+    if (typeof ScrollTrigger !== "undefined") {
+
+        ScrollTrigger.refresh();
+
+    }
+
+});
+
+/*==================================================
+DYNAMIC PLAYER COUNT
+==================================================*/
+
+const playerCount = document.querySelectorAll(".player-card").length;
+
+console.log(\`NIDMEGENT PLAYERS: \${playerCount}\`);
+
+/*==================================================
+FILTER EMPTY CHECK
+==================================================*/
+
+document.querySelectorAll(".filter-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const filter = button.dataset.filter;
+
+        const visibleCards = [...document.querySelectorAll(".player-card")]
+            .filter(card => {
+
+                return filter === "all" ||
+                       card.dataset.category === filter;
+
+            });
+
+        console.log(\`\${filter}: \${visibleCards.length} players\`);
 
     });
 
 });
 
 /*==================================================
-
-REVEAL
-
+PAGE READY
 ==================================================*/
 
-gsap.utils.toArray(".fade-up").forEach(el=>{
+window.addEventListener("load", () => {
 
-    gsap.from(el,{
+    // 初期表示アニメーション完了後にリフレッシュ
+    setTimeout(() => {
 
-        y:70,
+        if (typeof ScrollTrigger !== "undefined") {
 
-        opacity:0,
-
-        duration:1,
-
-        ease:"power3.out",
-
-        scrollTrigger:{
-
-            trigger:el,
-
-            start:"top 85%"
+            ScrollTrigger.refresh();
 
         }
 
-    });
+    }, 500);
 
-});
+    document.body.classList.add("loaded");
 
-/*==================================================
+    console.log("%cTEAM PAGE READY",
+        "color:#2962FF;font-size:16px;font-weight:bold;"
+    );
 
-READY
-
-==================================================*/
-
-window.addEventListener("load",()=>{
-
-    ScrollTrigger.refresh();
-
-});
-
-console.log("%cTEAM PAGE READY",
-"color:#2962FF;font-size:18px;font-weight:bold;");
+});`
