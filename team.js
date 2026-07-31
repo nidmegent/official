@@ -224,38 +224,14 @@ if (typeof gsap !== "undefined") {
 }
 
 `/*==================================================
-ACCESSIBILITY
+AUTO CLOSE MOBILE MENU
 ==================================================*/
 
-document.querySelectorAll(".player-card").forEach(card => {
+const navLinks = document.querySelectorAll(".nav a");
 
-    // キーボードフォーカス可能にする
-    card.setAttribute("tabindex", "0");
-
-    // Enterキーでプロフィールへ移動
-    card.addEventListener("keydown", (e) => {
-
-        if (e.key === "Enter") {
-
-            const link = card.querySelector(".player-link");
-
-            if (link) link.click();
-
-        }
-
-    });
-
-});
-
-/*==================================================
-CLOSE MOBILE MENU
-==================================================*/
-
-document.querySelectorAll(".nav a").forEach(link => {
+navLinks.forEach(link => {
 
     link.addEventListener("click", () => {
-
-        const nav = document.querySelector(".nav");
 
         if (nav.classList.contains("active")) {
 
@@ -277,46 +253,78 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const targetId = this.getAttribute("href");
 
-        if (targetId === "#") return;
+        if (targetId.length > 1) {
 
-        const target = document.querySelector(targetId);
+            const target = document.querySelector(targetId);
 
-        if (!target) return;
+            if (target) {
 
-        e.preventDefault();
+                e.preventDefault();
 
-        target.scrollIntoView({
+                target.scrollIntoView({
 
-            behavior: "smooth",
+                    behavior: "smooth",
 
-            block: "start"
+                    block: "start"
 
-        });
+                });
+
+            }
+
+        }
 
     });
 
 });
 
 /*==================================================
-SCROLL TOP HEADER FIX
+KEYBOARD ACCESSIBILITY
 ==================================================*/
 
-window.addEventListener("pageshow", () => {
+playerCards.forEach(card => {
 
-    const header = document.querySelector(".header");
+    card.setAttribute("tabindex", "0");
 
-    if (!header) return;
+    card.addEventListener("keydown", (e) => {
 
-    if (window.scrollY <= 50) {
+        if (e.key === "Enter") {
 
-        header.classList.remove("active");
+            const link = card.querySelector(".player-link");
 
-    }
+            if (link) link.click();
+
+        }
+
+    });
 
 });
 
 /*==================================================
-WINDOW RESIZE
+SCROLL TO TOP EFFECT
+==================================================*/
+
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 120) {
+
+        header.style.transform = "translateY(-100%)";
+
+    } else {
+
+        header.style.transform = "translateY(0)";
+
+    }
+
+    lastScroll = currentScroll;
+
+});
+
+/*==================================================
+REFRESH ON RESIZE
 ==================================================*/
 
 window.addEventListener("resize", () => {
@@ -330,58 +338,20 @@ window.addEventListener("resize", () => {
 });
 
 /*==================================================
-DYNAMIC PLAYER COUNT
+SAFE CHECKS
 ==================================================*/
 
-const playerCount = document.querySelectorAll(".player-card").length;
+window.addEventListener("error", (e) => {
 
-console.log(\`NIDMEGENT PLAYERS: \${playerCount}\`);
-
-/*==================================================
-FILTER EMPTY CHECK
-==================================================*/
-
-document.querySelectorAll(".filter-btn").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const filter = button.dataset.filter;
-
-        const visibleCards = [...document.querySelectorAll(".player-card")]
-            .filter(card => {
-
-                return filter === "all" ||
-                       card.dataset.category === filter;
-
-            });
-
-        console.log(\`\${filter}: \${visibleCards.length} players\`);
-
-    });
+    console.warn("TEAM PAGE ERROR:", e.message);
 
 });
 
 /*==================================================
-PAGE READY
+READY
 ==================================================*/
 
-window.addEventListener("load", () => {
+console.log("%cNIDMEGENT TEAM PAGE READY",
+"color:#2962FF;font-size:14px;font-weight:bold;");
 
-    // 初期表示アニメーション完了後にリフレッシュ
-    setTimeout(() => {
-
-        if (typeof ScrollTrigger !== "undefined") {
-
-            ScrollTrigger.refresh();
-
-        }
-
-    }, 500);
-
-    document.body.classList.add("loaded");
-
-    console.log("%cTEAM PAGE READY",
-        "color:#2962FF;font-size:16px;font-weight:bold;"
-    );
-
-});`
+document.body.classList.add("page-loaded");`
