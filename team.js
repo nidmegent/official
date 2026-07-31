@@ -302,7 +302,7 @@ DYNAMIC PLAYER COUNT
 
 const playerCount = document.querySelectorAll(".player-card").length;
 
-console.log(\`NIDMEGENT PLAYERS: \${playerCount}\`);
+console.log(`NIDMEGENT PLAYERS: ${playerCount}`);
 
 /*==================================================
 FILTER EMPTY CHECK
@@ -322,7 +322,7 @@ document.querySelectorAll(".filter-btn").forEach(button => {
 
             });
 
-        console.log(\`\${filter}: \${visibleCards.length} players\`);
+        console.log(`${filter}: ${visibleCards.length} players`);
 
     });
 
