@@ -42,32 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /*==================================================
-    FADE UP
-    ==================================================*/
-
-    const fadeItems = document.querySelectorAll(".fade-up");
-
-    const observer = new IntersectionObserver((entries) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    }, {
-
-        threshold: .15
-
-    });
-
-    fadeItems.forEach(item => observer.observe(item));
-
-    /*==================================================
     PLAYER FILTER
     ==================================================*/
 
@@ -197,27 +171,20 @@ if (typeof gsap !== "undefined") {
 
     gsap.utils.toArray(".player-card").forEach((card, index) => {
 
-        gsap.from(card, {
-
-            opacity: 0,
-            y: 60,
-            duration: .8,
-
-            delay: index * .08,
-
-            ease: "power3.out",
-
-            scrollTrigger: {
-
-                trigger: card,
-
-                start: "top 85%",
-
-                toggleActions: "play none none reverse"
-
-            }
-
-        });
+        gsap.fromTo(card,
+{
+    opacity:0,
+    y:50
+},
+{
+    opacity:1,
+    y:0,
+    duration:.8,
+    scrollTrigger:{
+        trigger:card,
+        start:"top 85%"
+    }
+});
 
     });
 
