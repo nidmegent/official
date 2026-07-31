@@ -473,4 +473,4 @@ PLAYER COUNT
 
 const playerCount = document.querySelectorAll(".player-card").length;
 
-console.log(`Players Loaded : ${playerCount}`);
+console.log(Players Loaded : ${playerCount});
