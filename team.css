@@ -12,18 +12,12 @@ ROOT
 
     --white:#ffffff;
     --black:#111111;
-
     --text:#1a1a1a;
     --text-light:#777777;
-
     --border:#e8e8e8;
-
     --blue:#2962FF;
-
     --bg:#fafafa;
-
     --radius:18px;
-
     --transition:.35s cubic-bezier(.25,.46,.45,.94);
 
 }
