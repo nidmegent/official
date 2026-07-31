@@ -1727,5 +1727,81 @@ body{
 }
 
 /*==================================================
+PLAYER CARD SNS
+==================================================*/
+
+.player-meta{
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:center;
+
+}
+
+.player-sns{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid var(--border);
+
+    transition:.35s;
+
+    color:#777;
+
+    position:relative;
+
+}
+
+.player-sns i{
+
+    font-size:1.2rem;
+
+}
+
+.player-sns span{
+
+    position:absolute;
+
+    top:58px;
+
+    font-size:.72rem;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.player-sns:hover{
+
+    background:var(--blue);
+
+    color:#fff;
+
+    border-color:var(--blue);
+
+    transform:translateY(-4px);
+
+}
+
+.player-sns:hover span{
+
+    opacity:1;
+
+}
+
+/*==================================================
 END
 ==================================================*/
