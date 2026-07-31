@@ -351,4 +351,4 @@ window.addEventListener("load", () => {
         "color:#2962FF;font-size:16px;font-weight:bold;"
     );
 
-});`
+});
