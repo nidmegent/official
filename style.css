@@ -1,16 +1,12 @@
 /*==================================================
-
 NIDMEGENT OFFICIAL WEBSITE V2
-
 ==================================================*/
-
 
 /*==============================
 FONT
 ==============================*/
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-
 
 /*==============================
 ROOT
@@ -19,39 +15,23 @@ ROOT
 :root{
 
     --white:#ffffff;
-
     --black:#111111;
-
     --background:#F7F8FA;
-
     --surface:#ffffff;
-
     --text:#111111;
-
     --text-light:#6F6F6F;
-
     --line:#E9EBEF;
-
     --blue:#2962FF;
-
     --blue-light:#5C85FF;
-
     --blue-dark:#003EE6;
-
     --red:#FF0000
-
     --shadow:
 
     0 20px 60px rgba(0,0,0,.06);
-
     --radius:28px;
-
     --transition:
-
     .45s cubic-bezier(.16,1,.3,1);
-
     --container:1380px;
-
 }
 
 
@@ -62,85 +42,55 @@ RESET
 *{
 
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
 
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
 
     font-family:"Inter",sans-serif;
-
     background:var(--background);
-
     color:var(--text);
-
     overflow-x:hidden;
-
     -webkit-font-smoothing:antialiased;
-
     text-rendering:optimizeLegibility;
-
 }
 
 img{
-
     width:100%;
-
     display:block;
-
 }
 
 video{
-
     width:100%;
-
     display:block;
-
 }
 
 a{
-
     color:inherit;
-
     text-decoration:none;
-
 }
 
 button{
-
     border:none;
-
     background:none;
-
     cursor:pointer;
-
     font-family:inherit;
-
 }
 
 ul{
-
     list-style:none;
-
 }
 
 input,
-
 textarea{
-
     font:inherit;
-
     outline:none;
-
 }
 
 
@@ -149,23 +99,14 @@ SCROLLBAR
 ==============================*/
 
 ::-webkit-scrollbar{
-
     width:9px;
-
 }
-
 ::-webkit-scrollbar-track{
-
     background:#fff;
-
 }
-
 ::-webkit-scrollbar-thumb{
-
     background:var(--blue);
-
     border-radius:999px;
-
 }
 
 /*==============================
