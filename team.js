@@ -1,147 +1,79 @@
 /*==================================================
-NIDMEGENT TEAM PAGE
+NIDMEGENT PLAYERS PAGE
 ==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    /*==================================================
-    HEADER
-    ==================================================*/
+/*==================================================
+HEADER
+==================================================*/
 
-    const header = document.querySelector(".header");
+const header = document.querySelector(".header");
 
-    window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 50) {
+    if(window.scrollY > 50){
 
-            header.classList.add("active");
+        header.classList.add("active");
 
-        } else {
+    }else{
 
-            header.classList.remove("active");
-
-        }
-
-    });
-
-    /*==================================================
-    MOBILE MENU
-    ==================================================*/
-
-    const menuBtn = document.querySelector(".menu");
-    const nav = document.querySelector(".nav");
-
-    if (menuBtn && nav) {
-
-        menuBtn.addEventListener("click", () => {
-
-            nav.classList.toggle("active");
-
-        });
+        header.classList.remove("active");
 
     }
 
-    /*==================================================
-    FADE UP
-    ==================================================*/
+});
 
-    const fadeItems = document.querySelectorAll(".fade-up");
+/*==================================================
+MOBILE MENU
+==================================================*/
 
-    const observer = new IntersectionObserver((entries) => {
+const menu = document.querySelector(".menu");
+const nav = document.querySelector(".nav");
 
-        entries.forEach(entry => {
+if(menu){
 
-            if (entry.isIntersecting) {
+    menu.addEventListener("click",()=>{
 
-                entry.target.classList.add("show");
-
-            }
-
-        });
-
-    }, {
-
-        threshold: .15
+        nav.classList.toggle("active");
 
     });
 
-    fadeItems.forEach(item => observer.observe(item));
+}
 
-    /*==================================================
-    PLAYER FILTER
-    ==================================================*/
+document.querySelectorAll(".nav a").forEach(link=>{
 
-    const buttons = document.querySelectorAll(".filter-btn");
+    link.addEventListener("click",()=>{
 
-    const cards = document.querySelectorAll(".player-card");
-
-    buttons.forEach(button => {
-
-        button.addEventListener("click", () => {
-
-            buttons.forEach(btn => btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            const filter = button.dataset.filter;
-
-            cards.forEach(card => {
-
-                const category = card.dataset.category;
-
-                if (filter === "all" || filter === category) {
-
-                    card.style.display = "flex";
-
-                    setTimeout(() => {
-
-                        card.classList.remove("hide");
-
-                    }, 20);
-
-                } else {
-
-                    card.classList.add("hide");
-
-                    setTimeout(() => {
-
-                        card.style.display = "none";
-
-                    }, 250);
-
-                }
-
-            });
-
-        });
+        nav.classList.remove("active");
 
     });
 
 });
 
 /*==================================================
-MOUSE GLOW
+FADE UP
 ==================================================*/
 
-const playerCards = document.querySelectorAll(".player-card");
+const observer = new IntersectionObserver((entries)=>{
 
-playerCards.forEach(card => {
+    entries.forEach(entry=>{
 
-    const glow = card.querySelector(".player-glow");
+        if(entry.isIntersecting){
 
-    if (!glow) return;
+            entry.target.classList.add("show");
 
-    card.addEventListener("mousemove", (e) => {
-
-        const rect = card.getBoundingClientRect();
-
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        glow.style.left = `${x}px`;
-        glow.style.top = `${y}px`;
+        }
 
     });
+
+},{
+    threshold:.15
+});
+
+document.querySelectorAll(".fade-up").forEach(el=>{
+
+    observer.observe(el);
 
 });
 
@@ -149,71 +81,122 @@ playerCards.forEach(card => {
 GSAP
 ==================================================*/
 
-if (typeof gsap !== "undefined") {
+if(typeof gsap !== "undefined"){
 
     gsap.registerPlugin(ScrollTrigger);
 
-    /*==============================
-    HERO
-    ==============================*/
+    gsap.from(".team-hero__eyebrow",{
 
-    gsap.from(".team-hero__eyebrow", {
-
-        opacity: 0,
-        y: 30,
-        duration: .8
+        y:30,
+        opacity:0,
+        duration:.8
 
     });
 
-    gsap.from(".team-hero__title", {
+    gsap.from(".team-hero__title",{
 
-        opacity: 0,
-        y: 60,
-        duration: 1,
-        delay: .15
-
-    });
-
-    gsap.from(".team-hero__subtitle", {
-
-        opacity: 0,
-        y: 30,
-        duration: .8,
-        delay: .35
+        y:60,
+        opacity:0,
+        duration:1,
+        delay:.2
 
     });
 
-    gsap.from(".team-hero__line", {
+    gsap.from(".team-hero__subtitle",{
 
-        width: 0,
-        duration: .8,
-        delay: .6
+        y:30,
+        opacity:0,
+        duration:.8,
+        delay:.45
 
     });
 
-    /*==============================
-    PLAYER CARDS
-    ==============================*/
+    gsap.from(".team-hero__line",{
 
-    gsap.utils.toArray(".player-card").forEach((card, index) => {
+        width:0,
+        duration:.8,
+        delay:.7
 
-        gsap.from(card, {
+    });
 
-            opacity: 0,
-            y: 60,
-            duration: .8,
+}
 
-            delay: index * .08,
+/*==================================================
+PLAYER FILTER
+==================================================*/
 
-            ease: "power3.out",
+const filterButtons = document.querySelectorAll(".filter-btn");
+const playerCards = document.querySelectorAll(".player-card");
 
-            scrollTrigger: {
+filterButtons.forEach(button=>{
 
-                trigger: card,
+    button.addEventListener("click",()=>{
 
-                start: "top 85%",
+        filterButtons.forEach(btn=>btn.classList.remove("active"));
 
-                toggleActions: "play none none reverse"
+        button.classList.add("active");
+
+        const filter = button.dataset.filter;
+
+        playerCards.forEach(card=>{
+
+            const category = card.dataset.category;
+
+            if(filter==="all" || category===filter){
+
+                card.style.display="flex";
+
+                requestAnimationFrame(()=>{
+
+                    card.classList.remove("hide");
+
+                });
+
+            }else{
+
+                card.classList.add("hide");
+
+                setTimeout(()=>{
+
+                    card.style.display="none";
+
+                },300);
+
+            }
+
+        });
+
+    });
+
+});
+
+/*==================================================
+PLAYER CARD ANIMATION
+==================================================*/
+
+if(typeof gsap !== "undefined"){
+
+    gsap.utils.toArray(".player-card").forEach((card,index)=>{
+
+        gsap.from(card,{
+
+            opacity:0,
+
+            y:60,
+
+            duration:.8,
+
+            ease:"power3.out",
+
+            delay:index*0.08,
+
+            scrollTrigger:{
+
+                trigger:card,
+
+                start:"top 88%",
+
+                toggleActions:"play none none reverse"
 
             }
 
@@ -224,44 +207,36 @@ if (typeof gsap !== "undefined") {
 }
 
 /*==================================================
-ACCESSIBILITY
+PLAYER GLOW
 ==================================================*/
 
-document.querySelectorAll(".player-card").forEach(card => {
+document.querySelectorAll(".player-card").forEach(card=>{
 
-    // キーボードフォーカス可能にする
-    card.setAttribute("tabindex", "0");
+    const glow = card.querySelector(".player-glow");
 
-    // Enterキーでプロフィールへ移動
-    card.addEventListener("keydown", (e) => {
+    if(!glow) return;
 
-        if (e.key === "Enter") {
+    card.addEventListener("mousemove",(e)=>{
 
-            const link = card.querySelector(".player-link");
+        const rect = card.getBoundingClientRect();
 
-            if (link) link.click();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-        }
+        glow.style.left = x + "px";
+        glow.style.top = y + "px";
 
     });
 
-});
+    card.addEventListener("mouseenter",()=>{
 
-/*==================================================
-CLOSE MOBILE MENU
-==================================================*/
+        glow.style.opacity="1";
 
-document.querySelectorAll(".nav a").forEach(link => {
+    });
 
-    link.addEventListener("click", () => {
+    card.addEventListener("mouseleave",()=>{
 
-        const nav = document.querySelector(".nav");
-
-        if (nav.classList.contains("active")) {
-
-            nav.classList.remove("active");
-
-        }
+        glow.style.opacity="0";
 
     });
 
@@ -273,23 +248,22 @@ SMOOTH SCROLL
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", function(e){
 
         const targetId = this.getAttribute("href");
 
-        if (targetId === "#") return;
+        if(targetId === "#") return;
 
         const target = document.querySelector(targetId);
 
-        if (!target) return;
+        if(!target) return;
 
         e.preventDefault();
 
         target.scrollIntoView({
 
-            behavior: "smooth",
-
-            block: "start"
+            behavior:"smooth",
+            block:"start"
 
         });
 
@@ -298,20 +272,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 /*==================================================
-SCROLL TOP HEADER FIX
+ACCESSIBILITY
 ==================================================*/
 
-window.addEventListener("pageshow", () => {
+document.querySelectorAll(".player-card").forEach(card=>{
 
-    const header = document.querySelector(".header");
+    card.setAttribute("tabindex","0");
 
-    if (!header) return;
+    card.addEventListener("keydown",(e)=>{
 
-    if (window.scrollY <= 50) {
+        if(e.key === "Enter"){
 
-        header.classList.remove("active");
+            const link = card.querySelector("a");
 
-    }
+            if(link){
+
+                link.click();
+
+            }
+
+        }
+
+    });
 
 });
 
@@ -319,9 +301,9 @@ window.addEventListener("pageshow", () => {
 WINDOW RESIZE
 ==================================================*/
 
-window.addEventListener("resize", () => {
+window.addEventListener("resize",()=>{
 
-    if (typeof ScrollTrigger !== "undefined") {
+    if(typeof ScrollTrigger !== "undefined"){
 
         ScrollTrigger.refresh();
 
@@ -330,58 +312,58 @@ window.addEventListener("resize", () => {
 });
 
 /*==================================================
-DYNAMIC PLAYER COUNT
+PAGE LOAD
 ==================================================*/
 
-const playerCount = document.querySelectorAll(".player-card").length;
+window.addEventListener("load",()=>{
 
-console.log(\`NIDMEGENT PLAYERS: \${playerCount}\`);
+    document.body.classList.add("loaded");
 
-/*==================================================
-FILTER EMPTY CHECK
-==================================================*/
+    setTimeout(()=>{
 
-document.querySelectorAll(".filter-btn").forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        const filter = button.dataset.filter;
-
-        const visibleCards = [...document.querySelectorAll(".player-card")]
-            .filter(card => {
-
-                return filter === "all" ||
-                       card.dataset.category === filter;
-
-            });
-
-        console.log(\${filter}: \${visibleCards.length} players\);
-
-    });
-
-});
-
-/*==================================================
-PAGE READY
-==================================================*/
-
-window.addEventListener("load", () => {
-
-    // 初期表示アニメーション完了後にリフレッシュ
-    setTimeout(() => {
-
-        if (typeof ScrollTrigger !== "undefined") {
+        if(typeof ScrollTrigger !== "undefined"){
 
             ScrollTrigger.refresh();
 
         }
 
-    }, 500);
+    },300);
 
-    document.body.classList.add("loaded");
+});
 
-    console.log("%cTEAM PAGE READY",
-        "color:#2962FF;font-size:16px;font-weight:bold;"
-    );
+/*==================================================
+PLAYER COUNT
+==================================================*/
+
+const count = document.querySelectorAll(".player-card").length;
+
+console.log(
+
+    `%cNIDMEGENT PLAYERS : ${count}`,
+
+    "color:#2962ff;font-size:15px;font-weight:bold;"
+
+);
+
+/*==================================================
+READY
+==================================================*/
+
+console.log(
+
+`%c
+███╗   ██╗██╗██████╗
+████╗  ██║██║██╔══██╗
+██╔██╗ ██║██║██║  ██║
+██║╚██╗██║██║██║  ██║
+██║ ╚████║██║██████╔╝
+╚═╝  ╚═══╝╚═╝╚═════╝
+
+NIDMEGENT PLAYERS READY
+`,
+
+"color:#2962ff;font-weight:bold;"
+
+);
 
 });
