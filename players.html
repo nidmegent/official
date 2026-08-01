@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PLAYERS | Nidmegent Esports</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="team.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PLAYERS | Nidmegent Esports</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Remix Icon -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="team.css">
+
 </head>
+
 <body>
 
 <!--====================================
@@ -16,40 +27,99 @@ HEADER
 =====================================-->
 
 <header class="header">
-<div class="container">
 
-<!-- Logo -->
-<a href="index.html" class="logo">
-<img src="logo/logo-back.png" alt="Nidmegent Logo">
-</a>
-<!-- Navigation -->
-<nav class="nav">
-<ul class="nav__list">
-<li><a href="index.html#about">ABOUT</a></li>
-<li><a href="players.html" class="active">PLAYERS</a></li>
-<li><a href="index.html#news">NEWS</a></li>
-<li><a href="index.html#contact">CONTACT</a></li>
-</ul>
-</nav>
-<button class="menu">
-<i class="ri-menu-3-line"></i>
-</button>
-</div>
+    <div class="container">
+
+        <!-- Logo -->
+
+        <a href="index.html" class="logo">
+
+            <img src="logo/logo-back.png"
+                alt="Nidmegent Esports">
+
+        </a>
+
+        <!-- Navigation -->
+
+        <nav class="nav">
+
+            <ul class="nav__list">
+
+                <li>
+                    <a href="index.html#about">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a href="players.html" class="active">
+                        PLAYERS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#news">
+                        NEWS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contact">
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Mobile -->
+
+        <button class="menu">
+
+            <i class="ri-menu-3-line"></i>
+
+        </button>
+
+    </div>
+
 </header>
 
 <!--====================================
-TEAM HERO
+HERO
 =====================================-->
 
 <section class="team-hero">
-<div class="container">
-<div class="team-hero__content">
-<span class="team-hero__eyebrow">NIDMEGENT ESPORTS</span>
-<h1 class="team-hero__title">PLAYERS</h1>
-<p class="team-hero__subtitle">CREATOR/STREAMER<br>VALORANT/ENJOY/APEX</p>
-<div class="team-hero__line"></div>
-</div>
-</div>
+
+    <div class="container">
+
+        <div class="team-hero__content">
+
+            <span class="team-hero__eyebrow">
+
+                NIDMEGENT ESPORTS
+
+            </span>
+
+            <h1 class="team-hero__title">
+
+                PLAYERS
+
+            </h1>
+
+            <p class="team-hero__subtitle">
+
+                Meet the members who represent
+                Nidmegent Esports.
+
+            </p>
+
+            <div class="team-hero__line"></div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!--====================================
@@ -57,453 +127,934 @@ PLAYERS
 =====================================-->
 
 <section class="players section" id="players">
+
     <div class="container">
-        <div class="section-header">
-            <span class="section-number">01</span>
-            <h2 class="section-title">PLAYERS</h2>
+
+        <!-- Title -->
+
+        <div class="section-header fade-up">
+
+            <span class="section-number">
+
+                01
+
+            </span>
+
+            <h2 class="section-title">
+
+                PLAYERS
+
+            </h2>
+
         </div>
+
         <!-- Filter -->
-        <div class="player-filter">
-            <button class="filter-btn active" data-filter="all">ALL</button>
-            <button class="filter-btn" data-filter="creator">CREATOR</button>
-            <button class="filter-btn" data-filter="streamer">STREAMER</button>
-            <button class="filter-btn" data-filter="valorant">VALORANT</button>
-            <button class="filter-btn" data-filter="apex">APEX</button>
+
+        <div class="player-filter fade-up">
+
+            <button
+                class="filter-btn active"
+                data-filter="all">
+
+                ALL
+
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="creator">
+
+                CREATOR
+
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="streamer">
+
+                STREAMER
+
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="valorant">
+
+                VALORANT
+
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="lyxen">
+
+                LYXEN
+
+            </button>
+
+            <button
+                class="filter-btn"
+                data-filter="apex">
+
+                APEX
+
+            </button>
+
         </div>
-        <!-- Player Grid -->
+
+        <!--====================================
+        PLAYER GRID
+        =====================================-->
+
         <div class="player-grid">
-            
-            <!--==================== M1yuN ====================-->
-            <article class="player-card fade-up" data-category="creator" data-name="CREATOR">
-                <span class="player-number">04</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">REPRESENTATIVE</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">M1yuN</h2>
-                <p class="player-hobby">
-                    <strong>Video/Image Creator</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2018.7</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>9/25</h4>
-                        </div>
-                        <a href="https://x.com/komuhana1216" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@komuhana1216" target="_blank" class="player-sns">
-                        <i class="ri-youtube-fill"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/komuhana1216" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
 
-            <!--==================== KanzakiAyaka ====================-->
-            <article class="player-card fade-up" data-category="creator" data-name="CREATOR">
-                <span class="player-number">09</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">CREATOR</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">KanzakiAyaka</h2>
-                <p class="player-hobby">
-                    <strong>Video Creator</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2026.6</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>9/21</h4>
-                        </div>
-                        <a href="https://x.com/kknzkk1129" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@knzk_09" target="_blank" class="player-sns">
-                        <i class="ri-youtube-fill"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/knzk_09" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+<!--==================================================
+M1yuN
+===================================================-->
 
-            <!--==================== Denden ====================-->
-            <article class="player-card fade-up" data-category="streamer" data-name="STREAMER">
-                <span class="player-number">25</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">STREAMER</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">Denden</h2>
-                <p class="player-hobby">
-                    <strong>Twitch Streamer</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.6</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>5/25</h4>
-                        </div>
-                        <a href="https://x.com/dedendeden0525" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@odendennnn" target="_blank" class="player-sns">
-                        <i class="ri-youtube-fill"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/denden_fps" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                        </div>
-                    </div>
-                </div>
-            </article>
+<article class="player-card fade-up"
+         data-category="creator"
+         data-name="CREATOR">
 
-            <!--==================== HakuaNoru ====================-->
-            <article class="player-card fade-up" data-category="streamer" data-name="STREAMER">
-                <span class="player-number">00</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">STREAMER</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">HakuaNoru</h2>
-                <p class="player-hobby">
-                    <strong>Twitch Streamer</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.8</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>4/20</h4>
-                        </div>
-                        <a href="https://x.com/NORU_hakua" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/hakua_noru" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+    <span class="player-number">04</span>
 
-            <!--==================== arufu ====================-->
-            <article class="player-card fade-up" data-category="valorant" data-name="VALORANT">
-                <span class="player-number">29</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">VALORANT</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">arufu</h2>
-                <p class="player-hobby">
-                    <strong>Player</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.8</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>9/29</h4>
-                        </div>
-                        <a href="https://x.com/arfy_vl" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/arufy_ry" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+    <div class="player-glow"></div>
 
-            <!--==================== keto ====================-->
-            <article class="player-card fade-up" data-category="valorant" data-name="VALORANT">
-                <span class="player-number">10</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">VALORANT</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">keto</h2>
-                <p class="player-hobby">
-                    <strong>Player</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.3</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>7/20</h4>
-                        </div>
-                        <a href="https://x.com/keto0720" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+    <div class="player-top">
 
-            <!--==================== Hanannnnt ====================-->
-            <article class="player-card fade-up" data-category="valorant" data-name="VALORANT">
-                <span class="player-number">44</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">VALORANT</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">Hanannnnt</h2>
-                <p class="player-hobby">
-                    <strong>Player</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.4</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>9/25</h4>
-                        </div>
-                        <a href="https://x.com/Hanannnnt" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
+        <span class="player-role">
+            REPRESENTATIVE
+        </span>
 
-            <!--==================== YamakazeNagi ====================-->
-            <article class="player-card fade-up" data-category="lyxen" data-name="LYXEN">
-                <span class="player-number">27</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">LYXENDiv.</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">YamakazeNagi</h2>
-                <p class="player-hobby">
-                    <strong>LYXEN DIVISION Main Roster</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.8</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>2/27</h4>
-                        </div>
-                        <a href="https://x.com/nagi_J0053" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@nagiyamakaze115" target="_blank" class="player-sns">
-                        <i class="ri-youtube-fill"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/yamakazenagi115" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-             <!--==================== HyugaLemo ====================-->
-            <article class="player-card fade-up" data-category="valorant" data-name="LYXENDIV.">
-                <span class="player-number">15</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">LYXENDiv.</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">HyugaLemo</h2>
-                <p class="player-hobby">
-                    <strong>Player</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.8</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>5/14</h4>
-                        </div>
-                        <a href="https://x.com/hyuga_lemo" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@lemo_hyuga" target="_blank" class="player-sns">
-                        <i class="ri-youtube-fill"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/lemo_hyuga" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-             <!--==================== muraneko ====================-->
-            <article class="player-card fade-up" data-category="valorant" data-name="LYXENDIV.">
-                <span class="player-number">61</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">LYXENDiv.</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">muraneko</h2>
-                <p class="player-hobby">
-                    <strong>LYXEN DIVISION Main Roster</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.9</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>11/14</h4>
-                        </div>
-                        <a href="https://x.com/muraneko542623" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-             <!--==================== TomoriHimari ====================-->
-            <article class="player-card fade-up" data-category="valorant" data-name="LYXENDIV.">
-                <span class="player-number">00</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">LYXENDiv.</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">TomoriHimari</h2>
-                <p class="player-hobby">
-                    <strong>LYXEN DIVISION Main Roster</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2026.2</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>8/2</h4>
-                        </div>
-                        <a href="https://x.com/tomori_himari" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                        <a href="https://www.twitch.tv/tomori_himari" target="_blank" class="player-sns">
-                        <i class="ri-twitch-fill"></i>
-                    </div>
-                </div>
-            </article>
-
-            <!--==================== AmaiRuru ====================-->
-            <article class="player-card fade-up" data-category="apex" data-name="APEXLEGENDS">
-                <span class="player-number">99</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">APEX</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">AmaiRuru</h2>
-                <p class="player-hobby">
-                    <strong>Player</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2025.12</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>3/18</h4>
-                        </div>
-                        <a href="https://x.com/nemruru" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!--==================== Rainaq ====================-->
-            <article class="player-card fade-up" data-category="apex" data-name="APEXLEGENDS">
-                <span class="player-number">66</span>
-                <div class="player-glow"></div>
-                <div class="player-top">
-                    <span class="player-role">APEX</span>
-                    <div class="player-icon">
-                        <i class="ri-arrow-right-up-line"></i>
-                    </div>
-                </div>
-                <h2 class="player-name">Rainaq</h2>
-                <p class="player-hobby">
-                    <strong>Player</strong></p>
-                <div class="player-bottom">
-                    <div class="player-meta">
-                        <div>
-                            <span>JOINED</span>
-                            <h4>2026.3</h4>
-                        </div>
-                        <div>
-                            <span>BIRTHDAY</span>
-                            <h4>10/13</h4>
-                        </div>
-                        <a href="https://x.com/rai7q00011" target="_blank" class="player-sns">
-                        <i class="ri-twitter-x-line"></i>
-                        </a>
-                    </div>
-                </div>
-            </article>
-            
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
         </div>
+
     </div>
+
+    <h2 class="player-name">
+        M1yuN
+    </h2>
+
+    <p class="player-hobby">
+        Video / Image Creator
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2018.07</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>09.25</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/komuhana1216"
+               target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@komuhana1216"
+               target="_blank">
+                <i class="ri-youtube-fill"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/komuhana1216"
+               target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+KanzakiAyaka
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="creator"
+         data-name="CREATOR">
+
+    <span class="player-number">09</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            CREATOR
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        KanzakiAyaka
+    </h2>
+
+    <p class="player-hobby">
+        Video Creator
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2026.06</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>09.21</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/kknzkk1129"
+               target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@knzk_09"
+               target="_blank">
+                <i class="ri-youtube-fill"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/knzk_09"
+               target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+Denden
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="streamer"
+         data-name="STREAMER">
+
+    <span class="player-number">25</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            STREAMER
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        Denden
+    </h2>
+
+    <p class="player-hobby">
+        Twitch Streamer
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.06</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>05.25</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/dedendeden0525"
+               target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@odendennnn"
+               target="_blank">
+                <i class="ri-youtube-fill"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/denden_fps"
+               target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+HakuaNoru
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="streamer"
+         data-name="STREAMER">
+
+    <span class="player-number">00</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            STREAMER
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        HakuaNoru
+    </h2>
+
+    <p class="player-hobby">
+        Twitch Streamer
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.08</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>04.20</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/NORU_hakua"
+               target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/hakua_noru"
+               target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+arufu
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="valorant"
+         data-name="VALORANT">
+
+    <span class="player-number">29</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            VALORANT
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        arufu
+    </h2>
+
+    <p class="player-hobby">
+        VALORANT Player
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.08</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>09.29</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/arfy_vl" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/arufy_ry" target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+keto
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="valorant"
+         data-name="VALORANT">
+
+    <span class="player-number">10</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            VALORANT
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        keto
+    </h2>
+
+    <p class="player-hobby">
+        VALORANT Player
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.03</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>07.20</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/keto0720" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+Hanannnnt
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="valorant"
+         data-name="VALORANT">
+
+    <span class="player-number">44</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            VALORANT
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        Hanannnnt
+    </h2>
+
+    <p class="player-hobby">
+        VALORANT Player
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.04</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>09.25</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/Hanannnnt" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+YamakazeNagi
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="lyxen"
+         data-name="LYXEN">
+
+    <span class="player-number">27</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            LYXEN DIV.
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        YamakazeNagi
+    </h2>
+
+    <p class="player-hobby">
+        Main Roster
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.08</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>02.27</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/nagi_J0053" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@nagiyamakaze115" target="_blank">
+                <i class="ri-youtube-fill"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/yamakazenagi115" target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+HyugaLemo
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="lyxen"
+         data-name="LYXEN">
+
+    <span class="player-number">15</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            LYXEN DIV.
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        HyugaLemo
+    </h2>
+
+    <p class="player-hobby">
+        Main Roster
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.08</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>05.14</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/hyuga_lemo" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.youtube.com/@lemo_hyuga" target="_blank">
+                <i class="ri-youtube-fill"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/lemo_hyuga" target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+muraneko
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="lyxen"
+         data-name="LYXEN">
+
+    <span class="player-number">61</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            LYXEN DIV.
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        muraneko
+    </h2>
+
+    <p class="player-hobby">
+        Main Roster
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.09</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>11.14</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/muraneko542623" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+TomoriHimari
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="lyxen"
+         data-name="LYXEN">
+
+    <span class="player-number">00</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            LYXEN DIV.
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        TomoriHimari
+    </h2>
+
+    <p class="player-hobby">
+        Main Roster
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2026.02</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>08.02</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/tomori_himari" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+            <a href="https://www.twitch.tv/tomori_himari" target="_blank">
+                <i class="ri-twitch-fill"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+AmaiRuru
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="apex"
+         data-name="APEX">
+
+    <span class="player-number">99</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            APEX
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        AmaiRuru
+    </h2>
+
+    <p class="player-hobby">
+        Apex Legends Player
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2025.12</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>03.18</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/nemruru" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<!--==================================================
+Rainaq
+===================================================-->
+
+<article class="player-card fade-up"
+         data-category="apex"
+         data-name="APEX">
+
+    <span class="player-number">66</span>
+
+    <div class="player-glow"></div>
+
+    <div class="player-top">
+
+        <span class="player-role">
+            APEX
+        </span>
+
+        <div class="player-icon">
+            <i class="ri-arrow-right-up-line"></i>
+        </div>
+
+    </div>
+
+    <h2 class="player-name">
+        Rainaq
+    </h2>
+
+    <p class="player-hobby">
+        Apex Legends Player
+    </p>
+
+    <div class="player-bottom">
+
+        <div class="player-meta">
+
+            <div>
+                <span>JOINED</span>
+                <h4>2026.03</h4>
+            </div>
+
+            <div>
+                <span>BIRTHDAY</span>
+                <h4>10.13</h4>
+            </div>
+
+        </div>
+
+        <div class="player-social">
+
+            <a href="https://x.com/rai7q00011" target="_blank">
+                <i class="ri-twitter-x-line"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+        </div>
+
+    </div>
+
 </section>
 
 <!--====================================
@@ -514,187 +1065,115 @@ TEAM RESULTS
 
     <div class="container">
 
-        <div class="section-header">
+        <div class="section-header fade-up">
 
-            <span class="section-number">02</span>
+            <span class="section-number">
+                02
+            </span>
 
-            <h2 class="section-title">TEAM RESULTS</h2>
+            <h2 class="section-title">
+                TEAM RESULTS
+            </h2>
 
-            <p class="team-results__subtitle">
-
+            <p class="team-hero__subtitle">
                 Our achievements across every division.
-
             </p>
 
         </div>
 
-        <!--====================
-        CATEGORY TAB
-        =====================-->
+        <div class="results-grid">
 
-        <div class="results-filter">
+            <!-- VALORANT -->
 
-            <button class="results-btn active" data-results="valorant">
-                VALORANT
-            </button>
+            <div class="results-card fade-up">
 
-            <button class="results-btn" data-results="creator">
-                CREATOR
-            </button>
+                <span class="results-tag">
+                    VALORANT
+                </span>
 
-            <button class="results-btn" data-results="streamer">
-                STREAMER
-            </button>
-
-            <button class="results-btn" data-results="staff">
-                STAFF
-            </button>
-
-        </div>
-
-        <!--====================
-        VALORANT
-        =====================-->
-
-        <div class="results-content active" data-content="valorant">
-
-            <div class="results-card">
-
-                <span class="results-year">
+                <h3>
                     2026
-                </span>
-
-                <h3>
-                    VALORANT DIVISION
                 </h3>
 
                 <ul>
 
-                    <li>
-                        🥇 NovaCup #4 Champion
-                    </li>
-
-                    <li>
-                        🥈 Kyoto Invitational Runner-up
-                    </li>
-
-                    <li>
-                        🥉 Community Cup Top 3
-                    </li>
+                    <li>🏆 NovaCup #4 Champion</li>
+                    <li>🥈 Kyoto Invitational Runner-up</li>
+                    <li>🥉 Community Cup Top3</li>
 
                 </ul>
 
             </div>
 
-        </div>
+            <!-- CREATOR -->
 
-        <!--====================
-        CREATOR
-        =====================-->
+            <div class="results-card fade-up">
 
-        <div class="results-content" data-content="creator">
+                <span class="results-tag">
+                    CREATOR
+                </span>
 
-            <div class="results-card">
-
-                <span class="results-year">
+                <h3>
                     ACHIEVEMENTS
-                </span>
-
-                <h3>
-                    CREATOR DIVISION
                 </h3>
 
                 <ul>
 
-                    <li>
-                        🎬 250万回再生突破
-                    </li>
-
-                    <li>
-                        📺 Short動画100万再生
-                    </li>
-
-                    <li>
-                        📸 イベント撮影25件
-                    </li>
+                    <li>🎬 250万回再生</li>
+                    <li>📹 Shorts 100万再生</li>
+                    <li>📷 Event Shooting 25+</li>
 
                 </ul>
 
             </div>
 
-        </div>
+            <!-- STREAMER -->
 
-        <!--====================
-        STREAMER
-        =====================-->
+            <div class="results-card fade-up">
 
-        <div class="results-content" data-content="streamer">
-
-            <div class="results-card">
-
-                <span class="results-year">
-                    STREAM STATS
+                <span class="results-tag">
+                    STREAMER
                 </span>
 
                 <h3>
-                    STREAMER DIVISION
+                    STATS
                 </h3>
 
                 <ul>
 
-                    <li>
-                        🎥 総配信時間 2,500時間
-                    </li>
-
-                    <li>
-                        👥 総フォロワー 15,000+
-                    </li>
-
-                    <li>
-                        🔥 最大同時視聴 350人
-                    </li>
+                    <li>🎥 Total Stream 2500h</li>
+                    <li>👥 Followers 15,000+</li>
+                    <li>🔥 Peak Viewer 350</li>
 
                 </ul>
 
             </div>
 
-        </div>
+            <!-- STAFF -->
 
-        <!--====================
-        STAFF
-        =====================-->
+            <div class="results-card fade-up">
 
-        <div class="results-content" data-content="staff">
+                <span class="results-tag">
+                    STAFF
+                </span>
 
-            <div class="results-card">
-
-                <span class="results-year">
+                <h3>
                     MANAGEMENT
-                </span>
-
-                <h3>
-                    STAFF DIVISION
                 </h3>
 
                 <ul>
 
-                    <li>
-                        🎮 大会運営 18回
-                    </li>
-
-                    <li>
-                        🎪 イベント企画 12件
-                    </li>
-
-                    <li>
-                        🤝 スポンサー契約 5社
-                    </li>
+                    <li>🎮 Tournament 18+</li>
+                    <li>🎪 Events 12+</li>
+                    <li>🤝 Sponsors 5</li>
 
                 </ul>
 
             </div>
 
         </div>
+
+    </div>
 
 </section>
 
@@ -703,20 +1182,44 @@ JOIN US
 =====================================-->
 
 <section class="join section">
+
     <div class="container">
-        <div class="join-box">
-            <span> NIDMEGENT ESPORTS</span>
-            <h2> JOIN OUR TEAM</h2>
+
+        <div class="join-box fade-up">
+
+            <span>
+
+                NIDMEGENT ESPORTS
+
+            </span>
+
+            <h2>
+
+                JOIN OUR TEAM
+
+            </h2>
+
             <p>
-                We're always looking for passionate players,
-                creators and staff who want to grow together
-                with Nidmegent Esports.
+
+                We're always looking for passionate
+                players, creators and staff who want
+                to grow together with Nidmegent Esports.
+
             </p>
-            <a href="index.html#contact" class="join-button"> CONTACT US
+
+            <a href="index.html#contact"
+               class="join-button">
+
+                CONTACT US
+
                 <i class="ri-arrow-right-line"></i>
+
             </a>
+
         </div>
+
     </div>
+
 </section>
 
 <!--====================================
@@ -724,49 +1227,121 @@ FOOTER
 =====================================-->
 
 <footer class="footer">
+
     <div class="container">
+
         <div class="footer__top">
+
             <div class="footer__brand">
-                <img src="logo/logo-back.png" alt="Nidmegent Logo">
-                <p>Keep Pushing Forward.Claim the Top.</p>
+
+                <img src="logo/logo-back.png"
+                     alt="Nidmegent">
+
+                <p>
+
+                    Keep Pushing Forward.
+                    Claim the Top.
+
+                </p>
+
             </div>
+
             <div class="footer__menu">
+
                 <div>
-                    <h4>MENU</h4>
+
+                    <h4>
+                        MENU
+                    </h4>
+
                     <a href="index.html#about">ABOUT</a>
-                    <a href="players.html">TEAMS</a>
-                    <a href="index.html#news">NEWS</a>
+                    <a href="players.html">PLAYERS</a>
+                    <a href="#results">RESULTS</a>
                     <a href="index.html#contact">CONTACT</a>
+
                 </div>
+
                 <div>
-                    <h4>COMPANY</h4>
-                    <a href="https://mellenastudio.github.io/official/" target="_blank">Mellena Studio</a>
+
+                    <h4>
+                        COMPANY
+                    </h4>
+
+                    <a href="https://mellenastudio.github.io/official/"
+                       target="_blank">
+
+                        Mellena Studio
+
+                    </a>
+
                 </div>
+
                 <div>
-                    <h4>SOCIAL</h4>
-                    <a href="https://x.com/Nidmegent" target="_blank">X</a>
-                    <a href="https://www.youtube.com/@Nidmegent" target="_blank">YouTube</a>
-                    <a href="https://discord.com/invite/24CjQUFqbp" target="_blank">Discord</a>
+
+                    <h4>
+                        SOCIAL
+                    </h4>
+
+                    <a href="https://x.com/Nidmegent"
+                       target="_blank">
+
+                        X
+
+                    </a>
+
+                    <a href="https://www.youtube.com/@Nidmegent"
+                       target="_blank">
+
+                        YouTube
+
+                    </a>
+
+                    <a href="https://discord.gg/24CjQUFqbp"
+                       target="_blank">
+
+                        Discord
+
+                    </a>
+
                 </div>
+
             </div>
+
         </div>
+
         <div class="footer__bottom">
-            <span>© 2026 Nidmegent Esports.All Rights Reserved.</span>
-            <span>EST.2018</span>
+
+            <span>
+
+                © 2026 Nidmegent Esports.
+                All Rights Reserved.
+
+            </span>
+
+            <span>
+
+                EST.2018
+
+            </span>
+
         </div>
+
     </div>
+
 </footer>
 
 <!--====================================
-LIBRARIES
+LIBRARY
 =====================================-->
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
 
-<!--====================================
-TEAM SCRIPT
-=====================================-->
+<!-- TEAM JS -->
+
 <script src="team.js"></script>
+
 </body>
+
 </html>
