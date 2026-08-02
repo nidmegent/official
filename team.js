@@ -355,7 +355,7 @@ document.querySelectorAll(".filter-btn").forEach(button => {
 
             });
 
-        console.log(\`\${filter}: \${visibleCards.length} players\`);
+        console.log(`${filter}: ${visibleCards.length} players`);
 
     });
 
