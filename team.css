@@ -994,32 +994,6 @@ RESPONSIVE
 
 }
 
-.player-meta{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:18px;
-
-}
-
-.player-meta-row{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:24px;
-
-}
-
-.player-meta-row div{
-
-    flex:1;
-
-}
-
 }
 
 /*==================================================
@@ -1719,6 +1693,47 @@ PLAYER CARD SNS
 .player-sns:hover span{
 
     opacity:1;
+
+}
+
+@media(max-width:768px){
+
+    .player-bottom{
+        display:block;
+    }
+
+
+    .player-meta{
+
+        display:grid;
+
+        grid-template-columns:1fr 1fr;
+
+        gap:20px;
+
+        width:100%;
+
+    }
+
+
+    .player-meta div{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:5px;
+
+    }
+
+
+    /* LIKE GAMEだけ横幅いっぱい */
+
+    .player-meta div:nth-child(2){
+
+        grid-column:1 / -1;
+
+    }
 
 }
 
