@@ -610,43 +610,47 @@ ROLE
 
 }
 
-/*==================================================
-ICON
-==================================================*/
+/*==================================
+PLAYER ID
+==================================*/
 
-.player-icon{
+.player-id{
 
-    width:46px;
+    width:56px;
 
-    height:46px;
+    height:56px;
 
-    border-radius:10px;
+    border-radius:50%;
 
     border:1px solid var(--border);
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-    font-size:1.3rem;
+    justify-content:center;
 
-    color:#888;
+    font-size:.9rem;
 
-    transition:var(--transition);
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    color:#777;
+
+    transition:.35s;
 
 }
 
-.player-card:hover .player-icon{
+.player-card:hover .player-id{
 
     background:var(--blue);
 
-    border-color:var(--blue);
-
     color:#fff;
 
-    transform:rotate(-12deg);
+    border-color:var(--blue);
+
+    transform:rotate(-8deg) scale(1.08);
 
 }
 
