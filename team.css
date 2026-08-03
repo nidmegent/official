@@ -996,6 +996,22 @@ RESPONSIVE
 
 }
 
+.player-meta-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:24px;
+
+}
+
+.player-meta-row div{
+
+    flex:1;
+
+}
+
 }
 
 /*==================================================
