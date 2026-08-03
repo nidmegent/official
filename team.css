@@ -1626,41 +1626,23 @@ PLAYER CARD SNS
 
 .player-meta{
 
-    display:flex;
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    align-items:center;
 
     gap:18px;
 
-    align-items:center;
+    width:100%;
 
 }
 
 .player-sns{
 
-    width:48px;
+    grid-column:2;
 
-    height:48px;
-
-    border-radius:50%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:1px solid var(--border);
-
-    transition:.35s;
-
-    color:#777;
-
-    position:relative;
-
-}
-
-.player-sns i{
-
-    font-size:1.2rem;
+    justify-self:end;
 
 }
 
