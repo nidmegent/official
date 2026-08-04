@@ -731,17 +731,15 @@ INFO
 .player-meta{
 
     display:flex;
-
     gap:50px;
+    align-items:flex-start;
 
 }
 
 .player-meta div{
 
     display:flex;
-
     flex-direction:column;
-
     gap:6px;
 
 }
@@ -976,7 +974,7 @@ RESPONSIVE
 
 }
 
-.player-bottom{
+{
 
     flex-direction:column;
 
