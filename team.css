@@ -1744,6 +1744,99 @@ MOBILE
 }
 
 }
+
+/*=========================================
+PLAYER CARD FINAL FIX
+=========================================*/
+
+.player-bottom{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    margin-top:45px;
+    padding-top:24px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.player-meta{
+
+    display:flex;
+    gap:50px;
+
+}
+
+.player-meta div{
+
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+
+}
+
+.player-social{
+
+    position:static;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    margin-left:auto;
+
+}
+
+.player-social a{
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-radius:50%;
+    border:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+.player-social a:hover{
+
+    background:var(--blue);
+    border-color:var(--blue);
+    color:#fff;
+
+}
+
+@media(max-width:768px){
+
+.player-bottom{
+
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+
+}
+
+.player-meta{
+
+    display:flex;
+    gap:40px;
+
+}
+
+.player-social{
+
+    margin-left:0;
+
+}
+
+}
 /*==================================================
 END
 ==================================================*/
