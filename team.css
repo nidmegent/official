@@ -806,6 +806,407 @@ CONTENT LAYER
 }
 
 /*==================================================
+PLAYER TOP
+==================================================*/
+
+.player-top{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    z-index:2;
+
+}
+
+
+/*==================================================
+PLAYER ROLE
+==================================================*/
+
+.player-role{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    height:36px;
+
+    padding:0 18px;
+
+
+    background:#111;
+
+    color:#fff;
+
+
+    border-radius:8px;
+
+
+    font-size:.72rem;
+
+    font-weight:800;
+
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+
+    transition:.35s;
+
+}
+
+
+.player-card:hover .player-role{
+
+    background:var(--blue);
+
+}
+
+
+/*==================================================
+PLAYER NUMBER
+==================================================*/
+
+.player-id{
+
+    width:54px;
+
+    height:54px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+
+    border-radius:14px;
+
+
+    background:#f5f5f5;
+
+
+    color:#999;
+
+
+    font-size:.95rem;
+
+    font-weight:900;
+
+
+    transition:.35s;
+
+}
+
+
+.player-card:hover .player-id{
+
+    background:var(--blue);
+
+    color:#fff;
+
+    transform:rotate(-8deg) scale(1.08);
+
+}
+
+
+/*==================================================
+PLAYER NAME
+==================================================*/
+
+.player-name{
+
+    position:relative;
+
+
+    margin-top:42px;
+
+
+    font-size:clamp(3rem,4vw,4.8rem);
+
+
+    line-height:.9;
+
+
+    font-weight:900;
+
+
+    letter-spacing:-.05em;
+
+
+    z-index:2;
+
+
+    transition:.35s;
+
+}
+
+
+.player-card:hover .player-name{
+
+    color:var(--blue);
+
+    transform:translateX(10px);
+
+}
+
+
+/*==================================================
+PLAYER DESCRIPTION
+==================================================*/
+
+.player-hobby{
+
+    position:relative;
+
+
+    margin-top:22px;
+
+
+    color:#666;
+
+
+    font-size:1rem;
+
+
+    z-index:2;
+
+}
+
+
+.player-hobby strong{
+
+    color:#111;
+
+}
+
+
+/*==================================================
+PLAYER BOTTOM
+==================================================*/
+
+.player-bottom{
+
+    position:relative;
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:flex-end;
+
+
+    gap:25px;
+
+
+    margin-top:70px;
+
+
+    padding-top:26px;
+
+
+    border-top:1px solid var(--border);
+
+
+    z-index:2;
+
+}
+
+
+/* BLUE LINE EFFECT */
+
+.player-bottom::before{
+
+    content:"";
+
+
+    position:absolute;
+
+
+    left:0;
+
+    top:-1px;
+
+
+    width:0;
+
+
+    height:2px;
+
+
+    background:var(--blue);
+
+
+    transition:.45s;
+
+}
+
+
+.player-card:hover .player-bottom::before{
+
+    width:100%;
+
+}
+
+
+/*==================================================
+PLAYER META
+==================================================*/
+
+
+.player-meta{
+
+    display:flex;
+
+
+    align-items:flex-end;
+
+
+    gap:45px;
+
+}
+
+
+.player-meta div{
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:6px;
+
+}
+
+
+.player-meta span{
+
+    font-size:.72rem;
+
+
+    font-weight:700;
+
+
+    letter-spacing:.18em;
+
+
+    color:#999;
+
+
+    text-transform:uppercase;
+
+}
+
+
+.player-meta h4{
+
+    font-size:1rem;
+
+
+    font-weight:800;
+
+
+    color:#111;
+
+
+    transition:.35s;
+
+}
+
+
+.player-card:hover .player-meta h4{
+
+    color:var(--blue);
+
+}
+
+
+/*==================================================
+PLAYER SOCIAL
+==================================================*/
+
+
+.player-social{
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    flex-shrink:0;
+
+}
+
+
+.player-social a{
+
+
+    width:44px;
+
+    height:44px;
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+    border-radius:50%;
+
+
+    border:1px solid var(--border);
+
+
+    background:#fff;
+
+
+    color:#777;
+
+
+    transition:.35s;
+
+}
+
+
+.player-social a:hover{
+
+
+    background:var(--blue);
+
+
+    border-color:var(--blue);
+
+
+    color:#fff;
+
+
+    transform:translateY(-4px);
+
+}
+
+/*==================================================
 JOIN US
 ==================================================*/
 
