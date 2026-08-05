@@ -1763,15 +1763,39 @@ background:#fff;
 
 .section-ja{
 
-    margin-top:12px;
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding-left:18px;
+
+    position:relative;
 
     font-size:1rem;
 
-    font-weight:500;
+    color:#666;
 
-    color:#777;
+    letter-spacing:.12em;
 
-    letter-spacing:.08em;
+}
+
+.section-ja::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:10px;
+
+    height:2px;
+
+    background:#2962FF;
 
 }
 
