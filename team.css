@@ -946,6 +946,7 @@ PLAYER NAME
 
     z-index:2;
 
+    transform:translateX(-6px);
 
     transition:.35s;
 
