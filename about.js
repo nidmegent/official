@@ -540,3 +540,45 @@ window.addEventListener("load",()=>{
 });
 
 });
+
+/*==================================================
+ACHIEVEMENTS ACCORDION
+==================================================*/
+
+const achievementItems = document.querySelectorAll(".achievement-item");
+
+achievementItems.forEach(item => {
+
+    const header = item.querySelector(".achievement-header");
+
+    header.addEventListener("click", () => {
+
+        const isActive = item.classList.contains("active");
+
+        // 一度すべて閉じる
+        achievementItems.forEach(el => {
+
+            el.classList.remove("active");
+
+        });
+
+        // 押したものだけ開く
+        if (!isActive) {
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+});
+
+/*==================================================
+OPEN FIRST ITEM
+==================================================*/
+
+if (achievementItems.length > 0) {
+
+    achievementItems[0].classList.add("active");
+
+}
