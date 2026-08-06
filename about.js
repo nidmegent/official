@@ -555,14 +555,12 @@ achievementItems.forEach(item => {
 
         const isActive = item.classList.contains("active");
 
-        // 一度すべて閉じる
         achievementItems.forEach(el => {
 
             el.classList.remove("active");
 
         });
 
-        // 押したものだけ開く
         if (!isActive) {
 
             item.classList.add("active");
