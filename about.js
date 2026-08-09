@@ -570,13 +570,3 @@ achievementItems.forEach(item => {
     });
 
 });
-
-/*==================================================
-OPEN FIRST ITEM
-==================================================*/
-
-if (achievementItems.length > 0) {
-
-    achievementItems[0].classList.add("active");
-
-}
