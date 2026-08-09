@@ -466,6 +466,37 @@ HERO
 
 }
 
+/*==================================================
+HERO IMAGE ONLY
+==================================================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+    background:#000;
+
+}
+
+.hero__image{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
 
 /*==============================
 VIDEO
