@@ -1,280 +1,168 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEWS | Nidmegent Esports</title>
-<link rel="icon" href="favicon.ico">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="news.css">
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>News | Nidmegent Esports</title>
+
+    <!-- Remix Icon -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        href="favicon.ico"
+        type="image/x-icon"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- News CSS -->
+    <link
+        rel="stylesheet"
+        href="news.css"
+    >
+
 </head>
+
+
 <body>
-<!--====================================
+
+
+<!--==================================================
 HEADER
-=====================================-->
+==================================================-->
+
 <header class="header">
-<div class="container">
-<a href="index.html" class="logo">
-<img src="logo/logo-back.png" alt="Nidmegent">
-</a>
-<nav class="nav">
-<ul class="nav__list">
-<li><a href="about.html">ABOUT</a></li>
-<li><a href="players.html">PLAYERS</a></li>
-<li><a href="news.html" class="active">NEWS</a></li>
-<li><a href="index.html#contact">CONTACT</a></li>
-</ul>
-</nav>
-<button class="menu">
-<i class="ri-menu-3-line"></i>
-</button>
-</div>
-</header>
-<!--====================================
-NEWS HERO
-=====================================-->
-<section class="news-hero">
-<div class="container">
-<span class="news-hero__eyebrow">NIDMEGENT ESPORTS</span>
-<h1 class="news-hero__title">NEWS</h1>
-<p class="news-hero__text">Latest updates, roster changes,tournament results and announcements.</p>
-<div class="news-hero__line"></div>
-</div>
-</section>
-<!--====================================
-FEATURED
-=====================================-->
-<section class="featured section">
-<div class="container">
-<div class="section-header">
-<span class="section-number">01</span>
-<h2 class="section-title">FEATURED
-</h2>
-</div>
-<article class="featured-card">
-<div class="featured-date">2026.08.03</div>
-<span class="featured-category">CREATOR
-</span>
-<h3>
-New Creator Joined Nidmegent Esports
-</h3>
-<p>We are pleased to welcome a new creator to Nidmegent Esports.Together we will continue creating better content for everyone.</p>
-<a href="#">
- READ MORE
-<i class="ri-arrow-right-up-line"></i>
-</a>
-</article>
-</div>
-</section>
-<!--====================================
-NEWS LIST
-=====================================-->
-<section class="news-list section">
 
     <div class="container">
 
-        <div class="section-header">
+        <!-- Logo -->
 
-            <span class="section-number">02</span>
+        <a
+            href="index.html"
+            class="logo"
+        >
 
-            <h2 class="section-title">
+            <img
+                src="logo/logo-back.png"
+                alt="Nidmegent Logo"
+            >
 
-                ALL NEWS
+        </a>
 
-            </h2>
 
-        </div>
+        <!-- Navigation -->
 
-        <!--====================
-        FILTER
-        =====================-->
+        <nav class="nav">
 
-        <div class="news-filter">
+            <ul class="nav__list">
 
-            <button class="filter-btn active" data-filter="all">
+                <li>
 
-                ALL
+                    <a href="index.html#about">
+                        ABOUT
+                    </a>
 
-            </button>
+                </li>
 
-            <button class="filter-btn" data-filter="team">
+                <li>
 
-                TEAM
+                    <a href="team.html">
+                        TEAMS
+                    </a>
 
-            </button>
+                </li>
 
-            <button class="filter-btn" data-filter="valorant">
+                <li>
 
-                VALORANT
+                    <a
+                        href="news.html"
+                        class="active"
+                    >
+                        NEWS
+                    </a>
 
-            </button>
+                </li>
 
-            <button class="filter-btn" data-filter="creator">
+                <li>
 
-                CREATOR
+                    <a href="index.html#contact">
+                        CONTACT
+                    </a>
 
-            </button>
+                </li>
 
-            <button class="filter-btn" data-filter="event">
+            </ul>
 
-                EVENT
+        </nav>
 
-            </button>
 
-            <button class="filter-btn" data-filter="media">
+        <!-- Mobile Menu -->
 
-                MEDIA
+        <button
+            class="menu"
+            aria-label="Open Menu"
+        >
 
-            </button>
+            <i class="ri-menu-3-line"></i>
 
-        </div>
+        </button>
 
-        <!--====================
-        NEWS ITEMS
-        =====================-->
+    </div>
 
-        <div class="news-items">
+</header>
 
-        <article class="news-item" data-category="creator">
 
-    <a href="news-post.html?id=1">
 
-        <span class="news-date">
+<!--==================================================
+NEWS HERO
+==================================================-->
 
-            2026.08.03
+<section class="news-hero">
 
-        </span>
+    <div class="container">
 
-        <span class="news-category">
+        <div class="news-hero__content">
 
-            CREATOR
+            <span class="news-hero__eyebrow">
 
-        </span>
+                NIDMEGENT ESPORTS
 
-        <h3>
+            </span>
 
-            New Creator Joined Nidmegent Esports
 
-        </h3>
+            <h1 class="news-hero__title">
 
-        <i class="ri-arrow-right-line"></i>
+                NEWS
 
-    </a>
+            </h1>
 
-</article>
 
-<article class="news-item" data-category="valorant">
+            <p class="news-hero__subtitle">
 
-    <a href="news-post.html?id=2">
+                Latest news, updates,
+                events and announcements
+                from Nidmegent Esports.
 
-        <span class="news-date">
+            </p>
 
-            2026.07.28
 
-        </span>
-
-        <span class="news-category">
-
-            VALORANT
-
-        </span>
-
-        <h3>
-
-            New Valorant Roster Announced
-
-        </h3>
-
-        <i class="ri-arrow-right-line"></i>
-
-    </a>
-
-</article>
-
-<article class="news-item" data-category="team">
-
-    <a href="news-post.html?id=3">
-
-        <span class="news-date">
-
-            2026.07.15
-
-        </span>
-
-        <span class="news-category">
-
-            TEAM
-
-        </span>
-
-        <h3>
-
-            Official Website Renewed
-
-        </h3>
-
-        <i class="ri-arrow-right-line"></i>
-
-    </a>
-
-</article>
-
-<article class="news-item" data-category="event">
-
-    <a href="news-post.html?id=4">
-
-        <span class="news-date">
-
-            2026.06.20
-
-        </span>
-
-        <span class="news-category">
-
-            EVENT
-
-        </span>
-
-        <h3>
-
-            Recruitment for New Members Started
-
-        </h3>
-
-        <i class="ri-arrow-right-line"></i>
-
-    </a>
-
-</article>
-
-<article class="news-item" data-category="media">
-
-    <a href="news-post.html?id=5">
-
-        <span class="news-date">
-
-            2026.06.10
-
-        </span>
-
-        <span class="news-category">
-
-            MEDIA
-
-        </span>
-
-        <h3>
-
-            New Promotional Video Released
-
-        </h3>
-
-        <i class="ri-arrow-right-line"></i>
-
-    </a>
-
-</article>
+            <div class="news-hero__line"></div>
 
         </div>
 
@@ -282,9 +170,433 @@ NEWS LIST
 
 </section>
 
-<!--====================================
+
+
+<!--==================================================
+NEWS
+==================================================-->
+
+<section
+    class="news-page section"
+    id="news"
+>
+
+    <div class="container">
+
+
+        <!-- Section Header -->
+
+        <div class="section-header">
+
+            <span class="section-number">
+                01
+            </span>
+
+            <h2 class="section-title">
+                LATEST NEWS
+            </h2>
+
+        </div>
+
+
+
+        <!--==================================================
+        FILTER
+        ==================================================-->
+
+        <div class="news-filter">
+
+            <button
+                class="news-filter__btn active"
+                data-filter="all"
+            >
+                ALL
+            </button>
+
+
+            <button
+                class="news-filter__btn"
+                data-filter="team"
+            >
+                TEAM
+            </button>
+
+
+            <button
+                class="news-filter__btn"
+                data-filter="event"
+            >
+                EVENT
+            </button>
+
+
+            <button
+                class="news-filter__btn"
+                data-filter="information"
+            >
+                INFORMATION
+            </button>
+
+
+            <button
+                class="news-filter__btn"
+                data-filter="creator"
+            >
+                CREATOR
+            </button>
+
+        </div>
+
+
+
+        <!--==================================================
+        NEWS LIST
+        ==================================================-->
+
+        <div class="news-list">
+
+
+            <!--==================================================
+            NEWS 01
+            ==================================================-->
+
+            <article
+                class="news-item fade-up"
+                data-category="information"
+            >
+
+                <div class="news-item__date">
+
+                    <span class="news-item__year">
+                        2026
+                    </span>
+
+                    <strong>
+                        08.10
+                    </strong>
+
+                </div>
+
+
+                <div class="news-item__category">
+
+                    INFORMATION
+
+                </div>
+
+
+                <div class="news-item__content">
+
+                    <h3>
+
+                        Nidmegent Esports
+                        Official Website Renewal
+
+                    </h3>
+
+                    <p>
+
+                        Nidmegent Esports
+                        official website has been
+                        renewed with a new design.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="news-item__link"
+                    aria-label="Read more"
+                >
+
+                    <span>
+                        READ MORE
+                    </span>
+
+                    <i class="ri-arrow-right-up-line"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!--==================================================
+            NEWS 02
+            ==================================================-->
+
+            <article
+                class="news-item fade-up"
+                data-category="team"
+            >
+
+                <div class="news-item__date">
+
+                    <span class="news-item__year">
+                        2026
+                    </span>
+
+                    <strong>
+                        08.05
+                    </strong>
+
+                </div>
+
+
+                <div class="news-item__category">
+
+                    TEAM
+
+                </div>
+
+
+                <div class="news-item__content">
+
+                    <h3>
+
+                        New Members
+                        Join Nidmegent Esports
+
+                    </h3>
+
+                    <p>
+
+                        New players and creators
+                        have joined the Nidmegent
+                        Esports roster.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="news-item__link"
+                >
+
+                    <span>
+                        READ MORE
+                    </span>
+
+                    <i class="ri-arrow-right-up-line"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!--==================================================
+            NEWS 03
+            ==================================================-->
+
+            <article
+                class="news-item fade-up"
+                data-category="event"
+            >
+
+                <div class="news-item__date">
+
+                    <span class="news-item__year">
+                        2026
+                    </span>
+
+                    <strong>
+                        07.25
+                    </strong>
+
+                </div>
+
+
+                <div class="news-item__category">
+
+                    EVENT
+
+                </div>
+
+
+                <div class="news-item__content">
+
+                    <h3>
+
+                        Nidmegent
+                        Community Event
+
+                    </h3>
+
+                    <p>
+
+                        An upcoming community
+                        event will be announced
+                        soon.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="news-item__link"
+                >
+
+                    <span>
+                        READ MORE
+                    </span>
+
+                    <i class="ri-arrow-right-up-line"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!--==================================================
+            NEWS 04
+            ==================================================-->
+
+            <article
+                class="news-item fade-up"
+                data-category="creator"
+            >
+
+                <div class="news-item__date">
+
+                    <span class="news-item__year">
+                        2026
+                    </span>
+
+                    <strong>
+                        07.18
+                    </strong>
+
+                </div>
+
+
+                <div class="news-item__category">
+
+                    CREATOR
+
+                </div>
+
+
+                <div class="news-item__content">
+
+                    <h3>
+
+                        Nidmegent Creator
+                        Project Begins
+
+                    </h3>
+
+                    <p>
+
+                        A new content project
+                        focusing on video production
+                        and creators has started.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="news-item__link"
+                >
+
+                    <span>
+                        READ MORE
+                    </span>
+
+                    <i class="ri-arrow-right-up-line"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <!--==================================================
+            NEWS 05
+            ==================================================-->
+
+            <article
+                class="news-item fade-up"
+                data-category="team"
+            >
+
+                <div class="news-item__date">
+
+                    <span class="news-item__year">
+                        2026
+                    </span>
+
+                    <strong>
+                        07.10
+                    </strong>
+
+                </div>
+
+
+                <div class="news-item__category">
+
+                    TEAM
+
+                </div>
+
+
+                <div class="news-item__content">
+
+                    <h3>
+
+                        VALORANT Division
+                        Update
+
+                    </h3>
+
+                    <p>
+
+                        Information regarding
+                        the Nidmegent VALORANT
+                        division has been updated.
+
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="#"
+                    class="news-item__link"
+                >
+
+                    <span>
+                        READ MORE
+                    </span>
+
+                    <i class="ri-arrow-right-up-line"></i>
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!--==================================================
 JOIN US
-=====================================-->
+==================================================-->
 
 <section class="join section">
 
@@ -293,26 +605,29 @@ JOIN US
         <div class="join-box">
 
             <span>
-
                 NIDMEGENT ESPORTS
-
             </span>
 
+
             <h2>
-
                 JOIN OUR TEAM
-
             </h2>
+
 
             <p>
 
-                We're always looking for passionate players,
-                creators and staff who want to grow together
-                with Nidmegent Esports.
+                We're always looking for
+                passionate players, creators
+                and staff who want to grow
+                together with Nidmegent Esports.
 
             </p>
 
-            <a href="index.html#contact" class="join-button">
+
+            <a
+                href="index.html#contact"
+                class="join-button"
+            >
 
                 CONTACT US
 
@@ -326,19 +641,28 @@ JOIN US
 
 </section>
 
-<!--====================================
+
+
+<!--==================================================
 FOOTER
-=====================================-->
+==================================================-->
 
 <footer class="footer">
 
     <div class="container">
 
+
         <div class="footer__top">
+
+
+            <!-- Brand -->
 
             <div class="footer__brand">
 
-                <img src="logo/logo-back.png" alt="Nidmegent Logo">
+                <img
+                    src="logo/logo-back.png"
+                    alt="Nidmegent Logo"
+                >
 
                 <p>
 
@@ -349,95 +673,126 @@ FOOTER
 
             </div>
 
+
+
+            <!-- Menu -->
+
             <div class="footer__menu">
 
+
                 <div>
 
-                    <h4>MENU</h4>
+                    <h4>
+                        MENU
+                    </h4>
 
-                    <a href="about.html">ABOUT</a>
+                    <a href="index.html#about">
+                        ABOUT
+                    </a>
 
-                    <a href="players.html">PLAYERS</a>
+                    <a href="team.html">
+                        TEAMS
+                    </a>
 
-                    <a href="news.html">NEWS</a>
+                    <a href="news.html">
+                        NEWS
+                    </a>
 
-                    <a href="index.html#contact">CONTACT</a>
+                    <a href="index.html#contact">
+                        CONTACT
+                    </a>
 
                 </div>
 
+
+
                 <div>
 
-                    <h4>COMPANY</h4>
+                    <h4>
+                        COMPANY
+                    </h4>
 
-                    <a href="https://mellenastudio.github.io/official/" target="_blank">
-
+                    <a
+                        href="https://mellenastudio.github.io/official/"
+                        target="_blank"
+                        rel="noopener"
+                    >
                         Mellena Studio
-
                     </a>
 
                 </div>
+
+
 
                 <div>
 
-                    <h4>SOCIAL</h4>
+                    <h4>
+                        SOCIAL
+                    </h4>
 
-                    <a href="https://x.com/Nidmegent" target="_blank">
-
+                    <a
+                        href="https://x.com/Nidmegent"
+                        target="_blank"
+                        rel="noopener"
+                    >
                         X
-
                     </a>
 
-                    <a href="https://www.youtube.com/@Nidmegent" target="_blank">
-
+                    <a
+                        href="https://www.youtube.com/@Nidmegent"
+                        target="_blank"
+                        rel="noopener"
+                    >
                         YouTube
-
                     </a>
 
-                    <a href="https://discord.com/invite/24CjQUFqbp" target="_blank">
-
+                    <a
+                        href="https://discord.com/invite/24CjQUFqbp"
+                        target="_blank"
+                        rel="noopener"
+                    >
                         Discord
-
                     </a>
 
                 </div>
+
 
             </div>
 
         </div>
 
+
+
+        <!-- Bottom -->
+
         <div class="footer__bottom">
 
             <span>
 
-                © 2026 Nidmegent Esports. All Rights Reserved.
+                © 2026 Nidmegent Esports.
+                All Rights Reserved.
 
             </span>
 
             <span>
-
                 EST.2018
-
             </span>
 
         </div>
+
 
     </div>
 
 </footer>
 
-<!--====================================
-GSAP
-=====================================-->
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
-
-<!--====================================
-NEWS SCRIPT
-=====================================-->
+<!--==================================================
+JAVASCRIPT
+==================================================-->
 
 <script src="news.js"></script>
+
 
 </body>
 
