@@ -4,32 +4,54 @@ NIDMEGENT NEWS PAGE
 
 document.addEventListener("DOMContentLoaded", () => {
 
+
     /*==================================================
     HEADER
     ==================================================*/
 
     const header = document.querySelector(".header");
 
-    window.addEventListener("scroll", () => {
 
-        if (window.scrollY > 50) {
+    if (header) {
 
-            header.classList.add("active");
+        const updateHeader = () => {
 
-        } else {
+            if (window.scrollY > 50) {
 
-            header.classList.remove("active");
+                header.classList.add("active");
 
-        }
+            } else {
 
-    });
+                header.classList.remove("active");
+
+            }
+
+        };
+
+
+        updateHeader();
+
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            { passive:true }
+        );
+
+    }
+
+
 
     /*==================================================
     MOBILE MENU
     ==================================================*/
 
-    const menuBtn = document.querySelector(".menu");
-    const nav = document.querySelector(".nav");
+    const menuBtn =
+        document.querySelector(".menu");
+
+    const nav =
+        document.querySelector(".nav");
+
 
     if (menuBtn && nav) {
 
@@ -39,365 +61,453 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-    }
 
-    /*==================================================
-    CLOSE MOBILE MENU
-    ==================================================*/
+        /* Close menu */
 
-    document.querySelectorAll(".nav a").forEach(link => {
+        nav.querySelectorAll("a").forEach(link => {
 
-        link.addEventListener("click", () => {
+            link.addEventListener("click", () => {
 
-            nav.classList.remove("active");
+                nav.classList.remove("active");
+
+            });
 
         });
 
-    });
+    }
+
+
 
     /*==================================================
     FADE UP
     ==================================================*/
 
-    const fadeItems = document.querySelectorAll(".fade-up");
+    const fadeItems =
+        document.querySelectorAll(".fade-up");
 
-    const observer = new IntersectionObserver((entries) => {
 
-        entries.forEach(entry => {
+    if ("IntersectionObserver" in window) {
 
-            if (entry.isIntersecting) {
+        const observer =
+            new IntersectionObserver(
 
-                entry.target.classList.add("show");
+                (entries, observer) => {
 
-            }
+                    entries.forEach(entry => {
 
-        });
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
 
-    }, {
 
-        threshold: .15
+                        entry.target.classList.add("show");
 
-    });
 
-    fadeItems.forEach(item => observer.observe(item));
+                        observer.unobserve(
+                            entry.target
+                        );
 
-    /*==================================================
-    NEWS FILTER
-    ==================================================*/
+                    });
 
-    const buttons = document.querySelectorAll(".filter-btn");
-    const items = document.querySelectorAll(".news-item");
+                },
 
-    buttons.forEach(button => {
+                {
 
-        button.addEventListener("click", () => {
+                    threshold:.12,
 
-            buttons.forEach(btn => btn.classList.remove("active"));
-
-            button.classList.add("active");
-
-            const filter = button.dataset.filter;
-
-            items.forEach(item => {
-
-                const category = item.dataset.category;
-
-                if (filter === "all" || category === filter) {
-
-                    item.style.display = "block";
-
-                    setTimeout(() => {
-
-                        item.classList.remove("hide");
-
-                    },20);
-
-                } else {
-
-                    item.classList.add("hide");
-
-                    setTimeout(() => {
-
-                        item.style.display = "none";
-
-                    },300);
+                    rootMargin:"0px 0px -50px 0px"
 
                 }
 
-            });
+            );
+
+
+        fadeItems.forEach(item => {
+
+            observer.observe(item);
 
         });
 
-    });
+    } else {
 
-        /*==================================================
-    GSAP
-    ==================================================*/
+        fadeItems.forEach(item => {
 
-    if (typeof gsap !== "undefined") {
-
-        gsap.registerPlugin(ScrollTrigger);
-
-        /*==============================
-        HERO
-        ==============================*/
-
-        gsap.from(".news-hero__eyebrow",{
-
-            opacity:0,
-            y:30,
-            duration:.8,
-            ease:"power3.out"
-
-        });
-
-        gsap.from(".news-hero__title",{
-
-            opacity:0,
-            y:70,
-            duration:1,
-            delay:.15,
-            ease:"power4.out"
-
-        });
-
-        gsap.from(".news-hero__text",{
-
-            opacity:0,
-            y:30,
-            duration:.8,
-            delay:.35,
-            ease:"power3.out"
-
-        });
-
-        gsap.from(".news-hero__line",{
-
-            width:0,
-            duration:.8,
-            delay:.55,
-            ease:"power2.out"
-
-        });
-
-        /*==============================
-        FEATURED CARD
-        ==============================*/
-
-        gsap.from(".featured-card",{
-
-            opacity:0,
-            y:80,
-            duration:1,
-            delay:.4,
-            ease:"power3.out",
-
-            scrollTrigger:{
-
-                trigger:".featured-card",
-
-                start:"top 80%",
-
-                toggleActions:"play none none reverse"
-
-            }
-
-        });
-
-        /*==============================
-        NEWS ITEMS
-        ==============================*/
-
-        gsap.utils.toArray(".news-item").forEach((item,index)=>{
-
-            gsap.from(item,{
-
-                opacity:0,
-                y:50,
-
-                duration:.8,
-
-                delay:index*.08,
-
-                ease:"power3.out",
-
-                scrollTrigger:{
-
-                    trigger:item,
-
-                    start:"top 90%",
-
-                    toggleActions:"play none none reverse"
-
-                }
-
-            });
-
-        });
-
-        /*==============================
-        JOIN BOX
-        ==============================*/
-
-        gsap.from(".join-box",{
-
-            opacity:0,
-
-            y:80,
-
-            duration:1,
-
-            ease:"power3.out",
-
-            scrollTrigger:{
-
-                trigger:".join-box",
-
-                start:"top 85%"
-
-            }
+            item.classList.add("show");
 
         });
 
     }
 
-        /*==================================================
-    SMOOTH SCROLL
+
+
+    /*==================================================
+    NEWS FILTER
     ==================================================*/
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    const filterButtons =
+        document.querySelectorAll(
+            ".news-filter__btn"
+        );
 
-        anchor.addEventListener("click", function(e){
 
-            const targetId = this.getAttribute("href");
+    const newsItems =
+        document.querySelectorAll(
+            ".news-item"
+        );
 
-            if(targetId === "#") return;
 
-            const target = document.querySelector(targetId);
+    filterButtons.forEach(button => {
 
-            if(!target) return;
 
-            e.preventDefault();
+        button.addEventListener("click", () => {
 
-            target.scrollIntoView({
 
-                behavior:"smooth",
+            /* Active button */
 
-                block:"start"
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
 
             });
+
+
+            button.classList.add("active");
+
+
+            /* Filter */
+
+            const filter =
+                button.dataset.filter;
+
+
+            newsItems.forEach(item => {
+
+
+                const category =
+                    item.dataset.category;
+
+
+                const shouldShow =
+                    filter === "all" ||
+                    category === filter;
+
+
+                if (shouldShow) {
+
+
+                    item.style.display = "grid";
+
+
+                    requestAnimationFrame(() => {
+
+                        item.classList.remove(
+                            "hide"
+                        );
+
+                    });
+
+
+                } else {
+
+
+                    item.classList.add(
+                        "hide"
+                    );
+
+
+                    setTimeout(() => {
+
+                        if (
+                            item.classList.contains(
+                                "hide"
+                            )
+                        ) {
+
+                            item.style.display =
+                                "none";
+
+                        }
+
+                    }, 350);
+
+                }
+
+            });
+
 
         });
 
     });
 
+
+
     /*==================================================
-    PAGE READY
+    NEWS ITEM HOVER
     ==================================================*/
 
-    window.addEventListener("load",()=>{
+    newsItems.forEach(item => {
 
-        document.body.classList.add("loaded");
 
-        if(typeof ScrollTrigger !== "undefined"){
+        item.addEventListener(
+            "mouseenter",
+            () => {
 
-            ScrollTrigger.refresh();
+                item.classList.add(
+                    "is-hover"
+                );
 
-        }
+            }
+        );
 
-        console.log(
-            "%cNEWS PAGE READY",
-            "color:#2962FF;font-size:16px;font-weight:bold;"
+
+        item.addEventListener(
+            "mouseleave",
+            () => {
+
+                item.classList.remove(
+                    "is-hover"
+                );
+
+            }
         );
 
     });
 
+
+
     /*==================================================
-    WINDOW RESIZE
+    KEYBOARD ACCESSIBILITY
     ==================================================*/
 
-    window.addEventListener("resize",()=>{
+    newsItems.forEach(item => {
 
-        if(typeof ScrollTrigger !== "undefined"){
 
-            ScrollTrigger.refresh();
+        item.setAttribute(
+            "tabindex",
+            "0"
+        );
 
-        }
+
+        item.addEventListener(
+            "keydown",
+            event => {
+
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+
+                    event.preventDefault();
+
+
+                    const link =
+                        item.querySelector(
+                            ".news-item__link"
+                        );
+
+
+                    if (link) {
+
+                        link.click();
+
+                    }
+
+                }
+
+            }
+        );
 
     });
 
+
+
     /*==================================================
-    PAGE SHOW
+    SMOOTH ANCHOR
     ==================================================*/
 
-    window.addEventListener("pageshow",()=>{
+    document
+        .querySelectorAll(
+            'a[href^="#"]'
+        )
+        .forEach(anchor => {
 
-        if(window.scrollY <= 50){
 
-            header.classList.remove("active");
+            anchor.addEventListener(
+                "click",
+                function(event) {
 
-        }
 
-    });
+                    const targetId =
+                        this.getAttribute(
+                            "href"
+                        );
+
+
+                    if (
+                        !targetId ||
+                        targetId === "#"
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if (!target) {
+
+                        return;
+
+                    }
+
+
+                    event.preventDefault();
+
+
+                    target.scrollIntoView({
+
+                        behavior:"smooth",
+
+                        block:"start"
+
+                    });
+
+                }
+            );
+
+        });
+
+
 
     /*==================================================
     NEWS COUNT
     ==================================================*/
 
-    const newsCount = document.querySelectorAll(".news-item").length;
+    const newsCount =
+        newsItems.length;
 
-    console.log(`NEWS : ${newsCount}`);
+
+    console.log(
+        `%cNIDMEGENT NEWS: ${newsCount}`,
+        "color:#2962FF;font-weight:800;"
+    );
+
+
 
     /*==================================================
     FILTER COUNT
     ==================================================*/
 
-    document.querySelectorAll(".filter-btn").forEach(button=>{
+    filterButtons.forEach(button => {
 
-        button.addEventListener("click",()=>{
 
-            const filter = button.dataset.filter;
+        button.addEventListener(
+            "click",
+            () => {
 
-            const visibleNews = [...document.querySelectorAll(".news-item")]
 
-                .filter(item=>{
+                const filter =
+                    button.dataset.filter;
 
-                    return filter==="all" ||
 
-                           item.dataset.category===filter;
+                const visible =
+                    [...newsItems].filter(item => {
 
-                });
 
-            console.log(`${filter} : ${visibleNews.length}`);
+                        return (
+                            filter === "all" ||
+                            item.dataset.category ===
+                            filter
+                        );
 
-        });
+                    });
 
-    });
 
-    /*==================================================
-    ACCESSIBILITY
-    ==================================================*/
-
-    document.querySelectorAll(".news-item").forEach(item=>{
-
-        item.setAttribute("tabindex","0");
-
-        item.addEventListener("keydown",(e)=>{
-
-            if(e.key==="Enter"){
-
-                const link = item.querySelector("a");
-
-                if(link){
-
-                    link.click();
-
-                }
+                console.log(
+                    `${filter}: ${visible.length} news`
+                );
 
             }
-
-        });
+        );
 
     });
 
+
+
+    /*==================================================
+    PAGE READY
+    ==================================================*/
+
+    document.body.classList.add(
+        "loaded"
+    );
+
+
+    console.log(
+        "%cNEWS PAGE READY",
+        "color:#2962FF;font-size:16px;font-weight:bold;"
+    );
+
 });
+
+
+
+/*==================================================
+WINDOW RESIZE
+==================================================*/
+
+window.addEventListener(
+    "resize",
+    () => {
+
+        /*
+
+        Reserved for future
+        responsive functions.
+
+        */
+
+    }
+);
+
+
+
+/*==================================================
+PAGE SHOW
+==================================================*/
+
+window.addEventListener(
+    "pageshow",
+    () => {
+
+
+        const header =
+            document.querySelector(
+                ".header"
+            );
+
+
+        if (!header) {
+
+            return;
+
+        }
+
+
+        if (window.scrollY <= 50) {
+
+            header.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
