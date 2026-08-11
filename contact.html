@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Nidmegent Esports</title>
+
+    <!-- Remix Icon -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Contact CSS -->
+    <link rel="stylesheet" href="contact.css">
+
+</head>
+
+
+<body>
+
+
+<!--==================================================
+HEADER
+==================================================-->
+
+<header class="header">
+
+    <div class="container">
+
+
+        <!-- Logo -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="logo/logo-back.png"
+                alt="Nidmegent Logo"
+            >
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="nav">
+
+            <ul class="nav__list">
+
+                <li>
+
+                    <a href="about.html">
+                        ABOUT
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="team.html">
+                        TEAMS
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="news.html">
+                        NEWS
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="contact.html" class="active">
+                        CONTACT
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Mobile Menu -->
+
+        <button class="menu" aria-label="メニュー">
+
+            <i class="ri-menu-3-line"></i>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!--==================================================
+CONTACT HERO
+==================================================-->
+
+<main>
+
+
+<section class="contact-hero">
+
+
+    <div class="container">
+
+
+        <div class="contact-hero__content">
+
+
+            <span class="contact-hero__eyebrow">
+
+                NIDMEGENT ESPORTS
+
+            </span>
+
+
+            <h1 class="contact-hero__title">
+
+                CONTACT
+
+            </h1>
+
+
+            <p class="contact-hero__subtitle">
+
+                Let's create the next era together.
+
+            </p>
+
+
+            <div class="contact-hero__line"></div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!--==================================================
+CONTACT INTRO
+==================================================-->
+
+<section class="contact-intro section">
+
+
+    <div class="container">
+
+
+        <div class="contact-intro__grid">
+
+
+            <!-- Left -->
+
+            <div class="contact-intro__title">
+
+
+                <span class="section-number">
+                    01
+                </span>
+
+
+                <h2 class="section-title">
+
+                    GET IN<br>
+                    TOUCH.
+
+                </h2>
+
+
+            </div>
+
+
+
+            <!-- Right -->
+
+            <div class="contact-intro__text">
+
+
+                <p>
+
+                    Nidmegent Esportsへのお問い合わせは、
+                    下記フォームよりお願いいたします。
+
+                </p>
+
+
+                <p>
+
+                    チームへの加入、スポンサー、
+                    コラボレーション、イベント、
+                    メディア関係など、
+                    幅広いお問い合わせを受け付けています。
+
+                </p>
+
+
+                <p class="contact-intro__note">
+
+                    ※お問い合わせ内容によっては、
+                    ご返信までお時間をいただく場合があります。
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!--==================================================
+CONTACT FORM
+==================================================-->
+
+<section class="contact-form-section">
+
+
+    <div class="container">
+
+
+        <div class="contact-form-header">
+
+
+            <div>
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <h2>
+                    SEND MESSAGE
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                CONTACT FORM
+
+            </p>
+
+
+        </div>
+
+
+
+        <form
+            class="contact-form"
+            id="contactForm"
+        >
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+
+                    NAME
+
+                    <span>
+                        REQUIRED
+                    </span>
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+
+                    EMAIL
+
+                    <span>
+                        REQUIRED
+                    </span>
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your@email.com"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="form-group">
+
+                <label for="category">
+
+                    CATEGORY
+
+                    <span>
+                        REQUIRED
+                    </span>
+
+                </label>
+
+
+                <select
+                    id="category"
+                    name="category"
+                    required
+                >
+
+                    <option value="" selected disabled>
+
+                        Select Category
+
+                    </option>
+
+
+                    <option value="team">
+
+                        TEAM / PLAYER
+
+                    </option>
+
+
+                    <option value="sponsor">
+
+                        SPONSORSHIP
+
+                    </option>
+
+
+                    <option value="collaboration">
+
+                        COLLABORATION
+
+                    </option>
+
+
+                    <option value="event">
+
+                        EVENT
+
+                    </option>
+
+
+                    <option value="media">
+
+                        MEDIA
+
+                    </option>
+
+
+                    <option value="other">
+
+                        OTHER
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label for="message">
+
+                    MESSAGE
+
+                    <span>
+                        REQUIRED
+                    </span>
+
+                </label>
+
+
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="8"
+                    placeholder="お問い合わせ内容をご入力ください。"
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- SUBMIT -->
+
+            <div class="contact-form__submit">
+
+
+                <p>
+
+                    Please make sure all information
+                    is correct before sending.
+
+                </p>
+
+
+                <button
+                    type="submit"
+                    class="contact-submit"
+                >
+
+                    <span>
+                        SEND MESSAGE
+                    </span>
+
+                    <i class="ri-arrow-right-up-line"></i>
+
+                </button>
+
+
+            </div>
+
+
+        </form>
+
+
+    </div>
+
+
+</section>
+
+<!--==================================================
+CONTACT NOTES
+==================================================-->
+
+<section class="contact-notes">
+
+
+    <div class="container">
+
+
+        <div class="contact-notes__grid">
+
+
+            <!-- LEFT -->
+
+            <div class="contact-notes__title">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <h2>
+                    BEFORE<br>
+                    CONTACT.
+                </h2>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="contact-notes__content">
+
+
+                <div class="contact-note">
+
+                    <span class="contact-note__number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            RESPONSE
+                        </h3>
+
+                        <p>
+                            お問い合わせ内容を確認後、
+                            担当者よりご連絡いたします。
+                            内容によっては返信まで数日いただく
+                            場合があります。
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-note">
+
+                    <span class="contact-note__number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            BUSINESS INQUIRY
+                        </h3>
+
+                        <p>
+                            スポンサーシップ、イベント、
+                            コラボレーション、メディア掲載などの
+                            ご相談もお気軽にお問い合わせください。
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="contact-note">
+
+                    <span class="contact-note__number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            PRIVACY
+                        </h3>
+
+                        <p>
+                            ご入力いただいた個人情報は、
+                            お問い合わせへの対応および
+                            ご連絡のためにのみ使用します。
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!--==================================================
+CONTACT CTA
+==================================================-->
+
+<section class="contact-cta">
+
+
+    <div class="container">
+
+
+        <div class="contact-cta__box">
+
+
+            <div class="contact-cta__content">
+
+
+                <span>
+                    NIDMEGENT ESPORTS
+                </span>
+
+
+                <h2>
+
+                    LET'S BUILD<br>
+                    THE NEXT ERA.
+
+                </h2>
+
+
+                <p>
+
+                    Keep Pushing Forward.<br>
+                    Claim the Top.
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="contact-cta__mark">
+
+                <i class="ri-arrow-right-up-line"></i>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+</main>
+
+
+
+<!--==================================================
+FOOTER
+==================================================-->
+
+<footer class="footer">
+
+
+    <div class="container">
+
+
+        <div class="footer__top">
+
+
+            <!-- BRAND -->
+
+            <div class="footer__brand">
+
+
+                <img
+                    src="logo/logo-back.png"
+                    alt="Nidmegent Logo"
+                >
+
+
+                <p>
+                    Keep Pushing Forward.<br>
+                    Claim the Top.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- MENU -->
+
+            <div class="footer__menu">
+
+
+                <!-- MENU -->
+
+                <div>
+
+                    <h4>
+                        MENU
+                    </h4>
+
+
+                    <a href="about.html">
+                        ABOUT
+                    </a>
+
+
+                    <a href="team.html">
+                        TEAMS
+                    </a>
+
+
+                    <a href="news.html">
+                        NEWS
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="active"
+                    >
+                        CONTACT
+                    </a>
+
+                </div>
+
+
+
+                <!-- COMPANY -->
+
+                <div>
+
+                    <h4>
+                        COMPANY
+                    </h4>
+
+
+                    <a
+                        href="https://mellenastudio.github.io/official/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Mellena Studio
+                    </a>
+
+                </div>
+
+
+
+                <!-- SOCIAL -->
+
+                <div>
+
+                    <h4>
+                        SOCIAL
+                    </h4>
+
+
+                    <a
+                        href="https://x.com/Nidmegent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        X
+                    </a>
+
+
+                    <a
+                        href="https://www.youtube.com/@Nidmegent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        YouTube
+                    </a>
+
+
+                    <a
+                        href="https://discord.com/invite/24CjQUFqbp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Discord
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer__bottom">
+
+
+            <span>
+                © 2026 Nidmegent Esports. All Rights Reserved.
+            </span>
+
+
+            <span>
+                EST.2018
+            </span>
+
+
+        </div>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!--==================================================
+CONTACT SCRIPT
+==================================================-->
+
+<script src="contact.js"></script>
+
+
+</body>
+
+</html>
