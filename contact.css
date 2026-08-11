@@ -1296,7 +1296,96 @@ SMALL MOBILE
 
 }
 
+/*==================================================
+FORM LOADING
+==================================================*/
 
+.contact-submit.is-loading i{
+
+    animation:contactSpin .8s linear infinite;
+
+}
+
+
+@keyframes contactSpin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+/*==================================================
+SUCCESS MESSAGE
+==================================================*/
+
+.form-success{
+
+    animation:contactSuccess .5s ease;
+
+}
+
+
+@keyframes contactSuccess{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==================================================
+ERROR
+==================================================*/
+
+.form-error{
+
+    animation:contactError .3s ease;
+
+}
+
+
+@keyframes contactError{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-5px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
 
 /*==================================================
 END
