@@ -1,253 +1,77 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>News | Nidmegent Esports</title>
-
-    <!-- Remix Icon -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
-    >
-
-    <!-- Favicon -->
-    <link
-        rel="icon"
-        href="favicon.ico"
-        type="image/x-icon"
-    >
-
-    <!-- Main CSS -->
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-    <!-- News CSS -->
-    <link
-        rel="stylesheet"
-        href="news.css"
-    >
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWS | Nidmegent Esports</title>
+<!-- Remix Icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+<!-- News CSS -->
+<link rel="stylesheet" href="news.css">
 </head>
-
-
 <body>
-
-
 <!--==================================================
 HEADER
 ==================================================-->
-
 <header class="header">
-
-    <div class="container">
-
-        <!-- Logo -->
-
-        <a
-            href="index.html"
-            class="logo"
-        >
-
-            <img
-                src="logo/logo-back.png"
-                alt="Nidmegent Logo"
-            >
-
-        </a>
-
-
-        <!-- Navigation -->
-
-        <nav class="nav">
-
-            <ul class="nav__list">
-
-                <li>
-
-                    <a href="index.html#about">
-                        ABOUT
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="team.html">
-                        TEAMS
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a
-                        href="news.html"
-                        class="active"
-                    >
-                        NEWS
-                    </a>
-
-                </li>
-
-                <li>
-
-                    <a href="index.html#contact">
-                        CONTACT
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </nav>
-
-
-        <!-- Mobile Menu -->
-
-        <button
-            class="menu"
-            aria-label="Open Menu"
-        >
-
-            <i class="ri-menu-3-line"></i>
-
-        </button>
-
-    </div>
-
+<div class="container">
+<!-- Logo -->
+<a href="index.html" class="logo">
+<img src="logo/logo-back.png" alt="Nidmegent Logo">
+</a>
+<!-- Navigation -->
+<nav class="nav">
+<ul class="nav__list">
+<li><a href="index.html#about">ABOUT</a></li>
+<li><a href="players.html">PLAYERS</a></li>
+<li><a href="news.html" class="active">NEWS</a></li>
+<li><a href="index.html#contact">CONTACT</a></li>
+</ul>
+</nav>
+<!-- Mobile Menu -->
+<button class="menu" aria-label="Open Menu">
+<i class="ri-menu-3-line"></i>
+</button>
+</div>
 </header>
-
-
-
 <!--==================================================
 NEWS HERO
 ==================================================-->
-
 <section class="news-hero">
-
-    <div class="container">
-
-        <div class="news-hero__content">
-
-            <span class="news-hero__eyebrow">
-
-                NIDMEGENT ESPORTS
-
-            </span>
-
-
-            <h1 class="news-hero__title">
-
-                NEWS
-
-            </h1>
-
-
-            <p class="news-hero__subtitle">
-
-                Latest news, updates,
-                events and announcements
-                from Nidmegent Esports.
-
-            </p>
-
-
-            <div class="news-hero__line"></div>
-
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="news-hero__content">
+<span class="news-hero__eyebrow">NIDMEGENT ESPORTS</span>
+<h1 class="news-hero__title">NEWS</h1>
+<p class="news-hero__subtitle">Latest news, updates,events and announcementsfrom Nidmegent Esports.</p>
+<div class="news-hero__line"></div>
+</div>
+</div>
 </section>
-
-
-
 <!--==================================================
 NEWS
 ==================================================-->
-
-<section
-    class="news-page section"
-    id="news"
->
-
-    <div class="container">
-
-
-        <!-- Section Header -->
-
-        <div class="section-header">
-
-            <span class="section-number">
-                01
-            </span>
-
-            <h2 class="section-title">
-                LATEST NEWS
-            </h2>
-
-        </div>
-
-
-
-        <!--==================================================
-        FILTER
-        ==================================================-->
-
-        <div class="news-filter">
-
-            <button
-                class="news-filter__btn active"
-                data-filter="all"
-            >
-                ALL
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="team"
-            >
-                TEAM
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="event"
-            >
-                EVENT
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="information"
-            >
-                INFORMATION
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="creator"
-            >
-                CREATOR
-            </button>
-
-        </div>
-
-
+<section class="news-page section"id="news">
+<div class="container">
+<!-- Section Header -->
+<div class="section-header">
+<span class="section-number">01</span>
+<h2 class="section-title">LATEST NEWS</h2>
+</div>
+<!--==================================================
+FILTER
+==================================================-->
+<div class="news-filter">
+<button class="news-filter__btn active"data-filter="all">ALL</button>
+<button class="news-filter__btn" data-filter="players">PLAYERS</button>
+<button class="news-filter__btn" data-filter="event">EVENT</button>
+<button class="news-filter__btn" data-filter="information">INFORMATION</button>
+<button class="news-filter__btn" data-filter="creator">CREATOR
+</button>
+</div>
 
         <!--==================================================
         NEWS LIST
@@ -592,54 +416,6 @@ NEWS
 
 </section>
 
-
-
-<!--==================================================
-JOIN US
-==================================================-->
-
-<section class="join section">
-
-    <div class="container">
-
-        <div class="join-box">
-
-            <span>
-                NIDMEGENT ESPORTS
-            </span>
-
-
-            <h2>
-                JOIN OUR TEAM
-            </h2>
-
-
-            <p>
-
-                We're always looking for
-                passionate players, creators
-                and staff who want to grow
-                together with Nidmegent Esports.
-
-            </p>
-
-
-            <a
-                href="index.html#contact"
-                class="join-button"
-            >
-
-                CONTACT US
-
-                <i class="ri-arrow-right-line"></i>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
