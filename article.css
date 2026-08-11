@@ -883,3 +883,30 @@ MOBILE
     }
 
 }
+
+/*==================================================
+ARTICLE JS ANIMATION
+==================================================*/
+
+.article-fade{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+
+        opacity .7s ease,
+
+        transform .7s ease;
+
+}
+
+
+.article-visible{
+
+    opacity:1;
+
+    transform:none;
+
+}
