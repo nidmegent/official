@@ -1,7 +1,18 @@
 /*==================================================
 NIDMEGENT ESPORTS
-CONTACT PAGE SCRIPT
+CONTACT - EMAILJS
 ==================================================*/
+
+
+/*==================================================
+EMAILJS SETTINGS
+==================================================*/
+
+const EMAILJS_PUBLIC_KEY = "WeWC6-HJ6YzhiZ5Rv";
+
+const EMAILJS_SERVICE_ID = "service_eo6skbr";
+
+const EMAILJS_TEMPLATE_ID = "template_7inesum";
 
 
 /*==================================================
@@ -12,10 +23,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     /*==================================================
+    EMAILJS INIT
+    ==================================================*/
+
+    if (typeof emailjs !== "undefined") {
+
+        emailjs.init({
+
+            publicKey: EMAILJS_PUBLIC_KEY
+
+        });
+
+        console.log(
+            "%cEmailJS initialized",
+            "color:#2962FF;font-weight:bold;"
+        );
+
+    } else {
+
+        console.error(
+            "EmailJS is not loaded."
+        );
+
+    }
+
+
+    /*==================================================
     HEADER
     ==================================================*/
 
-    const header = document.querySelector(".header");
+    const header =
+        document.querySelector(".header");
+
 
     if (header) {
 
@@ -33,9 +72,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         };
 
+
         updateHeader();
 
-        window.addEventListener("scroll", updateHeader);
+        window.addEventListener(
+            "scroll",
+            updateHeader
+        );
 
     }
 
@@ -44,185 +87,164 @@ document.addEventListener("DOMContentLoaded", () => {
     MOBILE MENU
     ==================================================*/
 
-    const menuButton = document.querySelector(".menu");
-    const nav = document.querySelector(".nav");
+    const menuButton =
+        document.querySelector(".menu");
+
+    const nav =
+        document.querySelector(".nav");
+
 
     if (menuButton && nav) {
 
-        menuButton.addEventListener("click", () => {
+        menuButton.addEventListener(
+            "click",
+            () => {
 
-            nav.classList.toggle("active");
+                nav.classList.toggle("active");
 
-            const isOpen = nav.classList.contains("active");
+                const isOpen =
+                    nav.classList.contains("active");
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                        ? "true"
+                        : "false"
+                );
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        nav.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+            });
+
+    }
+
+
+    /*==================================================
+    FORM
+    ==================================================*/
+
+    const form =
+        document.querySelector(".contact-form");
+
+
+    if (form) {
+
+        form.addEventListener(
+            "submit",
+            handleFormSubmit
+        );
+
+    }
+
+
+    /*==================================================
+    CLEAR ERRORS
+    ==================================================*/
+
+    document
+        .querySelectorAll(
+            ".contact-form input, .contact-form select, .contact-form textarea"
+        )
+        .forEach(field => {
+
+            field.addEventListener(
+                "input",
+                () => {
+
+                    clearFieldError(field);
+
+                }
+            );
+
+
+            field.addEventListener(
+                "change",
+                () => {
+
+                    clearFieldError(field);
+
+                }
             );
 
         });
 
 
-        /*==============================
-        CLOSE MENU
-        ==============================*/
-
-        document.querySelectorAll(".nav a").forEach(link => {
-
-            link.addEventListener("click", () => {
-
-                nav.classList.remove("active");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-            });
-
-        });
-
-    }
-
-
     /*==================================================
-    SCROLL FADE
+    FADE UP
     ==================================================*/
 
-    const fadeItems = document.querySelectorAll(
-        ".fade-up, .contact-note, .contact-cta__box"
-    );
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-
-            entries => {
-
-                entries.forEach(entry => {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("show");
-
-                        observer.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-
-            {
-                threshold: 0.12
-            }
-
+    const fadeItems =
+        document.querySelectorAll(
+            ".fade-up, .contact-note, .contact-cta__box"
         );
 
 
-        fadeItems.forEach(item => {
+    if ("IntersectionObserver" in window) {
 
-            observer.observe(item);
+        const observer =
+            new IntersectionObserver(
 
-        });
+                entries => {
 
-    } else {
+                    entries.forEach(
+                        entry => {
 
-        fadeItems.forEach(item => {
+                            if (
+                                entry.isIntersecting
+                            ) {
 
-            item.classList.add("show");
+                                entry.target
+                                    .classList
+                                    .add("show");
 
-        });
+                                observer
+                                    .unobserve(
+                                        entry.target
+                                    );
 
-    }
+                            }
 
+                        }
+                    );
 
-    /*==================================================
-    CONTACT FORM
-    ==================================================*/
+                },
 
-    const form = document.querySelector(".contact-form");
+                {
 
-    if (form) {
+                    threshold:0.12
 
-        form.addEventListener("submit", handleFormSubmit);
+                }
 
-    }
-
-
-    /*==================================================
-    INPUT REAL-TIME ERROR CLEAR
-    ==================================================*/
-
-    const inputs = document.querySelectorAll(
-        ".contact-form input, .contact-form select, .contact-form textarea"
-    );
-
-    inputs.forEach(input => {
-
-        input.addEventListener("input", () => {
-
-            clearFieldError(input);
-
-        });
-
-        input.addEventListener("change", () => {
-
-            clearFieldError(input);
-
-        });
-
-    });
+            );
 
 
-    /*==================================================
-    SMOOTH SCROLL
-    ==================================================*/
+        fadeItems.forEach(
+            item => {
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-        anchor.addEventListener("click", function (event) {
-
-            const targetId = this.getAttribute("href");
-
-            if (!targetId || targetId === "#") {
-
-                return;
+                observer.observe(item);
 
             }
+        );
 
-            const target = document.querySelector(targetId);
-
-            if (!target) {
-
-                return;
-
-            }
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-
-                behavior: "smooth",
-
-                block: "start"
-
-            });
-
-        });
-
-    });
-
-
-    /*==================================================
-    PAGE LOAD
-    ==================================================*/
-
-    window.addEventListener("load", () => {
-
-        document.body.classList.add("loaded");
-
-    });
+    }
 
 
     console.log(
@@ -237,13 +259,20 @@ document.addEventListener("DOMContentLoaded", () => {
 FORM SUBMIT
 ==================================================*/
 
-function handleFormSubmit(event) {
+async function handleFormSubmit(event) {
 
     event.preventDefault();
 
-    const form = event.currentTarget;
 
-    const submitButton = form.querySelector(".contact-submit");
+    const form =
+        event.currentTarget;
+
+
+    const submitButton =
+        form.querySelector(
+            ".contact-submit"
+        );
+
 
     if (!submitButton) {
 
@@ -253,80 +282,108 @@ function handleFormSubmit(event) {
 
 
     /*==================================================
-    CLEAR OLD ERRORS
+    CLEAR ERRORS
     ==================================================*/
 
-    form.querySelectorAll(".form-error").forEach(error => {
+    form
+        .querySelectorAll(".form-error")
+        .forEach(error => {
 
-        error.remove();
+            error.remove();
 
-    });
-
-    form.querySelectorAll(".error").forEach(field => {
-
-        field.classList.remove("error");
-
-    });
+        });
 
 
-    /*==================================================
-    GET VALUES
-    ==================================================*/
+    form
+        .querySelectorAll(".error")
+        .forEach(field => {
 
-    const name = form.querySelector('[name="name"]');
-    const email = form.querySelector('[name="email"]');
-    const category = form.querySelector('[name="category"]');
-    const message = form.querySelector('[name="message"]');
-
-
-    let isValid = true;
-
-
-    /*==================================================
-    NAME VALIDATION
-    ==================================================*/
-
-    if (name) {
-
-        if (name.value.trim() === "") {
-
-            showFieldError(
-                name,
-                "お名前を入力してください。"
+            field.classList.remove(
+                "error"
             );
 
-            isValid = false;
+        });
 
-        }
+
+    /*==================================================
+    GET FIELDS
+    ==================================================*/
+
+    const name =
+        form.querySelector(
+            '[name="name"]'
+        );
+
+
+    const email =
+        form.querySelector(
+            '[name="email"]'
+        );
+
+
+    const category =
+        form.querySelector(
+            '[name="category"]'
+        );
+
+
+    const message =
+        form.querySelector(
+            '[name="message"]'
+        );
+
+
+    let valid = true;
+
+
+    /*==================================================
+    NAME
+    ==================================================*/
+
+    if (
+        name &&
+        name.value.trim() === ""
+    ) {
+
+        showFieldError(
+            name,
+            "お名前を入力してください。"
+        );
+
+        valid = false;
 
     }
 
 
     /*==================================================
-    EMAIL VALIDATION
+    EMAIL
     ==================================================*/
 
     if (email) {
 
-        const emailValue = email.value.trim();
+        const value =
+            email.value.trim();
 
-        if (emailValue === "") {
+
+        if (value === "") {
 
             showFieldError(
                 email,
                 "メールアドレスを入力してください。"
             );
 
-            isValid = false;
+            valid = false;
 
-        } else if (!isValidEmail(emailValue)) {
+        } else if (
+            !isValidEmail(value)
+        ) {
 
             showFieldError(
                 email,
                 "正しいメールアドレスを入力してください。"
             );
 
-            isValid = false;
+            valid = false;
 
         }
 
@@ -334,48 +391,53 @@ function handleFormSubmit(event) {
 
 
     /*==================================================
-    CATEGORY VALIDATION
+    CATEGORY
     ==================================================*/
 
-    if (category) {
+    if (
+        category &&
+        category.value === ""
+    ) {
 
-        if (category.value === "") {
+        showFieldError(
+            category,
+            "お問い合わせ内容を選択してください。"
+        );
 
-            showFieldError(
-                category,
-                "お問い合わせ内容を選択してください。"
-            );
-
-            isValid = false;
-
-        }
+        valid = false;
 
     }
 
 
     /*==================================================
-    MESSAGE VALIDATION
+    MESSAGE
     ==================================================*/
 
     if (message) {
 
-        if (message.value.trim() === "") {
+        const value =
+            message.value.trim();
+
+
+        if (value === "") {
 
             showFieldError(
                 message,
                 "お問い合わせ内容を入力してください。"
             );
 
-            isValid = false;
+            valid = false;
 
-        } else if (message.value.trim().length < 10) {
+        } else if (
+            value.length < 10
+        ) {
 
             showFieldError(
                 message,
                 "お問い合わせ内容を10文字以上入力してください。"
             );
 
-            isValid = false;
+            valid = false;
 
         }
 
@@ -383,12 +445,14 @@ function handleFormSubmit(event) {
 
 
     /*==================================================
-    INVALID
+    VALIDATION ERROR
     ==================================================*/
 
-    if (!isValid) {
+    if (!valid) {
 
-        const firstError = form.querySelector(".error");
+        const firstError =
+            form.querySelector(".error");
+
 
         if (firstError) {
 
@@ -396,9 +460,9 @@ function handleFormSubmit(event) {
 
             firstError.scrollIntoView({
 
-                behavior: "smooth",
+                behavior:"smooth",
 
-                block: "center"
+                block:"center"
 
             });
 
@@ -410,68 +474,172 @@ function handleFormSubmit(event) {
 
 
     /*==================================================
-    SUBMIT LOADING
+    EMAILJS CHECK
     ==================================================*/
 
-    const originalHTML = submitButton.innerHTML;
+    if (
+        typeof emailjs === "undefined"
+    ) {
 
-    submitButton.disabled = true;
+        showSubmitError(
+            form,
+            "メール送信システムを読み込めませんでした。"
+        );
 
-    submitButton.style.pointerEvents = "none";
+        return;
 
-    submitButton.innerHTML = `
-        <span>送信中...</span>
-        <i class="ri-loader-4-line"></i>
-    `;
-
-
-    submitButton.classList.add("is-loading");
+    }
 
 
     /*==================================================
-    DEMO SUBMIT
+    LOADING
     ==================================================*/
 
-    setTimeout(() => {
+    const originalHTML =
+        submitButton.innerHTML;
 
-        submitButton.classList.remove("is-loading");
+
+    submitButton.disabled = true;
+
+    submitButton.innerHTML = `
+
+        <span>送信中...</span>
+
+        <i class="ri-loader-4-line"></i>
+
+    `;
+
+
+    submitButton.classList.add(
+        "is-loading"
+    );
+
+
+    /*==================================================
+    EMAILJS PARAMETERS
+    ==================================================*/
+
+    const templateParams = {
+
+        name:
+            name
+                ? name.value.trim()
+                : "",
+
+
+        email:
+            email
+                ? email.value.trim()
+                : "",
+
+
+        category:
+            category
+                ? category.value
+                : "",
+
+
+        message:
+            message
+                ? message.value.trim()
+                : "",
+
+
+        time:
+            new Date().toLocaleString(
+                "ja-JP"
+            )
+
+    };
+
+
+    /*==================================================
+    SEND
+    ==================================================*/
+
+    try {
+
+        await emailjs.send(
+
+            EMAILJS_SERVICE_ID,
+
+            EMAILJS_TEMPLATE_ID,
+
+            templateParams
+
+        );
+
+
+        /*==============================================
+        SUCCESS
+        ==============================================*/
+
+        submitButton.classList.remove(
+            "is-loading"
+        );
+
 
         submitButton.innerHTML = `
+
             <span>送信完了</span>
+
             <i class="ri-check-line"></i>
+
         `;
 
-
-        /*==============================
-        SUCCESS
-        ==============================*/
 
         showSuccessMessage(form);
 
 
-        /*==============================
-        RESET
-        ==============================*/
-
         form.reset();
 
 
-        /*==============================
-        RESTORE BUTTON
-        ==============================*/
+        /*==============================================
+        RESTORE
+        ==============================================*/
 
         setTimeout(() => {
 
             submitButton.disabled = false;
 
-            submitButton.style.pointerEvents = "";
-
-            submitButton.innerHTML = originalHTML;
+            submitButton.innerHTML =
+                originalHTML;
 
         }, 3000);
 
 
-    }, 1200);
+    } catch (error) {
+
+        console.error(
+            "EmailJS Error:",
+            error
+        );
+
+
+        /*==============================================
+        ERROR
+        ==============================================*/
+
+        submitButton.classList.remove(
+            "is-loading"
+        );
+
+
+        submitButton.disabled = false;
+
+        submitButton.innerHTML =
+            originalHTML;
+
+
+        showSubmitError(
+
+            form,
+
+            "送信に失敗しました。時間をおいて再度お試しください。"
+
+        );
+
+    }
 
 }
 
@@ -482,35 +650,37 @@ EMAIL VALIDATION
 
 function isValidEmail(email) {
 
-    const pattern =
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    return pattern.test(email);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+        email
+    );
 
 }
 
 
 /*==================================================
-SHOW FIELD ERROR
+FIELD ERROR
 ==================================================*/
 
-function showFieldError(field, message) {
+function showFieldError(
+    field,
+    message
+) {
 
-    if (!field) {
-
-        return;
-
-    }
-
-
-    field.classList.add("error");
+    field.classList.add(
+        "error"
+    );
 
 
-    const error = document.createElement("p");
+    const error =
+        document.createElement("p");
 
-    error.className = "form-error";
 
-    error.textContent = message;
+    error.className =
+        "form-error";
+
+
+    error.textContent =
+        message;
 
 
     field.insertAdjacentElement(
@@ -527,24 +697,23 @@ CLEAR FIELD ERROR
 
 function clearFieldError(field) {
 
-    if (!field) {
-
-        return;
-
-    }
+    field.classList.remove(
+        "error"
+    );
 
 
-    field.classList.remove("error");
+    const error =
+        field.nextElementSibling;
 
-
-    const next = field.nextElementSibling;
 
     if (
-        next &&
-        next.classList.contains("form-error")
+        error &&
+        error.classList.contains(
+            "form-error"
+        )
     ) {
 
-        next.remove();
+        error.remove();
 
     }
 
@@ -552,32 +721,30 @@ function clearFieldError(field) {
 
 
 /*==================================================
-SUCCESS MESSAGE
+SUCCESS
 ==================================================*/
 
 function showSuccessMessage(form) {
 
-    /*==================================================
-    REMOVE EXISTING MESSAGE
-    ==================================================*/
+    const old =
+        form.querySelector(
+            ".form-success"
+        );
 
-    const oldMessage =
-        form.querySelector(".form-success");
 
-    if (oldMessage) {
+    if (old) {
 
-        oldMessage.remove();
+        old.remove();
 
     }
 
 
-    /*==================================================
-    CREATE MESSAGE
-    ==================================================*/
+    const success =
+        document.createElement("div");
 
-    const success = document.createElement("div");
 
-    success.className = "form-success";
+    success.className =
+        "form-success";
 
 
     success.innerHTML = `
@@ -590,11 +757,17 @@ function showSuccessMessage(form) {
 
         <div>
 
-            <strong>THANK YOU.</strong>
+            <strong>
+                THANK YOU.
+            </strong>
 
             <p>
+
                 お問い合わせありがとうございます。<br>
-                内容を確認のうえ、担当者よりご連絡いたします。
+
+                内容を確認のうえ、
+                担当者よりご連絡いたします。
+
             </p>
 
         </div>
@@ -602,109 +775,47 @@ function showSuccessMessage(form) {
     `;
 
 
-    /*==================================================
-    STYLE
-    ==================================================*/
+    success.style.display =
+        "flex";
 
-    success.style.display = "flex";
 
-    success.style.alignItems = "center";
+    success.style.alignItems =
+        "center";
 
-    success.style.gap = "25px";
 
-    success.style.marginTop = "35px";
+    success.style.gap =
+        "25px";
 
-    success.style.padding = "25px";
+
+    success.style.marginTop =
+        "35px";
+
+
+    success.style.padding =
+        "25px";
+
 
     success.style.border =
         "1px solid rgba(41,98,255,.25)";
 
-    success.style.borderRadius = "10px";
+
+    success.style.borderRadius =
+        "10px";
+
 
     success.style.background =
         "rgba(41,98,255,.04)";
 
-    success.style.opacity = "0";
 
-    success.style.transform =
-        "translateY(15px)";
-
-
-    /*==================================================
-    ICON
-    ==================================================*/
-
-    const icon = success.querySelector(
-        ".form-success__icon"
+    form.appendChild(
+        success
     );
 
-    icon.style.width = "50px";
-
-    icon.style.height = "50px";
-
-    icon.style.minWidth = "50px";
-
-    icon.style.display = "flex";
-
-    icon.style.alignItems = "center";
-
-    icon.style.justifyContent = "center";
-
-    icon.style.borderRadius = "50%";
-
-    icon.style.background =
-        "#2962FF";
-
-    icon.style.color =
-        "#fff";
-
-    icon.style.fontSize =
-        "1.4rem";
-
-
-    /*==================================================
-    TEXT
-    ==================================================*/
-
-    const strong = success.querySelector("strong");
-
-    strong.style.display = "block";
-
-    strong.style.marginBottom = "5px";
-
-    strong.style.fontSize = ".85rem";
-
-    strong.style.letterSpacing = ".15em";
-
-
-    const paragraph = success.querySelector("p");
-
-    paragraph.style.margin = "0";
-
-    paragraph.style.color = "#777";
-
-    paragraph.style.fontSize = ".85rem";
-
-    paragraph.style.lineHeight = "1.8";
-
-
-    /*==================================================
-    INSERT
-    ==================================================*/
-
-    form.appendChild(success);
-
-
-    /*==================================================
-    ANIMATION
-    ==================================================*/
 
     requestAnimationFrame(() => {
 
-        success.style.transition =
-            "opacity .5s ease, transform .5s ease";
-
-        success.style.opacity = "1";
+        success.style.opacity =
+            "1";
 
         success.style.transform =
             "translateY(0)";
@@ -712,21 +823,86 @@ function showSuccessMessage(form) {
     });
 
 
-    /*==================================================
-    SCROLL
-    ==================================================*/
-
     setTimeout(() => {
 
         success.scrollIntoView({
 
-            behavior: "smooth",
+            behavior:"smooth",
 
-            block: "center"
+            block:"center"
 
         });
 
-    }, 100);
+    },100);
+
+}
+
+
+/*==================================================
+SUBMIT ERROR
+==================================================*/
+
+function showSubmitError(
+    form,
+    message
+) {
+
+    const old =
+        form.querySelector(
+            ".submit-error"
+        );
+
+
+    if (old) {
+
+        old.remove();
+
+    }
+
+
+    const error =
+        document.createElement("div");
+
+
+    error.className =
+        "submit-error";
+
+
+    error.textContent =
+        message;
+
+
+    error.style.marginTop =
+        "25px";
+
+
+    error.style.padding =
+        "18px 20px";
+
+
+    error.style.border =
+        "1px solid rgba(255,59,48,.25)";
+
+
+    error.style.borderRadius =
+        "8px";
+
+
+    error.style.background =
+        "rgba(255,59,48,.04)";
+
+
+    error.style.color =
+        "#ff3b30";
+
+
+    error.style.fontSize =
+        ".85rem";
+
+
+    form.appendChild(
+        error
+    );
 
 }
 
@@ -735,45 +911,64 @@ function showSuccessMessage(form) {
 WINDOW RESIZE
 ==================================================*/
 
-window.addEventListener("resize", () => {
+window.addEventListener(
+    "resize",
+    () => {
 
-    const nav = document.querySelector(".nav");
+        const nav =
+            document.querySelector(
+                ".nav"
+            );
 
-    if (
-        window.innerWidth > 768 &&
-        nav &&
-        nav.classList.contains("active")
-    ) {
 
-        nav.classList.remove("active");
+        if (
+            window.innerWidth > 900 &&
+            nav
+        ) {
+
+            nav.classList.remove(
+                "active"
+            );
+
+        }
 
     }
-
-});
+);
 
 
 /*==================================================
-ESCAPE KEY
+ESC KEY
 ==================================================*/
 
-document.addEventListener("keydown", event => {
+document.addEventListener(
+    "keydown",
+    event => {
 
-    if (event.key !== "Escape") {
+        if (
+            event.key !== "Escape"
+        ) {
 
-        return;
+            return;
+
+        }
+
+
+        const nav =
+            document.querySelector(
+                ".nav"
+            );
+
+
+        if (nav) {
+
+            nav.classList.remove(
+                "active"
+            );
+
+        }
 
     }
-
-
-    const nav = document.querySelector(".nav");
-
-    if (nav) {
-
-        nav.classList.remove("active");
-
-    }
-
-});
+);
 
 
 /*==================================================
