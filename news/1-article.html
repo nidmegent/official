@@ -5,33 +5,43 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>
         Nidmegent Esportsからのお知らせ | Nidmegent Esports
     </title>
 
+
     <!-- Remix Icon -->
+
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
     >
 
+
     <!-- Favicon -->
+
     <link
         rel="icon"
         href="../favicon.ico"
         type="image/x-icon"
     >
 
+
     <!-- Main CSS -->
+
     <link
         rel="stylesheet"
         href="../style.css"
     >
 
-    <!-- News CSS -->
+
+    <!-- Article CSS -->
+
     <link
         rel="stylesheet"
         href="../article.css"
@@ -43,13 +53,14 @@
 <body>
 
 
-<!--====================================
+<!--==================================================
 HEADER
-=====================================-->
+==================================================-->
 
 <header class="header">
 
     <div class="container">
+
 
         <!-- LOGO -->
 
@@ -66,16 +77,20 @@ HEADER
         </a>
 
 
+
         <!-- NAVIGATION -->
 
         <nav class="nav">
 
             <ul class="nav__list">
 
+
                 <li>
 
                     <a href="../about.html">
+
                         ABOUT
+
                     </a>
 
                 </li>
@@ -84,7 +99,9 @@ HEADER
                 <li>
 
                     <a href="../players.html">
+
                         PLAYERS
+
                     </a>
 
                 </li>
@@ -96,7 +113,9 @@ HEADER
                         href="../news.html"
                         class="active"
                     >
+
                         NEWS
+
                     </a>
 
                 </li>
@@ -105,14 +124,18 @@ HEADER
                 <li>
 
                     <a href="../index.html#contact">
+
                         CONTACT
+
                     </a>
 
                 </li>
 
+
             </ul>
 
         </nav>
+
 
 
         <!-- MOBILE MENU -->
@@ -120,11 +143,13 @@ HEADER
         <button
             class="menu"
             type="button"
+            aria-label="Open menu"
         >
 
             <i class="ri-menu-3-line"></i>
 
         </button>
+
 
     </div>
 
@@ -132,126 +157,462 @@ HEADER
 
 
 
-<!--====================================
+<!--==================================================
 ARTICLE
-=====================================-->
+==================================================-->
 
-<main class="news-article">
-
-    <div class="container">
+<main class="article-page">
 
 
-        <!-- ARTICLE HEADER -->
+    <!--==================================================
+    ARTICLE HERO
+    ==================================================-->
 
-        <header class="news-article__header">
+    <section class="article-hero">
 
-            <div class="news-article__meta">
-
-                <span class="news-article__category">
-                    NEWS
-                </span>
+        <div class="container">
 
 
-                <time
-                    class="news-article__date"
-                    datetime="2026-08-10"
-                >
-                    2026.08.10
-                </time>
+            <div class="article-hero__inner">
+
+
+                <!-- META -->
+
+                <div class="article-meta">
+
+
+                    <span class="article-category">
+
+                        NEWS
+
+                    </span>
+
+
+                    <time
+                        class="article-date"
+                        datetime="2026-08-10"
+                    >
+
+                        2026.08.10
+
+                    </time>
+
+
+                </div>
+
+
+
+                <!-- TITLE -->
+
+                <h1 class="article-title">
+
+                    Nidmegent Esportsからのお知らせ
+
+                </h1>
+
+
+
+                <!-- LEAD -->
+
+                <p class="article-lead">
+
+                    Nidmegent Esportsに関する
+                    最新のお知らせをお届けします。
+
+                </p>
+
+
+
+                <!-- LINE -->
+
+                <div class="article-line"></div>
+
 
             </div>
 
+        </div>
 
-            <h1>
-
-                Nidmegent Esportsからのお知らせ
-
-            </h1>
-
-
-            <p class="news-article__lead">
-
-                Nidmegent Esportsに関する
-                最新のお知らせをお届けします。
-
-            </p>
-
-        </header>
+    </section>
 
 
 
-        <!--====================================
-        ARTICLE BODY
-        =====================================-->
+    <!--==================================================
+    ARTICLE CONTENT
+    ==================================================-->
 
-        <article class="news-article__body">
+    <section class="article-content">
 
-
-            <p>
-
-                ここにニュース本文を入力します。
-
-            </p>
+        <div class="container">
 
 
-            <p>
-
-                Nidmegent Esportsは、
-
-                「Keep Pushing Forward. Claim the Top.」
-
-                を掲げ、活動しています。
-
-            </p>
+            <div class="article-layout">
 
 
-            <h2>
+                <!--==================================================
+                MAIN
+                ==================================================-->
 
-                今後について
-
-            </h2>
-
-
-            <p>
-
-                今後もNidmegent Esportsを
-                よろしくお願いいたします。
-
-            </p>
+                <article class="article-body">
 
 
-        </article>
+                    <!-- IMAGE -->
+
+                    <div class="article-image">
+
+                        <!--
+                        画像を使用する場合：
+
+                        <img
+                            src="../images/news01.jpg"
+                            alt="Nidmegent Esports"
+                        >
+
+                        -->
+
+                        <div class="article-image__placeholder">
+
+                            <span>
+                                NIDMEGENT
+                            </span>
+
+                            <strong>
+                                NEWS
+                            </strong>
+
+                        </div>
+
+                    </div>
 
 
 
-        <!--====================================
-        BACK
-        =====================================-->
+                    <!-- DATE -->
 
-        <div class="news-article__back">
+                    <div class="article-body__date">
 
-            <a href="../news.html">
+                        2026.08.10
 
-                <i class="ri-arrow-left-line"></i>
+                    </div>
 
-                <span>
-                    BACK TO NEWS
-                </span>
 
-            </a>
+
+                    <!-- TEXT -->
+
+                    <p>
+
+                        ここにニュース本文を入力します。
+
+                    </p>
+
+
+                    <p>
+
+                        Nidmegent Esportsは、
+
+                        「Keep Pushing Forward.
+                        Claim the Top.」
+
+                        を掲げ、活動しています。
+
+                    </p>
+
+
+
+                    <!-- HEADING -->
+
+                    <h2>
+
+                        Nidmegent Esportsについて
+
+                    </h2>
+
+
+                    <p>
+
+                        Nidmegent Esportsでは、
+
+                        PLAYER・CREATOR・STREAMERなど、
+                        様々な分野で活動するメンバーとともに、
+
+                        新しい時代のeスポーツを目指して
+                        活動しています。
+
+                    </p>
+
+
+
+                    <!-- HEADING -->
+
+                    <h2>
+
+                        今後について
+
+                    </h2>
+
+
+                    <p>
+
+                        今後も大会やイベント、
+                        コンテンツ制作など、
+
+                        Nidmegent Esportsならではの
+                        様々な活動を展開していきます。
+
+                    </p>
+
+
+                    <p>
+
+                        これからもNidmegent Esportsを
+                        よろしくお願いいたします。
+
+                    </p>
+
+
+
+                    <!-- QUOTE -->
+
+                    <blockquote>
+
+                        <span>
+                            NIDMEGENT ESPORTS
+                        </span>
+
+                        <strong>
+                            Keep Pushing Forward.
+                            Claim the Top.
+                        </strong>
+
+                    </blockquote>
+
+
+
+                    <!-- SHARE -->
+
+                    <div class="article-share">
+
+
+                        <span>
+
+                            SHARE
+
+                        </span>
+
+
+                        <div class="article-share__links">
+
+
+                            <a
+                                href="https://x.com/intent/post?text=Nidmegent%20Esports%E3%81%8B%E3%82%89%E3%81%AE%E3%81%8A%E7%9F%A5%E3%82%89%E3%81%9B&url=https://nidmegent.github.io/test.newwebsite.nidmegent2.github/news/1-article.html"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Share on X"
+                            >
+
+                                <i class="ri-twitter-x-line"></i>
+
+                            </a>
+
+
+                            <a
+                                href="https://www.facebook.com/sharer/sharer.php?u=https://nidmegent.github.io/test.newwebsite.nidmegent2.github/news/1-article.html"
+                                target="_blank"
+                                rel="noopener"
+                                aria-label="Share on Facebook"
+                            >
+
+                                <i class="ri-facebook-fill"></i>
+
+                            </a>
+
+
+                            <button
+                                type="button"
+                                class="copy-link"
+                                aria-label="Copy article link"
+                            >
+
+                                <i class="ri-link"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!--==================================================
+                SIDEBAR
+                ==================================================-->
+
+                <aside class="article-sidebar">
+
+
+                    <div class="article-sidebar__block">
+
+
+                        <span>
+                            CATEGORY
+                        </span>
+
+
+                        <strong>
+                            NEWS
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <div class="article-sidebar__block">
+
+
+                        <span>
+                            PUBLISHED
+                        </span>
+
+
+                        <strong>
+                            2026.08.10
+                        </strong>
+
+
+                    </div>
+
+
+
+                    <div class="article-sidebar__block">
+
+
+                        <span>
+                            ORGANIZATION
+                        </span>
+
+
+                        <strong>
+                            NIDMEGENT<br>
+                            ESPORTS
+                        </strong>
+
+
+                    </div>
+
+
+                </aside>
+
+
+            </div>
 
         </div>
 
+    </section>
 
-    </div>
+
+
+    <!--==================================================
+    ARTICLE NAVIGATION
+    ==================================================-->
+
+    <section class="article-navigation">
+
+        <div class="container">
+
+
+            <div class="article-navigation__inner">
+
+
+                <!-- PREVIOUS -->
+
+                <a
+                    href="#"
+                    class="article-nav article-nav--prev"
+                >
+
+                    <span>
+
+                        <i class="ri-arrow-left-line"></i>
+
+                        PREVIOUS
+
+                    </span>
+
+
+                    <strong>
+
+                        Previous Article
+
+                    </strong>
+
+                </a>
+
+
+
+                <!-- ALL NEWS -->
+
+                <a
+                    href="../news.html"
+                    class="article-nav article-nav--all"
+                >
+
+                    <span>
+
+                        ALL NEWS
+
+                    </span>
+
+
+                    <i class="ri-grid-line"></i>
+
+                </a>
+
+
+
+                <!-- NEXT -->
+
+                <a
+                    href="#"
+                    class="article-nav article-nav--next"
+                >
+
+                    <span>
+
+                        NEXT
+
+                        <i class="ri-arrow-right-line"></i>
+
+                    </span>
+
+
+                    <strong>
+
+                        Next Article
+
+                    </strong>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
 
 </main>
 
 
 
-<!--====================================
+<!--==================================================
 FOOTER
-=====================================-->
+==================================================-->
 
 <footer class="footer">
 
@@ -282,12 +643,10 @@ FOOTER
 
 
 
-            <!-- FOOTER MENU -->
+            <!-- MENU -->
 
             <div class="footer__menu">
 
-
-                <!-- MENU -->
 
                 <div>
 
@@ -319,8 +678,6 @@ FOOTER
 
 
 
-                <!-- COMPANY -->
-
                 <div>
 
                     <h4>
@@ -333,14 +690,14 @@ FOOTER
                         target="_blank"
                         rel="noopener"
                     >
+
                         Mellena Studio
+
                     </a>
 
                 </div>
 
 
-
-                <!-- SOCIAL -->
 
                 <div>
 
@@ -354,7 +711,9 @@ FOOTER
                         target="_blank"
                         rel="noopener"
                     >
+
                         X
+
                     </a>
 
 
@@ -363,7 +722,9 @@ FOOTER
                         target="_blank"
                         rel="noopener"
                     >
+
                         YouTube
+
                     </a>
 
 
@@ -372,7 +733,9 @@ FOOTER
                         target="_blank"
                         rel="noopener"
                     >
+
                         Discord
+
                     </a>
 
                 </div>
@@ -384,9 +747,8 @@ FOOTER
 
 
 
-        <!-- FOOTER BOTTOM -->
-
         <div class="footer__bottom">
+
 
             <span>
 
@@ -402,6 +764,7 @@ FOOTER
 
             </span>
 
+
         </div>
 
 
@@ -411,11 +774,11 @@ FOOTER
 
 
 
-<!--====================================
-NEWS JS
-=====================================-->
+<!--==================================================
+ARTICLE JS
+==================================================-->
 
-<script src="../news.js"></script>
+<script src="../article.js"></script>
 
 
 </body>
