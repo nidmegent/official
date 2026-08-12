@@ -265,21 +265,55 @@ LOADER
 
     position:fixed;
 
-    inset:0;
+    top:0;
+    left:0;
 
-    z-index:99999;
+    width:100vw;
+    height:100vh;
 
-    display:flex;
+    background:#000000 !important;
 
-    align-items:center;
+    z-index:999999;
 
-    justify-content:center;
+    overflow:hidden;
 
-    background:#ffffff;
+}
 
-    transition:
-        opacity .8s ease,
-        visibility .8s ease;
+
+/*==================================================
+LOADER PANELS
+==================================================*/
+
+.loader-panel{
+
+    position:absolute;
+
+    top:0;
+
+    width:50vw;
+    height:100vh;
+
+    background:#000000 !important;
+
+    z-index:2;
+
+}
+
+
+/* LEFT */
+
+.loader-panel--left{
+
+    left:0;
+
+}
+
+
+/* RIGHT */
+
+.loader-panel--right{
+
+    right:0;
 
 }
 
@@ -290,14 +324,19 @@ LOADER CONTENT
 
 .loader__content{
 
-    width:min(420px,80%);
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    z-index:10;
 
     display:flex;
 
-    flex-direction:column;
-
     align-items:center;
-
     justify-content:center;
 
 }
@@ -309,117 +348,87 @@ LOGO
 
 .loader__logo{
 
-    width:clamp(180px,30vw,320px);
+    width:300px;
+
+    max-width:70vw;
 
     height:auto;
 
-    object-fit:contain;
+    filter:
+        brightness(0)
+        invert(1);
 
     opacity:0;
 
-    transform:scale(.85);
-
     animation:
-        loaderLogo .9s
+        loaderLogo
+        1s
         cubic-bezier(.22,1,.36,1)
+        .2s
         forwards;
 
 }
 
 
 /*==================================================
-LOADER LINE
-==================================================*/
-
-.loader__line{
-
-    width:180px;
-
-    height:2px;
-
-    margin-top:35px;
-
-    background:#e8e8e8;
-
-    overflow:hidden;
-
-    opacity:0;
-
-    animation:
-        loaderLine .6s ease
-        .4s forwards;
-
-}
-
-
-.loader__line span{
-
-    display:block;
-
-    width:100%;
-
-    height:100%;
-
-    background:#2962FF;
-
-    transform:translateX(-100%);
-
-    animation:
-        loaderProgress 1.2s
-        cubic-bezier(.65,0,.35,1)
-        .45s forwards;
-
-}
-
-
-/*==================================================
-LOGO ANIMATION
+LOGO APPEAR
 ==================================================*/
 
 @keyframes loaderLogo{
 
-    from{
+    0%{
 
         opacity:0;
 
-        transform:
-            scale(.85);
+        transform:scale(.8);
 
     }
 
-    to{
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/*==================================================
+LOADER EXIT
+==================================================*/
+
+.loader.loaded .loader__content{
+
+    animation:
+        loaderContentExit
+        .35s
+        ease
+        forwards;
+
+}
+
+
+@keyframes loaderContentExit{
+
+    0%{
 
         opacity:1;
 
         transform:
+            translate(-50%,-50%)
             scale(1);
 
     }
 
-}
-
-
-/*==================================================
-LINE APPEAR
-==================================================*/
-
-@keyframes loaderLine{
-
-    from{
+    100%{
 
         opacity:0;
 
         transform:
-            translateY(10px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
+            translate(-50%,-50%)
+            scale(1.08);
 
     }
 
@@ -427,39 +436,69 @@ LINE APPEAR
 
 
 /*==================================================
-PROGRESS
+LEFT → OUTSIDE
 ==================================================*/
 
-@keyframes loaderProgress{
+.loader.loaded .loader-panel--left{
 
-    from{
+    animation:
+        loaderLeftExit
+        1s
+        cubic-bezier(.76,0,.24,1)
+        forwards;
 
-        transform:
-            translateX(-100%);
+}
 
-    }
 
-    to{
+@keyframes loaderLeftExit{
+
+    0%{
 
         transform:
             translateX(0);
 
     }
 
+    100%{
+
+        transform:
+            translateX(-100%);
+
+    }
+
 }
 
 
 /*==================================================
-LOADER HIDE
+RIGHT → OUTSIDE
 ==================================================*/
 
-.loader.loaded{
+.loader.loaded .loader-panel--right{
 
-    opacity:0;
+    animation:
+        loaderRightExit
+        1s
+        cubic-bezier(.76,0,.24,1)
+        forwards;
 
-    visibility:hidden;
+}
 
-    pointer-events:none;
+
+@keyframes loaderRightExit{
+
+    0%{
+
+        transform:
+            translateX(0);
+
+    }
+
+    100%{
+
+        transform:
+            translateX(100%);
+
+    }
 
 }
 
@@ -475,41 +514,6 @@ MOBILE
         width:220px;
 
     }
-
-    .loader__line{
-
-        width:140px;
-
-        margin-top:28px;
-
-    }
-
-}
-
-
-/*==============================
-CURSOR
-==============================*/
-
-.cursor{
-
-    position:fixed;
-
-    width:18px;
-
-    height:18px;
-
-    border-radius:50%;
-
-    background:var(--blue);
-
-    pointer-events:none;
-
-    z-index:99999;
-
-    mix-blend-mode:difference;
-
-    transform:translate(-50%,-50%);
 
 }
 
