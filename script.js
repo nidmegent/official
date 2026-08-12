@@ -15,34 +15,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 /*==================================================
-
 LOADER
-
 ==================================================*/
 
 window.addEventListener("load", () => {
 
-    const loader = document.querySelector(".loader");
+    const loader =
+        document.querySelector(".loader");
 
     if (!loader) return;
 
-    const tl = gsap.timeline();
 
-    tl.to(".loader__text", {
-        opacity: 0,
-        y: -40,
-        duration: .8,
-        ease: "power3.out"
-    })
+    /*
+    少しだけロゴを見せる
+    */
 
-    .to(loader, {
-        opacity: 0,
-        duration: .7
-    })
+    setTimeout(() => {
 
-    .set(loader, {
-        display: "none"
-    });
+        loader.classList.add("loaded");
+
+    }, 1600);
+
+
+    /*
+    アニメーション終了後
+    Loader自体を完全に削除
+    */
+
+    setTimeout(() => {
+
+        loader.remove();
+
+    }, 2600);
 
 });
 
