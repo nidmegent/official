@@ -26,27 +26,11 @@ window.addEventListener("load", () => {
     if (!loader) return;
 
 
-    /*
-    少しだけロゴを見せる
-    */
-
     setTimeout(() => {
 
         loader.classList.add("loaded");
 
-    }, 1600);
-
-
-    /*
-    アニメーション終了後
-    Loader自体を完全に削除
-    */
-
-    setTimeout(() => {
-
-        loader.remove();
-
-    }, 2600);
+    }, 1400);
 
 });
 
