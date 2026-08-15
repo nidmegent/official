@@ -145,8 +145,8 @@ NEWS FILTER
 const filterButtons =
     document.querySelectorAll(".news-filter__btn");
 
-const newsCards =
-    document.querySelectorAll(".news-card");
+const newsItems =
+    document.querySelectorAll(".news-item");
 
 
 filterButtons.forEach(button => {
@@ -172,7 +172,7 @@ filterButtons.forEach(button => {
 
         /* NEWS表示 */
 
-        newsCards.forEach(card => {
+        newsItems.forEach(card => {
 
             const cardCategory =
                 card.dataset.category;
