@@ -545,21 +545,29 @@ window.addEventListener("load",()=>{
 ACHIEVEMENTS ACCORDION
 ==================================================*/
 
-const achievementItems = document.querySelectorAll(".achievement-item");
-
-achievementItems.forEach(item => {
-
-    const header = item.querySelector(".achievement-header");
+document.querySelectorAll(".achievement-header").forEach(header => {
 
     header.addEventListener("click", () => {
 
+        const item = header.closest(".achievement-item");
+
+        if (!item) return;
+
         const isActive = item.classList.contains("active");
 
-        achievementItems.forEach(el => {
 
-            el.classList.remove("active");
+        /* 他を閉じる */
 
-        });
+        document
+            .querySelectorAll(".achievement-item")
+            .forEach(otherItem => {
+
+                otherItem.classList.remove("active");
+
+            });
+
+
+        /* 押したものだけ開く */
 
         if (!isActive) {
 
