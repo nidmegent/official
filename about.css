@@ -857,14 +857,10 @@ ACHIEVEMENTS
 
     overflow:hidden;
 
-    isolation:isolate;
-
 }
 
 
-/*==================================================
-BACKGROUND TITLE
-==================================================*/
+/* 背景文字 */
 
 .achievements::before{
 
@@ -872,9 +868,9 @@ BACKGROUND TITLE
 
     position:absolute;
 
-    right:-80px;
-
     top:60px;
+
+    right:-80px;
 
     font-size:180px;
 
@@ -886,82 +882,51 @@ BACKGROUND TITLE
 
     color:#f5f5f5;
 
-    white-space:nowrap;
-
     pointer-events:none;
-
-    user-select:none;
 
     z-index:0;
 
 }
 
 
-/*==================================================
-MAIN CONTENT
-==================================================*/
+/* コンテンツ */
 
-.achievements > .container{
+.achievements .container{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
 }
 
 
-/*==================================================
-ACHIEVEMENT LIST
-==================================================*/
+/* LIST */
 
 .achievement-list{
 
     position:relative;
 
-    z-index:1;
+    z-index:2;
 
     border-top:1px solid var(--border);
 
 }
 
 
-/*==================================================
-ITEM
-==================================================*/
+/* ITEM */
 
 .achievement-item{
 
-    position:relative;
-
     border-bottom:1px solid var(--border);
 
-    transition:background .35s ease;
-
-    z-index:1;
-
 }
 
 
-.achievement-item:hover{
-
-    background:#fcfcfc;
-
-}
-
-
-/*==================================================
-HEADER
-==================================================*/
+/* HEADER */
 
 .achievement-header{
 
-    position:relative;
-
-    z-index:2;
-
     width:100%;
-
-    padding:40px 0;
 
     display:flex;
 
@@ -969,35 +934,26 @@ HEADER
 
     align-items:center;
 
-    cursor:pointer;
+    padding:40px 0;
 
-    background:transparent;
+    background:none;
 
     border:none;
 
     color:inherit;
+
+    cursor:pointer;
 
     text-align:left;
 
 }
 
 
-.achievement-header:hover{
-
-    color:var(--blue);
-
-}
-
-
-/* YEAR */
-
 .achievement-year{
 
     font-size:clamp(2rem,4vw,3.2rem);
 
     font-weight:900;
-
-    letter-spacing:-.05em;
 
 }
 
@@ -1008,18 +964,12 @@ HEADER
 
     font-size:2rem;
 
-    transition:
-
-        transform .4s ease,
-
-        color .3s ease;
+    transition:transform .4s ease;
 
 }
 
 
-/*==================================================
-OPEN
-==================================================*/
+/* OPEN ICON */
 
 .achievement-item.active
 .achievement-header i{
@@ -1031,54 +981,44 @@ OPEN
 }
 
 
-/*==================================================
-CONTENT
-==================================================*/
+/* CONTENT */
 
 .achievement-content{
-
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
 
     max-height:0;
 
     overflow:hidden;
 
-    padding:0;
-
     opacity:0;
+
+    padding:0;
 
     transition:
 
         max-height .6s ease,
 
-        padding .35s ease,
+        opacity .3s ease,
 
-        opacity .3s ease;
+        padding .3s ease;
 
 }
 
 
-/* OPEN CONTENT */
+/* OPEN */
 
 .achievement-item.active
 .achievement-content{
 
     max-height:1000px;
 
-    padding:0 0 45px;
-
     opacity:1;
+
+    padding-bottom:45px;
 
 }
 
 
-/*==================================================
-CATEGORY
-==================================================*/
+/* CATEGORY */
 
 .achievement-category{
 
@@ -1098,15 +1038,13 @@ CATEGORY
 
     margin-bottom:18px;
 
+    color:var(--blue);
+
     font-size:1rem;
 
     font-weight:800;
 
     letter-spacing:.18em;
-
-    color:var(--blue);
-
-    text-transform:uppercase;
 
 }
 
@@ -1130,8 +1068,6 @@ CATEGORY
 
     color:var(--text-light);
 
-    font-size:1.05rem;
-
 }
 
 
@@ -1143,11 +1079,11 @@ CATEGORY
 
     left:0;
 
-    top:11px;
+    top:10px;
 
-    width:8px;
+    width:7px;
 
-    height:8px;
+    height:7px;
 
     border-radius:50%;
 
@@ -1156,39 +1092,9 @@ CATEGORY
 }
 
 
-/*==================================================
-MOBILE
-==================================================*/
+/* MOBILE */
 
 @media(max-width:768px){
-
-    .achievement-header{
-
-        padding:28px 0;
-
-    }
-
-
-    .achievement-year{
-
-        font-size:2rem;
-
-    }
-
-
-    .achievement-header i{
-
-        font-size:1.5rem;
-
-    }
-
-
-    .achievement-category li{
-
-        font-size:.95rem;
-
-    }
-
 
     .achievements::before{
 
