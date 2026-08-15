@@ -280,7 +280,6 @@ NEWS PAGE
 
 }
 
-
 /*==================================================
 NEWS FILTER
 ==================================================*/
@@ -295,16 +294,15 @@ NEWS FILTER
 
     margin-bottom:70px;
 
-    padding-bottom:25px;
+    padding-bottom:20px;
 
-    border-bottom:1px solid var(--news-border);
+    border-bottom:1px solid var(--border);
 
     overflow-x:auto;
 
     scrollbar-width:none;
 
 }
-
 
 .news-filter::-webkit-scrollbar{
 
@@ -313,7 +311,9 @@ NEWS FILTER
 }
 
 
-/* Button */
+/*==================================================
+FILTER BUTTON
+==================================================*/
 
 .news-filter__btn{
 
@@ -323,36 +323,48 @@ NEWS FILTER
 
     padding:0;
 
-    color:#888;
+    color:#999;
 
-    font-size:.9rem;
+    font-size:.85rem;
 
-    font-weight:700;
+    font-weight:800;
 
-    letter-spacing:.15em;
+    letter-spacing:.16em;
 
     text-transform:uppercase;
 
-    transition:.35s;
+    transition:
+
+        color .3s ease;
 
 }
 
+
+/*==================================================
+HOVER
+==================================================*/
 
 .news-filter__btn:hover{
 
-    color:var(--news-blue);
+    color:var(--blue);
 
 }
 
+
+/*==================================================
+ACTIVE
+==================================================*/
 
 .news-filter__btn.active{
 
-    color:var(--news-blue);
+    color:var(--blue);
 
 }
 
 
-/* Underline */
+/*==================================================
+ACTIVE LINE
+==================================================*/
 
 .news-filter__btn::after{
 
@@ -362,20 +374,25 @@ NEWS FILTER
 
     left:0;
 
-    bottom:-27px;
+    bottom:-21px;
 
     width:0;
 
     height:2px;
 
-    background:var(--news-blue);
+    background:var(--blue);
 
-    transition:.35s;
+    transition:
+
+        width .35s cubic-bezier(
+            .25,
+            .46,
+            .45,
+            .94
+        );
 
 }
 
-
-.news-filter__btn:hover::after,
 
 .news-filter__btn.active::after{
 
@@ -385,19 +402,36 @@ NEWS FILTER
 
 
 /*==================================================
-NEWS LIST
+MOBILE
 ==================================================*/
 
-.news-list{
+@media(max-width:768px){
 
-    position:relative;
+    .news-filter{
 
-    display:flex;
+        gap:28px;
 
-    flex-direction:column;
+        margin-bottom:50px;
+
+        padding-bottom:18px;
+
+    }
+
+
+    .news-filter__btn{
+
+        font-size:.75rem;
+
+    }
+
+
+    .news-filter__btn::after{
+
+        bottom:-19px;
+
+    }
 
 }
-
 
 /*==================================================
 NEWS ITEM
