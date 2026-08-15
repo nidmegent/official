@@ -857,10 +857,14 @@ ACHIEVEMENTS
 
     overflow:hidden;
 
+    isolation:isolate;
+
 }
 
 
-/* 背景文字 */
+/*==================================================
+BACKGROUND TITLE
+==================================================*/
 
 .achievements::before{
 
@@ -868,9 +872,9 @@ ACHIEVEMENTS
 
     position:absolute;
 
-    top:60px;
-
     right:-80px;
+
+    top:60px;
 
     font-size:180px;
 
@@ -882,51 +886,82 @@ ACHIEVEMENTS
 
     color:#f5f5f5;
 
+    white-space:nowrap;
+
     pointer-events:none;
+
+    user-select:none;
 
     z-index:0;
 
 }
 
 
-/* コンテンツ */
+/*==================================================
+MAIN CONTENT
+==================================================*/
 
-.achievements .container{
+.achievements > .container{
 
     position:relative;
 
-    z-index:2;
+    z-index:1;
 
 }
 
 
-/* LIST */
+/*==================================================
+ACHIEVEMENT LIST
+==================================================*/
 
 .achievement-list{
 
     position:relative;
 
-    z-index:2;
+    z-index:1;
 
     border-top:1px solid var(--border);
 
 }
 
 
-/* ITEM */
+/*==================================================
+ITEM
+==================================================*/
 
 .achievement-item{
 
+    position:relative;
+
     border-bottom:1px solid var(--border);
+
+    transition:background .35s ease;
+
+    z-index:1;
 
 }
 
 
-/* HEADER */
+.achievement-item:hover{
+
+    background:#fcfcfc;
+
+}
+
+
+/*==================================================
+HEADER
+==================================================*/
 
 .achievement-header{
 
+    position:relative;
+
+    z-index:2;
+
     width:100%;
+
+    padding:40px 0;
 
     display:flex;
 
@@ -934,26 +969,35 @@ ACHIEVEMENTS
 
     align-items:center;
 
-    padding:40px 0;
+    cursor:pointer;
 
-    background:none;
+    background:transparent;
 
     border:none;
 
     color:inherit;
-
-    cursor:pointer;
 
     text-align:left;
 
 }
 
 
+.achievement-header:hover{
+
+    color:var(--blue);
+
+}
+
+
+/* YEAR */
+
 .achievement-year{
 
     font-size:clamp(2rem,4vw,3.2rem);
 
     font-weight:900;
+
+    letter-spacing:-.05em;
 
 }
 
@@ -964,12 +1008,18 @@ ACHIEVEMENTS
 
     font-size:2rem;
 
-    transition:transform .4s ease;
+    transition:
+
+        transform .4s ease,
+
+        color .3s ease;
 
 }
 
 
-/* OPEN ICON */
+/*==================================================
+OPEN
+==================================================*/
 
 .achievement-item.active
 .achievement-header i{
@@ -981,44 +1031,54 @@ ACHIEVEMENTS
 }
 
 
-/* CONTENT */
+/*==================================================
+CONTENT
+==================================================*/
 
 .achievement-content{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
 
     max-height:0;
 
     overflow:hidden;
 
-    opacity:0;
-
     padding:0;
+
+    opacity:0;
 
     transition:
 
         max-height .6s ease,
 
-        opacity .3s ease,
+        padding .35s ease,
 
-        padding .3s ease;
+        opacity .3s ease;
 
 }
 
 
-/* OPEN */
+/* OPEN CONTENT */
 
 .achievement-item.active
 .achievement-content{
 
     max-height:1000px;
 
-    opacity:1;
+    padding:0 0 45px;
 
-    padding-bottom:45px;
+    opacity:1;
 
 }
 
 
-/* CATEGORY */
+/*==================================================
+CATEGORY
+==================================================*/
 
 .achievement-category{
 
@@ -1038,13 +1098,15 @@ ACHIEVEMENTS
 
     margin-bottom:18px;
 
-    color:var(--blue);
-
     font-size:1rem;
 
     font-weight:800;
 
     letter-spacing:.18em;
+
+    color:var(--blue);
+
+    text-transform:uppercase;
 
 }
 
@@ -1068,6 +1130,8 @@ ACHIEVEMENTS
 
     color:var(--text-light);
 
+    font-size:1.05rem;
+
 }
 
 
@@ -1079,11 +1143,11 @@ ACHIEVEMENTS
 
     left:0;
 
-    top:10px;
+    top:11px;
 
-    width:7px;
+    width:8px;
 
-    height:7px;
+    height:8px;
 
     border-radius:50%;
 
@@ -1092,9 +1156,39 @@ ACHIEVEMENTS
 }
 
 
-/* MOBILE */
+/*==================================================
+MOBILE
+==================================================*/
 
 @media(max-width:768px){
+
+    .achievement-header{
+
+        padding:28px 0;
+
+    }
+
+
+    .achievement-year{
+
+        font-size:2rem;
+
+    }
+
+
+    .achievement-header i{
+
+        font-size:1.5rem;
+
+    }
+
+
+    .achievement-category li{
+
+        font-size:.95rem;
+
+    }
+
 
     .achievements::before{
 
