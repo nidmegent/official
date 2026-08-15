@@ -850,146 +850,329 @@ PRINT
 /*==================================================
 ACHIEVEMENTS
 ==================================================*/
+
 .achievements{
+
     position:relative;
+
     overflow:hidden;
-}
-.achievement-list{
-    border-top:1px solid var(--border);
-}
-.achievement-item{
-    border-bottom:1px solid var(--border);
-}
-/*==============================
-HEADER
-==============================*/
-.achievement-header{
-    width:100%;
-    padding:40px 0;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    cursor:pointer;
-    background:none;
-    border:none;
-    transition:.3s;
-}
-.achievement-header:hover{
-    color:var(--blue);
-}
-.achievement-year{
-    font-size:clamp(2rem,4vw,3.2rem);
-    font-weight:900;
-    letter-spacing:-.05em;
-}
-.achievement-header i{
-    font-size:2rem
-    transition:.4s;
-}
-/*==============================
-OPEN
-==============================*/
-.achievement-item.active .achievement-header i{
-    transform:rotate(45deg);
-    color:var(--blue);
-}
-/*==============================
-CONTENT
-==============================*/
-.achievement-content{
-    max-height:0;
-    overflow:hidden;
-    transition:
-    max-height .6s ease,
-    padding .35s ease;
-    padding:0;
-}
-.achievement-item.active .achievement-content{
-    max-height:700px;
-    padding:0 0 45px;
-}
-/*==============================
-CATEGORY
-==============================*/
-.achievement-category{
-    margin-bottom:40px;
-}
-.achievement-category:last-child{
-    margin-bottom:0;
-}
-.achievement-category h3{
-    font-size:1rem;
-    font-weight:800;
-    letter-spacing:.18em;
-    color:var(--blue);
-    text-transform:uppercase;
-    margin-bottom:18px;
-}
-.achievement-category ul{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-.achievement-category li{
-    position:relative;
-    padding-left:22px;
-    color:var(--text-light);
-    font-size:1.05rem;
-}
-.achievement-category li::before{
-    content:"";
-    position:absolute;
-    left:0;
-    top:11px;
-    width:8px;
-    height:8px;
-    border-radius:50%;
-    background:var(--blue);
-}
-/*==============================
-HOVER
-==============================*/
-.achievement-item{
-    transition:.35s;
-}
-.achievement-item:hover{
-    background:#fcfcfc;
+
+    /* 重なり順をこのセクション内で完結させる */
+    isolation:isolate;
+
 }
 
-/*==============================
-BACKGROUND TITLE
-==============================*/
-.achievements::before{
-    content:"RESULT";
-    position:absolute;
-    right:-80px;
-    top:60px;
-    font-size:180px;
-    font-weight:900;
-    letter-spacing:-.08em;
-    color:#f5f5f5;
-    pointer-events:none;
-    user-select:none;
+
+/*==================================================
+ACHIEVEMENT LIST
+==================================================*/
+
+.achievement-list{
+
+    position:relative;
+
+    z-index:2;
+
+    border-top:1px solid var(--border);
+
 }
-/*==============================
+
+
+.achievement-item{
+
+    position:relative;
+
+    border-bottom:1px solid var(--border);
+
+    transition:.35s;
+
+    z-index:2;
+
+}
+
+
+.achievement-item:hover{
+
+    background:#fcfcfc;
+
+}
+
+
+/*==================================================
+HEADER
+==================================================*/
+
+.achievement-header{
+
+    position:relative;
+
+    z-index:3;
+
+    width:100%;
+
+    padding:40px 0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    cursor:pointer;
+
+    background:none;
+
+    border:none;
+
+    transition:.3s;
+
+}
+
+
+.achievement-header:hover{
+
+    color:var(--blue);
+
+}
+
+
+.achievement-year{
+
+    font-size:clamp(2rem,4vw,3.2rem);
+
+    font-weight:900;
+
+    letter-spacing:-.05em;
+
+}
+
+
+.achievement-header i{
+
+    font-size:2rem;
+
+    transition:.4s;
+
+}
+
+
+/*==================================================
+OPEN
+==================================================*/
+
+.achievement-item.active .achievement-header i{
+
+    transform:rotate(45deg);
+
+    color:var(--blue);
+
+}
+
+
+/*==================================================
+CONTENT
+==================================================*/
+
+.achievement-content{
+
+    position:relative;
+
+    z-index:3;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    padding:0;
+
+    transition:
+        max-height .6s ease,
+        padding .35s ease;
+
+}
+
+
+.achievement-item.active .achievement-content{
+
+    max-height:700px;
+
+    padding:0 0 45px;
+
+}
+
+
+/*==================================================
+CATEGORY
+==================================================*/
+
+.achievement-category{
+
+    margin-bottom:40px;
+
+}
+
+
+.achievement-category:last-child{
+
+    margin-bottom:0;
+
+}
+
+
+.achievement-category h3{
+
+    font-size:1rem;
+
+    font-weight:800;
+
+    letter-spacing:.18em;
+
+    color:var(--blue);
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+
+.achievement-category ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+
+.achievement-category li{
+
+    position:relative;
+
+    padding-left:22px;
+
+    color:var(--text-light);
+
+    font-size:1.05rem;
+
+}
+
+
+.achievement-category li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:11px;
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+}
+
+
+/*==================================================
+BACKGROUND TITLE
+==================================================*/
+
+.achievements::before{
+
+    content:"RESULT";
+
+    position:absolute;
+
+    right:-80px;
+
+    top:60px;
+
+    font-size:180px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.08em;
+
+    color:#f5f5f5;
+
+    white-space:nowrap;
+
+    pointer-events:none;
+
+    user-select:none;
+
+    /*
+    ★ 背景文字を確実に後ろへ
+    */
+
+    z-index:0;
+
+}
+
+
+/*==================================================
+CONTENT LAYER
+==================================================*/
+
+.achievements > .container{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+/*==================================================
 RESPONSIVE
-==============================*/
+==================================================*/
+
 @media(max-width:768px){
+
     .achievement-header{
+
         padding:28px 0;
+
     }
+
+
     .achievement-year{
+
         font-size:2rem;
+
     }
+
+
     .achievement-header i{
+
         font-size:1.5rem;
+
     }
+
+
     .achievement-category li{
+
         font-size:.95rem;
+
     }
+
+
     .achievements::before{
+
         display:none;
+
     }
+
 }
 /*==================================================
 END
