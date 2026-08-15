@@ -138,108 +138,84 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
+/*==================================================
+NEWS FILTER
+==================================================*/
+
+const filterButtons =
+    document.querySelectorAll(".news-filter__btn");
+
+const newsCards =
+    document.querySelectorAll(".news-card");
 
 
-    /*==================================================
-    NEWS FILTER
-    ==================================================*/
+filterButtons.forEach(button => {
 
-    const filterButtons =
-        document.querySelectorAll(
-            ".news-filter__btn"
-        );
+    button.addEventListener("click", () => {
 
+        /* ACTIVE変更 */
 
-    const newsItems =
-        document.querySelectorAll(
-            ".news-item"
-        );
+        filterButtons.forEach(btn => {
 
+            btn.classList.remove("active");
 
-    filterButtons.forEach(button => {
+        });
+
+        button.classList.add("active");
 
 
-        button.addEventListener("click", () => {
+        /* CATEGORY */
+
+        const category =
+            button.dataset.category;
 
 
-            /* Active button */
+        /* NEWS表示 */
 
-            filterButtons.forEach(btn => {
+        newsCards.forEach(card => {
 
-                btn.classList.remove("active");
-
-            });
-
-
-            button.classList.add("active");
+            const cardCategory =
+                card.dataset.category;
 
 
-            /* Filter */
+            if(
+                category === "all" ||
+                cardCategory === category
+            ){
 
-            const filter =
-                button.dataset.filter;
+                card.style.display = "";
 
+                requestAnimationFrame(() => {
 
-            newsItems.forEach(item => {
+                    card.classList.remove("filter-hidden");
 
+                });
 
-                const category =
-                    item.dataset.category;
+            }else{
 
+                card.classList.add("filter-hidden");
 
-                const shouldShow =
-                    filter === "all" ||
-                    category === filter;
+                setTimeout(() => {
 
+                    if(
+                        card.classList.contains(
+                            "filter-hidden"
+                        )
+                    ){
 
-                if (shouldShow) {
+                        card.style.display = "none";
 
+                    }
 
-                    item.style.display = "grid";
+                },300);
 
-
-                    requestAnimationFrame(() => {
-
-                        item.classList.remove(
-                            "hide"
-                        );
-
-                    });
-
-
-                } else {
-
-
-                    item.classList.add(
-                        "hide"
-                    );
-
-
-                    setTimeout(() => {
-
-                        if (
-                            item.classList.contains(
-                                "hide"
-                            )
-                        ) {
-
-                            item.style.display =
-                                "none";
-
-                        }
-
-                    }, 350);
-
-                }
-
-            });
-
+            }
 
         });
 
     });
 
-
+});
 
     /*==================================================
     NEWS ITEM HOVER
