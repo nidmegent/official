@@ -955,21 +955,7 @@ HOVER
 .achievement-item:hover{
     background:#fcfcfc;
 }
-/*==============================
-BACKGROUND TITLE
-==============================*/
-.achievements::before{
-    content:"RESULT";
-    position:absolute;
-    right:-80px;
-    top:60px;
-    font-size:180px;
-    font-weight:900;
-    letter-spacing:-.08em;
-    color:#f5f5f5;
-    pointer-events:none;
-    user-select:none;
-}
+
 /*==============================
 RESPONSIVE
 ==============================*/
