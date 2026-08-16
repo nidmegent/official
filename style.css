@@ -608,6 +608,26 @@ HEADER
 }
 
 /*==================================================
+MENU BUTTON
+==================================================*/
+
+.menu{
+
+    display:none;
+
+    width:52px;
+
+    height:52px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.8rem;
+
+}
+
+/*==================================================
 
 HERO
 
