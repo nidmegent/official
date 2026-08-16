@@ -142,127 +142,80 @@ document.addEventListener("DOMContentLoaded", () => {
 NEWS FILTER
 ==================================================*/
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+const filterButtons =
+    document.querySelectorAll(".news-filter__btn");
 
-        const buttons =
-            document.querySelectorAll(
-                ".news-filter__btn"
-            );
-
-        const cards =
-            document.querySelectorAll(
-                ".news-card"
-            );
+const newsCards =
+    document.querySelectorAll(".news-card");
 
 
-        if(
-            !buttons.length ||
-            !cards.length
-        ){
+filterButtons.forEach(button => {
 
-            return;
+    button.addEventListener("click", () => {
 
-        }
+        /* ACTIVE変更 */
 
+        filterButtons.forEach(btn => {
 
-        buttons.forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    /*------------------------------
-                    ACTIVE
-                    ------------------------------*/
-
-                    buttons.forEach(btn => {
-
-                        btn.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-                    button.classList.add(
-                        "active"
-                    );
-
-
-                    /*------------------------------
-                    CATEGORY
-                    ------------------------------*/
-
-                    const category =
-                        button.dataset.category;
-
-
-                    /*------------------------------
-                    FILTER
-                    ------------------------------*/
-
-                    cards.forEach(card => {
-
-                        const cardCategory =
-                            card.dataset.category;
-
-
-                        const show =
-                            category === "all" ||
-                            cardCategory === category;
-
-
-                        if(show){
-
-                            card.style.display =
-                                "";
-
-                            requestAnimationFrame(
-                                () => {
-
-                                    card.classList.remove(
-                                        "filter-hidden"
-                                    );
-
-                                }
-                            );
-
-                        }else{
-
-                            card.classList.add(
-                                "filter-hidden"
-                            );
-
-                            setTimeout(
-                                () => {
-
-                                    if(
-                                        card.classList.contains(
-                                            "filter-hidden"
-                                        )
-                                    ){
-
-                                        card.style.display =
-                                            "none";
-
-                                    }
-
-                                },
-                                400
-                            );
-
-                        }
-
-                    });
-
-                }
-            );
+            btn.classList.remove("active");
 
         });
 
-    }
-);
+        button.classList.add("active");
+
+
+        /* CATEGORY */
+
+        const category =
+            button.dataset.category;
+
+
+        /* NEWS表示 */
+
+        newsCards.forEach(card => {
+
+            const cardCategory =
+                card.dataset.category;
+
+
+            if(
+                category === "all" ||
+                cardCategory === category
+            ){
+
+                card.style.display = "";
+
+                requestAnimationFrame(() => {
+
+                    card.classList.remove("filter-hidden");
+
+                });
+
+            }else{
+
+                card.classList.add("filter-hidden");
+
+                setTimeout(() => {
+
+                    if(
+                        card.classList.contains(
+                            "filter-hidden"
+                        )
+                    ){
+
+                        card.style.display = "none";
+
+                    }
+
+                },300);
+
+            }
+
+        });
+
+    });
+
+});
 
     /*==================================================
     NEWS ITEM HOVER
