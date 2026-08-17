@@ -223,23 +223,19 @@ SPONSOR BACKGROUND
     position:absolute;
 
     right:-150px;
-
-    top:100px;
+    top:160px;
 
     font-size:190px;
-
     font-weight:900;
-
     line-height:1;
-
     letter-spacing:-.08em;
 
     color:#f7f7f7;
 
     pointer-events:none;
-
     user-select:none;
 
+    z-index:0;
 }
 
 
@@ -814,19 +810,19 @@ SPONSORSHIP BACKGROUND
     position:absolute;
 
     right:-120px;
-
-    top:120px;
+    top:160px;
 
     font-size:180px;
-
     font-weight:900;
-
+    line-height:1;
     letter-spacing:-.08em;
 
     color:#f7f7f7;
 
     pointer-events:none;
+    user-select:none;
 
+    z-index:0;
 }
 
 
@@ -1607,6 +1603,22 @@ REDUCED MOTION
 
 }
 
+.sponsors > .container,
+.sponsorship > .container{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.sponsors,
+.sponsorship{
+
+    position:relative;
+    overflow:hidden;
+    isolation:isolate;
+
+}
 
 /*==================================================
 END
