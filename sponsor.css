@@ -349,6 +349,27 @@ CARD BACKGROUND NUMBER
 }
 
 /*==================================================
+SPONSOR CARD BACKGROUND TYPE
+==================================================*/
+
+/* PARTNERカード */
+
+.sponsor-card.partner::before{
+
+    content:"PARTNER";
+
+}
+
+
+/* SPONSORカード */
+
+.sponsor-card.sponsor::before{
+
+    content:"SPONSOR";
+
+}
+
+/*==================================================
 CARD TOP
 ==================================================*/
 
