@@ -258,28 +258,6 @@ SPONSOR GRID
 }
 
 /*==================================================
-SPONSOR CARD BACKGROUND TYPE
-==================================================*/
-
-/* PARTNERカード */
-
-.sponsor-card.partner::before{
-
-    content:"PARTNER";
-
-}
-
-
-/* SPONSORカード */
-
-.sponsor-card.sponsor::before{
-
-    content:"SPONSOR";
-
-}
-
-
-/*==================================================
 SPONSOR CARD
 ==================================================*/
 
