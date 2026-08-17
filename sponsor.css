@@ -1,0 +1,1613 @@
+/*==================================================
+NIDMEGENT SPONSOR PAGE
+==================================================*/
+
+/*==================================================
+ROOT
+==================================================*/
+
+:root{
+
+    --sponsor-blue:#2962FF;
+    --sponsor-black:#111111;
+    --sponsor-text:#1a1a1a;
+    --sponsor-gray:#777777;
+    --sponsor-light:#f7f7f7;
+    --sponsor-border:#e8e8e8;
+
+}
+
+
+/*==================================================
+SPONSOR HERO
+==================================================*/
+
+.sponsor-hero{
+
+    position:relative;
+
+    min-height:72vh;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:220px 0 110px;
+
+    overflow:hidden;
+
+    background:#fafafa;
+
+}
+
+
+/*==================================================
+HERO BACKGROUND TEXT
+==================================================*/
+
+.sponsor-hero::before{
+
+    content:"SPONSORS";
+
+    position:absolute;
+
+    right:-120px;
+
+    top:40px;
+
+    font-size:17vw;
+
+    font-weight:900;
+
+    line-height:.8;
+
+    letter-spacing:-.09em;
+
+    color:#f1f1f1;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+
+/*==================================================
+HERO BLUE GLOW
+==================================================*/
+
+.sponsor-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-220px;
+
+    right:-180px;
+
+    width:750px;
+
+    height:750px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+
+            circle,
+
+            rgba(41,98,255,.09),
+
+            transparent 70%
+
+        );
+
+    pointer-events:none;
+
+}
+
+
+/*==================================================
+HERO CONTENT
+==================================================*/
+
+.sponsor-hero__content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
+.sponsor-hero__eyebrow{
+
+    display:block;
+
+    margin-bottom:25px;
+
+    color:var(--sponsor-blue);
+
+    font-size:.85rem;
+
+    font-weight:800;
+
+    letter-spacing:.25em;
+
+    text-transform:uppercase;
+
+}
+
+
+.sponsor-hero__title{
+
+    font-size:clamp(5rem,11vw,9rem);
+
+    font-weight:900;
+
+    line-height:.85;
+
+    letter-spacing:-.07em;
+
+}
+
+
+.sponsor-hero__subtitle{
+
+    max-width:720px;
+
+    margin-top:35px;
+
+    color:var(--sponsor-gray);
+
+    font-size:1.2rem;
+
+    line-height:1.9;
+
+}
+
+
+.sponsor-hero__line{
+
+    width:120px;
+
+    height:4px;
+
+    margin-top:50px;
+
+    border-radius:999px;
+
+    background:var(--sponsor-blue);
+
+}
+
+
+/*==================================================
+COMMON SECTION
+==================================================*/
+
+.sponsors,
+.partnership,
+.sponsorship{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+/*==================================================
+OUR SPONSORS
+==================================================*/
+
+.sponsors{
+
+    padding-top:140px;
+
+    padding-bottom:140px;
+
+}
+
+
+/*==================================================
+SPONSOR BACKGROUND
+==================================================*/
+
+.sponsors::before{
+
+    content:"PARTNERS";
+
+    position:absolute;
+
+    right:-150px;
+
+    top:100px;
+
+    font-size:190px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.08em;
+
+    color:#f7f7f7;
+
+    pointer-events:none;
+
+    user-select:none;
+
+}
+
+
+/*==================================================
+SPONSOR GRID
+==================================================*/
+
+.sponsor-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:35px;
+
+}
+
+
+/*==================================================
+SPONSOR CARD
+==================================================*/
+
+.sponsor-card{
+
+    position:relative;
+
+    min-height:500px;
+
+    padding:40px;
+
+    background:#fff;
+
+    border:1px solid var(--sponsor-border);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:
+
+        transform .4s cubic-bezier(.25,.46,.45,.94),
+
+        border-color .4s,
+
+        box-shadow .4s;
+
+}
+
+
+.sponsor-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:rgba(41,98,255,.4);
+
+    box-shadow:
+
+        0 30px 70px rgba(0,0,0,.08),
+
+        0 0 0 1px rgba(41,98,255,.05);
+
+}
+
+
+/*==================================================
+CARD BACKGROUND NUMBER
+==================================================*/
+
+.sponsor-card::before{
+
+    content:"SPONSOR";
+
+    position:absolute;
+
+    right:-35px;
+
+    bottom:-30px;
+
+    font-size:110px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.08em;
+
+    color:#f7f7f7;
+
+    pointer-events:none;
+
+    transition:.5s;
+
+}
+
+
+.sponsor-card:hover::before{
+
+    transform:translateX(-15px);
+
+}
+
+
+/*==================================================
+CARD TOP
+==================================================*/
+
+.sponsor-card__top{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+
+.sponsor-card__number{
+
+    color:#aaa;
+
+    font-size:.75rem;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+}
+
+
+.sponsor-card__label{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:32px;
+
+    padding:0 14px;
+
+    border-radius:999px;
+
+    background:#111;
+
+    color:#fff;
+
+    font-size:.65rem;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+}
+
+
+/*==================================================
+LOGO AREA
+==================================================*/
+
+.sponsor-card__logo{
+
+    position:relative;
+
+    z-index:2;
+
+    height:210px;
+
+    margin-top:35px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border:1px solid var(--sponsor-border);
+
+    background:#fafafa;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+
+.sponsor-card:hover .sponsor-card__logo{
+
+    border-color:rgba(41,98,255,.25);
+
+    background:#fcfdff;
+
+}
+
+
+.sponsor-card__logo img{
+
+    width:auto;
+
+    max-width:75%;
+
+    max-height:120px;
+
+    object-fit:contain;
+
+}
+
+
+.sponsor-card__logo span{
+
+    color:#aaa;
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:.15em;
+
+}
+
+
+/*==================================================
+CARD CONTENT
+==================================================*/
+
+.sponsor-card__content{
+
+    position:relative;
+
+    z-index:2;
+
+    margin-top:30px;
+
+}
+
+
+.sponsor-card__content h3{
+
+    font-size:clamp(1.7rem,3vw,2.5rem);
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.04em;
+
+    transition:.35s;
+
+}
+
+
+.sponsor-card:hover .sponsor-card__content h3{
+
+    color:var(--sponsor-blue);
+
+}
+
+
+.sponsor-card__content p{
+
+    max-width:650px;
+
+    margin-top:18px;
+
+    color:#888;
+
+    font-size:.9rem;
+
+    line-height:1.8;
+
+}
+
+
+/*==================================================
+SPONSOR LINK
+==================================================*/
+
+.sponsor-card__link{
+
+    position:relative;
+
+    z-index:3;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    width:max-content;
+
+    margin-top:auto;
+
+    padding-top:28px;
+
+    color:#777;
+
+    font-size:.75rem;
+
+    font-weight:800;
+
+    letter-spacing:.14em;
+
+    transition:.35s;
+
+}
+
+
+.sponsor-card__link i{
+
+    font-size:1.15rem;
+
+    transition:.35s;
+
+}
+
+
+.sponsor-card__link:hover{
+
+    color:var(--sponsor-blue);
+
+}
+
+
+.sponsor-card__link:hover i{
+
+    transform:translate(5px,-5px);
+
+}
+
+
+/*==================================================
+PARTNERSHIP
+==================================================*/
+
+.partnership{
+
+    padding-top:140px;
+
+    padding-bottom:140px;
+
+    background:#fafafa;
+
+}
+
+
+/*==================================================
+PARTNERSHIP BACKGROUND
+==================================================*/
+
+.partnership::before{
+
+    content:"WHY US";
+
+    position:absolute;
+
+    left:-100px;
+
+    top:100px;
+
+    font-size:180px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.08em;
+
+    color:#f1f1f1;
+
+    pointer-events:none;
+
+}
+
+
+/*==================================================
+PARTNERSHIP GRID
+==================================================*/
+
+.partnership-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:1px;
+
+    background:var(--sponsor-border);
+
+    border:1px solid var(--sponsor-border);
+
+}
+
+
+/*==================================================
+PARTNERSHIP ITEM
+==================================================*/
+
+.partnership-item{
+
+    position:relative;
+
+    min-height:320px;
+
+    padding:45px;
+
+    background:#fafafa;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+}
+
+
+.partnership-item:hover{
+
+    background:#fff;
+
+}
+
+
+/*==================================================
+PARTNERSHIP NUMBER
+==================================================*/
+
+.partnership-number{
+
+    position:absolute;
+
+    top:35px;
+
+    right:40px;
+
+    color:#ccc;
+
+    font-size:.7rem;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+}
+
+
+/*==================================================
+PARTNERSHIP ICON
+==================================================*/
+
+.partnership-item > i{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:58px;
+
+    height:58px;
+
+    margin-bottom:35px;
+
+    border:1px solid var(--sponsor-border);
+
+    border-radius:12px;
+
+    color:var(--sponsor-blue);
+
+    font-size:1.5rem;
+
+    background:#fff;
+
+    transition:.4s;
+
+}
+
+
+.partnership-item:hover > i{
+
+    background:var(--sponsor-blue);
+
+    border-color:var(--sponsor-blue);
+
+    color:#fff;
+
+    transform:rotate(-8deg);
+
+}
+
+
+/*==================================================
+PARTNERSHIP TITLE
+==================================================*/
+
+.partnership-item h3{
+
+    font-size:1.4rem;
+
+    font-weight:900;
+
+    letter-spacing:-.03em;
+
+    transition:.35s;
+
+}
+
+
+.partnership-item:hover h3{
+
+    color:var(--sponsor-blue);
+
+}
+
+
+.partnership-item p{
+
+    max-width:500px;
+
+    margin-top:18px;
+
+    color:#777;
+
+    font-size:.9rem;
+
+    line-height:1.8;
+
+}
+
+
+/*==================================================
+SPONSORSHIP
+==================================================*/
+
+.sponsorship{
+
+    padding-top:140px;
+
+    padding-bottom:140px;
+
+}
+
+
+/*==================================================
+SPONSORSHIP BACKGROUND
+==================================================*/
+
+.sponsorship::before{
+
+    content:"PARTNER";
+
+    position:absolute;
+
+    right:-120px;
+
+    top:120px;
+
+    font-size:180px;
+
+    font-weight:900;
+
+    letter-spacing:-.08em;
+
+    color:#f7f7f7;
+
+    pointer-events:none;
+
+}
+
+
+/*==================================================
+SPONSORSHIP LIST
+==================================================*/
+
+.sponsorship-list{
+
+    position:relative;
+
+    z-index:2;
+
+    border-top:1px solid var(--sponsor-border);
+
+}
+
+
+/*==================================================
+SPONSORSHIP ITEM
+==================================================*/
+
+.sponsorship-item{
+
+    display:grid;
+
+    grid-template-columns:120px 1fr;
+
+    gap:45px;
+
+    padding:50px 0;
+
+    border-bottom:1px solid var(--sponsor-border);
+
+    transition:.35s;
+
+}
+
+
+.sponsorship-item:hover{
+
+    padding-left:25px;
+
+    padding-right:25px;
+
+    background:#fff;
+
+}
+
+
+/*==================================================
+NUMBER
+==================================================*/
+
+.sponsorship-item__number{
+
+    color:#aaa;
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+}
+
+
+/*==================================================
+PLAN LABEL
+==================================================*/
+
+.sponsorship-item span{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--sponsor-blue);
+
+    font-size:.72rem;
+
+    font-weight:800;
+
+    letter-spacing:.18em;
+
+}
+
+
+/*==================================================
+PLAN TITLE
+==================================================*/
+
+.sponsorship-item h3{
+
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.05em;
+
+    transition:.35s;
+
+}
+
+
+.sponsorship-item:hover h3{
+
+    color:var(--sponsor-blue);
+
+}
+
+
+/*==================================================
+PLAN TEXT
+==================================================*/
+
+.sponsorship-item p{
+
+    max-width:700px;
+
+    margin-top:20px;
+
+    color:#777;
+
+    font-size:.95rem;
+
+    line-height:1.8;
+
+}
+
+
+/*==================================================
+JOIN
+==================================================*/
+
+.sponsor-join{
+
+    padding-top:80px;
+
+    padding-bottom:140px;
+
+}
+
+
+/*==================================================
+JOIN BOX
+==================================================*/
+
+.sponsor-join__box{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:100px 80px;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #111,
+
+            #1d1d1d
+
+        );
+
+    color:#fff;
+
+}
+
+
+/*==================================================
+JOIN BACKGROUND TEXT
+==================================================*/
+
+.sponsor-join__box::before{
+
+    content:"PARTNER";
+
+    position:absolute;
+
+    right:-80px;
+
+    bottom:-70px;
+
+    font-size:190px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.08em;
+
+    color:rgba(255,255,255,.035);
+
+    pointer-events:none;
+
+}
+
+
+/*==================================================
+JOIN CONTENT
+==================================================*/
+
+.sponsor-join__box > span{
+
+    position:relative;
+
+    z-index:2;
+
+    display:block;
+
+    margin-bottom:25px;
+
+    color:#6ea3ff;
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    letter-spacing:.22em;
+
+}
+
+
+.sponsor-join__box h2{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:clamp(3.5rem,7vw,7rem);
+
+    font-weight:900;
+
+    line-height:.9;
+
+    letter-spacing:-.07em;
+
+}
+
+
+.sponsor-join__box p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:650px;
+
+    margin-top:30px;
+
+    color:rgba(255,255,255,.65);
+
+    font-size:1rem;
+
+    line-height:1.9;
+
+}
+
+
+/*==================================================
+JOIN BUTTON
+==================================================*/
+
+.sponsor-join__button{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:45px;
+
+    padding:18px 34px;
+
+    border-radius:999px;
+
+    background:var(--sponsor-blue);
+
+    color:#fff;
+
+    font-size:.8rem;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    transition:.35s;
+
+}
+
+
+.sponsor-join__button:hover{
+
+    gap:24px;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+
+        0 18px 40px
+
+        rgba(41,98,255,.35);
+
+}
+
+
+.sponsor-join__button i{
+
+    transition:.35s;
+
+}
+
+
+.sponsor-join__button:hover i{
+
+    transform:translateX(6px);
+
+}
+
+
+/*==================================================
+FADE UP
+==================================================*/
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+
+        opacity .8s ease,
+
+        transform .8s ease;
+
+}
+
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/*==================================================
+PAGE FADE
+==================================================*/
+
+body{
+
+    animation:sponsorPageFade .6s ease;
+
+}
+
+
+@keyframes sponsorPageFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+/*==================================================
+1200px
+==================================================*/
+
+@media(max-width:1200px){
+
+    .sponsor-hero::before{
+
+        font-size:15vw;
+
+    }
+
+
+    .sponsors::before{
+
+        font-size:150px;
+
+    }
+
+
+    .partnership::before{
+
+        font-size:140px;
+
+    }
+
+
+    .sponsorship::before{
+
+        font-size:140px;
+
+    }
+
+}
+
+
+/*==================================================
+900px
+==================================================*/
+
+@media(max-width:900px){
+
+    .sponsor-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .partnership-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .sponsor-hero{
+
+        min-height:65vh;
+
+    }
+
+
+    .sponsor-card{
+
+        min-height:480px;
+
+    }
+
+}
+
+
+/*==================================================
+768px
+==================================================*/
+
+@media(max-width:768px){
+
+    .sponsor-hero{
+
+        min-height:60vh;
+
+        padding:170px 0 80px;
+
+    }
+
+
+    .sponsor-hero::before{
+
+        font-size:25vw;
+
+        right:-40px;
+
+    }
+
+
+    .sponsor-hero__title{
+
+        font-size:3.8rem;
+
+    }
+
+
+    .sponsor-hero__subtitle{
+
+        font-size:1rem;
+
+    }
+
+
+    .sponsors,
+    .partnership,
+    .sponsorship{
+
+        padding-top:100px;
+
+        padding-bottom:100px;
+
+    }
+
+
+    .sponsors::before,
+    .partnership::before,
+    .sponsorship::before{
+
+        display:none;
+
+    }
+
+
+    .sponsor-card{
+
+        min-height:450px;
+
+        padding:28px;
+
+    }
+
+
+    .sponsor-card__logo{
+
+        height:180px;
+
+    }
+
+
+    .partnership-item{
+
+        min-height:280px;
+
+        padding:32px;
+
+    }
+
+
+    .sponsorship-item{
+
+        grid-template-columns:50px 1fr;
+
+        gap:20px;
+
+        padding:35px 0;
+
+    }
+
+
+    .sponsorship-item:hover{
+
+        padding-left:15px;
+
+        padding-right:15px;
+
+    }
+
+
+    .sponsor-join{
+
+        padding-top:40px;
+
+        padding-bottom:90px;
+
+    }
+
+
+    .sponsor-join__box{
+
+        padding:65px 30px;
+
+        border-radius:22px;
+
+    }
+
+
+    .sponsor-join__box::before{
+
+        font-size:100px;
+
+    }
+
+
+    .sponsor-join__box h2{
+
+        font-size:3.6rem;
+
+    }
+
+}
+
+
+/*==================================================
+480px
+==================================================*/
+
+@media(max-width:480px){
+
+    .sponsor-hero{
+
+        padding-top:150px;
+
+    }
+
+
+    .sponsor-hero__title{
+
+        font-size:3rem;
+
+    }
+
+
+    .sponsor-hero__subtitle{
+
+        font-size:.95rem;
+
+    }
+
+
+    .sponsor-card{
+
+        min-height:430px;
+
+        padding:22px;
+
+    }
+
+
+    .sponsor-card__top{
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+
+    .sponsor-card__label{
+
+        font-size:.58rem;
+
+        padding:0 10px;
+
+    }
+
+
+    .sponsor-card__logo{
+
+        height:150px;
+
+        margin-top:28px;
+
+    }
+
+
+    .sponsor-card__content h3{
+
+        font-size:1.6rem;
+
+    }
+
+
+    .sponsor-card__content p{
+
+        font-size:.85rem;
+
+    }
+
+
+    .partnership-item{
+
+        min-height:250px;
+
+        padding:28px;
+
+    }
+
+
+    .partnership-item h3{
+
+        font-size:1.2rem;
+
+    }
+
+
+    .partnership-item p{
+
+        font-size:.85rem;
+
+    }
+
+
+    .sponsorship-item{
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+
+    }
+
+
+    .sponsorship-item__number{
+
+        margin-bottom:5px;
+
+    }
+
+
+    .sponsorship-item h3{
+
+        font-size:2rem;
+
+    }
+
+
+    .sponsorship-item p{
+
+        font-size:.85rem;
+
+    }
+
+
+    .sponsor-join__box{
+
+        padding:55px 24px;
+
+    }
+
+
+    .sponsor-join__box h2{
+
+        font-size:2.7rem;
+
+    }
+
+
+    .sponsor-join__box p{
+
+        font-size:.9rem;
+
+    }
+
+
+    .sponsor-join__button{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+
+/*==================================================
+REDUCED MOTION
+==================================================*/
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+
+        scroll-behavior:auto !important;
+
+    }
+
+}
+
+
+/*==================================================
+END
+==================================================*/
