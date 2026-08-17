@@ -334,6 +334,10 @@ CARD BACKGROUND NUMBER
 
     pointer-events:none;
 
+    user-select:none;
+
+    z-index:0;
+
     transition:.5s;
 
 }
@@ -345,6 +349,26 @@ CARD BACKGROUND NUMBER
 
 }
 
+/*==================================================
+SPONSOR CARD BACKGROUND TYPE
+==================================================*/
+
+/* PARTNERカード */
+
+.sponsor-card.partner::before{
+
+    content:"PARTNER";
+
+}
+
+
+/* SPONSORカード */
+
+.sponsor-card.sponsor::before{
+
+    content:"SPONSOR";
+
+}
 
 /*==================================================
 CARD TOP
