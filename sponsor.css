@@ -257,6 +257,27 @@ SPONSOR GRID
 
 }
 
+/*==================================================
+SPONSOR CARD BACKGROUND TYPE
+==================================================*/
+
+/* PARTNERカード */
+
+.sponsor-card.partner::before{
+
+    content:"PARTNER";
+
+}
+
+
+/* SPONSORカード */
+
+.sponsor-card.sponsor::before{
+
+    content:"SPONSOR";
+
+}
+
 
 /*==================================================
 SPONSOR CARD
@@ -346,27 +367,6 @@ CARD BACKGROUND NUMBER
 .sponsor-card:hover::before{
 
     transform:translateX(-15px);
-
-}
-
-/*==================================================
-SPONSOR CARD BACKGROUND TYPE
-==================================================*/
-
-/* PARTNERカード */
-
-.sponsor-card.partner::before{
-
-    content:"PARTNER";
-
-}
-
-
-/* SPONSORカード */
-
-.sponsor-card.sponsor::before{
-
-    content:"SPONSOR";
 
 }
 
@@ -605,7 +605,6 @@ SPONSOR LINK
     transform:translate(5px,-5px);
 
 }
-
 
 /*==================================================
 PARTNERSHIP
