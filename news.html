@@ -1,343 +1,102 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>NEWS | Nidmegent Esports</title>
-
-    <!-- Remix Icon -->
-    <link
-        rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
-    >
-
-    <!-- Favicon -->
-    <link
-        rel="icon"
-        href="favicon.ico"
-        type="image/x-icon"
-    >
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- News CSS -->
-    <link rel="stylesheet" href="news.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEWS | Nidmegent Esports</title>
+<!-- Remix Icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+<!-- News CSS -->
+<link rel="stylesheet" href="news.css">
 </head>
-
-
 <body>
-
-
 <!--==================================================
 HEADER
 ==================================================-->
-
 <header class="header">
-
-    <div class="container">
-
-        <!-- Logo -->
-
-        <a href="index.html" class="logo">
-
-            <img
-                src="logo/logo-back.png"
-                alt="Nidmegent Esports"
-            >
-
-        </a>
-
-
-        <!-- Navigation -->
-
-        <nav class="nav">
-
-            <ul class="nav__list">
-
-                <li>
-
-                    <a href="about.html">
-                        ABOUT
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="players.html">
-                        PLAYERS
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a
-                        href="news.html"
-                        class="active"
-                    >
-                        NEWS
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="sponsor.html">
-                        SPONSORS
-                    </a>
-
-                </li>
-
-
-                <li>
-
-                    <a href="index.html#contact">
-                        CONTACT
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </nav>
-
-
-        <!-- Mobile Menu -->
-
-        <button class="menu">
-
-            <i class="ri-menu-3-line"></i>
-
-        </button>
-
-    </div>
-
+<div class="container">
+<!-- Logo -->
+<a href="index.html" class="logo">
+<img src="logo/logo-back.png" alt="Nidmegent Esports">
+</a>
+<!-- Navigation -->
+<nav class="nav">
+<ul class="nav__list">
+<li><a href="about.html">ABOUT</a></li>
+<li><a href="players.html">PLAYERS</a></li>
+<li><a href="news.html"class="active">NEWS</a></li>
+<li><a href="sponsor.html">SPONSORS</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</nav>
+<!-- Mobile Menu -->
+<button class="menu">
+<i class="ri-menu-3-line"></i>
+</button>
+</div>
 </header>
-
-
-
 <!--==================================================
 NEWS HERO
 ==================================================-->
-
 <section class="news-hero">
-
-    <div class="container">
-
-        <div class="news-hero__content">
-
-
-            <span class="news-hero__eyebrow">
-
-                NIDMEGENT ESPORTS
-
-            </span>
-
-
-            <h1 class="news-hero__title">
-
-                NEWS
-
-            </h1>
-
-
-            <p class="news-hero__subtitle">
-
-                Nidmegent Esportsの最新情報、
-                イベント情報、活動情報をお届けします。
-
-            </p>
-
-
-            <div class="news-hero__line"></div>
-
-
-        </div>
-
-    </div>
-
+<div class="container">
+<div class="news-hero__content">
+<span class="news-hero__eyebrow">NIDMEGENT ESPORTS</span>
+<h1 class="news-hero__title">NEWS</h1>
+<p class="news-hero__subtitle">Nidmegent Esportsの最新情報、イベント情報、活動情報をお届けします。</p>
+<div class="news-hero__line"></div>
+</div>
+</div>
 </section>
-
-
-
 <!--==================================================
 NEWS
 ==================================================-->
-
 <section class="news-page">
-
-    <div class="container">
-
-
-        <!--==================================================
-        FILTER
-        ==================================================-->
-
-        <div class="news-filter">
-
-
-            <button
-                class="news-filter__btn active"
-                data-filter="all"
-            >
-
-                ALL
-
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="news"
-            >
-
-                NEWS
-
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="event"
-            >
-
-                EVENT
-
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="valorant"
-            >
-
-                VALORANT
-
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="apex"
-            >
-
-                APEX
-
-            </button>
-
-
-            <button
-                class="news-filter__btn"
-                data-filter="creator"
-            >
-
-                CREATOR
-
-            </button>
-
-
-        </div>
-
-
-
-        <!--==================================================
-        NEWS GRID
-        ==================================================-->
-
-        <div class="news-grid">
-
-
-
-            <!--==================================================
-            NEWS 01
-            ==================================================-->
-
-            <article
-                class="news-card fade-up"
-                data-category="news"
-            >
-
-                <a
-                    href="news/1-article.html"
-                    class="news-card__link"
-                >
-
-
-                    <!-- IMAGE -->
-
-                    <div class="news-card__image">
-
-                        <img
-                            src="images/news/news01.jpg"
-                            alt="Nidmegent Esportsからのお知らせ"
-                            loading="lazy"
-                        >
-
-                    </div>
-
-
-                    <!-- BODY -->
-
-                    <div class="news-card__body">
-
-
-                        <div class="news-card__meta">
-
-                            <time datetime="2026-08-10">
-
-                                2026.08.10
-
-                            </time>
-
-
-                            <span>
-
-                                NEWS
-
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-
-                            Nidmegent Esportsからのお知らせ
-
-                        </h3>
-
-
-                        <p>
-
-                            Nidmegent Esportsに関する
-                            最新のお知らせをお届けします。
-
-                        </p>
-
-
-                        <div class="news-card__more">
-
-                            READ MORE
-
-                            <i class="ri-arrow-right-up-line"></i>
-
-                        </div>
-
-
-                    </div>
-
-                </a>
-
-            </article>
+<div class="container">
+<!--==================================================
+FILTER
+==================================================-->
+<div class="news-filter">
+<button class="news-filter__btn active" data-filter="all">ALL</button>
+<button class="news-filter__btn"data-filter="news">NEWS</button>
+<button class="news-filter__btn"data-filter="event">EVENT</button>
+<button class="news-filter__btn" data-filter="valorant">VALORANT</button>
+<button class="news-filter__btn" data-filter="apex">APEX</button>
+<button class="news-filter__btn" data-filter="creator">CREATOR</button>
+</div>
+<!--==================================================
+ NEWS GRID
+==================================================-->
+<div class="news-grid">
+<!--==================================================
+NEWS 01
+==================================================-->
+<article class="news-card fade-up" data-category="news">
+<a href="news/1-article.html" class="news-card__link">
+<!-- IMAGE -->
+<div class="news-card__image">
+<img src="images/news/news01.jpg" alt="Nidmegent Esportsからのお知らせ" loading="lazy">
+</div>
+<!-- BODY -->
+<div class="news-card__body">
+<div class="news-card__meta">
+<time datetime="2026-08-10">
+2026.08.10
+</time>
+<span>NEWS</span>
+</div>
+<h3>Nidmegent Esportsからのお知らせ</h3>
+<p>Nidmegent Esportsに関する最新のお知らせをお届けします。</p>
+<div class="news-card__more">READ MORE
+<i class="ri-arrow-right-up-line"></i>
+</div>
+</div>
+</a>
+</article>
 
 
 
@@ -742,59 +501,6 @@ NEWS
 
 </section>
 
-
-
-<!--==================================================
-JOIN US
-==================================================-->
-
-<section class="join section">
-
-    <div class="container">
-
-        <div class="join-box">
-
-
-            <span>
-
-                NIDMEGENT ESPORTS
-
-            </span>
-
-
-            <h2>
-
-                JOIN OUR TEAM
-
-            </h2>
-
-
-            <p>
-
-                We're always looking for passionate
-                players, creators and staff who want to
-                grow together with Nidmegent Esports.
-
-            </p>
-
-
-            <a
-                href="index.html#contact"
-                class="join-button"
-            >
-
-                CONTACT US
-
-                <i class="ri-arrow-right-line"></i>
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
 
 
 
