@@ -1439,3 +1439,43 @@ REDUCED MOTION
     }
 
 }
+
+/*==================================================
+NEWS FILTER ANIMATION
+==================================================*/
+
+.news-card{
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+    transition:
+        opacity .35s ease,
+        transform .35s ease;
+
+}
+
+
+.news-card.is-hidden{
+
+    opacity:0;
+
+    transform:translateY(20px) scale(.98);
+
+    pointer-events:none;
+
+    position:absolute;
+
+}
+
+
+.news-card.is-visible{
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+    position:relative;
+
+}
