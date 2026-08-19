@@ -3,374 +3,418 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>RECRUIT | Nidmegent Esports</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
->
+    <title>RECRUIT | Nidmegent Esports</title>
 
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Remix Icon -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
+    >
 
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="recruit.css">
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        href="favicon.ico"
+        type="image/x-icon"
+    >
+
+    <!-- Common CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Recruit CSS -->
+    <link
+        rel="stylesheet"
+        href="recruit.css"
+    >
 
 </head>
 
 
-<body>
+<body class="recruit-page">
 
 
-<!--==================================================
+<!-- ==================================================
 HEADER
-==================================================-->
+================================================== -->
 
 <header class="header">
 
-<div class="container">
+    <div class="container header__inner">
 
-<a href="index.html" class="logo">
+        <!-- LOGO -->
 
-<img
-src="logo/logo-back.png"
-alt="Nidmegent Esports"
->
+        <a
+            href="index.html"
+            class="logo"
+        >
 
-</a>
+            <img
+                src="logo/logo-back.png"
+                alt="Nidmegent Esports"
+            >
 
-
-<nav class="nav">
-
-<ul class="nav__list">
-
-<li>
-<a href="about.html">ABOUT</a>
-</li>
-
-<li>
-<a href="players.html">PLAYERS</a>
-</li>
-
-<li>
-<a href="news.html">NEWS</a>
-</li>
-
-<li>
-<a href="sponsor.html">SPONSORS</a>
-</li>
-
-<li>
-<a href="recruit.html" class="active">
-RECRUIT
-</a>
-</li>
-
-<li>
-<a href="index.html#contact">
-CONTACT
-</a>
-</li>
-
-</ul>
-
-</nav>
+        </a>
 
 
-<button class="menu">
+        <!-- NAVIGATION -->
 
-<i class="ri-menu-3-line"></i>
+        <nav
+            class="nav"
+            id="global-nav"
+        >
 
-</button>
+            <ul class="nav__list">
 
-</div>
+                <li>
+                    <a href="about.html">
+                        ABOUT
+                    </a>
+                </li>
+
+                <li>
+                    <a href="players.html">
+                        PLAYERS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="news.html">
+                        NEWS
+                    </a>
+                </li>
+
+                <li>
+                    <a href="sponsor.html">
+                        SPONSORS
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="recruit.html"
+                        class="active"
+                    >
+                        RECRUIT
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html#contact">
+                        CONTACT
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- MOBILE MENU -->
+
+        <button
+            class="menu"
+            type="button"
+            aria-label="メニューを開く"
+            aria-controls="global-nav"
+            aria-expanded="false"
+        >
+
+            <i class="ri-menu-3-line"></i>
+
+        </button>
+
+    </div>
 
 </header>
 
 
 
-<!--==================================================
+<!-- ==================================================
+MAIN
+================================================== -->
+
+<main>
+
+
+<!-- ==================================================
 RECRUIT HERO
-==================================================-->
+================================================== -->
 
 <section class="recruit-hero">
 
-<div class="container">
+    <div class="container">
 
-<div class="recruit-hero__content">
+        <div class="recruit-hero__content">
 
-
-<span class="recruit-hero__eyebrow">
-JOIN NIDMEGENT
-</span>
-
-
-<h1 class="recruit-hero__title">
-RECRUIT
-</h1>
+            <span class="recruit-hero__eyebrow">
+                JOIN NIDMEGENT
+            </span>
 
 
-<p class="recruit-hero__lead">
-
-競技に、本気で向き合う。<br>
-そして、次の時代を一緒につくる。
-
-</p>
+            <h1 class="recruit-hero__title">
+                RECRUIT
+            </h1>
 
 
-<p class="recruit-hero__text">
+            <p class="recruit-hero__lead">
 
-Nidmegent Esportsでは、
-競技・クリエイティブ・運営など、
-それぞれのフィールドで挑戦する
-新しい仲間を募集しています。
+                競技に、本気で向き合う。<br>
+                そして、次の時代を一緒につくる。
 
-</p>
+            </p>
 
 
-<div class="recruit-hero__line"></div>
+            <p class="recruit-hero__text">
+
+                Nidmegent Esportsでは、
+                競技・クリエイティブ・運営など、
+                それぞれのフィールドで挑戦する
+                新しい仲間を募集しています。
+
+            </p>
 
 
-</div>
+            <div class="recruit-hero__line"></div>
 
-</div>
+        </div>
+
+    </div>
 
 
-<div class="recruit-hero__background">
-RECRUIT
-</div>
+    <!-- BACKGROUND TEXT -->
+
+    <div
+        class="recruit-hero__background"
+        aria-hidden="true"
+    >
+        RECRUIT
+    </div>
 
 </section>
 
 
 
-<!--==================================================
-RECRUIT INTRO
-==================================================-->
+<!-- ==================================================
+INTRO
+================================================== -->
 
 <section class="recruit-intro">
 
-<div class="container">
+    <div class="container">
+
+        <div class="recruit-section-header fade-up">
+
+            <span>
+                NIDMEGENT / RECRUITMENT
+            </span>
+
+            <h2>
+                JOIN THE<br>
+                NEXT ERA.
+            </h2>
+
+        </div>
 
 
-<div class="recruit-section-header fade-up">
+        <div class="recruit-intro__grid">
 
-<span>
-NIDMEGENT / RECRUITMENT
-</span>
+            <!-- LEFT -->
 
-<h2>
-JOIN THE<br>
-NEXT ERA.
-</h2>
+            <div class="recruit-intro__heading fade-up">
 
-</div>
+                <p>
+                    Nidmegent Esportsと一緒に、<br>
+                    新しい可能性へ挑戦しませんか？
+                </p>
 
-
-
-<div class="recruit-intro__grid">
+            </div>
 
 
-<div class="recruit-intro__heading fade-up">
+            <!-- RIGHT -->
 
-<p>
-Nidmegent Esportsと一緒に、
-新しい可能性へ挑戦しませんか？
-</p>
+            <div class="recruit-intro__content fade-up">
 
-</div>
-
-
-
-<div class="recruit-intro__content fade-up">
-
-<p>
-
-Nidmegent Esportsは、
-「楽しく、ときには本気で向き合える」
-コミュニティを大切にしながら、
-eスポーツを中心とした活動を行っています。
-
-</p>
+                <p>
+                    Nidmegent Esportsは、
+                    「楽しく、ときには本気で向き合える」
+                    コミュニティを大切にしながら、
+                    eスポーツを中心とした活動を行っています。
+                </p>
 
 
-<p>
-
-競技で上を目指したい人。
-
-自分の個性を発信したい人。
-
-チームを支える側として
-新しい挑戦をしたい人。
-
-</p>
+                <p>
+                    競技で上を目指したい人。<br>
+                    自分の個性を発信したい人。<br>
+                    チームを支える側として
+                    新しい挑戦をしたい人。
+                </p>
 
 
-<p>
+                <p>
+                    それぞれの「やってみたい」を、
+                    Nidmegentという場所から
+                    カタチにしていきます。
+                </p>
 
-それぞれの「やってみたい」を、
-Nidmegentという場所から
-カタチにしていきます。
+            </div>
 
-</p>
+        </div>
 
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 
-<!--==================================================
+<!-- ==================================================
 OUR CULTURE
-==================================================-->
+================================================== -->
 
 <section class="recruit-culture">
 
-<div class="container">
+    <div class="container">
 
 
-<div class="recruit-culture__header fade-up">
+        <div class="recruit-culture__header fade-up">
 
-<span>
-OUR CULTURE
-</span>
+            <span>
+                OUR CULTURE
+            </span>
 
-<h2>
-WHAT WE<br>
-VALUE.
-</h2>
+            <h2>
+                WHAT WE<br>
+                VALUE.
+            </h2>
 
-</div>
-
-
-
-<div class="recruit-culture__grid">
+        </div>
 
 
-<div class="culture-item fade-up">
-
-<span class="culture-item__number">
-01
-</span>
-
-<i class="ri-gamepad-line"></i>
-
-<h3>
-COMPETE
-</h3>
-
-<p>
-
-勝つことにこだわる。
-
-競技者として成長するために、
-一つひとつの挑戦と向き合います。
-
-</p>
-
-</div>
+        <div class="recruit-culture__grid">
 
 
+            <!-- COMPETE -->
 
-<div class="culture-item fade-up">
+            <article class="culture-item fade-up">
 
-<span class="culture-item__number">
-02
-</span>
+                <span class="culture-item__number">
+                    01
+                </span>
 
-<i class="ri-lightbulb-line"></i>
+                <i class="ri-gamepad-line"></i>
 
-<h3>
-CREATE
-</h3>
+                <h3>
+                    COMPETE
+                </h3>
 
-<p>
+                <p>
+                    勝つことにこだわる。<br>
+                    競技者として成長するために、
+                    一つひとつの挑戦と向き合います。
+                </p>
 
-ゲームだけでは終わらない。
-
-動画・配信・デザインなど、
-自分の「好き」を新しい価値へ変えていきます。
-
-</p>
-
-</div>
+            </article>
 
 
+            <!-- CREATE -->
 
-<div class="culture-item fade-up">
+            <article class="culture-item fade-up">
 
-<span class="culture-item__number">
-03
-</span>
+                <span class="culture-item__number">
+                    02
+                </span>
 
-<i class="ri-team-line"></i>
+                <i class="ri-lightbulb-line"></i>
 
-<h3>
-CONNECT
-</h3>
+                <h3>
+                    CREATE
+                </h3>
 
-<p>
+                <p>
+                    ゲームだけでは終わらない。<br>
+                    動画・配信・デザインなど、
+                    自分の「好き」を新しい価値へ変えていきます。
+                </p>
 
-一人ではできないことも、
-仲間とならできる。
-
-互いを尊重し、
-一緒に成長できる環境を目指します。
-
-</p>
-
-</div>
+            </article>
 
 
+            <!-- CONNECT -->
 
-<div class="culture-item fade-up">
+            <article class="culture-item fade-up">
 
-<span class="culture-item__number">
-04
-</span>
+                <span class="culture-item__number">
+                    03
+                </span>
 
-<i class="ri-rocket-2-line"></i>
+                <i class="ri-team-line"></i>
 
-<h3>
-CHALLENGE
-</h3>
+                <h3>
+                    CONNECT
+                </h3>
 
-<p>
+                <p>
+                    一人ではできないことも、
+                    仲間とならできる。<br>
+                    互いを尊重し、
+                    一緒に成長できる環境を目指します。
+                </p>
 
-失敗を恐れず、
-何度でも挑戦する。
-
-新しい可能性へ踏み出す人を
-Nidmegentは応援します。
-
-</p>
-
-</div>
+            </article>
 
 
-</div>
+            <!-- CHALLENGE -->
 
-</div>
+            <article class="culture-item fade-up">
+
+                <span class="culture-item__number">
+                    04
+                </span>
+
+                <i class="ri-rocket-2-line"></i>
+
+                <h3>
+                    CHALLENGE
+                </h3>
+
+                <p>
+                    失敗を恐れず、
+                    何度でも挑戦する。<br>
+                    新しい可能性へ踏み出す人を
+                    Nidmegentは応援します。
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
 
 </section>
 
-<!--==================================================
+
+
+<!-- ==================================================
 RECRUITMENT POSITIONS
-==================================================-->
+================================================== -->
 
 <section class="recruit-positions">
 
     <div class="container">
 
+
         <!-- SECTION HEADER -->
+
         <div class="recruit-positions__header fade-up">
 
             <div>
@@ -386,6 +430,7 @@ RECRUITMENT POSITIONS
 
             </div>
 
+
             <p>
                 Nidmegent Esportsでは、
                 様々なフィールドで活動する
@@ -395,15 +440,20 @@ RECRUITMENT POSITIONS
         </div>
 
 
+
         <!-- POSITION LIST -->
+
         <div class="recruit-position-list">
 
 
-            <!--==================================================
-            VALORANT
-            ==================================================-->
+            <!-- ==================================================
+            01 VALORANT
+            ================================================== -->
 
-            <article class="recruit-position fade-up" data-number="01">
+            <article
+                class="recruit-position fade-up"
+                data-number="01"
+            >
 
                 <div class="recruit-position__number">
                     01
@@ -418,7 +468,13 @@ RECRUITMENT POSITIONS
                             COMPETITIVE
                         </span>
 
-                        <i class="ri-arrow-right-up-line"></i>
+                        <a
+                            href="#"
+                            class="recruit-position__arrow"
+                            aria-label="VALORANT PLAYER"
+                        >
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
 
                     </div>
 
@@ -451,11 +507,14 @@ RECRUITMENT POSITIONS
 
 
 
-            <!--==================================================
-            APEX
-            ==================================================-->
+            <!-- ==================================================
+            02 APEX LEGENDS
+            ================================================== -->
 
-            <article class="recruit-position fade-up" data-number="02">
+            <article
+                class="recruit-position fade-up"
+                data-number="02"
+            >
 
                 <div class="recruit-position__number">
                     02
@@ -470,7 +529,13 @@ RECRUITMENT POSITIONS
                             COMPETITIVE
                         </span>
 
-                        <i class="ri-arrow-right-up-line"></i>
+                        <a
+                            href="#"
+                            class="recruit-position__arrow"
+                            aria-label="APEX LEGENDS PLAYER"
+                        >
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
 
                     </div>
 
@@ -503,11 +568,14 @@ RECRUITMENT POSITIONS
 
 
 
-            <!--==================================================
-            MINECRAFT
-            ==================================================-->
+            <!-- ==================================================
+            03 MINECRAFT
+            ================================================== -->
 
-            <article class="recruit-position fade-up" data-number="03">
+            <article
+                class="recruit-position fade-up"
+                data-number="03"
+            >
 
                 <div class="recruit-position__number">
                     03
@@ -522,7 +590,13 @@ RECRUITMENT POSITIONS
                             GAME
                         </span>
 
-                        <i class="ri-arrow-right-up-line"></i>
+                        <a
+                            href="#"
+                            class="recruit-position__arrow"
+                            aria-label="MINECRAFT MEMBER"
+                        >
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
 
                     </div>
 
@@ -554,11 +628,14 @@ RECRUITMENT POSITIONS
 
 
 
-            <!--==================================================
-            CREATOR
-            ==================================================-->
+            <!-- ==================================================
+            04 CREATOR
+            ================================================== -->
 
-            <article class="recruit-position fade-up" data-number="04">
+            <article
+                class="recruit-position fade-up"
+                data-number="04"
+            >
 
                 <div class="recruit-position__number">
                     04
@@ -573,7 +650,13 @@ RECRUITMENT POSITIONS
                             CREATIVE
                         </span>
 
-                        <i class="ri-arrow-right-up-line"></i>
+                        <a
+                            href="#"
+                            class="recruit-position__arrow"
+                            aria-label="CREATOR"
+                        >
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
 
                     </div>
 
@@ -605,11 +688,14 @@ RECRUITMENT POSITIONS
 
 
 
-            <!--==================================================
-            STREAMER
-            ==================================================-->
+            <!-- ==================================================
+            05 STREAMER
+            ================================================== -->
 
-            <article class="recruit-position fade-up" data-number="05">
+            <article
+                class="recruit-position fade-up"
+                data-number="05"
+            >
 
                 <div class="recruit-position__number">
                     05
@@ -624,7 +710,13 @@ RECRUITMENT POSITIONS
                             CONTENT
                         </span>
 
-                        <i class="ri-arrow-right-up-line"></i>
+                        <a
+                            href="#"
+                            class="recruit-position__arrow"
+                            aria-label="STREAMER"
+                        >
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
 
                     </div>
 
@@ -657,11 +749,14 @@ RECRUITMENT POSITIONS
 
 
 
-            <!--==================================================
-            STAFF
-            ==================================================-->
+            <!-- ==================================================
+            06 STAFF
+            ================================================== -->
 
-            <article class="recruit-position fade-up" data-number="06">
+            <article
+                class="recruit-position fade-up"
+                data-number="06"
+            >
 
                 <div class="recruit-position__number">
                     06
@@ -676,7 +771,13 @@ RECRUITMENT POSITIONS
                             MANAGEMENT
                         </span>
 
-                        <i class="ri-arrow-right-up-line"></i>
+                        <a
+                            href="#"
+                            class="recruit-position__arrow"
+                            aria-label="STAFF"
+                        >
+                            <i class="ri-arrow-right-up-line"></i>
+                        </a>
 
                     </div>
 
@@ -713,142 +814,197 @@ RECRUITMENT POSITIONS
 
 </section>
 
-<!--==================================================
-RECRUIT MESSAGE
-==================================================-->
+
+
+<!-- ==================================================
+MESSAGE
+================================================== -->
 
 <section class="recruit-message">
 
-<div class="container">
+    <div class="container">
+
+        <div class="recruit-message__box fade-up">
+
+            <span>
+                FOR THE NEXT GENERATION
+            </span>
 
 
-<div class="recruit-message__box">
+            <h2>
+                YOUR NEXT<br>
+                CHALLENGE.
+            </h2>
 
 
-<span>
-FOR THE NEXT GENERATION
-</span>
+            <p>
+                Nidmegent Esportsは、<br>
+                あなたの挑戦を待っています。
+            </p>
 
 
-<h2>
-YOUR NEXT<br>
-CHALLENGE.
-</h2>
+            <a
+                href="index.html#contact"
+                class="recruit-message__button"
+            >
 
+                <span>
+                    CONTACT US
+                </span>
 
-<p>
+                <i class="ri-arrow-right-up-line"></i>
 
-Nidmegent Esportsは、
-あなたの挑戦を待っています。
+            </a>
 
-</p>
+        </div>
 
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
+</main>
 
 
-<!--==================================================
+
+<!-- ==================================================
 FOOTER
-==================================================-->
+================================================== -->
 
 <footer class="footer">
 
-<div class="container">
-
-<div class="footer__top">
+    <div class="container">
 
 
-<div class="footer__brand">
-
-<img
-src="logo/logo-back.png"
-alt="Nidmegent Esports"
->
-
-<p>
-Keep Pushing Forward. Claim the Top.
-</p>
-
-</div>
+        <div class="footer__top">
 
 
+            <!-- BRAND -->
 
-<div class="footer__menu">
+            <div class="footer__brand">
+
+                <a href="index.html">
+
+                    <img
+                        src="logo/logo-back.png"
+                        alt="Nidmegent Esports"
+                    >
+
+                </a>
 
 
-<div>
+                <p>
+                    Keep Pushing Forward.<br>
+                    Claim the Top.
+                </p>
 
-<h4>MENU</h4>
-
-<a href="about.html">ABOUT</a>
-
-<a href="players.html">PLAYERS</a>
-
-<a href="news.html">NEWS</a>
-
-<a href="sponsor.html">SPONSORS</a>
-
-<a href="recruit.html">RECRUIT</a>
-
-<a href="index.html#contact">CONTACT</a>
-
-</div>
+            </div>
 
 
 
-<div>
+            <!-- MENU -->
 
-<h4>SOCIAL</h4>
-
-<a
-href="https://x.com/Nidmegent"
-target="_blank"
->
-X
-</a>
-
-<a
-href="https://www.youtube.com/@Nidmegent"
-target="_blank"
->
-YouTube
-</a>
-
-<a
-href="https://discord.com/invite/24CjQUFqbp"
-target="_blank"
->
-Discord
-</a>
-
-</div>
+            <div class="footer__menu">
 
 
-</div>
+                <div>
 
-</div>
+                    <h4>
+                        MENU
+                    </h4>
+
+                    <a href="about.html">
+                        ABOUT
+                    </a>
+
+                    <a href="players.html">
+                        PLAYERS
+                    </a>
+
+                    <a href="news.html">
+                        NEWS
+                    </a>
+
+                    <a href="sponsor.html">
+                        SPONSORS
+                    </a>
+
+                    <a href="recruit.html">
+                        RECRUIT
+                    </a>
+
+                    <a href="index.html#contact">
+                        CONTACT
+                    </a>
+
+                </div>
 
 
 
-<div class="footer__bottom">
+                <!-- SOCIAL -->
 
-<span>
-© 2026 Nidmegent Esports. All Rights Reserved.
-</span>
+                <div>
 
-</div>
+                    <h4>
+                        SOCIAL
+                    </h4>
+
+                    <a
+                        href="https://x.com/Nidmegent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        X
+                    </a>
+
+                    <a
+                        href="https://www.youtube.com/@Nidmegent"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        YouTube
+                    </a>
+
+                    <a
+                        href="https://discord.com/invite/24CjQUFqbp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Discord
+                    </a>
+
+                </div>
 
 
-</div>
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer__bottom">
+
+            <span>
+                © 2026 Nidmegent Esports. All Rights Reserved.
+            </span>
+
+            <span>
+                RECRUIT
+            </span>
+
+        </div>
+
+
+    </div>
 
 </footer>
 
 
+
+<!-- ==================================================
+JAVASCRIPT
+================================================== -->
 
 <script src="recruit.js"></script>
 
