@@ -727,3 +727,14 @@ SMALL MOBILE
     }
 
 }
+
+/*==================================================
+JS HOVER STATE
+==================================================*/
+
+.recruit-position.is-hover
+.recruit-position__number{
+
+    color:#2962FF;
+
+}
