@@ -1448,7 +1448,7 @@ NEWS FILTER ANIMATION
 
     opacity:1;
 
-    transform:translateY(0) scale(1);
+    transform:translateY(0);
 
     transition:
         opacity .35s ease,
@@ -1459,13 +1459,11 @@ NEWS FILTER ANIMATION
 
 .news-card.is-hidden{
 
+    display:none;
+
     opacity:0;
 
-    transform:translateY(20px) scale(.98);
-
-    pointer-events:none;
-
-    position:absolute;
+    transform:translateY(20px);
 
 }
 
@@ -1474,8 +1472,6 @@ NEWS FILTER ANIMATION
 
     opacity:1;
 
-    transform:translateY(0) scale(1);
-
-    position:relative;
+    transform:translateY(0);
 
 }
