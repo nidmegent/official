@@ -3,6 +3,31 @@
    Nidmegent Esports
 ================================================== */
 
+/* ==================================================
+   EXISTING GLOBAL CONTAINER
+================================================== */
+
+.recruit-page .container{
+    width:min(1200px, calc(100% - 80px));
+    margin:0 auto;
+}
+
+@media(max-width:768px){
+
+    .recruit-page .container{
+        width:calc(100% - 40px);
+    }
+
+}
+
+@media(max-width:480px){
+
+    .recruit-page .container{
+        width:calc(100% - 30px);
+    }
+
+}
+
 
 /* ==================================================
    BASE
