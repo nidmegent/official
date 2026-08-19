@@ -1,131 +1,163 @@
-/*==================================================
-NIDMEGENT RECRUIT PAGE
-==================================================*/
-
-
-/*==================================================
-DOM READY
-==================================================*/
+/* ==================================================
+   NIDMEGENT RECRUIT JS
+================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    initRecruitAnimations();
-    initPositionHover();
-    initPageFade();
 
-});
+    /* ==================================================
+       MOBILE MENU
+    ================================================== */
 
+    const menuButton =
+        document.querySelector(".recruit-menu");
 
-/*==================================================
-RECRUITMENT POSITION ANIMATION
-==================================================*/
-
-function initRecruitAnimations(){
-
-    const positions = document.querySelectorAll(
-        ".recruit-position"
-    );
-
-    if(!positions.length) return;
+    const mobileMenu =
+        document.querySelector(".recruit-mobile-menu");
 
 
-    /* Reduced Motion */
+    if(menuButton && mobileMenu){
 
-    const reduceMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+        menuButton.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("active");
+
+            const icon =
+                menuButton.querySelector("i");
 
 
-    if(reduceMotion){
+            if(mobileMenu.classList.contains("active")){
 
-        positions.forEach(position => {
+                icon.classList.remove(
+                    "ri-menu-3-line"
+                );
 
-            position.classList.add("show");
+                icon.classList.add(
+                    "ri-close-line"
+                );
+
+            }else{
+
+                icon.classList.remove(
+                    "ri-close-line"
+                );
+
+                icon.classList.add(
+                    "ri-menu-3-line"
+                );
+
+            }
 
         });
 
-        return;
+
+        /* CLOSE MENU */
+
+        mobileMenu
+            .querySelectorAll("a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    mobileMenu.classList.remove(
+                        "active"
+                    );
+
+                    const icon =
+                        menuButton.querySelector("i");
+
+                    icon.classList.remove(
+                        "ri-close-line"
+                    );
+
+                    icon.classList.add(
+                        "ri-menu-3-line"
+                    );
+
+                });
+
+            });
 
     }
 
 
-    /* Intersection Observer */
+    /* ==================================================
+       SCROLL REVEAL
+    ================================================== */
 
-    const observer = new IntersectionObserver(
-
-        (entries, observer) => {
-
-            entries.forEach(entry => {
-
-                if(!entry.isIntersecting) return;
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
 
-                const position = entry.target;
+    if("IntersectionObserver" in window){
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if(entry.isIntersecting){
+
+                            entry.target.classList.add(
+                                "show"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold:.12,
+                    rootMargin:"0px 0px -50px 0px"
+                }
+
+            );
 
 
-                /*
-                カードごとに少しずつ
-                表示タイミングをずらす
-                */
+        revealElements.forEach(element => {
 
-                const index =
-                    [...positions].indexOf(position);
+            observer.observe(element);
+
+        });
+
+    }else{
+
+        revealElements.forEach(element => {
+
+            element.classList.add("show");
+
+        });
+
+    }
 
 
-                setTimeout(() => {
+    /* ==================================================
+       POSITION HOVER
+    ================================================== */
 
-                    position.classList.add("show");
-
-                }, index * 100);
-
-
-                observer.unobserve(position);
-
-            });
-
-        },
-
-        {
-            threshold:0.15,
-
-            rootMargin:"0px 0px -60px 0px"
-
-        }
-
-    );
+    const positions =
+        document.querySelectorAll(
+            ".position-card"
+        );
 
 
     positions.forEach(position => {
-
-        observer.observe(position);
-
-    });
-
-}
-
-
-/*==================================================
-POSITION HOVER
-==================================================*/
-
-function initPositionHover(){
-
-    const positions = document.querySelectorAll(
-        ".recruit-position"
-    );
-
-    if(!positions.length) return;
-
-
-    positions.forEach(position => {
-
 
         position.addEventListener(
             "mouseenter",
             () => {
 
-                position.classList.add("is-hover");
+                position.classList.add(
+                    "is-hover"
+                );
 
             }
         );
@@ -135,149 +167,113 @@ function initPositionHover(){
             "mouseleave",
             () => {
 
-                position.classList.remove("is-hover");
+                position.classList.remove(
+                    "is-hover"
+                );
 
             }
         );
 
-
     });
 
-}
 
+    /* ==================================================
+       HEADER SCROLL
+    ================================================== */
 
-/*==================================================
-PAGE FADE
-==================================================*/
-
-function initPageFade(){
-
-    document.body.classList.add(
-        "recruit-page-loaded"
-    );
-
-}
-
-
-/*==================================================
-POSITION NUMBER CHECK
-==================================================*/
-
-document.querySelectorAll(
-    ".recruit-position"
-).forEach((position, index) => {
-
-    /*
-    data-numberが設定されていない場合は
-    自動で番号を設定
-    */
-
-    if(!position.dataset.number){
-
-        position.dataset.number =
-            String(index + 1).padStart(2, "0");
-
-    }
-
-});
-
-
-/*==================================================
-SMOOTH POSITION LINK
-==================================================*/
-
-document.querySelectorAll(
-    ".recruit-position"
-).forEach(position => {
-
-    const icon =
-        position.querySelector(
-            ".recruit-position__top i"
+    const header =
+        document.querySelector(
+            ".recruit-header"
         );
 
 
-    if(!icon) return;
+    if(header){
+
+        let lastScroll = 0;
 
 
-    position.addEventListener(
-        "click",
-        () => {
-
-            /*
-            現時点ではクリック時の
-            詳細ページ遷移は設定しない。
-
-            将来的に募集詳細ページを作る場合は
-            ここにリンク処理を追加できます。
-            */
-
-        }
-    );
-
-});
-
-
-/*==================================================
-WINDOW RESIZE
-==================================================*/
-
-let recruitResizeTimer;
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        clearTimeout(
-            recruitResizeTimer
-        );
-
-
-        recruitResizeTimer = setTimeout(
+        window.addEventListener(
+            "scroll",
             () => {
 
-                /*
-                Resize時にレイアウトを
-                再計算するための処理
-                */
+                const currentScroll =
+                    window.scrollY;
 
-                document
-                    .querySelectorAll(
-                        ".recruit-position"
-                    )
-                    .forEach(position => {
 
-                        position.style.removeProperty(
-                            "transition"
-                        );
+                if(currentScroll > 30){
 
-                    });
+                    header.classList.add(
+                        "scrolled"
+                    );
+
+                }else{
+
+                    header.classList.remove(
+                        "scrolled"
+                    );
+
+                }
+
+
+                lastScroll = currentScroll;
 
             },
-            200
+            {
+                passive:true
+            }
         );
 
     }
-);
 
 
-/*==================================================
-PAGE VISIBILITY
-==================================================*/
+    /* ==================================================
+       SMOOTH ANCHOR
+    ================================================== */
 
-document.addEventListener(
-    "visibilitychange",
-    () => {
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(link => {
 
-        if(
-            document.visibilityState ===
-            "visible"
-        ){
+            link.addEventListener(
+                "click",
+                event => {
 
-            document.body.classList.add(
-                "recruit-page-active"
+                    const targetId =
+                        link.getAttribute("href");
+
+
+                    if(
+                        !targetId ||
+                        targetId === "#"
+                    ){
+                        return;
+                    }
+
+
+                    const target =
+                        document.querySelector(
+                            targetId
+                        );
+
+
+                    if(target){
+
+                        event.preventDefault();
+
+
+                        target.scrollIntoView({
+
+                            behavior:"smooth",
+
+                            block:"start"
+
+                        });
+
+                    }
+
+                }
             );
 
-        }
+        });
 
-    }
-);
+});
