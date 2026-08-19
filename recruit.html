@@ -2,41 +2,20 @@
 <html lang="ja">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>RECRUIT | Nidmegent Esports</title>
 
-    <!-- Remix Icon -->
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css"
     >
 
-    <!-- Favicon -->
-    <link
-        rel="icon"
-        href="favicon.ico"
-        type="image/x-icon"
-    >
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Common CSS -->
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-    <!-- Recruit CSS -->
-    <link
-        rel="stylesheet"
-        href="recruit.css"
-    >
-
+    <!-- RECRUIT専用CSS -->
+    <link rel="stylesheet" href="recruit.css">
 </head>
 
 
@@ -47,90 +26,41 @@
 HEADER
 ================================================== -->
 
-<header class="header">
+<header class="recruit-header">
 
-    <div class="container header__inner">
+    <div class="recruit-header__inner">
 
-        <!-- LOGO -->
-
-        <a
-            href="index.html"
-            class="logo"
-        >
-
+        <a href="index.html" class="recruit-logo">
             <img
                 src="logo/logo-back.png"
                 alt="Nidmegent Esports"
             >
-
         </a>
 
 
-        <!-- NAVIGATION -->
+        <nav class="recruit-nav">
 
-        <nav
-            class="nav"
-            id="global-nav"
-        >
+            <a href="about.html">ABOUT</a>
 
-            <ul class="nav__list">
+            <a href="players.html">PLAYERS</a>
 
-                <li>
-                    <a href="about.html">
-                        ABOUT
-                    </a>
-                </li>
+            <a href="news.html">NEWS</a>
 
-                <li>
-                    <a href="players.html">
-                        PLAYERS
-                    </a>
-                </li>
+            <a href="sponsor.html">SPONSORS</a>
 
-                <li>
-                    <a href="news.html">
-                        NEWS
-                    </a>
-                </li>
+            <a href="recruit.html" class="active">RECRUIT</a>
 
-                <li>
-                    <a href="sponsor.html">
-                        SPONSORS
-                    </a>
-                </li>
-
-                <li>
-                    <a
-                        href="recruit.html"
-                        class="active"
-                    >
-                        RECRUIT
-                    </a>
-                </li>
-
-                <li>
-                    <a href="index.html#contact">
-                        CONTACT
-                    </a>
-                </li>
-
-            </ul>
+            <a href="index.html#contact">CONTACT</a>
 
         </nav>
 
 
-        <!-- MOBILE MENU -->
-
         <button
-            class="menu"
+            class="recruit-menu"
             type="button"
-            aria-label="メニューを開く"
-            aria-controls="global-nav"
-            aria-expanded="false"
+            aria-label="メニュー"
         >
-
             <i class="ri-menu-3-line"></i>
-
         </button>
 
     </div>
@@ -138,33 +68,45 @@ HEADER
 </header>
 
 
+<!-- ==================================================
+MOBILE MENU
+================================================== -->
+
+<div class="recruit-mobile-menu">
+
+    <nav>
+
+        <a href="about.html">ABOUT</a>
+        <a href="players.html">PLAYERS</a>
+        <a href="news.html">NEWS</a>
+        <a href="sponsor.html">SPONSORS</a>
+        <a href="recruit.html">RECRUIT</a>
+        <a href="index.html#contact">CONTACT</a>
+
+    </nav>
+
+</div>
+
 
 <!-- ==================================================
-MAIN
+HERO
 ================================================== -->
 
 <main>
 
-
-<!-- ==================================================
-RECRUIT HERO
-================================================== -->
-
 <section class="recruit-hero">
 
-    <div class="container">
+    <div class="recruit-container">
 
         <div class="recruit-hero__content">
 
-            <span class="recruit-hero__eyebrow">
+            <span class="recruit-eyebrow">
                 JOIN NIDMEGENT
             </span>
 
-
-            <h1 class="recruit-hero__title">
+            <h1>
                 RECRUIT
             </h1>
-
 
             <p class="recruit-hero__lead">
 
@@ -172,7 +114,6 @@ RECRUIT HERO
                 そして、次の時代を一緒につくる。
 
             </p>
-
 
             <p class="recruit-hero__text">
 
@@ -183,25 +124,18 @@ RECRUIT HERO
 
             </p>
 
-
-            <div class="recruit-hero__line"></div>
+            <div class="recruit-line"></div>
 
         </div>
 
     </div>
 
 
-    <!-- BACKGROUND TEXT -->
-
-    <div
-        class="recruit-hero__background"
-        aria-hidden="true"
-    >
+    <div class="recruit-hero__bg">
         RECRUIT
     </div>
 
 </section>
-
 
 
 <!-- ==================================================
@@ -210,9 +144,9 @@ INTRO
 
 <section class="recruit-intro">
 
-    <div class="container">
+    <div class="recruit-container">
 
-        <div class="recruit-section-header fade-up">
+        <div class="recruit-section-header reveal">
 
             <span>
                 NIDMEGENT / RECRUITMENT
@@ -228,21 +162,18 @@ INTRO
 
         <div class="recruit-intro__grid">
 
-            <!-- LEFT -->
-
-            <div class="recruit-intro__heading fade-up">
+            <div class="recruit-intro__heading reveal">
 
                 <p>
-                    Nidmegent Esportsと一緒に、<br>
-                    新しい可能性へ挑戦しませんか？
+                    Nidmegent Esportsと一緒に、
+                    新しい可能性へ
+                    挑戦しませんか？
                 </p>
 
             </div>
 
 
-            <!-- RIGHT -->
-
-            <div class="recruit-intro__content fade-up">
+            <div class="recruit-intro__text reveal">
 
                 <p>
                     Nidmegent Esportsは、
@@ -251,14 +182,12 @@ INTRO
                     eスポーツを中心とした活動を行っています。
                 </p>
 
-
                 <p>
-                    競技で上を目指したい人。<br>
-                    自分の個性を発信したい人。<br>
+                    競技で上を目指したい人。
+                    自分の個性を発信したい人。
                     チームを支える側として
                     新しい挑戦をしたい人。
                 </p>
-
 
                 <p>
                     それぞれの「やってみたい」を、
@@ -275,17 +204,15 @@ INTRO
 </section>
 
 
-
 <!-- ==================================================
-OUR CULTURE
+CULTURE
 ================================================== -->
 
 <section class="recruit-culture">
 
-    <div class="container">
+    <div class="recruit-container">
 
-
-        <div class="recruit-culture__header fade-up">
+        <div class="recruit-section-header reveal">
 
             <span>
                 OUR CULTURE
@@ -299,25 +226,18 @@ OUR CULTURE
         </div>
 
 
-        <div class="recruit-culture__grid">
+        <div class="culture-grid">
 
+            <article class="culture-card reveal">
 
-            <!-- COMPETE -->
-
-            <article class="culture-item fade-up">
-
-                <span class="culture-item__number">
-                    01
-                </span>
+                <span class="culture-number">01</span>
 
                 <i class="ri-gamepad-line"></i>
 
-                <h3>
-                    COMPETE
-                </h3>
+                <h3>COMPETE</h3>
 
                 <p>
-                    勝つことにこだわる。<br>
+                    勝つことにこだわる。
                     競技者として成長するために、
                     一つひとつの挑戦と向き合います。
                 </p>
@@ -325,22 +245,16 @@ OUR CULTURE
             </article>
 
 
-            <!-- CREATE -->
+            <article class="culture-card reveal">
 
-            <article class="culture-item fade-up">
-
-                <span class="culture-item__number">
-                    02
-                </span>
+                <span class="culture-number">02</span>
 
                 <i class="ri-lightbulb-line"></i>
 
-                <h3>
-                    CREATE
-                </h3>
+                <h3>CREATE</h3>
 
                 <p>
-                    ゲームだけでは終わらない。<br>
+                    ゲームだけでは終わらない。
                     動画・配信・デザインなど、
                     自分の「好き」を新しい価値へ変えていきます。
                 </p>
@@ -348,53 +262,38 @@ OUR CULTURE
             </article>
 
 
-            <!-- CONNECT -->
+            <article class="culture-card reveal">
 
-            <article class="culture-item fade-up">
-
-                <span class="culture-item__number">
-                    03
-                </span>
+                <span class="culture-number">03</span>
 
                 <i class="ri-team-line"></i>
 
-                <h3>
-                    CONNECT
-                </h3>
+                <h3>CONNECT</h3>
 
                 <p>
                     一人ではできないことも、
-                    仲間とならできる。<br>
-                    互いを尊重し、
-                    一緒に成長できる環境を目指します。
+                    仲間とならできる。
+                    互いを尊重し、一緒に成長できる環境を目指します。
                 </p>
 
             </article>
 
 
-            <!-- CHALLENGE -->
+            <article class="culture-card reveal">
 
-            <article class="culture-item fade-up">
-
-                <span class="culture-item__number">
-                    04
-                </span>
+                <span class="culture-number">04</span>
 
                 <i class="ri-rocket-2-line"></i>
 
-                <h3>
-                    CHALLENGE
-                </h3>
+                <h3>CHALLENGE</h3>
 
                 <p>
-                    失敗を恐れず、
-                    何度でも挑戦する。<br>
+                    失敗を恐れず、何度でも挑戦する。
                     新しい可能性へ踏み出す人を
                     Nidmegentは応援します。
                 </p>
 
             </article>
-
 
         </div>
 
@@ -403,23 +302,20 @@ OUR CULTURE
 </section>
 
 
-
 <!-- ==================================================
-RECRUITMENT POSITIONS
+POSITIONS
 ================================================== -->
 
 <section class="recruit-positions">
 
-    <div class="container">
+    <div class="recruit-container">
 
 
-        <!-- SECTION HEADER -->
-
-        <div class="recruit-positions__header fade-up">
+        <div class="positions-header reveal">
 
             <div>
 
-                <span class="recruit-section-number">
+                <span>
                     01 / RECRUITMENT
                 </span>
 
@@ -430,7 +326,6 @@ RECRUITMENT POSITIONS
 
             </div>
 
-
             <p>
                 Nidmegent Esportsでは、
                 様々なフィールドで活動する
@@ -440,50 +335,34 @@ RECRUITMENT POSITIONS
         </div>
 
 
-
-        <!-- POSITION LIST -->
-
-        <div class="recruit-position-list">
+        <div class="position-list">
 
 
-            <!-- ==================================================
-            01 VALORANT
-            ================================================== -->
+            <!-- VALORANT -->
 
             <article
-                class="recruit-position fade-up"
+                class="position-card reveal"
                 data-number="01"
             >
 
-                <div class="recruit-position__number">
+                <div class="position-number">
                     01
                 </div>
 
+                <div class="position-main">
 
-                <div class="recruit-position__main">
+                    <div class="position-top">
 
-                    <div class="recruit-position__top">
+                        <span>COMPETITIVE</span>
 
-                        <span>
-                            COMPETITIVE
-                        </span>
-
-                        <a
-                            href="#"
-                            class="recruit-position__arrow"
-                            aria-label="VALORANT PLAYER"
-                        >
-                            <i class="ri-arrow-right-up-line"></i>
-                        </a>
+                        <i class="ri-arrow-right-up-line"></i>
 
                     </div>
-
 
                     <h3>
                         VALORANT<br>
                         PLAYER
                     </h3>
-
 
                     <p>
                         VALORANTを中心に競技シーンで
@@ -492,13 +371,10 @@ RECRUITMENT POSITIONS
                         様々な環境での挑戦を目指します。
                     </p>
 
-
-                    <div class="recruit-position__tags">
-
+                    <div class="position-tags">
                         <span>VALORANT</span>
                         <span>PLAYER</span>
                         <span>COMPETITIVE</span>
-
                     </div>
 
                 </div>
@@ -506,45 +382,31 @@ RECRUITMENT POSITIONS
             </article>
 
 
-
-            <!-- ==================================================
-            02 APEX LEGENDS
-            ================================================== -->
+            <!-- APEX -->
 
             <article
-                class="recruit-position fade-up"
+                class="position-card reveal"
                 data-number="02"
             >
 
-                <div class="recruit-position__number">
+                <div class="position-number">
                     02
                 </div>
 
+                <div class="position-main">
 
-                <div class="recruit-position__main">
+                    <div class="position-top">
 
-                    <div class="recruit-position__top">
+                        <span>COMPETITIVE</span>
 
-                        <span>
-                            COMPETITIVE
-                        </span>
-
-                        <a
-                            href="#"
-                            class="recruit-position__arrow"
-                            aria-label="APEX LEGENDS PLAYER"
-                        >
-                            <i class="ri-arrow-right-up-line"></i>
-                        </a>
+                        <i class="ri-arrow-right-up-line"></i>
 
                     </div>
-
 
                     <h3>
                         APEX LEGENDS<br>
                         PLAYER
                     </h3>
-
 
                     <p>
                         Apex Legendsの競技シーンで
@@ -553,13 +415,10 @@ RECRUITMENT POSITIONS
                         新たな挑戦を目指します。
                     </p>
 
-
-                    <div class="recruit-position__tags">
-
+                    <div class="position-tags">
                         <span>APEX LEGENDS</span>
                         <span>PLAYER</span>
                         <span>COMPETITIVE</span>
-
                     </div>
 
                 </div>
@@ -567,45 +426,31 @@ RECRUITMENT POSITIONS
             </article>
 
 
-
-            <!-- ==================================================
-            03 MINECRAFT
-            ================================================== -->
+            <!-- MINECRAFT -->
 
             <article
-                class="recruit-position fade-up"
+                class="position-card reveal"
                 data-number="03"
             >
 
-                <div class="recruit-position__number">
+                <div class="position-number">
                     03
                 </div>
 
+                <div class="position-main">
 
-                <div class="recruit-position__main">
+                    <div class="position-top">
 
-                    <div class="recruit-position__top">
+                        <span>GAME</span>
 
-                        <span>
-                            GAME
-                        </span>
-
-                        <a
-                            href="#"
-                            class="recruit-position__arrow"
-                            aria-label="MINECRAFT MEMBER"
-                        >
-                            <i class="ri-arrow-right-up-line"></i>
-                        </a>
+                        <i class="ri-arrow-right-up-line"></i>
 
                     </div>
-
 
                     <h3>
                         MINECRAFT<br>
                         MEMBER
                     </h3>
-
 
                     <p>
                         Minecraftを中心に、
@@ -613,13 +458,10 @@ RECRUITMENT POSITIONS
                         活動に参加するメンバーを募集しています。
                     </p>
 
-
-                    <div class="recruit-position__tags">
-
+                    <div class="position-tags">
                         <span>MINECRAFT</span>
                         <span>MEMBER</span>
                         <span>COMMUNITY</span>
-
                     </div>
 
                 </div>
@@ -627,44 +469,30 @@ RECRUITMENT POSITIONS
             </article>
 
 
-
-            <!-- ==================================================
-            04 CREATOR
-            ================================================== -->
+            <!-- CREATOR -->
 
             <article
-                class="recruit-position fade-up"
+                class="position-card reveal"
                 data-number="04"
             >
 
-                <div class="recruit-position__number">
+                <div class="position-number">
                     04
                 </div>
 
+                <div class="position-main">
 
-                <div class="recruit-position__main">
+                    <div class="position-top">
 
-                    <div class="recruit-position__top">
+                        <span>CREATIVE</span>
 
-                        <span>
-                            CREATIVE
-                        </span>
-
-                        <a
-                            href="#"
-                            class="recruit-position__arrow"
-                            aria-label="CREATOR"
-                        >
-                            <i class="ri-arrow-right-up-line"></i>
-                        </a>
+                        <i class="ri-arrow-right-up-line"></i>
 
                     </div>
-
 
                     <h3>
                         CREATOR
                     </h3>
-
 
                     <p>
                         動画・画像・デザインなど、
@@ -673,13 +501,10 @@ RECRUITMENT POSITIONS
                         盛り上げてくれるクリエイターを募集。
                     </p>
 
-
-                    <div class="recruit-position__tags">
-
+                    <div class="position-tags">
                         <span>VIDEO</span>
                         <span>DESIGN</span>
                         <span>CREATIVE</span>
-
                     </div>
 
                 </div>
@@ -687,44 +512,30 @@ RECRUITMENT POSITIONS
             </article>
 
 
-
-            <!-- ==================================================
-            05 STREAMER
-            ================================================== -->
+            <!-- STREAMER -->
 
             <article
-                class="recruit-position fade-up"
+                class="position-card reveal"
                 data-number="05"
             >
 
-                <div class="recruit-position__number">
+                <div class="position-number">
                     05
                 </div>
 
+                <div class="position-main">
 
-                <div class="recruit-position__main">
+                    <div class="position-top">
 
-                    <div class="recruit-position__top">
+                        <span>CONTENT</span>
 
-                        <span>
-                            CONTENT
-                        </span>
-
-                        <a
-                            href="#"
-                            class="recruit-position__arrow"
-                            aria-label="STREAMER"
-                        >
-                            <i class="ri-arrow-right-up-line"></i>
-                        </a>
+                        <i class="ri-arrow-right-up-line"></i>
 
                     </div>
-
 
                     <h3>
                         STREAMER
                     </h3>
-
 
                     <p>
                         TwitchやYouTubeなどを中心に
@@ -734,13 +545,10 @@ RECRUITMENT POSITIONS
                         ストリーマーを募集。
                     </p>
 
-
-                    <div class="recruit-position__tags">
-
+                    <div class="position-tags">
                         <span>STREAMING</span>
                         <span>TWITCH</span>
                         <span>YOUTUBE</span>
-
                     </div>
 
                 </div>
@@ -748,44 +556,30 @@ RECRUITMENT POSITIONS
             </article>
 
 
-
-            <!-- ==================================================
-            06 STAFF
-            ================================================== -->
+            <!-- STAFF -->
 
             <article
-                class="recruit-position fade-up"
+                class="position-card reveal"
                 data-number="06"
             >
 
-                <div class="recruit-position__number">
+                <div class="position-number">
                     06
                 </div>
 
+                <div class="position-main">
 
-                <div class="recruit-position__main">
+                    <div class="position-top">
 
-                    <div class="recruit-position__top">
+                        <span>MANAGEMENT</span>
 
-                        <span>
-                            MANAGEMENT
-                        </span>
-
-                        <a
-                            href="#"
-                            class="recruit-position__arrow"
-                            aria-label="STAFF"
-                        >
-                            <i class="ri-arrow-right-up-line"></i>
-                        </a>
+                        <i class="ri-arrow-right-up-line"></i>
 
                     </div>
-
 
                     <h3>
                         STAFF
                     </h3>
-
 
                     <p>
                         チーム運営・大会運営・SNS・
@@ -794,19 +588,15 @@ RECRUITMENT POSITIONS
                         支えてくれるスタッフを募集。
                     </p>
 
-
-                    <div class="recruit-position__tags">
-
+                    <div class="position-tags">
                         <span>MANAGEMENT</span>
                         <span>EVENT</span>
                         <span>SNS</span>
-
                     </div>
 
                 </div>
 
             </article>
-
 
         </div>
 
@@ -815,45 +605,36 @@ RECRUITMENT POSITIONS
 </section>
 
 
-
 <!-- ==================================================
 MESSAGE
 ================================================== -->
 
 <section class="recruit-message">
 
-    <div class="container">
+    <div class="recruit-container">
 
-        <div class="recruit-message__box fade-up">
+        <div class="message-box reveal">
 
             <span>
                 FOR THE NEXT GENERATION
             </span>
-
 
             <h2>
                 YOUR NEXT<br>
                 CHALLENGE.
             </h2>
 
-
             <p>
-                Nidmegent Esportsは、<br>
+                Nidmegent Esportsは、
                 あなたの挑戦を待っています。
             </p>
 
-
             <a
                 href="index.html#contact"
-                class="recruit-message__button"
+                class="message-button"
             >
-
-                <span>
-                    CONTACT US
-                </span>
-
-                <i class="ri-arrow-right-up-line"></i>
-
+                CONTACT US
+                <i class="ri-arrow-right-line"></i>
             </a>
 
         </div>
@@ -865,32 +646,22 @@ MESSAGE
 </main>
 
 
-
 <!-- ==================================================
 FOOTER
 ================================================== -->
 
-<footer class="footer">
+<footer class="recruit-footer">
 
-    <div class="container">
+    <div class="recruit-container">
 
+        <div class="footer-top">
 
-        <div class="footer__top">
+            <div class="footer-brand">
 
-
-            <!-- BRAND -->
-
-            <div class="footer__brand">
-
-                <a href="index.html">
-
-                    <img
-                        src="logo/logo-back.png"
-                        alt="Nidmegent Esports"
-                    >
-
-                </a>
-
+                <img
+                    src="logo/logo-back.png"
+                    alt="Nidmegent Esports"
+                >
 
                 <p>
                     Keep Pushing Forward.<br>
@@ -900,58 +671,30 @@ FOOTER
             </div>
 
 
-
-            <!-- MENU -->
-
-            <div class="footer__menu">
-
+            <div class="footer-menu">
 
                 <div>
 
-                    <h4>
-                        MENU
-                    </h4>
+                    <h4>MENU</h4>
 
-                    <a href="about.html">
-                        ABOUT
-                    </a>
-
-                    <a href="players.html">
-                        PLAYERS
-                    </a>
-
-                    <a href="news.html">
-                        NEWS
-                    </a>
-
-                    <a href="sponsor.html">
-                        SPONSORS
-                    </a>
-
-                    <a href="recruit.html">
-                        RECRUIT
-                    </a>
-
-                    <a href="index.html#contact">
-                        CONTACT
-                    </a>
+                    <a href="about.html">ABOUT</a>
+                    <a href="players.html">PLAYERS</a>
+                    <a href="news.html">NEWS</a>
+                    <a href="sponsor.html">SPONSORS</a>
+                    <a href="recruit.html">RECRUIT</a>
+                    <a href="index.html#contact">CONTACT</a>
 
                 </div>
 
 
-
-                <!-- SOCIAL -->
-
                 <div>
 
-                    <h4>
-                        SOCIAL
-                    </h4>
+                    <h4>SOCIAL</h4>
 
                     <a
                         href="https://x.com/Nidmegent"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                     >
                         X
                     </a>
@@ -959,7 +702,7 @@ FOOTER
                     <a
                         href="https://www.youtube.com/@Nidmegent"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                     >
                         YouTube
                     </a>
@@ -967,47 +710,32 @@ FOOTER
                     <a
                         href="https://discord.com/invite/24CjQUFqbp"
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener"
                     >
                         Discord
                     </a>
 
                 </div>
 
-
             </div>
 
         </div>
 
 
-
-        <!-- FOOTER BOTTOM -->
-
-        <div class="footer__bottom">
+        <div class="footer-bottom">
 
             <span>
                 © 2026 Nidmegent Esports. All Rights Reserved.
             </span>
 
-            <span>
-                RECRUIT
-            </span>
-
         </div>
-
 
     </div>
 
 </footer>
 
 
-
-<!-- ==================================================
-JAVASCRIPT
-================================================== -->
-
 <script src="recruit.js"></script>
 
 </body>
-
 </html>
