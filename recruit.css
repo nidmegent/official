@@ -543,65 +543,57 @@
     color:rgba(255,255,255,.8);
 }
 
-
 /* ==================================================
    POSITIONS
 ================================================== */
 
 .recruit-positions{
     position:relative;
-
-    padding:170px 0;
-
-    overflow:hidden;
-
+    padding:150px 0;
     background:#fff;
+    overflow:hidden;
 }
-
 
 .recruit-positions::before{
     content:"POSITIONS";
 
     position:absolute;
-
     right:-100px;
-    top:100px;
+    top:80px;
 
-    color:#f5f5f5;
-
-    font-size:clamp(130px,17vw,250px);
-
+    font-size:clamp(120px,17vw,250px);
     font-weight:900;
-
     line-height:.8;
-
     letter-spacing:-.1em;
+
+    color:#f5f6f8;
 
     pointer-events:none;
 }
 
 
+/* ==================================================
+   HEADER
+================================================== */
+
 .positions-header{
     position:relative;
-
     z-index:2;
 
     display:grid;
-
     grid-template-columns:1fr 1fr;
 
     gap:80px;
 
     align-items:end;
 
-    margin-bottom:90px;
+    margin-bottom:80px;
 }
-
 
 .positions-header span{
     display:block;
 
-    margin-bottom:25px;
+    margin-bottom:20px;
 
     color:#2962ff;
 
@@ -611,11 +603,10 @@
     letter-spacing:.2em;
 }
 
-
 .positions-header h2{
     margin:0;
 
-    font-size:clamp(55px,8vw,110px);
+    font-size:clamp(60px,8vw,110px);
 
     font-weight:900;
 
@@ -623,7 +614,6 @@
 
     letter-spacing:-.08em;
 }
-
 
 .positions-header p{
     max-width:500px;
@@ -644,15 +634,14 @@
 
 .position-list{
     position:relative;
-
     z-index:2;
 
-    border-top:1px solid #ddd;
+    width:100%;
 }
 
 
 /* ==================================================
-   POSITION CARD
+   FUNCTION STYLE CARD
 ================================================== */
 
 .position-card{
@@ -662,45 +651,78 @@
 
     grid-template-columns:100px 1fr;
 
-    gap:60px;
+    gap:70px;
 
-    min-height:370px;
+    min-height:420px;
 
-    padding:55px 0;
+    padding:45px 30px 45px 30px;
 
-    border-bottom:1px solid #ddd;
+    border-top:1px solid #ddd;
+
+    background:#fff;
 
     overflow:hidden;
 
     transition:
-        padding .45s ease,
-        background .45s ease;
+        background .45s ease,
+        transform .45s ease,
+        padding .45s ease;
 }
 
 
-.position-card:hover{
-    padding-left:35px;
-    padding-right:35px;
+/* 最後のカード */
+
+.position-card:last-child{
+    border-bottom:1px solid #ddd;
+}
+
+
+/* ==================================================
+   HOVER BACKGROUND
+================================================== */
+
+.position-card::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
 
     background:#fafafa;
+
+    opacity:0;
+
+    transition:.45s;
+
+    pointer-events:none;
 }
 
+.position-card:hover::after{
+    opacity:1;
+}
+
+
+/* ==================================================
+   NUMBER
+================================================== */
 
 .position-number{
     position:relative;
 
-    z-index:2;
+    z-index:3;
 
-    color:#aaa;
+    padding-top:8px;
+
+    color:#999;
 
     font-size:11px;
+
     font-weight:800;
 
     letter-spacing:.2em;
 
-    transition:.3s;
+    transition:.35s;
 }
-
 
 .position-card:hover .position-number{
     color:#2962ff;
@@ -708,17 +730,21 @@
 
 
 /* ==================================================
-   POSITION MAIN
+   MAIN
 ================================================== */
 
 .position-main{
     position:relative;
 
-    z-index:2;
+    z-index:3;
 
     max-width:900px;
 }
 
+
+/* ==================================================
+   TOP
+================================================== */
 
 .position-top{
     display:flex;
@@ -727,19 +753,23 @@
 
     justify-content:space-between;
 
-    margin-bottom:35px;
+    margin-bottom:55px;
 }
-
 
 .position-top span{
     color:#2962ff;
 
     font-size:10px;
+
     font-weight:800;
 
-    letter-spacing:.2em;
+    letter-spacing:.22em;
 }
 
+
+/* ==================================================
+   ARROW
+================================================== */
 
 .position-top i{
     display:flex;
@@ -756,11 +786,14 @@
 
     color:#555;
 
-    font-size:18px;
+    font-size:17px;
 
-    transition:.35s;
+    transition:
+        transform .4s ease,
+        background .4s ease,
+        border-color .4s ease,
+        color .4s ease;
 }
-
 
 .position-card:hover .position-top i{
     transform:translate(5px,-5px);
@@ -773,20 +806,25 @@
 }
 
 
+/* ==================================================
+   TITLE
+================================================== */
+
 .position-main h3{
     margin:0;
 
-    font-size:clamp(45px,6vw,85px);
+    font-size:clamp(55px,6.2vw,92px);
 
     font-weight:900;
 
-    line-height:.86;
+    line-height:.84;
 
-    letter-spacing:-.07em;
+    letter-spacing:-.075em;
 
-    transition:.35s;
+    transition:
+        color .4s ease,
+        transform .4s ease;
 }
-
 
 .position-card:hover .position-main h3{
     color:#2962ff;
@@ -795,10 +833,14 @@
 }
 
 
+/* ==================================================
+   DESCRIPTION
+================================================== */
+
 .position-main > p{
     max-width:680px;
 
-    margin:35px 0 0;
+    margin:40px 0 0;
 
     color:#777;
 
@@ -819,9 +861,8 @@
 
     gap:8px;
 
-    margin-top:30px;
+    margin-top:28px;
 }
-
 
 .position-tags span{
     display:inline-flex;
@@ -829,7 +870,7 @@
     align-items:center;
     justify-content:center;
 
-    min-height:30px;
+    min-height:29px;
 
     padding:0 14px;
 
@@ -842,23 +883,23 @@
     color:#888;
 
     font-size:9px;
+
     font-weight:800;
 
-    letter-spacing:.12em;
+    letter-spacing:.13em;
 
-    transition:.3s;
+    transition:.35s;
 }
-
 
 .position-card:hover .position-tags span{
     color:#2962ff;
 
-    border-color:rgba(41,98,255,.2);
+    border-color:#cfdcff;
 }
 
 
 /* ==================================================
-   BACKGROUND NUMBER
+   BIG BACKGROUND NUMBER
 ================================================== */
 
 .position-card::before{
@@ -866,12 +907,12 @@
 
     position:absolute;
 
-    right:-30px;
-    bottom:-75px;
+    right:-25px;
+    bottom:-70px;
 
-    color:#f6f6f6;
+    z-index:1;
 
-    font-size:200px;
+    font-size:210px;
 
     font-weight:900;
 
@@ -879,18 +920,159 @@
 
     letter-spacing:-.1em;
 
+    color:#f3f5f9;
+
     pointer-events:none;
 
-    transition:.5s;
+    transition:
+        transform .55s ease,
+        color .55s ease;
 }
-
 
 .position-card:hover::before{
-    transform:translateX(-20px);
+    transform:translateX(-25px);
 
-    color:#f0f3ff;
+    color:#edf2ff;
 }
 
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:1000px){
+
+    .recruit-positions{
+        padding:120px 0;
+    }
+
+    .positions-header{
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+        margin-bottom:60px;
+    }
+
+    .positions-header p{
+        margin:0;
+    }
+
+    .position-card{
+        grid-template-columns:70px 1fr;
+
+        gap:35px;
+
+        min-height:390px;
+    }
+
+    .position-main h3{
+        font-size:65px;
+    }
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:768px){
+
+    .recruit-positions{
+        padding:100px 0;
+    }
+
+    .recruit-positions::before{
+        display:none;
+    }
+
+    .positions-header{
+        margin-bottom:50px;
+    }
+
+    .positions-header h2{
+        font-size:55px;
+    }
+
+    .position-card{
+        grid-template-columns:1fr;
+
+        gap:15px;
+
+        min-height:auto;
+
+        padding:35px 0;
+    }
+
+    .position-card:hover{
+        padding-left:15px;
+        padding-right:15px;
+    }
+
+    .position-number{
+        padding-top:0;
+    }
+
+    .position-top{
+        margin-bottom:35px;
+    }
+
+    .position-main h3{
+        font-size:48px;
+    }
+
+    .position-main > p{
+        margin-top:25px;
+
+        font-size:13px;
+    }
+
+    .position-card::before{
+        right:-15px;
+        bottom:-25px;
+
+        font-size:120px;
+    }
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media(max-width:480px){
+
+    .recruit-positions{
+        padding:80px 0;
+    }
+
+    .positions-header h2{
+        font-size:45px;
+    }
+
+    .position-card{
+        padding:30px 0;
+    }
+
+    .position-main h3{
+        font-size:38px;
+    }
+
+    .position-top i{
+        width:40px;
+        height:40px;
+
+        font-size:15px;
+    }
+
+    .position-main > p{
+        font-size:12px;
+    }
+
+    .position-tags span{
+        font-size:8px;
+    }
+}
 
 /* ==================================================
    MESSAGE
