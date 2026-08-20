@@ -697,29 +697,26 @@
    CARD HOVER BACKGROUND
 ================================================== */
 
-.recruit-position::after{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:0;
-
-    background:#fafafa;
-
-    opacity:0;
-
-    transition:opacity .45s ease;
-
-    pointer-events:none;
+.recruit-position{
+    transition:
+        background .45s ease,
+        padding .45s ease;
 }
 
+.recruit-position:hover{
+    background:#f8f8f8;
+}
 
-.recruit-position:hover::after{
+.recruit-position:hover
+.recruit-position__main h3{
+    color:#2962ff;
+}
 
-    opacity:1;
+.recruit-position:hover
+.recruit-position__top i{
+    background:#2962ff;
+    border-color:#2962ff;
+    color:#fff;
 }
 
 
