@@ -544,43 +544,60 @@
 }
 
 /* ==================================================
-   POSITIONS
+   RECRUITMENT POSITIONS
+   FUNCTION KYOTO STYLE
 ================================================== */
 
 .recruit-positions{
     position:relative;
-    padding:150px 0;
+
+    padding:160px 0;
+
     background:#fff;
+
     overflow:hidden;
 }
+
+
+/* ==================================================
+   BACKGROUND TEXT
+================================================== */
 
 .recruit-positions::before{
     content:"POSITIONS";
 
     position:absolute;
-    right:-100px;
-    top:80px;
 
-    font-size:clamp(120px,17vw,250px);
+    right:-120px;
+    top:70px;
+
+    color:#f4f5f7;
+
+    font-size:clamp(130px,17vw,260px);
+
     font-weight:900;
+
     line-height:.8;
+
     letter-spacing:-.1em;
 
-    color:#f5f6f8;
-
     pointer-events:none;
+
+    user-select:none;
 }
 
 
 /* ==================================================
-   HEADER
+   SECTION HEADER
 ================================================== */
 
-.positions-header{
+.recruit-positions__header{
     position:relative;
+
     z-index:2;
 
     display:grid;
+
     grid-template-columns:1fr 1fr;
 
     gap:80px;
@@ -590,20 +607,23 @@
     margin-bottom:80px;
 }
 
-.positions-header span{
+
+.recruit-section-number{
     display:block;
 
-    margin-bottom:20px;
+    margin-bottom:22px;
 
     color:#2962ff;
 
     font-size:11px;
+
     font-weight:800;
 
-    letter-spacing:.2em;
+    letter-spacing:.18em;
 }
 
-.positions-header h2{
+
+.recruit-positions__header h2{
     margin:0;
 
     font-size:clamp(60px,8vw,110px);
@@ -615,7 +635,8 @@
     letter-spacing:-.08em;
 }
 
-.positions-header p{
+
+.recruit-positions__header p{
     max-width:500px;
 
     margin:0 0 5px auto;
@@ -632,32 +653,36 @@
    POSITION LIST
 ================================================== */
 
-.position-list{
+.recruit-position-list{
     position:relative;
+
     z-index:2;
 
     width:100%;
+
+    border-top:1px solid #ddd;
 }
 
 
 /* ==================================================
-   FUNCTION STYLE CARD
+   POSITION CARD
 ================================================== */
 
-.position-card{
+.recruit-position{
+
     position:relative;
 
     display:grid;
 
     grid-template-columns:100px 1fr;
 
-    gap:70px;
+    gap:60px;
 
     min-height:420px;
 
-    padding:45px 30px 45px 30px;
+    padding:48px 30px;
 
-    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
 
     background:#fff;
 
@@ -665,39 +690,36 @@
 
     transition:
         background .45s ease,
-        transform .45s ease,
         padding .45s ease;
 }
 
 
-/* 最後のカード */
-
-.position-card:last-child{
-    border-bottom:1px solid #ddd;
-}
-
-
 /* ==================================================
-   HOVER BACKGROUND
+   CARD HOVER BACKGROUND
 ================================================== */
 
-.position-card::after{
+.recruit-position::after{
+
     content:"";
 
     position:absolute;
 
     inset:0;
 
+    z-index:0;
+
     background:#fafafa;
 
     opacity:0;
 
-    transition:.45s;
+    transition:opacity .45s ease;
 
     pointer-events:none;
 }
 
-.position-card:hover::after{
+
+.recruit-position:hover::after{
+
     opacity:1;
 }
 
@@ -706,7 +728,8 @@
    NUMBER
 ================================================== */
 
-.position-number{
+.recruit-position__number{
+
     position:relative;
 
     z-index:3;
@@ -724,7 +747,9 @@
     transition:.35s;
 }
 
-.position-card:hover .position-number{
+
+.recruit-position:hover .recruit-position__number{
+
     color:#2962ff;
 }
 
@@ -733,7 +758,8 @@
    MAIN
 ================================================== */
 
-.position-main{
+.recruit-position__main{
+
     position:relative;
 
     z-index:3;
@@ -746,7 +772,8 @@
    TOP
 ================================================== */
 
-.position-top{
+.recruit-position__top{
+
     display:flex;
 
     align-items:center;
@@ -756,7 +783,9 @@
     margin-bottom:55px;
 }
 
-.position-top span{
+
+.recruit-position__top span{
+
     color:#2962ff;
 
     font-size:10px;
@@ -771,13 +800,16 @@
    ARROW
 ================================================== */
 
-.position-top i{
+.recruit-position__top i{
+
     display:flex;
 
     align-items:center;
+
     justify-content:center;
 
     width:48px;
+
     height:48px;
 
     border:1px solid #ddd;
@@ -795,7 +827,9 @@
         color .4s ease;
 }
 
-.position-card:hover .position-top i{
+
+.recruit-position:hover .recruit-position__top i{
+
     transform:translate(5px,-5px);
 
     background:#2962ff;
@@ -810,7 +844,8 @@
    TITLE
 ================================================== */
 
-.position-main h3{
+.recruit-position__main h3{
+
     margin:0;
 
     font-size:clamp(55px,6.2vw,92px);
@@ -826,7 +861,9 @@
         transform .4s ease;
 }
 
-.position-card:hover .position-main h3{
+
+.recruit-position:hover .recruit-position__main h3{
+
     color:#2962ff;
 
     transform:translateX(5px);
@@ -837,7 +874,8 @@
    DESCRIPTION
 ================================================== */
 
-.position-main > p{
+.recruit-position__main > p{
+
     max-width:680px;
 
     margin:40px 0 0;
@@ -854,7 +892,8 @@
    TAGS
 ================================================== */
 
-.position-tags{
+.recruit-position__tags{
+
     display:flex;
 
     flex-wrap:wrap;
@@ -864,10 +903,13 @@
     margin-top:28px;
 }
 
-.position-tags span{
+
+.recruit-position__tags span{
+
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     min-height:29px;
@@ -891,7 +933,9 @@
     transition:.35s;
 }
 
-.position-card:hover .position-tags span{
+
+.recruit-position:hover .recruit-position__tags span{
+
     color:#2962ff;
 
     border-color:#cfdcff;
@@ -902,15 +946,19 @@
    BIG BACKGROUND NUMBER
 ================================================== */
 
-.position-card::before{
+.recruit-position::before{
+
     content:attr(data-number);
 
     position:absolute;
 
     right:-25px;
+
     bottom:-70px;
 
     z-index:1;
+
+    color:#f3f5f9;
 
     font-size:210px;
 
@@ -920,19 +968,47 @@
 
     letter-spacing:-.1em;
 
-    color:#f3f5f9;
-
     pointer-events:none;
+
+    user-select:none;
 
     transition:
         transform .55s ease,
         color .55s ease;
 }
 
-.position-card:hover::before{
+
+.recruit-position:hover::before{
+
     transform:translateX(-25px);
 
     color:#edf2ff;
+}
+
+
+/* ==================================================
+   FADE UP
+================================================== */
+
+.recruit-position.fade-up{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease,
+        background .45s ease,
+        padding .45s ease;
+}
+
+
+.recruit-position.fade-up.show{
+
+    opacity:1;
+
+    transform:none;
 }
 
 
@@ -943,32 +1019,47 @@
 @media(max-width:1000px){
 
     .recruit-positions{
+
         padding:120px 0;
+
     }
 
-    .positions-header{
+
+    .recruit-positions__header{
+
         grid-template-columns:1fr;
 
         gap:30px;
 
         margin-bottom:60px;
+
     }
 
-    .positions-header p{
+
+    .recruit-positions__header p{
+
         margin:0;
+
     }
 
-    .position-card{
+
+    .recruit-position{
+
         grid-template-columns:70px 1fr;
 
         gap:35px;
 
         min-height:390px;
+
     }
 
-    .position-main h3{
+
+    .recruit-position__main h3{
+
         font-size:65px;
+
     }
+
 }
 
 
@@ -979,22 +1070,35 @@
 @media(max-width:768px){
 
     .recruit-positions{
+
         padding:100px 0;
+
     }
+
 
     .recruit-positions::before{
+
         display:none;
+
     }
 
-    .positions-header{
+
+    .recruit-positions__header{
+
         margin-bottom:50px;
+
     }
 
-    .positions-header h2{
+
+    .recruit-positions__header h2{
+
         font-size:55px;
+
     }
 
-    .position-card{
+
+    .recruit-position{
+
         grid-template-columns:1fr;
 
         gap:15px;
@@ -1002,37 +1106,59 @@
         min-height:auto;
 
         padding:35px 0;
+
     }
 
-    .position-card:hover{
+
+    .recruit-position:hover{
+
         padding-left:15px;
+
         padding-right:15px;
+
     }
 
-    .position-number{
+
+    .recruit-position__number{
+
         padding-top:0;
+
     }
 
-    .position-top{
+
+    .recruit-position__top{
+
         margin-bottom:35px;
+
     }
 
-    .position-main h3{
+
+    .recruit-position__main h3{
+
         font-size:48px;
+
     }
 
-    .position-main > p{
+
+    .recruit-position__main > p{
+
         margin-top:25px;
 
         font-size:13px;
+
     }
 
-    .position-card::before{
+
+    .recruit-position::before{
+
         right:-15px;
+
         bottom:-25px;
 
         font-size:120px;
+
     }
+
 }
 
 
@@ -1043,35 +1169,57 @@
 @media(max-width:480px){
 
     .recruit-positions{
+
         padding:80px 0;
+
     }
 
-    .positions-header h2{
+
+    .recruit-positions__header h2{
+
         font-size:45px;
+
     }
 
-    .position-card{
+
+    .recruit-position{
+
         padding:30px 0;
+
     }
 
-    .position-main h3{
+
+    .recruit-position__main h3{
+
         font-size:38px;
+
     }
 
-    .position-top i{
+
+    .recruit-position__top i{
+
         width:40px;
+
         height:40px;
 
         font-size:15px;
+
     }
 
-    .position-main > p{
+
+    .recruit-position__main > p{
+
         font-size:12px;
+
     }
 
-    .position-tags span{
+
+    .recruit-position__tags span{
+
         font-size:8px;
+
     }
+
 }
 
 /* ==================================================
