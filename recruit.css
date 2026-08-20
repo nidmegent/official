@@ -1824,3 +1824,489 @@
     }
 
 }
+
+/* ==================================================
+   RECRUITMENT CARD GRID
+================================================== */
+
+.recruit-position-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:24px;
+
+}
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.recruit-position-card{
+
+    position:relative;
+
+    min-height:480px;
+
+    padding:35px;
+
+    overflow:hidden;
+
+    border:1px solid #e5e5e5;
+
+    background:#fff;
+
+    transition:
+        transform .45s ease,
+        background .45s ease,
+        border-color .45s ease;
+
+}
+
+
+/* ==================================================
+   HOVER
+================================================== */
+
+.recruit-position-card:hover{
+
+    transform:translateY(-8px);
+
+    background:#2962ff;
+
+    border-color:#2962ff;
+
+}
+
+
+/* ==================================================
+   TOP
+================================================== */
+
+.recruit-position-card__top{
+
+    position:relative;
+
+    z-index:3;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+/* NUMBER */
+
+.recruit-position-card__number{
+
+    color:#aaa;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.18em;
+
+    transition:.35s;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__number{
+
+    color:rgba(255,255,255,.6);
+
+}
+
+
+/* CATEGORY */
+
+.recruit-position-card__category{
+
+    color:#2962ff;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:.2em;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__category{
+
+    color:#fff;
+
+}
+
+
+/* ==================================================
+   ARROW
+================================================== */
+
+.recruit-position-card__arrow{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:46px;
+
+    height:46px;
+
+    margin-left:auto;
+
+    border:1px solid #ddd;
+
+    border-radius:50%;
+
+    color:#555;
+
+    transition:.4s;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__arrow{
+
+    background:#fff;
+
+    border-color:#fff;
+
+    color:#2962ff;
+
+    transform:translate(4px,-4px);
+
+}
+
+
+/* ==================================================
+   CONTENT
+================================================== */
+
+.recruit-position-card__content{
+
+    position:relative;
+
+    z-index:3;
+
+    margin-top:90px;
+
+}
+
+
+.recruit-position-card__content h3{
+
+    margin:0;
+
+    color:#111;
+
+    font-size:clamp(42px,4.5vw,70px);
+
+    font-weight:900;
+
+    line-height:.88;
+
+    letter-spacing:-.07em;
+
+    transition:.4s;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__content h3{
+
+    color:#fff;
+
+}
+
+
+.recruit-position-card__content p{
+
+    max-width:560px;
+
+    margin:35px 0 0;
+
+    color:#777;
+
+    font-size:13px;
+
+    line-height:2;
+
+    transition:.4s;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__content p{
+
+    color:rgba(255,255,255,.8);
+
+}
+
+
+/* ==================================================
+   TAGS
+================================================== */
+
+.recruit-position-card__tags{
+
+    position:absolute;
+
+    left:35px;
+
+    bottom:35px;
+
+    z-index:3;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+
+.recruit-position-card__tags span{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    min-height:29px;
+
+    padding:0 13px;
+
+    border:1px solid #ddd;
+
+    border-radius:999px;
+
+    background:#fff;
+
+    color:#888;
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.13em;
+
+    transition:.35s;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__tags span{
+
+    border-color:rgba(255,255,255,.5);
+
+    color:#2962ff;
+
+}
+
+
+/* ==================================================
+   BACKGROUND NUMBER
+================================================== */
+
+.recruit-position-card__bg{
+
+    position:absolute;
+
+    right:-25px;
+
+    bottom:-65px;
+
+    z-index:1;
+
+    color:#f4f5f7;
+
+    font-size:190px;
+
+    font-weight:900;
+
+    line-height:1;
+
+    letter-spacing:-.1em;
+
+    pointer-events:none;
+
+    transition:.5s;
+
+}
+
+
+.recruit-position-card:hover
+.recruit-position-card__bg{
+
+    color:rgba(255,255,255,.12);
+
+    transform:translateX(-15px);
+
+}
+
+
+/* ==================================================
+   REVEAL
+================================================== */
+
+.recruit-position-card.reveal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+}
+
+
+.recruit-position-card.reveal.show{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media(max-width:900px){
+
+    .recruit-position-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .recruit-position-card{
+
+        min-height:430px;
+
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media(max-width:600px){
+
+    .recruit-position-grid{
+
+        gap:15px;
+
+    }
+
+
+    .recruit-position-card{
+
+        min-height:420px;
+
+        padding:25px;
+
+    }
+
+
+    .recruit-position-card__content{
+
+        margin-top:70px;
+
+    }
+
+
+    .recruit-position-card__content h3{
+
+        font-size:40px;
+
+    }
+
+
+    .recruit-position-card__content p{
+
+        font-size:12px;
+
+        line-height:1.9;
+
+    }
+
+
+    .recruit-position-card__tags{
+
+        left:25px;
+
+        bottom:25px;
+
+    }
+
+
+    .recruit-position-card__bg{
+
+        font-size:130px;
+
+        bottom:-35px;
+
+    }
+
+}
+
+
+/* ==================================================
+   SMALL MOBILE
+================================================== */
+
+@media(max-width:400px){
+
+    .recruit-position-card{
+
+        min-height:400px;
+
+    }
+
+
+    .recruit-position-card__category{
+
+        font-size:8px;
+
+    }
+
+
+    .recruit-position-card__arrow{
+
+        width:40px;
+
+        height:40px;
+
+    }
+
+
+    .recruit-position-card__content h3{
+
+        font-size:34px;
+
+    }
+
+}
