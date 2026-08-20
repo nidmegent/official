@@ -139,42 +139,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ==================================================
-       POSITION HOVER
-    ================================================== */
+    /*==================================================
+RECRUIT POSITION ANIMATION
+==================================================*/
 
-    const positions =
-        document.querySelectorAll(
-            ".position-card"
-        );
+document.addEventListener("DOMContentLoaded", () => {
+
+    const positions = document.querySelectorAll(
+        ".recruit-position"
+    );
+
+
+    if (!positions.length) return;
+
+
+    const observer = new IntersectionObserver(
+
+        (entries, observer) => {
+
+            entries.forEach((entry, index) => {
+
+                if (!entry.isIntersecting) return;
+
+
+                const card = entry.target;
+
+
+                setTimeout(() => {
+
+                    card.classList.add("show");
+
+                }, index * 120);
+
+
+                observer.unobserve(card);
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+
+    );
 
 
     positions.forEach(position => {
 
-        position.addEventListener(
-            "mouseenter",
-            () => {
-
-                position.classList.add(
-                    "is-hover"
-                );
-
-            }
-        );
-
-
-        position.addEventListener(
-            "mouseleave",
-            () => {
-
-                position.classList.remove(
-                    "is-hover"
-                );
-
-            }
-        );
+        observer.observe(position);
 
     });
+
+});
 
 
     /* ==================================================
