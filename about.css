@@ -752,101 +752,23 @@ SELECTION
     background:var(--blue);
     color:#fff;
 }
-/*==================================================
-HEADER MOBILE
-==================================================*/
-@media(max-width:900px){
-    .menu{
-        display:block;
-        font-size:1.8rem;
-    }
-    .nav{
-        position:fixed;
-        top:92px;
-        left:0;
-        width:100%;
-        background:#fff;
-        display:none;
-        border-top:1px solid var(--border);
-        z-index:999;
-    }
-    .nav.active{
-        display:block;
-    }
-    .nav__list{
-        flex-direction:column;
-        gap:0;
-    }
-    .nav__list li{
-        border-bottom:1px solid var(--border);
-    }
-    .nav__list a{
-        display:block;
-        padding:24px;
-    }
-    .footer__top{
-        flex-direction:column;
-        gap:50px;
-    }
-    .footer__menu{
-        flex-direction:column;
-        gap:40px;
-    }
-    .footer__bottom{
-        flex-direction:column;
-        gap:16px;
-        text-align:center;
-    }
+
+.menu{
+
+    display:none;
+
+    width:52px;
+
+    height:52px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.8rem;
+
 }
-/*==================================================
-SMALL MOBILE
-==================================================*/
-@media(max-width:480px){
-    .section{
-        padding:90px 0;
-    }
-    .section-title{
-        font-size:2.4rem;
-    }
-    .about-hero{
-        min-height:80vh;
-        padding-top:170px;
-    }
-    .about-hero__title{
-        font-size:3rem;
-    }
-    .about-hero__text{
-        font-size:1rem;
-    }
-    .container{
-        width:92%;
-    }
-    .number-card{
-        padding:50px 25px;
-    }
-    .partner-card{
-        min-height:180px;
-    }
-    .join-button{
-        width:100%;
-        justify-content:center;
-    }
-}
-/*==================================================
-PRINT
-==================================================*/
-@media print{
-    .header,
-    .footer,
-    .menu,
-    .join{
-        display:none;
-    }
-    body{
-        background:#fff;
-        color:#000;
-    }
-}
+
 /*==================================================
 ACHIEVEMENTS
 ==================================================*/
