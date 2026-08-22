@@ -1,332 +1,569 @@
-/* ==================================================
-   NIDMEGENT ESPORTS
-   GLOBAL SCRIPT
-================================================== */
+/*==================================================
 
-document.addEventListener("DOMContentLoaded", () => {
+NIDMEGENT OFFICIAL WEBSITE
 
-
-    /* ==================================================
-       MOBILE MENU
-    ================================================== */
-
-    const menuButton = document.querySelector(".menu");
-    const mobileMenu = document.querySelector(".mobile-menu");
+==================================================*/
 
 
-    if (menuButton && mobileMenu) {
+/*==================================================
+
+GSAP
+
+==================================================*/
+
+gsap.registerPlugin(ScrollTrigger);
 
 
-        /* ==================================================
-           MENU TOGGLE
-        ================================================== */
+/*==================================================
+LOADER
+==================================================*/
 
-        menuButton.addEventListener("click", () => {
+window.addEventListener("load", () => {
 
-            const isOpen =
-                menuButton.classList.toggle("active");
+    const loader =
+        document.querySelector(".loader");
 
-            mobileMenu.classList.toggle(
-                "active",
-                isOpen
-            );
+    if (!loader) return;
 
-            document.body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
+    setTimeout(() => {
+
+        loader.classList.add("loaded");
+
+    }, 1400);
+
+});
+
+
+/*==================================================
+
+HEADER
+
+==================================================*/
+
+const header = document.querySelector(".header");
+
+window.addEventListener("scroll", () => {
+
+    if (!header) return;
+
+    if (window.scrollY > 80) {
+
+        header.classList.add("active");
+
+    } else {
+
+        header.classList.remove("active");
+
+    }
+
+});
+
+
+/*==================================================
+
+CUSTOM CURSOR
+
+==================================================*/
+
+const cursor = document.querySelector(".cursor");
+
+if (cursor) {
+
+    document.addEventListener("mousemove", (e) => {
+
+        gsap.to(cursor, {
+
+            x: e.clientX,
+
+            y: e.clientY,
+
+            duration: .18,
+
+            ease: "power2.out"
 
         });
 
+    });
 
-        /* ==================================================
-           CLOSE MENU WHEN LINK IS CLICKED
-        ================================================== */
+    document.querySelectorAll("a,button,.team-card,.member-card,.news-card").forEach(item => {
 
-        const mobileLinks =
-            mobileMenu.querySelectorAll("a");
+        item.addEventListener("mouseenter", () => {
 
+            gsap.to(cursor, {
 
-        mobileLinks.forEach(link => {
+                scale: 2,
 
-            link.addEventListener("click", () => {
-
-                closeMobileMenu();
+                duration: .25
 
             });
 
         });
 
+        item.addEventListener("mouseleave", () => {
 
-        /* ==================================================
-           ESC KEY
-        ================================================== */
+            gsap.to(cursor, {
 
-        document.addEventListener("keydown", event => {
+                scale: 1,
 
-            if (
-                event.key === "Escape" &&
-                mobileMenu.classList.contains("active")
-            ) {
+                duration: .25
 
-                closeMobileMenu();
-
-            }
+            });
 
         });
 
+    });
 
-        /* ==================================================
-           CLOSE FUNCTION
-        ================================================== */
+}
 
-        function closeMobileMenu() {
 
-            menuButton.classList.remove("active");
+/*==================================================
 
-            mobileMenu.classList.remove("active");
+HERO
 
-            document.body.classList.remove("menu-open");
+==================================================*/
 
-            menuButton.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+if (document.querySelector(".hero")) {
+
+    gsap.timeline({ delay: .4 })
+
+    .from(".hero__eyebrow", {
+
+        y: 40,
+
+        opacity: 0,
+
+        duration: .8
+
+    })
+
+    .from(".hero__title", {
+
+        y: 80,
+
+        opacity: 0,
+
+        duration: 1
+
+    }, "-=.5")
+
+    .from(".hero__subtitle", {
+
+        y: 60,
+
+        opacity: 0,
+
+        duration: 1
+
+    }, "-=.7")
+
+    .from(".hero__description", {
+
+        y: 40,
+
+        opacity: 0,
+
+        duration: .8
+
+    }, "-=.6")
+
+    .from(".hero__buttons", {
+
+        y: 30,
+
+        opacity: 0,
+
+        duration: .8
+
+    }, "-=.6");
+
+}
+
+
+/*==================================================
+
+SCROLL ANIMATION
+
+==================================================*/
+
+gsap.utils.toArray(".fade-up").forEach(el => {
+
+    gsap.from(el, {
+
+        y: 80,
+
+        opacity: 0,
+
+        duration: 1,
+
+        ease: "power3.out",
+
+        scrollTrigger: {
+
+            trigger: el,
+
+            start: "top 85%"
 
         }
 
+    });
 
-        /* ==================================================
-           RESIZE
-        ================================================== */
+});
 
-        window.addEventListener("resize", () => {
+gsap.utils.toArray(".fade-left").forEach(el => {
 
-            if (window.innerWidth > 768) {
+    gsap.from(el, {
 
-                closeMobileMenu();
+        x: -80,
 
-            }
+        opacity: 0,
 
-        });
+        duration: 1,
+
+        ease: "power3.out",
+
+        scrollTrigger: {
+
+            trigger: el,
+
+            start: "top 85%"
+
+        }
+
+    });
+
+});
+
+gsap.utils.toArray(".fade-right").forEach(el => {
+
+    gsap.from(el, {
+
+        x: 80,
+
+        opacity: 0,
+
+        duration: 1,
+
+        ease: "power3.out",
+
+        scrollTrigger: {
+
+            trigger: el,
+
+            start: "top 85%"
+
+        }
+
+    });
+
+});
+
+
+/*==================================================
+
+TEAM CARD
+
+==================================================*/
+
+gsap.from(".team-card", {
+
+    y: 80,
+
+    opacity: 0,
+
+    stagger: .2,
+
+    duration: 1,
+
+    scrollTrigger: {
+
+        trigger: ".teams",
+
+        start: "top 75%"
 
     }
 
+});
 
 
-    /* ==================================================
-       HEADER SCROLL
-================================================== */
+/*==================================================
 
-    const header =
-        document.querySelector(".header");
+MEMBER
 
+==================================================*/
 
-    if (header) {
+if (document.querySelector(".memberSwiper")) {
 
-        let lastScroll = 0;
+    new Swiper(".memberSwiper", {
 
+        slidesPerView: 1.2,
 
-        window.addEventListener(
-            "scroll",
-            () => {
+        spaceBetween: 30,
 
-                const currentScroll =
-                    window.scrollY;
+        loop: true,
 
+        speed: 900,
 
-                if (currentScroll > 50) {
+        autoplay: {
 
-                    header.classList.add(
-                        "scrolled"
-                    );
+            delay: 3500,
 
-                } else {
+            disableOnInteraction: false
 
-                    header.classList.remove(
-                        "scrolled"
-                    );
+        },
 
-                }
+        breakpoints: {
 
+            768: {
 
-                lastScroll = currentScroll;
+                slidesPerView: 2
 
             },
-            { passive: true }
-        );
 
-    }
+            1200: {
 
+                slidesPerView: 3
 
+            }
 
-    /* ==================================================
-       FADE / REVEAL ANIMATION
-================================================== */
+        }
 
-    const revealElements =
-        document.querySelectorAll(
-            ".reveal, .fade-up"
-        );
+    });
+
+}
 
 
-    if (revealElements.length) {
+/*==================================================
 
-        const observer =
-            new IntersectionObserver(
-                entries => {
+COUNTER
 
-                    entries.forEach(entry => {
+==================================================*/
 
-                        if (
-                            entry.isIntersecting
-                        ) {
+document.querySelectorAll(".stat-card h2").forEach(counter => {
 
-                            entry.target.classList.add(
-                                "show"
-                            );
+    const target = parseInt(counter.dataset.target);
 
-                            observer.unobserve(
-                                entry.target
-                            );
+    if (isNaN(target)) return;
 
-                        }
+    ScrollTrigger.create({
 
-                    });
+        trigger: counter,
 
-                },
+        start: "top 85%",
+
+        once: true,
+
+        onEnter: () => {
+
+            gsap.fromTo(counter,
+
+                { innerText: 0 },
+
                 {
-                    threshold: 0.12
+
+                    innerText: target,
+
+                    duration: 2,
+
+                    snap: { innerText: 1 },
+
+                    onUpdate() {
+
+                        counter.innerText = Math.floor(counter.innerText);
+
+                    }
+
                 }
+
             );
 
+        }
 
-        revealElements.forEach(element => {
+    });
 
-            observer.observe(element);
+});
+
+
+/*==================================================
+
+HERO PARALLAX
+
+==================================================*/
+
+const hero = document.querySelector(".hero");
+
+if (hero) {
+
+    hero.addEventListener("mousemove", (e) => {
+
+        const x = (e.clientX / window.innerWidth - .5) * 20;
+
+        const y = (e.clientY / window.innerHeight - .5) * 20;
+
+        gsap.to(".hero__gradient", {
+
+            x,
+
+            y,
+
+            duration: 1
 
         });
 
-    }
+    });
+
+}
 
 
+/*==================================================
 
-    /* ==================================================
-       SMOOTH SCROLL
-================================================== */
+SCROLL PROGRESS
 
-    const anchorLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
+==================================================*/
 
+const progress = document.createElement("div");
 
-    anchorLinks.forEach(link => {
+progress.className = "scroll-progress";
 
-        link.addEventListener(
-            "click",
-            event => {
+document.body.appendChild(progress);
 
-                const targetId =
-                    link.getAttribute("href");
+window.addEventListener("scroll", () => {
 
+    const h = document.documentElement.scrollHeight - window.innerHeight;
 
-                if (
-                    !targetId ||
-                    targetId === "#"
-                ) {
-                    return;
-                }
+    const percent = (window.scrollY / h) * 100;
+
+    progress.style.width = percent + "%";
+
+});
 
 
-                const target =
-                    document.querySelector(
-                        targetId
-                    );
+/*==================================================
+
+MENU
+
+==================================================*/
+
+const menu = document.querySelector(".menu");
+const nav = document.querySelector(".nav");
+
+if (menu && nav) {
+
+    menu.addEventListener("click", () => {
+
+        menu.classList.toggle("active");
+
+        nav.classList.toggle("show");
+
+    });
+
+}
 
 
-                if (!target) {
-                    return;
-                }
+/*==================================================
+
+REFRESH
+
+==================================================*/
+
+window.addEventListener("resize", () => {
+
+    ScrollTrigger.refresh();
+
+});
 
 
-                event.preventDefault();
+console.log("NIDMEGENT WEBSITE READY");
 
+/*==================================================
 
-                const headerHeight =
-                    header
-                        ? header.offsetHeight
-                        : 0;
+TEAM 2
 
+==================================================*/
 
-                const targetPosition =
-                    target.getBoundingClientRect().top +
-                    window.scrollY -
-                    headerHeight;
+const filterBtns = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".team-card");
 
+filterBtns.forEach(btn=>{
 
-                window.scrollTo({
+    btn.addEventListener("click",()=>{
 
-                    top: targetPosition,
+        filterBtns.forEach(b=>b.classList.remove("active"));
+        btn.classList.add("active");
 
-                    behavior: "smooth"
+        const filter = btn.dataset.filter;
 
-                });
+        cards.forEach(card=>{
+
+            if(filter==="all"){
+
+                card.style.display="block";
+
+                return;
 
             }
-        );
+
+            if(card.dataset.category===filter){
+
+                card.style.display="block";
+
+            }else{
+
+                card.style.display="none";
+
+            }
+
+        });
 
     });
 
+});
 
+/*==============================
+TEAM FILTER
+==============================*/
 
-    /* ==================================================
-       ACTIVE NAV
-================================================== */
+const filterButtons = document.querySelectorAll(".filter-btn");
+const teamCards = document.querySelectorAll(".team-card");
 
-    const currentPage =
-        window.location.pathname
-            .split("/")
-            .pop();
+filterButtons.forEach(button => {
 
+    button.addEventListener("click", () => {
 
-    const navLinks =
-        document.querySelectorAll(
-            ".nav a"
-        );
+        // ボタンのアクティブ切り替え
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
 
+        const filter = button.dataset.filter;
 
-    navLinks.forEach(link => {
+        teamCards.forEach(card => {
 
-        const href =
-            link.getAttribute("href");
+            const category = card.dataset.category;
 
+            if (filter === "all" || category === filter) {
 
-        if (!href) {
-            return;
-        }
+                card.style.display = "block";
 
+                gsap.fromTo(card,
+                    {
+                        opacity: 0,
+                        y: 30
+                    },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.4
+                    }
+                );
 
-        const linkPage =
-            href.split("#")[0];
+            } else {
 
+                card.style.display = "none";
 
-        if (
-            linkPage &&
-            linkPage === currentPage
-        ) {
+            }
 
-            link.classList.add("active");
-
-        }
+        });
 
     });
-
-
 
 });
