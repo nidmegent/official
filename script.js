@@ -63,65 +63,32 @@ window.addEventListener("scroll", () => {
    MOBILE MENU
 ================================================== */
 
-const menuButton = document.querySelector(".menu");
-const mobileMenu = document.querySelector(".mobile-menu");
+document.addEventListener("DOMContentLoaded", () => {
 
-if (menuButton && mobileMenu) {
+    const menu = document.querySelector(".menu");
+    const nav = document.querySelector(".nav");
 
-    const menuIcon = menuButton.querySelector("i");
+    if (!menu || !nav) return;
 
+    menu.addEventListener("click", () => {
 
-    /* ==============================
-       OPEN / CLOSE
-    ============================== */
+        nav.classList.toggle("active");
 
-    menuButton.addEventListener("click", () => {
+        menu.classList.toggle("active");
 
-        const isOpen =
-            mobileMenu.classList.toggle("active");
+        const icon = menu.querySelector("i");
 
+        if (icon) {
 
-        menuButton.classList.toggle(
-            "active",
-            isOpen
-        );
+            if (nav.classList.contains("active")) {
 
-
-        document.body.classList.toggle(
-            "menu-open",
-            isOpen
-        );
-
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
-
-        /* ICON */
-
-        if (menuIcon) {
-
-            if (isOpen) {
-
-                menuIcon.classList.remove(
-                    "ri-menu-3-line"
-                );
-
-                menuIcon.classList.add(
-                    "ri-close-line"
-                );
+                icon.classList.remove("ri-menu-3-line");
+                icon.classList.add("ri-close-line");
 
             } else {
 
-                menuIcon.classList.remove(
-                    "ri-close-line"
-                );
-
-                menuIcon.classList.add(
-                    "ri-menu-3-line"
-                );
+                icon.classList.remove("ri-close-line");
+                icon.classList.add("ri-menu-3-line");
 
             }
 
@@ -130,102 +97,31 @@ if (menuButton && mobileMenu) {
     });
 
 
-    /* ==============================
-       CLOSE FUNCTION
-    ============================== */
+    /* メニューをクリックしたら閉じる */
 
-    function closeMobileMenu(){
+    const navLinks = nav.querySelectorAll("a");
 
-        mobileMenu.classList.remove("active");
+    navLinks.forEach(link => {
 
-        menuButton.classList.remove("active");
+        link.addEventListener("click", () => {
 
-        document.body.classList.remove(
-            "menu-open"
-        );
+            nav.classList.remove("active");
+            menu.classList.remove("active");
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+            const icon = menu.querySelector("i");
 
+            if (icon) {
 
-        if (menuIcon) {
-
-            menuIcon.classList.remove(
-                "ri-close-line"
-            );
-
-            menuIcon.classList.add(
-                "ri-menu-3-line"
-            );
-
-        }
-
-    }
-
-
-    /* ==============================
-       MENU LINK
-    ============================== */
-
-    const mobileLinks =
-        mobileMenu.querySelectorAll("a");
-
-
-    mobileLinks.forEach(link => {
-
-        link.addEventListener(
-            "click",
-            () => {
-
-                closeMobileMenu();
+                icon.classList.remove("ri-close-line");
+                icon.classList.add("ri-menu-3-line");
 
             }
-        );
+
+        });
 
     });
 
-
-    /* ==============================
-       ESC
-    ============================== */
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                event.key === "Escape" &&
-                mobileMenu.classList.contains("active")
-            ){
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-
-
-    /* ==============================
-       RESIZE
-    ============================== */
-
-    window.addEventListener(
-        "resize",
-        () => {
-
-            if (window.innerWidth > 768) {
-
-                closeMobileMenu();
-
-            }
-
-        }
-    );
-
-}
+});
 
 /*==================================================
 
