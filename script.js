@@ -1,12 +1,5 @@
 /*==================================================
 
-NIDMEGENT OFFICIAL WEBSITE
-
-==================================================*/
-
-
-/*==================================================
-
 GSAP
 
 ==================================================*/
@@ -59,9 +52,9 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* ==================================================
-   MOBILE MENU
-================================================== */
+/*==================================================
+MOBILE MENU
+==================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -70,54 +63,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!menu || !nav) return;
 
+    const icon = menu.querySelector("i");
+
+
+    /* ==============================
+       MENU OPEN / CLOSE
+    ============================== */
+
     menu.addEventListener("click", () => {
 
-        nav.classList.toggle("active");
+        const isOpen = nav.classList.toggle("active");
 
-        menu.classList.toggle("active");
-
-        const icon = menu.querySelector("i");
+        menu.classList.toggle("active", isOpen);
 
         if (icon) {
 
-            if (nav.classList.contains("active")) {
+            icon.classList.toggle(
+                "ri-menu-3-line",
+                !isOpen
+            );
 
-                icon.classList.remove("ri-menu-3-line");
-                icon.classList.add("ri-close-line");
-
-            } else {
-
-                icon.classList.remove("ri-close-line");
-                icon.classList.add("ri-menu-3-line");
-
-            }
+            icon.classList.toggle(
+                "ri-close-line",
+                isOpen
+            );
 
         }
 
     });
 
 
-    /* メニューをクリックしたら閉じる */
+    /* ==============================
+       NAV LINK CLICK
+    ============================== */
 
-    const navLinks = nav.querySelectorAll("a");
-
-    navLinks.forEach(link => {
+    nav.querySelectorAll("a").forEach(link => {
 
         link.addEventListener("click", () => {
 
             nav.classList.remove("active");
-            menu.classList.remove("active");
 
-            const icon = menu.querySelector("i");
+            menu.classList.remove("active");
 
             if (icon) {
 
                 icon.classList.remove("ri-close-line");
+
                 icon.classList.add("ri-menu-3-line");
 
             }
 
         });
+
+    });
+
+
+    /* ==============================
+       PCに戻ったら強制的に閉じる
+    ============================== */
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 900) {
+
+            nav.classList.remove("active");
+
+            menu.classList.remove("active");
+
+            if (icon) {
+
+                icon.classList.remove("ri-close-line");
+
+                icon.classList.add("ri-menu-3-line");
+
+            }
+
+        }
 
     });
 
@@ -499,29 +520,6 @@ window.addEventListener("scroll", () => {
     progress.style.width = percent + "%";
 
 });
-
-
-/*==================================================
-
-MENU
-
-==================================================*/
-
-const menu = document.querySelector(".menu");
-const nav = document.querySelector(".nav");
-
-if (menu && nav) {
-
-    menu.addEventListener("click", () => {
-
-        menu.classList.toggle("active");
-
-        nav.classList.toggle("show");
-
-    });
-
-}
-
 
 /*==================================================
 
