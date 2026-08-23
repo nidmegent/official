@@ -59,6 +59,173 @@ window.addEventListener("scroll", () => {
 
 });
 
+/* ==================================================
+   MOBILE MENU
+================================================== */
+
+const menuButton = document.querySelector(".menu");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+if (menuButton && mobileMenu) {
+
+    const menuIcon = menuButton.querySelector("i");
+
+
+    /* ==============================
+       OPEN / CLOSE
+    ============================== */
+
+    menuButton.addEventListener("click", () => {
+
+        const isOpen =
+            mobileMenu.classList.toggle("active");
+
+
+        menuButton.classList.toggle(
+            "active",
+            isOpen
+        );
+
+
+        document.body.classList.toggle(
+            "menu-open",
+            isOpen
+        );
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+
+        /* ICON */
+
+        if (menuIcon) {
+
+            if (isOpen) {
+
+                menuIcon.classList.remove(
+                    "ri-menu-3-line"
+                );
+
+                menuIcon.classList.add(
+                    "ri-close-line"
+                );
+
+            } else {
+
+                menuIcon.classList.remove(
+                    "ri-close-line"
+                );
+
+                menuIcon.classList.add(
+                    "ri-menu-3-line"
+                );
+
+            }
+
+        }
+
+    });
+
+
+    /* ==============================
+       CLOSE FUNCTION
+    ============================== */
+
+    function closeMobileMenu(){
+
+        mobileMenu.classList.remove("active");
+
+        menuButton.classList.remove("active");
+
+        document.body.classList.remove(
+            "menu-open"
+        );
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+
+        if (menuIcon) {
+
+            menuIcon.classList.remove(
+                "ri-close-line"
+            );
+
+            menuIcon.classList.add(
+                "ri-menu-3-line"
+            );
+
+        }
+
+    }
+
+
+    /* ==============================
+       MENU LINK
+    ============================== */
+
+    const mobileLinks =
+        mobileMenu.querySelectorAll("a");
+
+
+    mobileLinks.forEach(link => {
+
+        link.addEventListener(
+            "click",
+            () => {
+
+                closeMobileMenu();
+
+            }
+        );
+
+    });
+
+
+    /* ==============================
+       ESC
+    ============================== */
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape" &&
+                mobileMenu.classList.contains("active")
+            ){
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+
+    /* ==============================
+       RESIZE
+    ============================== */
+
+    window.addEventListener(
+        "resize",
+        () => {
+
+            if (window.innerWidth > 768) {
+
+                closeMobileMenu();
+
+            }
+
+        }
+    );
+
+}
 
 /*==================================================
 
