@@ -22,10 +22,13 @@ ROOT
     --text:#111111;
     --text-light:#6F6F6F;
     --line:#E9EBEF;
-    --blue:#2962FF;
-    --blue-light:#5C85FF;
-    --blue-dark:#003EE6;
-    --red:#FF0000
+    
+     /* RED */
+    --blue:#E10600;
+    --blue-light:#FF3B30;
+    --blue-dark:#A80000;
+    
+    --red:#FF0000;
     --shadow:
 
     0 20px 60px rgba(0,0,0,.06);
