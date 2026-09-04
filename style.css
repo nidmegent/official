@@ -2737,27 +2737,3 @@ team.js add css
     filter:blur(20px);
 
 }
-
-/* ====================================
-   RED ACCENT COLOR
-==================================== */
-
-.footer a {
-    color: #ff0000;
-}
-
-.footer a:hover {
-    color: #cc0000;
-}
-
-.footer h4 {
-    color: #ff0000;
-}
-
-.section-number {
-    color: #ff0000;
-}
-
-.section-title {
-    color: #ff0000;
-}
