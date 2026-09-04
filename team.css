@@ -1742,5 +1742,24 @@ background:#fff;
 }
 
 /*==================================================
+HERO HEADER OFFSET FIX
+==================================================*/
+
+.team-hero{
+    padding-top:calc(var(--header) + 160px);
+}
+
+@media(max-width:768px){
+    .team-hero{
+        padding-top:210px;
+    }
+}
+
+@media(max-width:480px){
+    .team-hero{
+        padding-top:190px;
+    }
+}
+/*==================================================
 END
 ==================================================*/
