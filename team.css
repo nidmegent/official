@@ -57,7 +57,7 @@ ul{
 }
 ::selection{
     background:var(--blue);
-    color:#fff
+    color:#fff;
 }
 /*==================================================
 COMMON
