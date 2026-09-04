@@ -23,10 +23,9 @@ ROOT
     --text-light:#6F6F6F;
     --line:#E9EBEF;
     
-     /* RED */
-    --blue:#E10600;
-    --blue-light:#FF3B30;
-    --blue-dark:#A80000;
+    --blue:#2962FF;
+    --blue-light:#5C85FF;
+    --blue-dark:#003EE6;
     
     --red:#FF0000;
     --shadow:
