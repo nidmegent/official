@@ -64,7 +64,7 @@ CONTACT FORM
 <form class="contact-form" id="contactForm">
 <!-- NAME -->
 <div class="form-group">
-<label for="name">NAME / お名前
+<label for="name">NAME / 活動名
 <span>REQUIRED</span>
 </label>
 <input type="text" id="name" name="name" placeholder="Your Name" required>
@@ -76,18 +76,53 @@ CONTACT FORM
 </label>
 <input type="email" id="email" name="email" placeholder="example@mail.com" required>
 </div>
-<!-- CATEGORY -->
+<!-- DIVISION SELECT -->
 <div class="form-group">
-<label for="category">CATEGORY / お問い合わせ項目
+<label for="category">DivisonSelect / 希望部門
 <span>REQUIRED</span>
 </label>
-<select id="category" name="category" required>
+<select id="dv" name="dv" required>
 <option value="" selected disabled>Select Category</option>
-<option value="jointeams">加入についてのご相談</option>
-<option value="sponsor">スポンサーシップについて</option>
-<option value="events">主催イベントについて</option>
-<option value="media">取材・メディア関連について</option>
-<option value="other">その他</option>
+<option value="creator">CREATOR</option>
+<option value="streamer">STREAMER</option>
+<option value="apex">APEX LEGENDS</option>
+<option value="spt">SUPPORTED PLAYER</option>
+<option value="staff">STAFF</option>
+</select>
+</div>
+<!-- X ID -->
+<div class="form-group">
+<label for="name">X ID / X ID
+<span>REQUIRED</span>
+</label>
+<input type="text" id="xid" name="xid" placeholder="Example:@Nidmegent" required>
+</div>
+<!-- Discord ID -->
+<div class="form-group">
+<label for="name">Discord ID / Discord ID
+<span>REQUIRED</span>
+</label>
+<input type="text" id="discoid" name="discoid" placeholder="Example:Nidmegent" required>
+</div>
+<!-- State/Province -->
+<div class="form-group">
+<label for="name">State/Province / お住まいの都道府県
+<span>REQUIRED</span>
+</label>
+<input type="text" id="xid" name="xid" placeholder="Example:Nidmegent" required>
+</div>
+<!-- CURRENT OCCUPATION -->
+<div class="form-group">
+<label for="category">Current Occupation / 現在のご職業
+<span>REQUIRED</span>
+</label>
+<select id="co" name="co" required>
+<option value="" selected disabled>Select Category</option>
+<option value="hst">高校生</option>
+<option value="ust">大学生/専門学生</option>
+<option value="ce">会社員</option>
+<option value="fp">フリーター</option>
+<option value="ud">無職</option>
 </select>
 </div>
 <!-- MESSAGE -->
