@@ -401,7 +401,7 @@ async function handleFormSubmit(event) {
 
         showFieldError(
             category,
-            "お問い合わせ内容を選択してください。"
+            "選択してください。"
         );
 
         valid = false;
