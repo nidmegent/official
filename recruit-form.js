@@ -521,34 +521,11 @@ async function handleFormSubmit(event) {
 
     const templateParams = {
 
-        name:
-            name
-                ? name.value.trim()
-                : "",
-
-
-        email:
-            email
-                ? email.value.trim()
-                : "",
-
-
-        category:
-            category
-                ? category.value
-                : "",
-
-
-        message:
-            message
-                ? message.value.trim()
-                : "",
-
-
-        time:
-            new Date().toLocaleString(
-                "ja-JP"
-            )
+        name:name ? name.value.trim() : "",
+        email:email ? email.value.trim() : "",
+        dv: dv ? dv.value : "",
+        message:message ? message.value.trim() : "",
+        time:new Date().toLocaleString("ja-JP")
 
     };
 
