@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RecruitForm | Nidmegent Esports</title>
+<!-- Remix Icon -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Common CSS -->
+<link rel="stylesheet" href="style.css">
+<!-- Contact CSS -->
+<link rel="stylesheet" href="contact.css">
+</head>
+<body>
+<!--==================================================
+HEADER
+==================================================-->
+<header class="header">
+<div class="container">
+<!-- Logo -->
+<a href="index.html" class="logo">
+<img src="logo/logo-back.png" alt="Nidmegent Logo">
+</a>
+<!-- Navigation -->
+<nav class="nav">
+<ul class="nav__list">
+<li><a href="about.html">ABOUT</a></li>
+<li><a href="players.html">PLAYERS</a></li>
+<li><a href="news.html">NEWS</a></li>
+<li><a href="sponsor.html">SPONSORS</a></li>
+<li><a href="contact.html" class="active">CONTACT</a></li>
+</ul>
+</nav>
+
+</div>
+</header>
+<!--=================================================
+CONTACT HERO
+==================================================-->
+<main>
+<section class="contact-hero">
+<div class="container">
+<div class="contact-hero__content">
+<span class="contact-hero__eyebrow">NIDMEGENT ESPORTS
+</span>
+<h1 class="contact-hero__title">RECRUIT</h1>
+<div class="contact-hero__line"></div>
+</div>
+</div>
+</section>
+<!--==================================================
+CONTACT NOTES
+==================================================-->
+<section class="contact-notes">
+<div class="container">
+<div class="contact-notes__grid">
+<!-- LEFT -->
+<div class="contact-notes__title">
+<span class="section-number">01</span>
+<h2>BEFORE<br>CONTACT.</h2>
+</div>
+<!-- RIGHT -->
+<div class="contact-notes__content">
+<div class="contact-note">
+<span class="contact-note__number">00</span>
+<div>
+<h3>CONTACT</h3>
+<a href="mailto:lgs.esportsgames@gmail.com">Mail ：lgs.esportsgames@gmail.com</a><br>
+<a href="https://x.com/Nidmegent" target="_blank" rel="noopener noreferrer">SNS：@Nidmegent</a>
+</div>
+</div>
+<div class="contact-note">
+<span class="contact-note__number">01</span>
+<div>
+<h3>RESPONSE</h3>
+<p>お問い合わせ内容を確認後、担当者よりご連絡いたします。内容によっては返信まで数日いただく場合があります。</p>
+</div>
+</div>
+<div class="contact-note">
+<span class="contact-note__number">02</span>
+<div>
+<h3>BUSINESS INQUIRY</h3>
+<p>スポンサーシップ、イベント、コラボレーション、メディア掲載などのご相談もお気軽にお問い合わせください。</p>
+</div>
+</div>
+<div class="contact-note">
+<span class="contact-note__number">03</span>
+<div>
+<h3>PRIVACY</h3>
+<p>ご入力いただいた個人情報は、お問い合わせへの対応およびご連絡のためにのみ使用します。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!--==================================================
+CONTACT FORM
+==================================================-->
+<section class="contact-form-section">
+<div class="container">
+<div class="contact-form-header">
+<div>
+<span class="section-number">02</span>
+<h2>SEND MESSAGE</h2>
+</div>
+<p>CONTACT FORM</p>
+</div>
+<form class="contact-form" id="contactForm">
+<!-- NAME -->
+<div class="form-group">
+<label for="name">NAME / お名前
+<span>REQUIRED</span>
+</label>
+<input type="text" id="name" name="name" placeholder="Your Name" required>
+</div>
+<!-- EMAIL -->
+<div class="form-group">
+<label for="email">MAIL / メールアドレス
+<span>REQUIRED</span>
+</label>
+<input type="email" id="email" name="email" placeholder="example@mail.com" required>
+</div>
+<!-- CATEGORY -->
+<div class="form-group">
+<label for="category">CATEGORY / お問い合わせ項目
+<span>REQUIRED</span>
+</label>
+<select id="category" name="category" required>
+<option value="" selected disabled>Select Category</option>
+<option value="jointeams">加入についてのご相談</option>
+<option value="sponsor">スポンサーシップについて</option>
+<option value="events">主催イベントについて</option>
+<option value="media">取材・メディア関連について</option>
+<option value="other">その他</option>
+</select>
+</div>
+<!-- MESSAGE -->
+<div class="form-group">
+<label for="message">MESSAGE / お問い合わせ内容
+<span>REQUIRED</span>
+</label>
+<textarea id="message" name="message" rows="8" placeholder="Please enter your inquiry here." required></textarea>
+</div>
+<!-- SUBMIT -->
+<div class="contact-form__submit">
+<p>Please make sure all information is correct before sending.<br>送信前にフォーム内の情報が正しいことをご確認ください。</p>
+<button type="submit" class="contact-submit">
+<span>送信する</span>
+<i class="ri-arrow-right-up-line"></i>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!--==================================================
+FOOTER
+==================================================-->
+<footer class="footer">
+<div class="container">
+<div class="footer__top">
+<!-- BRAND -->
+<div class="footer__brand">
+<img src="logo/logo-back.png" alt="Nidmegent Logo">
+<p>Keep Pushing Forward. Claim the Top.</p>
+</div>
+<!-- MENU -->
+<div class="footer__menu">
+<!-- MENU -->
+<div>
+<h4>MENU</h4>
+<a href="about.html">ABOUT</a>
+<a href="players.html">PLAYERS</a>
+<a href="news.html">NEWS</a>
+<a href="sponsor.html">SPONSORS</a>
+<a href="contact.html" class="active">CONTACT</a>
+</div>
+<!-- COMPANY -->
+<div>
+<h4>COMPANY</h4>
+<a href="https://mellenastudio.github.io/official/" target="_blank"rel="noopener noreferrer">Mellena Studio</a>
+</div>
+<!-- SOCIAL -->
+<div>
+<h4>SOCIAL</h4>
+<a href="https://x.com/Nidmegent" target="_blank" rel="noopener noreferrer">X</a>
+<a href="https://www.youtube.com/@Nidmegent" target="_blank" rel="noopener noreferrer">YouTube</a>
+<a href="https://discord.com/invite/t7JfJrfwGfp" target="_blank" rel="noopener noreferrer">Discord</a>
+</div>
+</div>
+</div>
+<!-- FOOTER BOTTOM -->
+<div class="footer__bottom">
+<span>© 2026 Nidmegent Esports. All Rights Reserved.</span>
+</div>
+</div>
+</footer>
+<!--====================================
+EMAILJS
+=====================================-->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!--====================================
+CONTACT SCRIPT
+=====================================-->
+<script src="contact.js"></script>
+</body>
+</html>
