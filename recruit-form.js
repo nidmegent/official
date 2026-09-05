@@ -321,9 +321,9 @@ async function handleFormSubmit(event) {
         );
 
 
-    const category =
+    const dv =
         form.querySelector(
-            '[name="category"]'
+            '[name="dv"]'
         );
 
 
