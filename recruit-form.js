@@ -1,6 +1,6 @@
 /*==================================================
 NIDMEGENT ESPORTS
-CONTACT - EMAILJS
+RECRUIT FORM - EMAILJS
 ==================================================*/
 
 
@@ -21,7 +21,6 @@ DOM READY
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
     /*==================================================
     EMAILJS INIT
     ==================================================*/
@@ -29,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (typeof emailjs !== "undefined") {
 
         emailjs.init({
-
             publicKey: EMAILJS_PUBLIC_KEY
-
         });
 
         console.log(
@@ -41,9 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-        console.error(
-            "EmailJS is not loaded."
-        );
+        console.error("EmailJS is not loaded.");
 
     }
 
@@ -52,26 +47,19 @@ document.addEventListener("DOMContentLoaded", () => {
     HEADER
     ==================================================*/
 
-    const header =
-        document.querySelector(".header");
-
+    const header = document.querySelector(".header");
 
     if (header) {
 
         const updateHeader = () => {
 
             if (window.scrollY > 50) {
-
                 header.classList.add("active");
-
             } else {
-
                 header.classList.remove("active");
-
             }
 
         };
-
 
         updateHeader();
 
@@ -93,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav =
         document.querySelector(".nav");
 
-
     if (menuButton && nav) {
 
         menuButton.addEventListener(
@@ -105,12 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 const isOpen =
                     nav.classList.contains("active");
 
-
                 menuButton.setAttribute(
                     "aria-expanded",
-                    isOpen
-                        ? "true"
-                        : "false"
+                    isOpen ? "true" : "false"
                 );
 
             }
@@ -125,9 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     "click",
                     () => {
 
-                        nav.classList.remove(
-                            "active"
-                        );
+                        nav.classList.remove("active");
 
                     }
                 );
@@ -142,8 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ==================================================*/
 
     const form =
-        document.querySelector(".contact-form");
-
+        document.querySelector("#contactForm");
 
     if (form) {
 
@@ -161,94 +142,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document
         .querySelectorAll(
-            ".contact-form input, .contact-form select, .contact-form textarea"
+            "#contactForm input, #contactForm select, #contactForm textarea"
         )
         .forEach(field => {
 
             field.addEventListener(
                 "input",
-                () => {
-
-                    clearFieldError(field);
-
-                }
+                () => clearFieldError(field)
             );
-
 
             field.addEventListener(
                 "change",
-                () => {
-
-                    clearFieldError(field);
-
-                }
+                () => clearFieldError(field)
             );
 
         });
 
 
-    /*==================================================
-    FADE UP
-    ==================================================*/
-
-    const fadeItems =
-        document.querySelectorAll(
-            ".fade-up, .contact-note, .contact-cta__box"
-        );
-
-
-    if ("IntersectionObserver" in window) {
-
-        const observer =
-            new IntersectionObserver(
-
-                entries => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if (
-                                entry.isIntersecting
-                            ) {
-
-                                entry.target
-                                    .classList
-                                    .add("show");
-
-                                observer
-                                    .unobserve(
-                                        entry.target
-                                    );
-
-                            }
-
-                        }
-                    );
-
-                },
-
-                {
-
-                    threshold:0.12
-
-                }
-
-            );
-
-
-        fadeItems.forEach(
-            item => {
-
-                observer.observe(item);
-
-            }
-        );
-
-    }
-
-
     console.log(
-        "%cNIDMEGENT CONTACT PAGE READY",
+        "%cNIDMEGENT RECRUIT PAGE READY",
         "color:#2962FF;font-size:16px;font-weight:800;"
     );
 
@@ -263,45 +175,31 @@ async function handleFormSubmit(event) {
 
     event.preventDefault();
 
-
-    const form =
-        event.currentTarget;
-
+    const form = event.currentTarget;
 
     const submitButton =
-        form.querySelector(
-            ".contact-submit"
-        );
+        form.querySelector(".contact-submit");
 
 
     if (!submitButton) {
-
         return;
-
     }
 
 
     /*==================================================
-    CLEAR ERRORS
+    CLEAR OLD ERRORS
     ==================================================*/
 
     form
-        .querySelectorAll(".form-error")
-        .forEach(error => {
-
-            error.remove();
-
+        .querySelectorAll(".form-error, .submit-error, .form-success")
+        .forEach(element => {
+            element.remove();
         });
-
 
     form
         .querySelectorAll(".error")
         .forEach(field => {
-
-            field.classList.remove(
-                "error"
-            );
-
+            field.classList.remove("error");
         });
 
 
@@ -310,27 +208,31 @@ async function handleFormSubmit(event) {
     ==================================================*/
 
     const name =
-        form.querySelector(
-            '[name="name"]'
-        );
-
+        form.querySelector('[name="name"]');
 
     const email =
-        form.querySelector(
-            '[name="email"]'
-        );
-
+        form.querySelector('[name="email"]');
 
     const dv =
-        form.querySelector(
-            '[name="dv"]'
-        );
+        form.querySelector('[name="dv"]');
 
+    const xid =
+        form.querySelector('[name="xid"]');
+
+    const discoid =
+        form.querySelector('[name="discoid"]');
+
+    const sp =
+        form.querySelector('[name="sp"]');
+
+    const co =
+        form.querySelector('[name="co"]');
+
+    const ar =
+        form.querySelector('[name="ar"]');
 
     const message =
-        form.querySelector(
-            '[name="message"]'
-        );
+        form.querySelector('[name="message"]');
 
 
     let valid = true;
@@ -340,15 +242,16 @@ async function handleFormSubmit(event) {
     NAME
     ==================================================*/
 
-    if (
-        name &&
-        name.value.trim() === ""
-    ) {
+    if (!name || name.value.trim() === "") {
 
-        showFieldError(
-            name,
-            "お名前を入力してください。"
-        );
+        if (name) {
+
+            showFieldError(
+                name,
+                "お名前を入力してください。"
+            );
+
+        }
 
         valid = false;
 
@@ -359,49 +262,24 @@ async function handleFormSubmit(event) {
     EMAIL
     ==================================================*/
 
-    if (email) {
+    if (!email || email.value.trim() === "") {
 
-        const value =
-            email.value.trim();
-
-
-        if (value === "") {
+        if (email) {
 
             showFieldError(
                 email,
                 "メールアドレスを入力してください。"
             );
 
-            valid = false;
-
-        } else if (
-            !isValidEmail(value)
-        ) {
-
-            showFieldError(
-                email,
-                "正しいメールアドレスを入力してください。"
-            );
-
-            valid = false;
-
         }
 
-    }
+        valid = false;
 
-
-    /*==================================================
-    CATEGORY
-    ==================================================*/
-
-    if (
-        category &&
-        category.value === ""
-    ) {
+    } else if (!isValidEmail(email.value.trim())) {
 
         showFieldError(
-            category,
-            "選択してください。"
+            email,
+            "正しいメールアドレスを入力してください。"
         );
 
         valid = false;
@@ -410,36 +288,150 @@ async function handleFormSubmit(event) {
 
 
     /*==================================================
-    MESSAGE
+    DIVISION
     ==================================================*/
 
-    if (message) {
+    if (!dv || dv.value === "") {
 
-        const value =
-            message.value.trim();
-
-
-        if (value === "") {
+        if (dv) {
 
             showFieldError(
-                message,
-                "お問い合わせ内容を入力してください。"
+                dv,
+                "希望部門を選択してください。"
             );
-
-            valid = false;
-
-        } else if (
-            value.length < 10
-        ) {
-
-            showFieldError(
-                message,
-                "お問い合わせ内容を10文字以上入力してください。"
-            );
-
-            valid = false;
 
         }
+
+        valid = false;
+
+    }
+
+
+    /*==================================================
+    X ID
+    ==================================================*/
+
+    if (!xid || xid.value.trim() === "") {
+
+        if (xid) {
+
+            showFieldError(
+                xid,
+                "X IDを入力してください。"
+            );
+
+        }
+
+        valid = false;
+
+    }
+
+
+    /*==================================================
+    DISCORD ID
+    ==================================================*/
+
+    if (!discoid || discoid.value.trim() === "") {
+
+        if (discoid) {
+
+            showFieldError(
+                discoid,
+                "Discord IDを入力してください。"
+            );
+
+        }
+
+        valid = false;
+
+    }
+
+
+    /*==================================================
+    STATE / PROVINCE
+    ==================================================*/
+
+    if (!sp || sp.value.trim() === "") {
+
+        if (sp) {
+
+            showFieldError(
+                sp,
+                "お住まいの都道府県を入力してください。"
+            );
+
+        }
+
+        valid = false;
+
+    }
+
+
+    /*==================================================
+    CURRENT OCCUPATION
+    ==================================================*/
+
+    if (!co || co.value === "") {
+
+        if (co) {
+
+            showFieldError(
+                co,
+                "現在のご職業を選択してください。"
+            );
+
+        }
+
+        valid = false;
+
+    }
+
+
+    /*==================================================
+    ACTIVITY RESULTS
+    ==================================================*/
+
+    if (!ar || ar.value.trim() === "") {
+
+        if (ar) {
+
+            showFieldError(
+                ar,
+                "活動実績を入力してください。"
+            );
+
+        }
+
+        valid = false;
+
+    }
+
+
+    /*==================================================
+    SELF PR
+    ==================================================*/
+
+    if (!message || message.value.trim() === "") {
+
+        if (message) {
+
+            showFieldError(
+                message,
+                "自己PRを入力してください。"
+            );
+
+        }
+
+        valid = false;
+
+    } else if (message.value.trim().length < 10) {
+
+        showFieldError(
+            message,
+            "自己PRを10文字以上入力してください。"
+        );
+
+        valid = false;
 
     }
 
@@ -453,17 +445,13 @@ async function handleFormSubmit(event) {
         const firstError =
             form.querySelector(".error");
 
-
         if (firstError) {
 
             firstError.focus();
 
             firstError.scrollIntoView({
-
-                behavior:"smooth",
-
-                block:"center"
-
+                behavior: "smooth",
+                block: "center"
             });
 
         }
@@ -477,9 +465,7 @@ async function handleFormSubmit(event) {
     EMAILJS CHECK
     ==================================================*/
 
-    if (
-        typeof emailjs === "undefined"
-    ) {
+    if (typeof emailjs === "undefined") {
 
         showSubmitError(
             form,
@@ -498,21 +484,14 @@ async function handleFormSubmit(event) {
     const originalHTML =
         submitButton.innerHTML;
 
-
     submitButton.disabled = true;
 
     submitButton.innerHTML = `
-
         <span>送信中...</span>
-
         <i class="ri-loader-4-line"></i>
-
     `;
 
-
-    submitButton.classList.add(
-        "is-loading"
-    );
+    submitButton.classList.add("is-loading");
 
 
     /*==================================================
@@ -521,13 +500,47 @@ async function handleFormSubmit(event) {
 
     const templateParams = {
 
-        name:name ? name.value.trim() : "",
-        email:email ? email.value.trim() : "",
-        dv: dv ? dv.value : "",
-        message:message ? message.value.trim() : "",
-        time:new Date().toLocaleString("ja-JP")
+        name:
+            name ? name.value.trim() : "",
+
+        email:
+            email ? email.value.trim() : "",
+
+        dv:
+            dv ? dv.value : "",
+
+        xid:
+            xid ? xid.value.trim() : "",
+
+        discoid:
+            discoid ? discoid.value.trim() : "",
+
+        sp:
+            sp ? sp.value.trim() : "",
+
+        co:
+            co ? co.value : "",
+
+        ar:
+            ar ? ar.value.trim() : "",
+
+        message:
+            message ? message.value.trim() : "",
+
+        time:
+            new Date().toLocaleString("ja-JP")
 
     };
+
+
+    /*==================================================
+    DEBUG
+    ==================================================*/
+
+    console.log(
+        "EmailJS Template Params:",
+        templateParams
+    );
 
 
     /*==================================================
@@ -536,44 +549,46 @@ async function handleFormSubmit(event) {
 
     try {
 
-        await emailjs.send(
-
+        const response = await emailjs.send(
             EMAILJS_SERVICE_ID,
-
             EMAILJS_TEMPLATE_ID,
-
             templateParams
-
         );
 
 
-        /*==============================================
+        console.log(
+            "EmailJS Success:",
+            response
+        );
+
+
+        /*==================================================
         SUCCESS
-        ==============================================*/
+        ==================================================*/
 
         submitButton.classList.remove(
             "is-loading"
         );
 
-
         submitButton.innerHTML = `
-
             <span>送信完了</span>
-
             <i class="ri-check-line"></i>
-
         `;
 
 
         showSuccessMessage(form);
 
 
+        /*==================================================
+        RESET
+        ==================================================*/
+
         form.reset();
 
 
-        /*==============================================
-        RESTORE
-        ==============================================*/
+        /*==================================================
+        RESTORE BUTTON
+        ==================================================*/
 
         setTimeout(() => {
 
@@ -593,14 +608,13 @@ async function handleFormSubmit(event) {
         );
 
 
-        /*==============================================
+        /*==================================================
         ERROR
-        ==============================================*/
+        ==================================================*/
 
         submitButton.classList.remove(
             "is-loading"
         );
-
 
         submitButton.disabled = false;
 
@@ -609,11 +623,8 @@ async function handleFormSubmit(event) {
 
 
         showSubmitError(
-
             form,
-
             "送信に失敗しました。時間をおいて再度お試しください。"
-
         );
 
     }
@@ -643,22 +654,16 @@ function showFieldError(
     message
 ) {
 
-    field.classList.add(
-        "error"
-    );
-
+    field.classList.add("error");
 
     const error =
         document.createElement("p");
 
-
     error.className =
         "form-error";
 
-
     error.textContent =
         message;
-
 
     field.insertAdjacentElement(
         "afterend",
@@ -674,20 +679,14 @@ CLEAR FIELD ERROR
 
 function clearFieldError(field) {
 
-    field.classList.remove(
-        "error"
-    );
-
+    field.classList.remove("error");
 
     const error =
         field.nextElementSibling;
 
-
     if (
         error &&
-        error.classList.contains(
-            "form-error"
-        )
+        error.classList.contains("form-error")
     ) {
 
         error.remove();
@@ -703,33 +702,16 @@ SUCCESS
 
 function showSuccessMessage(form) {
 
-    const old =
-        form.querySelector(
-            ".form-success"
-        );
-
-
-    if (old) {
-
-        old.remove();
-
-    }
-
-
     const success =
         document.createElement("div");
-
 
     success.className =
         "form-success";
 
-
     success.innerHTML = `
 
         <div class="form-success__icon">
-
             <i class="ri-check-line"></i>
-
         </div>
 
         <div>
@@ -739,12 +721,9 @@ function showSuccessMessage(form) {
             </strong>
 
             <p>
-
-                お問い合わせありがとうございます。<br>
-
+                ご応募ありがとうございます。<br>
                 内容を確認のうえ、
                 担当者よりご連絡いたします。
-
             </p>
 
         </div>
@@ -752,65 +731,35 @@ function showSuccessMessage(form) {
     `;
 
 
-    success.style.display =
-        "flex";
+    success.style.display = "flex";
 
+    success.style.alignItems = "center";
 
-    success.style.alignItems =
-        "center";
+    success.style.gap = "25px";
 
+    success.style.marginTop = "35px";
 
-    success.style.gap =
-        "25px";
-
-
-    success.style.marginTop =
-        "35px";
-
-
-    success.style.padding =
-        "25px";
-
+    success.style.padding = "25px";
 
     success.style.border =
         "1px solid rgba(41,98,255,.25)";
 
-
-    success.style.borderRadius =
-        "10px";
-
+    success.style.borderRadius = "10px";
 
     success.style.background =
         "rgba(41,98,255,.04)";
 
-
-    form.appendChild(
-        success
-    );
-
-
-    requestAnimationFrame(() => {
-
-        success.style.opacity =
-            "1";
-
-        success.style.transform =
-            "translateY(0)";
-
-    });
+    form.appendChild(success);
 
 
     setTimeout(() => {
 
         success.scrollIntoView({
-
-            behavior:"smooth",
-
-            block:"center"
-
+            behavior: "smooth",
+            block: "center"
         });
 
-    },100);
+    }, 100);
 
 }
 
@@ -825,61 +774,44 @@ function showSubmitError(
 ) {
 
     const old =
-        form.querySelector(
-            ".submit-error"
-        );
-
+        form.querySelector(".submit-error");
 
     if (old) {
-
         old.remove();
-
     }
 
 
     const error =
         document.createElement("div");
 
-
     error.className =
         "submit-error";
-
 
     error.textContent =
         message;
 
-
     error.style.marginTop =
         "25px";
-
 
     error.style.padding =
         "18px 20px";
 
-
     error.style.border =
         "1px solid rgba(255,59,48,.25)";
-
 
     error.style.borderRadius =
         "8px";
 
-
     error.style.background =
         "rgba(255,59,48,.04)";
-
 
     error.style.color =
         "#ff3b30";
 
-
     error.style.fontSize =
         ".85rem";
 
-
-    form.appendChild(
-        error
-    );
+    form.appendChild(error);
 
 }
 
@@ -893,19 +825,14 @@ window.addEventListener(
     () => {
 
         const nav =
-            document.querySelector(
-                ".nav"
-            );
-
+            document.querySelector(".nav");
 
         if (
             window.innerWidth > 900 &&
             nav
         ) {
 
-            nav.classList.remove(
-                "active"
-            );
+            nav.classList.remove("active");
 
         }
 
@@ -921,33 +848,16 @@ document.addEventListener(
     "keydown",
     event => {
 
-        if (
-            event.key !== "Escape"
-        ) {
-
+        if (event.key !== "Escape") {
             return;
-
         }
 
-
         const nav =
-            document.querySelector(
-                ".nav"
-            );
-
+            document.querySelector(".nav");
 
         if (nav) {
-
-            nav.classList.remove(
-                "active"
-            );
-
+            nav.classList.remove("active");
         }
 
     }
 );
-
-
-/*==================================================
-END
-==================================================*/
