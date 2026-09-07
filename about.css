@@ -55,28 +55,28 @@ ul{
 COMMON
 ==================================================*/
 .container{
-    width:min(1700px,94%);
-    margin:auto;
+    width:min(1400px,86%);
+    margin:0 auto;
 }
 .section{
-    padding:150px 0;
+    padding:140px 0;
 }
 .section-header{
-    margin-bottom:80px;
+    margin-bottom:70px;
 }
 .section-number{
     display:block;
-    margin-bottom:16px;
+    margin-bottom:15px;
     color:var(--blue);
     font-size:.82rem;
-    font-weight:700;
-    letter-spacing:.22em;
+    font-weight:800;
+    letter-spacing:.24em;
     text-transform:uppercase;
 }
 .section-title{
-    font-size:clamp(3rem,7vw,6rem);
+    font-size:clamp(3rem,6vw,6rem);
+    line-height:1;
     font-weight:900;
-    line-height:.95;
     letter-spacing:-.05em;
 }
 /*==================================================
