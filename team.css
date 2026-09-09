@@ -1055,34 +1055,55 @@ background:#fff;
     background:#2962FF;
 }
 
-/* ==================================================
+/*==================================================
    PLAYERS FOOTER
-   Aboutページと同じスマホレイアウト
-================================================== */
+   ABOUT PAGEと同じスマホレイアウト
+==================================================*/
 
-@media (max-width:768px){
+@media (max-width: 768px){
 
     .footer{
+        width:100%;
         overflow:hidden;
     }
 
-    .footer .container{
-        width:88%;
-        margin:0 auto;
+    /* フッター上部を完全に縦並び */
+    .footer__top{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:70px !important;
+        padding:80px 0 !important;
     }
 
-    .footer-grid{
+    /* ブランド */
+    .footer__brand{
+        width:100% !important;
+    }
+
+    /* MENU / COMPANY / SOCIAL */
+    .footer__menu{
+        display:grid !important;
+        grid-template-columns:1fr !important;
+        gap:55px !important;
+        width:100% !important;
+    }
+
+    /* 各カラム */
+    .footer__menu > div{
+        width:100% !important;
+    }
+
+    /* 見出し */
+    .footer__menu h4{
+        margin-bottom:28px;
+    }
+
+    /* フッター下部 */
+    .footer__bottom{
         display:flex !important;
         flex-direction:column !important;
-        gap:70px !important;
-    }
-
-    .footer-brand,
-    .footer-menu,
-    .footer-company,
-    .footer-social{
-        width:100% !important;
-        max-width:none !important;
+        gap:14px !important;
+        text-align:center;
     }
 
 }
