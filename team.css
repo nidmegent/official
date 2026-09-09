@@ -1054,25 +1054,43 @@ background:#fff;
     height:2px;
     background:#2962FF;
 }
-/*==================================================
-CONTAINER RESPONSIVE
-==================================================*/
 
-@media(max-width:768px){
+/* ==================================================
+   FOOTER MOBILE FIX
+   Aboutページと同じレイアウトに統一
+================================================== */
 
-    .container{
+@media (max-width: 768px){
+
+    .footer{
+        overflow:hidden;
+    }
+
+    .footer .container{
         width:88%;
+        margin:0 auto;
+    }
+
+    /* フッター全体 */
+    .footer-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:70px;
+    }
+
+    /* 各カラム */
+    .footer-column{
+        width:100%;
+    }
+
+    /* COMPANY / SOCIAL */
+    .footer-company,
+    .footer-social{
+        width:100%;
     }
 
 }
 
-@media(max-width:480px){
-
-    .container{
-        width:90%;
-    }
-
-}
 /*==================================================
 END
 ==================================================*/
