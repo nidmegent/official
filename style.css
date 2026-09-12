@@ -2729,25 +2729,6 @@ INDEX HEADER COLOR
 }
 
 /*==================================================
-INDEX ONLY HEADER
-==================================================*/
-
-/* index.htmlだけヘッダー文字を白 */
-.home-page .header .nav__list a{
-    color:#fff;
-}
-
-/* index.htmlだけホバー時 */
-.home-page .header .nav__list a:hover{
-    color:var(--blue);
-}
-
-/* スクロールしてheader.activeになったら黒 */
-.home-page .header.active .nav__list a{
-    color:#111;
-}
-
-/*==================================================
 
 team.js add css
 
