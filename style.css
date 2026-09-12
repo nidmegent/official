@@ -585,7 +585,7 @@ HEADER
 
 .header__button{
 
-    background:var(--white);
+    background:var(--black);
 
     color:white;
 
@@ -2709,6 +2709,24 @@ SMALL MOBILE
 
 }
 
+/*==================================================
+INDEX HEADER COLOR
+==================================================*/
+
+/* 通常時 */
+.header .nav__list a{
+    color:#fff;
+}
+
+/* スクロール後 */
+.header.active .nav__list a{
+    color:#111;
+}
+
+/* ホバー */
+.header .nav__list a:hover{
+    color:var(--blue);
+}
 
 /*==================================================
 
