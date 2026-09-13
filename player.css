@@ -1,0 +1,454 @@
+/*==================================================
+NIDMEGENT PLAYER PROFILE
+==================================================*/
+
+:root{
+
+    --player-red:#e6002f;
+    --player-text:#111;
+    --player-light:#777;
+    --player-line:#dedede;
+
+}
+
+
+/*==================================================
+PAGE
+==================================================*/
+
+.player-page{
+
+    background:#fff;
+
+    min-height:100vh;
+
+    padding-top:95px;
+
+}
+
+
+/*==================================================
+CONTAINER
+==================================================*/
+
+.player-container{
+
+    width:min(1200px,86%);
+
+    margin:0 auto;
+
+}
+
+
+/*==================================================
+PROFILE
+==================================================*/
+
+.player-profile{
+
+    padding:90px 0 120px;
+
+}
+
+
+.player-profile .player-container{
+
+    display:grid;
+
+    grid-template-columns:420px 1fr;
+
+    gap:70px;
+
+    align-items:start;
+
+}
+
+
+/*==================================================
+PHOTO
+==================================================*/
+
+.player-photo{
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    overflow:hidden;
+
+    border-radius:5px;
+
+    background:#eee;
+
+}
+
+
+.player-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+/*==================================================
+INFORMATION
+==================================================*/
+
+.player-information{
+
+    padding-top:8px;
+
+}
+
+
+.player-role{
+
+    display:block;
+
+    margin-bottom:12px;
+
+    color:#111;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.02em;
+
+}
+
+
+.player-name{
+
+    margin:0;
+
+    font-size:clamp(3rem,5vw,4rem);
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-.05em;
+
+}
+
+
+.player-basic{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+    margin-top:18px;
+
+}
+
+
+.player-basic span{
+
+    color:#777;
+
+    font-size:13px;
+
+}
+
+
+/*==================================================
+SOCIAL
+==================================================*/
+
+.player-social{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:26px;
+
+    margin-top:20px;
+
+}
+
+
+.player-social a{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:22px;
+
+    height:22px;
+
+    color:#111;
+
+    font-size:18px;
+
+    transition:.3s ease;
+
+}
+
+
+.player-social a:hover{
+
+    color:var(--player-red);
+
+    transform:translateY(-3px);
+
+}
+
+
+/*==================================================
+DESCRIPTION
+==================================================*/
+
+.player-description{
+
+    margin-top:20px;
+
+    padding-top:15px;
+
+    border-top:1px solid var(--player-line);
+
+}
+
+
+.player-description p{
+
+    margin:0;
+
+    max-width:600px;
+
+    color:#111;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+}
+
+
+/*==================================================
+RESULT
+==================================================*/
+
+.player-results{
+
+    padding:0 0 120px;
+
+}
+
+
+.player-results h2{
+
+    margin:0 0 22px;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:-.02em;
+
+}
+
+
+.result-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+.result-item{
+
+    display:grid;
+
+    grid-template-columns:70px 1fr;
+
+    gap:0;
+
+    padding:7px 0;
+
+    font-size:12px;
+
+    line-height:1.6;
+
+}
+
+
+.result-date{
+
+    color:#111;
+
+    font-weight:500;
+
+}
+
+
+.result-title{
+
+    color:#111;
+
+}
+
+
+.result-rank{
+
+    color:#111;
+
+}
+
+
+/*==================================================
+RESULT HOVER
+==================================================*/
+
+.result-item{
+
+    transition:.25s ease;
+
+}
+
+
+.result-item:hover{
+
+    color:var(--player-red);
+
+}
+
+
+.result-item:hover .result-title{
+
+    color:var(--player-red);
+
+}
+
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media(max-width:768px){
+
+    .player-page{
+
+        padding-top:80px;
+
+    }
+
+
+    .player-container{
+
+        width:88%;
+
+    }
+
+
+    .player-profile{
+
+        padding:60px 0 80px;
+
+    }
+
+
+    .player-profile .player-container{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+
+    .player-photo{
+
+        max-width:420px;
+
+    }
+
+
+    .player-information{
+
+        padding-top:0;
+
+    }
+
+
+    .player-name{
+
+        font-size:3rem;
+
+    }
+
+
+    .player-results{
+
+        padding-bottom:80px;
+
+    }
+
+
+    .result-item{
+
+        grid-template-columns:65px 1fr;
+
+        font-size:11px;
+
+    }
+
+}
+
+
+/*==================================================
+SMALL MOBILE
+==================================================*/
+
+@media(max-width:480px){
+
+    .player-container{
+
+        width:90%;
+
+    }
+
+
+    .player-profile{
+
+        padding-top:40px;
+
+    }
+
+
+    .player-name{
+
+        font-size:2.6rem;
+
+    }
+
+
+    .player-description p{
+
+        font-size:13px;
+
+    }
+
+
+    .result-item{
+
+        grid-template-columns:60px 1fr;
+
+        font-size:10px;
+
+    }
+
+}
