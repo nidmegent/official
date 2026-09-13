@@ -28,7 +28,7 @@ const players = {
                 title: "シルバー以下限定カスタム",
                 rank: ""
             }
-        ]
+        ],
         OTHER: [
             {
                 date: "2026.09",
