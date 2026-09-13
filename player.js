@@ -168,4 +168,6 @@ if(player.premier && player.premier.length > 0){
 
     });
 
-}
+        }
+
+    }
