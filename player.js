@@ -11,17 +11,22 @@ const players = {
         x: "https://x.com/komuhana1216",
         youtube: "https://www.youtube.com/@komuhana1216",
         twitch: "https://www.twitch.tv/komuhana1216",
-        description:"Nidmegent Esportsのクリエイター。映像制作・デザイン・イベント制作など、チームのクリエイティブを支える。",
+        description:"Nidmegent Esports 代表",
         results: [
             {
                 date: "2026.09",
-                title: "Nidmegent Esports Creative Event",
-                rank: "1位"
+                title: "StreamerValorantCustom 1",
+                rank: ""
             },
             {
                 date: "2026.08",
-                title: "VALORANT Community Event",
-                rank: "3位"
+                title: "第1回うちゃカス",
+                rank: ""
+            },
+            {
+                date: "2026.04",
+                title: "シルバー以下限定カスタム",
+                rank: ""
             }
         ]
     },
