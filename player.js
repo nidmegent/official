@@ -8,9 +8,9 @@ youtube: "https://www.youtube.com/@komuhana1216",
 twitch: "https://www.twitch.tv/komuhana1216",
 description:"Nidmegent Esports 代表",
 results: [
-{date: "大会出場：",title: "StreamerValorantCustom 1",rank: ""},
+{date: "大会出場：",title: "StreamerValorantCustom 1",rank: "3位"},
 {date: "大会出場：",title: "第1回うちゃカス",rank: ""},
-{date: "大会出場：",title: "CHILLCUSTOM",rank: ""},
+{date: "大会出場：",title: "CHILLCUSTOM",rank: "Best.18"},
 {date: "大会出場：",title: "シルバー以下限定VALORANTカスタム",rank: ""},
 {date: "大会運営：",title: "UpStageCup",rank: ""},
 {date: "大会運営：",title: "VELCUP",rank: ""},
@@ -21,39 +21,21 @@ results: [
 {date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
 ]
 },
-    /*========================================
-       新しい選手はここに追加
-    ========================================*/
-
-    player2: {
-
-        role: "ATHLETE",
-
-        name: "PLAYER",
-
-        realName: "Real Name",
-
-        birthday: "2000/00/00",
-
-        image: "assets/images/players/player2.png",
-
-        x: "#",
-
-        youtube: "#",
-
-        twitch: "#",
-
-        description:
-            "Player description.",
-
-        results: []
-
-    }
-
-};
-
-
-
+hati: {role: "CREATOR",name: "hati",realName: "JOIND：2025.3",birthday: "BIRTHDAY：04/08",image: "player/hati.png",
+x: "https://x.com/hati3974",
+description:"自由気ままな暇人",
+results: [
+]
+},
+yuiri: {role: "CREATOR",name: "MinatoYuiri",realName: "JOIND：2026.8",birthday: "BIRTHDAY：03/18",image: "player/yuiri.png",
+x: "https://x.com/yuiri_minato",
+youtube: "https://www.youtube.com/@yuiriminato",
+twitch: "https://www.twitch.tv/yuiri00",
+description:"かわいいものに囲まれていたいかわいい大好きゲーマー",
+results: [
+{date: "大会出場：",title: "桜珂杯",rank: "2位"},
+]
+},
 /*==================================================
 GET PLAYER ID
 ==================================================*/
