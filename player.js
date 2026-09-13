@@ -32,7 +32,7 @@ youtube: "https://www.youtube.com/@yuiriminato",
 twitch: "https://www.twitch.tv/yuiri00",
 description:"かわいいものに囲まれていたいかわいい大好きゲーマー",
 results: [
-{date: "大会出場：",title: "桜珂杯",rank: "2位"},
+{date: "大会出場：",title: "桜珂杯",rank: "2位"}
 ]
 }
 /*==================================================
