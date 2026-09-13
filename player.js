@@ -28,66 +28,34 @@ results: [
 {date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
 ]},
 
+hati: {
+role: "CREATOR",
+name: "hati",
+realName: "JOIND：2025.3",
+birthday: "BIRTHDAY：04/08",
+image: "player/hati.png",
+x: "https://x.com/hati3974",
+youtube: "#",
+twitch: "#",
+description: "自由気ままな暇人",
+results: []
+},
 
-    /*==================================================
-    hati
-    ==================================================*/
+yuiri: {
+role: "CREATOR",
+name: "MinatoYuiri",
+realName: "JOIND：2026.8",
+birthday: "BIRTHDAY：03/18",
+image: "player/yuiri.png",
+x: "https://x.com/yuiri_minato",
+youtube: "https://www.youtube.com/@yuiriminato",
+twitch: "https://www.twitch.tv/yuiri00",
+description: "かわいいものに囲まれていたいかわいい大好きゲーマー",
+results: [
+{date: "大会出場：",title: "桜珂杯",rank: "2位"}
+]}
 
-    hati: {
-
-        role: "CREATOR",
-        name: "hati",
-
-        realName: "JOIND：2025.3",
-        birthday: "BIRTHDAY：04/08",
-
-        image: "player/hati.png",
-
-        x: "https://x.com/hati3974",
-        youtube: "#",
-        twitch: "#",
-
-        description: "自由気ままな暇人",
-
-        results: []
-
-    },
-
-
-    /*==================================================
-    MinatoYuiri
-    ==================================================*/
-
-    yuiri: {
-
-        role: "CREATOR",
-        name: "MinatoYuiri",
-
-        realName: "JOIND：2026.8",
-        birthday: "BIRTHDAY：03/18",
-
-        image: "player/yuiri.png",
-
-        x: "https://x.com/yuiri_minato",
-        youtube: "https://www.youtube.com/@yuiriminato",
-        twitch: "https://www.twitch.tv/yuiri00",
-
-        description: "かわいいものに囲まれていたいかわいい大好きゲーマー",
-
-        results: [
-
-            {
-                date: "大会出場：",
-                title: "桜珂杯",
-                rank: "2位"
-            }
-
-        ]
-
-    }
-
-}; // ★ players終了
-
+}; // playerstats end
 
 /*==================================================
 GET PLAYER ID
