@@ -2726,18 +2726,23 @@ HEADER COLOR
 }
 
 <style>
-/*==================================================
-INDEX HEADER WHITE
-==================================================*/
 
+/* 通常 */
 .header .nav__list a{
     color:#fff;
 }
 
+/* スクロール後 */
+.header.active .nav__list a{
+    color:#111;
+}
+
+/* ボタン */
 .header .header__button{
     color:#fff;
 }
 
+/* ホバー */
 .header .nav__list a:hover{
     color:#e6002f;
 }
