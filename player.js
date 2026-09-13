@@ -27,6 +27,7 @@ results: [
 {date: "大会運営：",title: "NovaCup Vol.2",rank: ""},
 {date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
 ]},
+
 hati: {
 role: "CREATOR",
 name: "hati",
@@ -39,6 +40,7 @@ twitch: "#",
 description: "自由気ままな暇人",
 results: []
 },
+
 yuiri: {
 role: "CREATOR",
 name: "MinatoYuiri",
@@ -52,6 +54,7 @@ description: "かわいいものに囲まれていたいかわいい大好きゲ
 results: [
 {date: "大会出場：",title: "桜珂杯",rank: "2位"}
 ]},
+
 kanzaki: {
 role: "CREATOR",
 name: "KanzakiAyaka",
@@ -65,6 +68,7 @@ description: "ポジション思考？なゲーマー",
 results: [
 {date: "大会運営：",title: "STELLA CUP",rank: ""}
 ]},
+
 nade: {
 role: "CREATOR",
 name: "Nade",
