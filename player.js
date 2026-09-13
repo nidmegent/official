@@ -14,17 +14,17 @@ const players = {
         description:"Nidmegent Esports 代表",
         results: [
             {
-                date: "2026.09",
+                date: "大会出場：",
                 title: "StreamerValorantCustom 1",
                 rank: ""
             },
             {
-                date: "2026.08",
+                date: "大会出場：",
                 title: "第1回うちゃカス",
                 rank: ""
             },
             {
-                date: "2026.04",
+                date: "大会出場：",
                 title: "シルバー以下限定カスタム",
                 rank: ""
             }
