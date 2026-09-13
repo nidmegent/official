@@ -2,82 +2,31 @@
 NIDMEGENT PLAYER DATA
 ==================================================*/
 const players = {
-    m1yun: {
-        role: "CREATOR",
-        name: "M1yuN",
-        realName: "JOIND：2018.7",
-        birthday: "BIRTHDAY：09/25",
-        image: "player/m1yun.png",
-        x: "https://x.com/komuhana1216",
-        youtube: "https://www.youtube.com/@komuhana1216",
-        twitch: "https://www.twitch.tv/komuhana1216",
-        description:"Nidmegent Esports 代表",
-        results: [
-            {
-                date: "大会出場：",
-                title: "ESR GRAND PRIX VALORANT",
-                rank: ""
-            },
-            {
-                date: "大会出場：",
-                title: "StreamerValorantCustom 1",
-                rank: ""
-            },
-            {
-                date: "大会出場：",
-                title: "第1回うちゃカス",
-                rank: ""
-            },
-            {
-                date: "大会出場：",
-                title: "CHILLCUSTOM",
-                rank: ""
-            },
-        
-            {
-                date: "大会出場：",
-                title: "シルバー以下限定カスタム",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "UpStageCup",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "VELCUP",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "StreamerValorantCustom 1",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "StreamerValorantCustom 2",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "NovaCup Vol.1",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "NovaCup Vol.2",
-                rank: ""
-            },
-            {
-                date: "大会運営：",
-                title: "STELLA CUP Vol.1",
-                rank: ""
-            }
-            
-        ]
-       
-    },
+m1yun: {
+role: "CREATOR",
+name: "M1yuN",
+realName: "JOIND：2018.7",
+birthday: "BIRTHDAY：09/25",
+image: "player/m1yun.png",
+x: "https://x.com/komuhana1216",
+youtube: "https://www.youtube.com/@komuhana1216",
+twitch: "https://www.twitch.tv/komuhana1216",
+description:"Nidmegent Esports 代表",
+results: [
+{date: "大会出場：",title: "ESR GRAND PRIX VALORANT"},
+{date: "大会出場：",title: "StreamerValorantCustom 1"},
+{date: "大会出場：",title: "第1回うちゃカス"},
+{date: "大会出場：",title: "CHILLCUSTOM"},
+{date: "大会出場：",title: "シルバー以下限定カスタム"},
+{date: "大会運営：",title: "UpStageCup"},
+{date: "大会運営：",title: "VELCUP"},
+{date: "大会運営：",title: "StreamerValorantCustom 1"},
+{date: "大会運営：",title: "StreamerValorantCustom 2"},
+{date: "大会運営：",title: "NovaCup Vol.1"},
+{date: "大会運営：",title: "NovaCup Vol.2"},
+{date: "大会運営：",title: "STELLA CUP Vol.1",}
+]
+},
     /*========================================
        新しい選手はここに追加
     ========================================*/
@@ -114,9 +63,7 @@ const players = {
 /*==================================================
 GET PLAYER ID
 ==================================================*/
-const params = new URLSearchParams(
-    window.location.search
-);
+const params = new URLSearchParams(window.location.search);
 const playerId = params.get("id");
 /*==================================================
 PLAYER
@@ -125,69 +72,45 @@ const player = players[playerId];
 /*==================================================
 ERROR
 ==================================================*/
-if(!player){
-    document.title =
-        "PLAYER NOT FOUND | Nidmegent Esports";
-    document.getElementById("playerName").textContent =
-        "PLAYER NOT FOUND";
-}else{
-    /*============================================
-       TITLE
-    ============================================*/
-    document.title =
-        `${player.name} | Nidmegent Esports`;
-    /*============================================
-       BASIC
-    ============================================*/
-    document.getElementById("playerRole")
-        .textContent = player.role;
-    document.getElementById("playerName")
-        .textContent = player.name;
-    document.getElementById("playerRealName")
-        .textContent = player.realName;
-    document.getElementById("playerBirthday")
-        .textContent = player.birthday;
-    /*============================================
-       IMAGE
-    ============================================*/
-    const image =
-        document.getElementById("playerImage");
-    image.src = player.image;
-    image.alt = player.name;
-    /*============================================
-       SOCIAL
-    ============================================*/
-    document.getElementById("playerX")
-        .href = player.x;
-    document.getElementById("playerYoutube")
-        .href = player.youtube;
-    document.getElementById("playerTwitch")
-        .href = player.twitch;
-    /*============================================
-       DESCRIPTION
-    ============================================*/
-    document.getElementById("playerDescription")
-        .textContent = player.description;
-    /*============================================
-       RESULTS
-    ============================================*/
-    const results =
-        document.getElementById("playerResults");
-    results.innerHTML = "";
-    player.results.forEach(result => {
-        const item =
-            document.createElement("div");
-        item.className =
-            "result-item";
-        item.innerHTML = `
-            <span class="result-date">
-                ${result.date}
-            </span>
-            <span class="result-title">
-                ${result.title}
-                ${result.rank}
-            </span>
-        `;
-        results.appendChild(item);
-    });
+if(!player){document.title ="PLAYER NOT FOUND | Nidmegent Esports";document.getElementById("playerName").textContent ="PLAYER NOT FOUND";}else{
+document.title =`${player.name} | Nidmegent Esports`;
+document.getElementById("playerRole")
+.textContent = player.role;
+document.getElementById("playerName")
+.textContent = player.name;
+document.getElementById("playerRealName")
+.textContent = player.realName;
+document.getElementById("playerBirthday")
+.textContent = player.birthday;
+
+const image =
+document.getElementById("playerImage");
+image.src = player.image;
+image.alt = player.name;
+document.getElementById("playerX")
+.href = player.x;
+document.getElementById("playerYoutube")
+.href = player.youtube;
+document.getElementById("playerTwitch")
+.href = player.twitch;
+document.getElementById("playerDescription")
+.textContent = player.description;
+
+const results =document.getElementById("playerResults");
+results.innerHTML = "";
+player.results.forEach(result => {
+const item =
+document.createElement("div");
+item.className ="result-item";
+item.innerHTML = `
+<span class="result-date">
+${result.date}
+</span>
+<span class="result-title">
+${result.title}
+${result.rank}
+</span>
+`;
+results.appendChild(item);
+});
 }
