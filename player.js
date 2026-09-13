@@ -23,8 +23,10 @@ results: [
 },
 hati: {role: "CREATOR",name: "hati",realName: "JOIND：2025.3",birthday: "BIRTHDAY：04/08",image: "player/hati.png",
 x: "https://x.com/hati3974",
-description:"自由気ままな暇人",
-results: [ ]
+youtube: "#",
+twitch: "#",
+description: "自由気ままな暇人",
+results: []
 },
 yuiri: {role: "CREATOR",name: "MinatoYuiri",realName: "JOIND：2026.8",birthday: "BIRTHDAY：03/18",image: "player/yuiri.png",
 x: "https://x.com/yuiri_minato",
