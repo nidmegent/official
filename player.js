@@ -60,141 +60,82 @@ results: [
 /*==================================================
 GET PLAYER ID
 ==================================================*/
-
 const params = new URLSearchParams(
     window.location.search
 );
-
 const playerId = params.get("id");
-
-
 /*==================================================
 PLAYER
 ==================================================*/
-
 const player = players[playerId];
-
-
 /*==================================================
 ERROR
 ==================================================*/
-
 if (!player) {
-
     document.title =
         "PLAYER NOT FOUND | Nidmegent Esports";
-
     document.getElementById("playerName").textContent =
         "PLAYER NOT FOUND";
-
 } else {
-
-
     /*============================================
     TITLE
     ============================================*/
-
     document.title =
-        `${player.name} | Nidmegent Esports`;
-
-
+        ${player.name} | Nidmegent Esports;
     /*============================================
     BASIC
     ============================================*/
-
     document.getElementById("playerRole")
         .textContent = player.role;
-
-
     document.getElementById("playerName")
         .textContent = player.name;
-
-
     document.getElementById("playerRealName")
         .textContent = player.realName;
-
-
     document.getElementById("playerBirthday")
         .textContent = player.birthday;
-
-
     /*============================================
     IMAGE
     ============================================*/
-
     const image =
         document.getElementById("playerImage");
-
     image.src = player.image;
-
     image.alt = player.name;
-
-
     /*============================================
     SOCIAL
     ============================================*/
-
     document.getElementById("playerX")
         .href = player.x;
-
-
     document.getElementById("playerYoutube")
         .href = player.youtube || "#";
-
-
     document.getElementById("playerTwitch")
         .href = player.twitch || "#";
-
-
     /*============================================
     DESCRIPTION
     ============================================*/
-
     document.getElementById("playerDescription")
         .textContent = player.description;
-
-
     /*============================================
     RESULTS
     ============================================*/
-
     const results =
         document.getElementById("playerResults");
-
-
     results.innerHTML = "";
-
-
     if (player.results && player.results.length > 0) {
-
         player.results.forEach(result => {
-
             const item =
                 document.createElement("div");
-
-
             item.className =
                 "result-item";
-
-
-            item.innerHTML = `
-
+            item.innerHTML =
                 <span class="result-date">
                     ${result.date}
                 </span>
-
                 <span class="result-title">
                     ${result.title}
                     ${result.rank}
                 </span>
-
-            `;
-
-
+            ;
             results.appendChild(item);
-
         });
-
     }
-
 }
