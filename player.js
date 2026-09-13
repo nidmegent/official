@@ -15,6 +15,11 @@ const players = {
         results: [
             {
                 date: "大会出場：",
+                title: "ESR GRAND PRIX VALORANT",
+                rank: ""
+            },
+            {
+                date: "大会出場：",
                 title: "StreamerValorantCustom 1",
                 rank: ""
             },
@@ -28,6 +33,7 @@ const players = {
                 title: "CHILLCUSTOM",
                 rank: ""
             },
+        
             {
                 date: "大会出場：",
                 title: "シルバー以下限定カスタム",
