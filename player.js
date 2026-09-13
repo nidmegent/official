@@ -53,6 +53,21 @@ const players = {
                 date: "大会運営：",
                 title: "StreamerValorantCustom 1",
                 rank: ""
+            },
+            {
+                date: "大会運営：",
+                title: "NovaCup Vol.1",
+                rank: ""
+            },
+            {
+                date: "大会運営：",
+                title: "NovaCup Vol.2",
+                rank: ""
+            },
+            {
+                date: "大会運営：",
+                title: "STELLA CUP Vol.1",
+                rank: ""
             }
           
         ]
