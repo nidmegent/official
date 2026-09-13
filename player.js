@@ -55,33 +55,6 @@ results: [
 {date: "大会出場：",title: "桜珂杯",rank: "2位"}
 ]},
 
-kanzaki: {
-role: "CREATOR",
-name: "KanzakiAyaka",
-realName: "JOIND：2026.6",
-birthday: "BIRTHDAY：09/21",
-image: "player/kanzaki.png",
-x: "https://x.com/kknzkk1129",
-youtube: "https://www.youtube.com/@knzk_09",
-twitch: "https://www.twitch.tv/knzk_09",
-description: "ポジション思考？なゲーマー",
-results: [
-{date: "大会運営：",title: "STELLA CUP",rank: ""}
-]},
-
-nade: {
-role: "CREATOR",
-name: "Nade",
-realName: "JOIND：2026.8",
-birthday: "BIRTHDAY：07/21",
-image: "player/nade.png",
-x: "#",
-youtube: "#",
-twitch: "#",
-description: "Nidmegentイメージキャラクター",
-results: []
-}
-
 }; // playerstats end
 
 /*==================================================
