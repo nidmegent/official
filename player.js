@@ -29,6 +29,23 @@ const players = {
                 rank: ""
             }
         ]
+        OTHER: [
+            {
+                date: "2026.09",
+                title: "StreamerValorantCustom 1",
+                rank: ""
+            },
+            {
+                date: "2026.08",
+                title: "第1回うちゃカス",
+                rank: ""
+            },
+            {
+                date: "2026.04",
+                title: "シルバー以下限定カスタム",
+                rank: ""
+            }
+        ]
     },
     /*========================================
        新しい選手はここに追加
