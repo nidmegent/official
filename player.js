@@ -11,7 +11,7 @@ results: [
 {date: "大会出場：",title: "StreamerValorantCustom 1",rank: ""},
 {date: "大会出場：",title: "第1回うちゃカス",rank: ""},
 {date: "大会出場：",title: "CHILLCUSTOM",rank: ""},
-{date: "大会出場：",title: "シルバー以下限定カスタム",rank: ""},
+{date: "大会出場：",title: "シルバー以下限定VALORANTカスタム",rank: ""},
 {date: "大会運営：",title: "UpStageCup",rank: ""},
 {date: "大会運営：",title: "VELCUP",rank: ""},
 {date: "大会運営：",title: "StreamerValorantCustom 1",rank: ""},
