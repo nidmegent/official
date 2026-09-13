@@ -18,58 +18,15 @@ results: [
 {date: "大会出場：",title: "StreamerValorantCustom 1",rank: "3位"},
 {date: "大会出場：",title: "第1回うちゃカス",rank: ""},
 {date: "大会出場：",title: "CHILLCUSTOM",rank: "Best.18"},
-
-            {
-                date: "大会出場：",
-                title: "シルバー以下限定VALORANTカスタム",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "UpStageCup",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "VELCUP",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "StreamerValorantCustom 1",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "StreamerValorantCustom 2",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "NovaCup Vol.1",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "NovaCup Vol.2",
-                rank: ""
-            },
-
-            {
-                date: "大会運営：",
-                title: "STELLA CUP Vol.1",
-                rank: ""
-            }
-
-        ]
-
-    },
+{date: "大会出場：",title: "シルバー以下限定VALORANTカスタム",rank: ""},
+{date: "大会運営：",title: "UpStageCup",rank: ""},
+{date: "大会運営：",title: "VELCUP",rank: ""},
+{date: "大会運営：",title: "StreamerValorantCustom 1",rank: ""},
+{date: "大会運営：",title: "StreamerValorantCustom 2",rank: ""},
+{date: "大会運営：",title: "NovaCup Vol.1",rank: ""},
+{date: "大会運営：",title: "NovaCup Vol.2",rank: ""},
+{date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
+]},
 
 
     /*==================================================
