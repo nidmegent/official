@@ -5,12 +5,12 @@ const players = {
     m1yun: {
         role: "CREATOR",
         name: "M1yuN",
-        realName: "湖夢 はな",
-        birthday: "2000/10/00",
+        realName: "JOIND：2018.7",
+        birthday: "BIRTHDAY：09/25",
         image: "player/m1yun.png",
         x: "https://x.com/komuhana1216",
-        youtube: "#",
-        twitch: "#",
+        youtube: "https://www.youtube.com/@komuhana1216",
+        twitch: "https://www.twitch.tv/komuhana1216",
         description:"Nidmegent Esportsのクリエイター。映像制作・デザイン・イベント制作など、チームのクリエイティブを支える。",
         results: [
             {
