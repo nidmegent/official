@@ -8,7 +8,6 @@ youtube: "https://www.youtube.com/@komuhana1216",
 twitch: "https://www.twitch.tv/komuhana1216",
 description:"Nidmegent Esports 代表",
 results: [
-{date: "大会出場：",title: "ESR GRAND PRIX VALORANT",rank: ""},
 {date: "大会出場：",title: "StreamerValorantCustom 1",rank: ""},
 {date: "大会出場：",title: "第1回うちゃカス",rank: ""},
 {date: "大会出場：",title: "CHILLCUSTOM",rank: ""},
