@@ -20,6 +20,10 @@ results: [
 {date: "大会運営：",title: "NovaCup Vol.1",rank: ""},
 {date: "大会運営：",title: "NovaCup Vol.2",rank: ""},
 {date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
+],
+premier: [
+{date: "2026.8",title: "VALORANT Premier",rank: "出場"},
+{date: "2026.9",title: "VALORANT Premier",rank: "出場"}
 ]
 },
     /*========================================
@@ -91,21 +95,77 @@ document.getElementById("playerTwitch")
 document.getElementById("playerDescription")
 .textContent = player.description;
 
-const results =document.getElementById("playerResults");
+const results =
+    document.getElementById("playerResults");
+
 results.innerHTML = "";
-player.results.forEach(result => {
-const item =
-document.createElement("div");
-item.className ="result-item";
-item.innerHTML = `
-<span class="result-date">
-${result.date}
-</span>
-<span class="result-title">
-${result.title}
-${result.rank}
-</span>
-`;
-results.appendChild(item);
-});
+
+
+/* RESULT */
+
+if(player.results && player.results.length > 0){
+
+    player.results.forEach(result => {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "result-item";
+
+        item.innerHTML = `
+
+            <span class="result-date">
+                ${result.date}
+            </span>
+
+            <span class="result-title">
+                ${result.title}
+                ${result.rank}
+            </span>
+
+        `;
+
+        results.appendChild(item);
+
+    });
+
+}
+
+
+/*==================================================
+PREMIER
+==================================================*/
+
+const premier =
+    document.getElementById("playerPremier");
+
+premier.innerHTML = "";
+
+
+if(player.premier && player.premier.length > 0){
+
+    player.premier.forEach(itemData => {
+
+        const item =
+            document.createElement("div");
+
+        item.className = "result-item";
+
+        item.innerHTML = `
+
+            <span class="result-date">
+                ${itemData.date}
+            </span>
+
+            <span class="result-title">
+                ${itemData.title}
+                ${itemData.rank}
+            </span>
+
+        `;
+
+        premier.appendChild(item);
+
+    });
+
 }
