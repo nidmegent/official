@@ -61,55 +61,119 @@ premier: [
 /*==================================================
 GET PLAYER ID
 ==================================================*/
-const params = new URLSearchParams(window.location.search);
+
+const params = new URLSearchParams(
+    window.location.search
+);
+
 const playerId = params.get("id");
+
+
 /*==================================================
 PLAYER
 ==================================================*/
+
 const player = players[playerId];
+
+
 /*==================================================
 ERROR
 ==================================================*/
-if(!player){document.title ="PLAYER NOT FOUND | Nidmegent Esports";document.getElementById("playerName").textContent ="PLAYER NOT FOUND";}else{
-document.title =`${player.name} | Nidmegent Esports`;
-document.getElementById("playerRole")
-.textContent = player.role;
-document.getElementById("playerName")
-.textContent = player.name;
-document.getElementById("playerRealName")
-.textContent = player.realName;
-document.getElementById("playerBirthday")
-.textContent = player.birthday;
 
-const image =
-document.getElementById("playerImage");
-image.src = player.image;
-image.alt = player.name;
-document.getElementById("playerX")
-.href = player.x;
-document.getElementById("playerYoutube")
-.href = player.youtube;
-document.getElementById("playerTwitch")
-.href = player.twitch;
-document.getElementById("playerDescription")
-.textContent = player.description;
+if(!player){
 
-const results =
-    document.getElementById("playerResults");
+    document.title =
+        "PLAYER NOT FOUND | Nidmegent Esports";
 
-results.innerHTML = "";
+    document.getElementById("playerName").textContent =
+        "PLAYER NOT FOUND";
+
+}else{
 
 
-/* RESULT */
+    /*============================================
+       TITLE
+    ============================================*/
 
-if(player.results && player.results.length > 0){
+    document.title =
+        `${player.name} | Nidmegent Esports`;
+
+
+    /*============================================
+       BASIC
+    ============================================*/
+
+    document.getElementById("playerRole")
+        .textContent = player.role;
+
+
+    document.getElementById("playerName")
+        .textContent = player.name;
+
+
+    document.getElementById("playerRealName")
+        .textContent = player.realName;
+
+
+    document.getElementById("playerBirthday")
+        .textContent = player.birthday;
+
+
+    /*============================================
+       IMAGE
+    ============================================*/
+
+    const image =
+        document.getElementById("playerImage");
+
+    image.src = player.image;
+
+    image.alt = player.name;
+
+
+    /*============================================
+       SOCIAL
+    ============================================*/
+
+    document.getElementById("playerX")
+        .href = player.x;
+
+
+    document.getElementById("playerYoutube")
+        .href = player.youtube;
+
+
+    document.getElementById("playerTwitch")
+        .href = player.twitch;
+
+
+    /*============================================
+       DESCRIPTION
+    ============================================*/
+
+    document.getElementById("playerDescription")
+        .textContent = player.description;
+
+
+    /*============================================
+       RESULTS
+    ============================================*/
+
+    const results =
+        document.getElementById("playerResults");
+
+
+    results.innerHTML = "";
+
 
     player.results.forEach(result => {
 
         const item =
             document.createElement("div");
 
-        item.className = "result-item";
+        item.className =
+            "result-item";
+
 
         item.innerHTML = `
 
@@ -124,49 +188,9 @@ if(player.results && player.results.length > 0){
 
         `;
 
+
         results.appendChild(item);
 
     });
 
 }
-
-
-/*==================================================
-PREMIER
-==================================================*/
-
-const premier =
-    document.getElementById("playerPremier");
-
-premier.innerHTML = "";
-
-
-if(player.premier && player.premier.length > 0){
-
-    player.premier.forEach(itemData => {
-
-        const item =
-            document.createElement("div");
-
-        item.className = "result-item";
-
-        item.innerHTML = `
-
-            <span class="result-date">
-                ${itemData.date}
-            </span>
-
-            <span class="result-title">
-                ${itemData.title}
-                ${itemData.rank}
-            </span>
-
-        `;
-
-        premier.appendChild(item);
-
-    });
-
-        }
-
-    }
