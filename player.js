@@ -19,10 +19,6 @@ results: [
 {date: "大会運営：",title: "NovaCup Vol.1",rank: ""},
 {date: "大会運営：",title: "NovaCup Vol.2",rank: ""},
 {date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
-],
-premier: [
-{date: "2026.8",title: "VALORANT Premier",rank: "出場"},
-{date: "2026.9",title: "VALORANT Premier",rank: "出場"}
 ]
 },
     /*========================================
