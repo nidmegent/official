@@ -4,45 +4,20 @@ NIDMEGENT PLAYER DATA
 
 const players = {
 
-    /*==================================================
-    M1yuN
-    ==================================================*/
-
-    m1yun: {
-
-        role: "CREATOR",
-        name: "M1yuN",
-
-        realName: "JOIND：2018.7",
-        birthday: "BIRTHDAY：09/25",
-
-        image: "player/m1yun.png",
-
-        x: "https://x.com/komuhana1216",
-        youtube: "https://www.youtube.com/@komuhana1216",
-        twitch: "https://www.twitch.tv/komuhana1216",
-
-        description: "Nidmegent Esports 代表",
-
-        results: [
-
-            {
-                date: "大会出場：",
-                title: "StreamerValorantCustom 1",
-                rank: "3位"
-            },
-
-            {
-                date: "大会出場：",
-                title: "第1回うちゃカス",
-                rank: ""
-            },
-
-            {
-                date: "大会出場：",
-                title: "CHILLCUSTOM",
-                rank: "Best.18"
-            },
+m1yun: {
+role: "CREATOR",
+name: "M1yuN",
+realName: "JOIND：2018.7",
+birthday: "BIRTHDAY：09/25",
+image: "player/m1yun.png",
+x: "https://x.com/komuhana1216",
+youtube: "https://www.youtube.com/@komuhana1216",
+twitch: "https://www.twitch.tv/komuhana1216",
+description: "Nidmegent Esports 代表",
+results: [
+{date: "大会出場：",title: "StreamerValorantCustom 1",rank: "3位"},
+{date: "大会出場：",title: "第1回うちゃカス",rank: ""},
+{date: "大会出場：",title: "CHILLCUSTOM",rank: "Best.18"},
 
             {
                 date: "大会出場：",
