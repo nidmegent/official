@@ -81,7 +81,7 @@ if (!player) {
     TITLE
     ============================================*/
     document.title =
-        ${player.name} | Nidmegent Esports;
+        `${player.name} | Nidmegent Esports`;
     /*============================================
     BASIC
     ============================================*/
@@ -126,7 +126,7 @@ if (!player) {
                 document.createElement("div");
             item.className =
                 "result-item";
-            item.innerHTML =
+            item.innerHTML = `
                 <span class="result-date">
                     ${result.date}
                 </span>
@@ -134,7 +134,7 @@ if (!player) {
                     ${result.title}
                     ${result.rank}
                 </span>
-            ;
+            `;
             results.appendChild(item);
         });
     }
