@@ -175,6 +175,24 @@ results: [
 {date: "大会出場：",title: "シルバー以下限定VALORANTカスタム",rank: ""},
 {date: "大会出場：",title: "StreamerValorantCustom 2",rank: ""},
 ]},
+
+muraneko: {
+role: "VALORANT - LYXEN DIVISION",
+name: "muraneko",
+realName: "JOIND：2025.9",
+birthday: "BIRTHDAY：11/14",
+image: "player/muraneko.png",
+x: "https://x.com/muraneko542623",
+youtube: "#",
+twitch: "#",
+description: "確かな実力で勝利を目指す、競技派VALORANTプレイヤー",
+results: [
+{date: "大会出場：",title: "STAGE:0 VALORANT 2026",rank: "予選敗退"},
+{date: "大会出場：",title: "VALORANT UNIVERS HIGH CUP",rank: ""},
+{date: "大会出場：",title: "ESR GRAND PRIX VALORANT",rank: "C Tier Best.6"},
+{date: "大会出場：",title: "STAGE:0 VALORANT 2025",rank: "予選敗退"},
+{date: "大会運営：",title: "KEST VALORANT 2025",rank: ""}
+]},
     
 }; // playerstats end
 
