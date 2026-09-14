@@ -193,6 +193,52 @@ results: [
 {date: "大会出場：",title: "STAGE:0 VALORANT 2025",rank: "予選敗退"},
 {date: "大会運営：",title: "KEST VALORANT 2025",rank: ""}
 ]},
+
+liesan: {
+role: "VALORANT - LYXEN DIVISION",
+name: "Liesan",
+realName: "JOIND：2026.5",
+birthday: "BIRTHDAY：06/25",
+image: "player/liesan.png",
+x: "https://x.com/Liesan_akairo",
+youtube: "https://www.youtube.com/@liesan_akairo",
+twitch: "#",
+description: "ゲームを楽しみながら、競技の舞台にも挑むVALORANTプレイヤー",
+results: [
+{date: "大会出場：",title: "DONGURI CUP Play for VALORANT Vol.6",rank: "3位"},
+{date: "大会出場：",title: "どんぐり杯 UNDER GOLD",rank: ""},
+{date: "大会出場：",title: "どんぐり杯 fot Silver Rank and below",rank: ""}
+]},
+
+r1esel: {
+role: "VALORANT - LYXEN DIVISION",
+name: "R1eseL",
+realName: "JOIND：2026.8",
+birthday: "BIRTHDAY：N/A",
+image: "player/comingsoon.png",
+x: "https://x.com/R1eseL_99",
+youtube: "#",
+twitch: "#",
+description: "",
+results: [
+{date: "大会出場：",title: "DONGURI CUP Play for VALORANT Vol.6",rank: "3位"},
+{date: "大会出場：",title: "どんぐり杯 UNDER GOLD",rank: ""},
+{date: "大会出場：",title: "どんぐり杯 fot Silver Rank and below",rank: ""}
+]},
+
+rainaq: {
+role: "APEXLEGENDS",
+name: "Rainaq",
+realName: "JOIND：2026.3",
+birthday: "BIRTHDAY：10/13",
+image: "player/rainaq.png",
+x: "https://x.com/rai7q00011",
+youtube: "#",
+twitch: "https://www.twitch.tv/rainya00",
+description: "",
+results: [
+{date: "大会運営：",title: "STELLA CUP",rank: ""}
+]},
     
 }; // playerstats end
 
