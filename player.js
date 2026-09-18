@@ -26,7 +26,13 @@ results: [
 {date: "大会運営：",title: "NovaCup Vol.1",rank: ""},
 {date: "大会運営：",title: "NovaCup Vol.2",rank: ""},
 {date: "大会運営：",title: "WKC Vol.1",rank: ""},
-{date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""}
+{date: "大会運営：",title: "STELLA CUP Vol.1",rank: ""},
+{date: "PREMIER：",title: "V25 Act4 INTERMEDIATE3",rank: "Playoff進出権獲得"},
+{date: "PREMIER：",title: "V25 Act5 INTERMEDIATE3",rank: "59位"},
+{date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"},
+{date: "PREMIER：",title: "V26 Act1 INTERMEDIATE4",rank: "Playoff敗退"},
+{date: "PREMIER：",title: "V26 Act3 INTERMEDIATE2",rank: "117位"},
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
 ]},
 
 hati: {
@@ -67,7 +73,9 @@ youtube: "https://www.youtube.com/@knzk_09",
 twitch: "https://www.twitch.tv/knzk_09",
 description: "ポジティブ思考？ゲーマー",
 results: [
-{date: "大会運営：",title: "STELLA CUP",rank: ""}
+{date: "大会運営：",title: "STELLA CUP",rank: ""},
+{date: "PREMIER：",title: "V26 Act3 INTERMEDIATE2",rank: "117位"},
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
 ]},
 
 nade: {
@@ -95,7 +103,10 @@ twitch: "https://www.twitch.tv/denden_fps",
 description: "",
 results: [
 {date: "大会出場：",title: "StreamerValorantCustom 1",rank: ""},
-{date: "大会実況：",title: "StreamerValorantCustom 2",rank: ""}
+{date: "大会実況：",title: "StreamerValorantCustom 2",rank: ""},
+{date: "PREMIER：",title: "V25 Act4 INTERMEDIATE3",rank: "Playoff進出権獲得"},
+{date: "PREMIER：",title: "V25 Act5 INTERMEDIATE3",rank: "59位"},
+{date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"}
 ]},
 
 hakuanoru: {
@@ -111,6 +122,12 @@ description: "ゲームと配信を楽しむ、個性派ストリーマー",
 results: [
 {date: "大会出場：",title: "StreamerValorantCustom 1",rank: ""},
 {date: "大会実況：",title: "StreamerValorantCustom 2",rank: ""}
+{date: "PREMIER：",title: "V25 Act4 INTERMEDIATE3",rank: "Playoff進出権獲得"},
+{date: "PREMIER：",title: "V25 Act5 INTERMEDIATE3",rank: "59位"},
+{date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"},
+{date: "PREMIER：",title: "V26 Act1 INTERMEDIATE4",rank: "Playoff敗退"},
+{date: "PREMIER：",title: "V26 Act3 INTERMEDIATE2",rank: "117位"},
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
 ]},
 
 arufu: {
@@ -124,7 +141,8 @@ youtube: "#",
 twitch: "https://www.twitch.tv/arfy_ry",
 description: "VALORANTシーンで存在感を放つ、実力派プレイヤー",
 results: [
-{date: "大会実況：",title: "StreamerValorantCustom 2",rank: ""}
+{date: "大会実況：",title: "StreamerValorantCustom 2",rank: ""},
+{date: "PREMIER：",title: "V25 Act4 INTERMEDIATE3",rank: "Playoff進出権獲得"}
 ]},
 
 keto: {
@@ -174,6 +192,8 @@ results: [
 {date: "大会主催：",title: "YAMAKAZENAGI BIRTHDAY CUSTOM 2026",rank: ""},
 {date: "大会出場：",title: "シルバー以下限定VALORANTカスタム",rank: ""},
 {date: "大会出場：",title: "StreamerValorantCustom 2",rank: ""},
+{date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"},
+{date: "PREMIER：",title: "V26 Act1 INTERMEDIATE4",rank: "Playoff敗退"}
 ]},
 
 muraneko: {
@@ -191,7 +211,13 @@ results: [
 {date: "大会出場：",title: "VALORANT UNIVERS HIGH CUP",rank: ""},
 {date: "大会出場：",title: "ESR GRAND PRIX VALORANT",rank: "C Tier Best.6"},
 {date: "大会出場：",title: "STAGE:0 VALORANT 2025",rank: "予選敗退"},
-{date: "大会運営：",title: "KEST VALORANT 2025",rank: ""}
+{date: "大会運営：",title: "KEST VALORANT 2025",rank: ""},
+{date: "PREMIER：",title: "V25 Act4 INTERMEDIATE3",rank: "Playoff進出権獲得"},
+{date: "PREMIER：",title: "V25 Act5 INTERMEDIATE3",rank: "59位"},
+{date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"},
+{date: "PREMIER：",title: "V26 Act1 INTERMEDIATE4",rank: "Playoff敗退"},
+{date: "PREMIER：",title: "V26 Act3 INTERMEDIATE2",rank: "117位"},
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
 ]},
 
 liesan: {
@@ -207,7 +233,8 @@ description: "ゲームを楽しみながら、競技の舞台にも挑むVALORA
 results: [
 {date: "大会出場：",title: "DONGURI CUP Play for VALORANT Vol.6",rank: "3位"},
 {date: "大会出場：",title: "どんぐり杯 UNDER GOLD",rank: ""},
-{date: "大会出場：",title: "どんぐり杯 fot Silver Rank and below",rank: ""}
+{date: "大会出場：",title: "どんぐり杯 fot Silver Rank and below",rank: ""},
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
 ]},
 
 r1esel: {
@@ -221,9 +248,7 @@ youtube: "#",
 twitch: "#",
 description: "",
 results: [
-{date: "大会出場：",title: "DONGURI CUP Play for VALORANT Vol.6",rank: "3位"},
-{date: "大会出場：",title: "どんぐり杯 UNDER GOLD",rank: ""},
-{date: "大会出場：",title: "どんぐり杯 fot Silver Rank and below",rank: ""}
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
 ]},
 
 rainaq: {
