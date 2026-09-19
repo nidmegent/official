@@ -120,8 +120,6 @@ youtube: "#",
 twitch: "https://www.twitch.tv/hakua_noru",
 description: "ゲームと配信を楽しむ、個性派ストリーマー",
 results: [
-{date: "大会出場：",title: "StreamerValorantCustom 1",rank: ""},
-{date: "大会実況：",title: "StreamerValorantCustom 2",rank: ""},
 {date: "PREMIER：",title: "V25 Act4 INTERMEDIATE3",rank: "Playoff進出権獲得"},
 {date: "PREMIER：",title: "V25 Act5 INTERMEDIATE3",rank: "59位"},
 {date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"},
