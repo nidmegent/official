@@ -178,7 +178,7 @@ results: [
 {date: "大会運営：",title: "WKC Vol.1",rank: ""}
 ]},
 
-nagi: {
+yamakazenagi: {
 role: "VALORANT - LYXEN DIVISION",
 name: "Yamakaze Nagi",
 realName: "JOIND：2025.8",
