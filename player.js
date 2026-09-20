@@ -228,7 +228,7 @@ image: "player/liesan.png",
 x: "https://x.com/Liesan_akairo",
 youtube: "https://www.youtube.com/@liesan_akairo",
 twitch: "#",
-description: "ゲームを楽しみながら、競技の舞台にも挑むVALORANTプレイヤー<br>SuPporTed Player",
+description: "ゲームを楽しみながら、競技の舞台にも挑むVALORANTプレイヤー / SuPporTed Player",
 results: [
 {date: "大会出場：",title: "DONGURI CUP Play for VALORANT Vol.6",rank: "3位"},
 {date: "大会出場：",title: "どんぐり杯 UNDER GOLD",rank: ""},
