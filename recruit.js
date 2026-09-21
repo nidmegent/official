@@ -4,7 +4,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
     /* ==================================================
        MOBILE MENU
     ================================================== */
@@ -15,43 +14,62 @@ document.addEventListener("DOMContentLoaded", () => {
     const mobileMenu =
         document.querySelector(".recruit-mobile-menu");
 
+    if (menuButton && mobileMenu) {
 
-    if(menuButton && mobileMenu){
+        const icon =
+            menuButton.querySelector("i");
 
         menuButton.addEventListener("click", () => {
 
-            mobileMenu.classList.toggle("active");
+            const isOpen =
+                mobileMenu.classList.toggle("active");
 
-            const icon =
-                menuButton.querySelector("i");
+            document.body.classList.toggle(
+                "menu-open",
+                isOpen
+            );
 
+            /* アイコン変更 */
 
-            if(mobileMenu.classList.contains("active")){
+            if (icon) {
 
-                icon.classList.remove(
-                    "ri-menu-3-line"
-                );
+                if (isOpen) {
 
-                icon.classList.add(
-                    "ri-close-line"
-                );
+                    icon.classList.remove(
+                        "ri-menu-3-line"
+                    );
 
-            }else{
+                    icon.classList.add(
+                        "ri-close-line"
+                    );
 
-                icon.classList.remove(
-                    "ri-close-line"
-                );
+                } else {
 
-                icon.classList.add(
-                    "ri-menu-3-line"
-                );
+                    icon.classList.remove(
+                        "ri-close-line"
+                    );
+
+                    icon.classList.add(
+                        "ri-menu-3-line"
+                    );
+
+                }
 
             }
+
+            /* アクセシビリティ */
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
 
         });
 
 
-        /* CLOSE MENU */
+        /* ==================================================
+           MOBILE MENU CLOSE
+        ================================================== */
 
         mobileMenu
             .querySelectorAll("a")
@@ -63,15 +81,25 @@ document.addEventListener("DOMContentLoaded", () => {
                         "active"
                     );
 
-                    const icon =
-                        menuButton.querySelector("i");
-
-                    icon.classList.remove(
-                        "ri-close-line"
+                    document.body.classList.remove(
+                        "menu-open"
                     );
 
-                    icon.classList.add(
-                        "ri-menu-3-line"
+                    if (icon) {
+
+                        icon.classList.remove(
+                            "ri-close-line"
+                        );
+
+                        icon.classList.add(
+                            "ri-menu-3-line"
+                        );
+
+                    }
+
+                    menuButton.setAttribute(
+                        "aria-expanded",
+                        "false"
                     );
 
                 });
@@ -88,47 +116,45 @@ document.addEventListener("DOMContentLoaded", () => {
     const revealElements =
         document.querySelectorAll(".reveal");
 
+    if ("IntersectionObserver" in window) {
 
-    if("IntersectionObserver" in window){
-
-        const observer =
+        const revealObserver =
             new IntersectionObserver(
 
                 entries => {
 
                     entries.forEach(entry => {
 
-                        if(entry.isIntersecting){
-
-                            entry.target.classList.add(
-                                "show"
-                            );
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
+                        if (!entry.isIntersecting) {
+                            return;
                         }
+
+                        entry.target.classList.add(
+                            "show"
+                        );
+
+                        revealObserver.unobserve(
+                            entry.target
+                        );
 
                     });
 
                 },
 
                 {
-                    threshold:.12,
-                    rootMargin:"0px 0px -50px 0px"
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -50px 0px"
                 }
 
             );
 
-
         revealElements.forEach(element => {
 
-            observer.observe(element);
+            revealObserver.observe(element);
 
         });
 
-    }else{
+    } else {
 
         revealElements.forEach(element => {
 
@@ -139,59 +165,65 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /*==================================================
-RECRUIT POSITION ANIMATION
-==================================================*/
+    /* ==================================================
+       RECRUIT POSITION CARDS
+    ================================================== */
 
-document.addEventListener("DOMContentLoaded", () => {
+    const positionCards =
+        document.querySelectorAll(
+            ".recruit-position-card"
+        );
 
-    const positions = document.querySelectorAll(
-        ".recruit-position"
-    );
+    if (
+        "IntersectionObserver" in window &&
+        positionCards.length
+    ) {
 
+        const positionObserver =
+            new IntersectionObserver(
 
-    if (!positions.length) return;
+                entries => {
 
+                    entries.forEach(entry => {
 
-    const observer = new IntersectionObserver(
+                        if (!entry.isIntersecting) {
+                            return;
+                        }
 
-        (entries, observer) => {
+                        entry.target.classList.add(
+                            "show"
+                        );
 
-            entries.forEach((entry, index) => {
+                        positionObserver.unobserve(
+                            entry.target
+                        );
 
-                if (!entry.isIntersecting) return;
+                    });
 
+                },
 
-                const card = entry.target;
+                {
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px 0px"
+                }
 
+            );
 
-                setTimeout(() => {
+        positionCards.forEach(card => {
 
-                    card.classList.add("show");
+            positionObserver.observe(card);
 
-                }, index * 120);
+        });
 
+    } else {
 
-                observer.unobserve(card);
+        positionCards.forEach(card => {
 
-            });
+            card.classList.add("show");
 
-        },
+        });
 
-        {
-            threshold: 0.12
-        }
-
-    );
-
-
-    positions.forEach(position => {
-
-        observer.observe(position);
-
-    });
-
-});
+    }
 
 
     /* ==================================================
@@ -203,27 +235,18 @@ document.addEventListener("DOMContentLoaded", () => {
             ".recruit-header"
         );
 
+    if (header) {
 
-    if(header){
-
-        let lastScroll = 0;
-
-
-        window.addEventListener(
-            "scroll",
+        const updateHeader =
             () => {
 
-                const currentScroll =
-                    window.scrollY;
-
-
-                if(currentScroll > 30){
+                if (window.scrollY > 30) {
 
                     header.classList.add(
                         "scrolled"
                     );
 
-                }else{
+                } else {
 
                     header.classList.remove(
                         "scrolled"
@@ -231,14 +254,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 }
 
+            };
 
-                lastScroll = currentScroll;
-
-            },
+        window.addEventListener(
+            "scroll",
+            updateHeader,
             {
-                passive:true
+                passive: true
             }
         );
+
+        /* 初期状態 */
+
+        updateHeader();
 
     }
 
@@ -258,38 +286,46 @@ document.addEventListener("DOMContentLoaded", () => {
                     const targetId =
                         link.getAttribute("href");
 
-
-                    if(
+                    if (
                         !targetId ||
                         targetId === "#"
-                    ){
+                    ) {
                         return;
                     }
-
 
                     const target =
                         document.querySelector(
                             targetId
                         );
 
-
-                    if(target){
-
-                        event.preventDefault();
-
-
-                        target.scrollIntoView({
-
-                            behavior:"smooth",
-
-                            block:"start"
-
-                        });
-
+                    if (!target) {
+                        return;
                     }
+
+                    event.preventDefault();
+
+                    target.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
 
                 }
             );
+
+        });
+
+
+    /* ==================================================
+       CURRENT YEAR
+       ※ HTMLに .current-year がある場合のみ
+    ================================================== */
+
+    document
+        .querySelectorAll(".current-year")
+        .forEach(element => {
+
+            element.textContent =
+                new Date().getFullYear();
 
         });
 
