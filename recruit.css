@@ -12,15 +12,14 @@
     --recruit-red:#e6002f;
     --recruit-red-dark:#b80025;
 
-    --recruit-black:#101010;
-    --recruit-dark:#171717;
-
+    --recruit-black:#111111;
     --recruit-white:#ffffff;
+
     --recruit-bg:#f5f5f3;
-    --recruit-gray:#777777;
+    --recruit-gray:#707070;
     --recruit-light:#eeeeec;
 
-    --recruit-line:#ddddda;
+    --recruit-line:#dededb;
 
     --recruit-header:78px;
 
@@ -60,21 +59,24 @@
     text-decoration:none;
 }
 
-.recruit-page button{
-    font:inherit;
-}
-
 .recruit-page img{
     display:block;
     max-width:100%;
 }
 
+.recruit-page ul{
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
 
 /* ==================================================
-   03. COMMON
+   03. COMMON CONTAINER
 ================================================== */
 
-.recruit-page .container{
+.recruit-container{
     width:min(
         var(--recruit-container),
         90%
@@ -83,33 +85,34 @@
     margin-inline:auto;
 }
 
-.recruit-page section{
-    position:relative;
-}
-
-.recruit-page .recruit-eyebrow{
+.section-index{
     display:flex;
     align-items:center;
-    gap:12px;
+    gap:18px;
 
-    margin-bottom:20px;
+    margin-bottom:55px;
 
-    color:var(--recruit-red);
-
-    font-size:.72rem;
+    font-size:.7rem;
     font-weight:800;
 
-    letter-spacing:.18em;
-    text-transform:uppercase;
+    letter-spacing:.16em;
 }
 
-.recruit-page .recruit-eyebrow::before{
+.section-index span:first-child{
+    color:var(--recruit-red);
+}
+
+.section-index span:last-child{
+    color:#777;
+}
+
+.section-index::after{
     content:"";
 
-    width:28px;
-    height:2px;
+    width:45px;
+    height:1px;
 
-    background:var(--recruit-red);
+    background:var(--recruit-line);
 }
 
 
@@ -141,7 +144,7 @@
 }
 
 .recruit-header.scrolled{
-    background:rgba(255,255,255,.96);
+    background:rgba(255,255,255,.97);
 
     border-color:var(--recruit-line);
 
@@ -152,8 +155,15 @@
 
 /* HEADER INNER */
 
-.recruit-header .container{
+.recruit-header__inner{
+    width:min(
+        var(--recruit-container),
+        90%
+    );
+
     height:100%;
+
+    margin-inline:auto;
 
     display:flex;
     align-items:center;
@@ -166,8 +176,6 @@
 .recruit-logo{
     display:flex;
     align-items:center;
-
-    height:100%;
 }
 
 .recruit-logo img{
@@ -181,27 +189,19 @@
 .recruit-nav{
     display:flex;
     align-items:center;
-}
-
-.recruit-nav ul{
-    display:flex;
-    align-items:center;
-
-    gap:38px;
-
-    margin:0;
-    padding:0;
-
-    list-style:none;
+    gap:36px;
 }
 
 .recruit-nav a{
     position:relative;
 
-    font-size:.76rem;
+    font-size:.72rem;
     font-weight:800;
 
     letter-spacing:.08em;
+
+    transition:
+        color .3s ease;
 }
 
 .recruit-nav a::after{
@@ -221,35 +221,40 @@
         width .35s var(--recruit-ease);
 }
 
-.recruit-nav a:hover::after{
-    width:100%;
+.recruit-nav a:hover,
+.recruit-nav a.active{
+    color:var(--recruit-red);
 }
 
-
-/* MENU BUTTON */
-
-.recruit-menu{
-    display:none;
-
-    width:46px;
-    height:46px;
-
-    align-items:center;
-    justify-content:center;
-
-    border:1px solid var(--recruit-line);
-
-    background:var(--recruit-white);
-
-    cursor:pointer;
-
-    font-size:1.2rem;
+.recruit-nav a:hover::after,
+.recruit-nav a.active::after{
+    width:100%;
 }
 
 
 /* ==================================================
    05. MOBILE MENU
 ================================================== */
+
+.recruit-menu{
+    display:none;
+
+    width:44px;
+    height:44px;
+
+    align-items:center;
+    justify-content:center;
+
+    border:1px solid var(--recruit-line);
+
+    background:#fff;
+
+    color:#111;
+
+    cursor:pointer;
+
+    font-size:1.2rem;
+}
 
 .recruit-mobile-menu{
     position:fixed;
@@ -261,14 +266,14 @@
 
     z-index:999;
 
-    padding:40px 7%;
+    padding:35px 7%;
 
     background:var(--recruit-black);
 
     opacity:0;
     visibility:hidden;
 
-    transform:translateY(-12px);
+    transform:translateY(-15px);
 
     transition:
         opacity .35s ease,
@@ -283,42 +288,26 @@
     transform:translateY(0);
 }
 
-.recruit-mobile-menu ul{
-    margin:0;
-    padding:0;
-
-    list-style:none;
-}
-
-.recruit-mobile-menu li{
-    border-bottom:1px solid rgba(255,255,255,.14);
-}
-
 .recruit-mobile-menu a{
     display:flex;
     align-items:center;
     justify-content:space-between;
 
-    padding:24px 0;
+    padding:22px 0;
 
     color:#fff;
 
-    font-size:1.2rem;
-    font-weight:800;
+    border-bottom:1px solid rgba(255,255,255,.12);
 
-    letter-spacing:.04em;
+    font-size:1.1rem;
+    font-weight:800;
 }
 
 .recruit-mobile-menu a::after{
     content:"→";
 
     color:var(--recruit-red);
-
-    font-size:1rem;
 }
-
-
-/* MENU LOCK */
 
 body.menu-open{
     overflow:hidden;
@@ -329,10 +318,10 @@ body.menu-open{
    06. HERO
 ================================================== */
 
-.recruit-hero{
+.join-hero{
     position:relative;
 
-    min-height:calc(100vh - 20px);
+    min-height:100vh;
 
     display:flex;
     align-items:center;
@@ -340,16 +329,9 @@ body.menu-open{
     padding:
         calc(var(--recruit-header) + 80px)
         0
-        100px;
+        90px;
 
-    background:
-        linear-gradient(
-            90deg,
-            #ffffff 0%,
-            #ffffff 58%,
-            #eeeeec 58%,
-            #eeeeec 100%
-        );
+    background:#f5f5f3;
 
     overflow:hidden;
 }
@@ -357,7 +339,7 @@ body.menu-open{
 
 /* GRID */
 
-.recruit-hero::before{
+.join-hero::before{
     content:"";
 
     position:absolute;
@@ -375,7 +357,7 @@ body.menu-open{
             transparent 1px
         );
 
-    background-size:48px 48px;
+    background-size:50px 50px;
 
     mask-image:
         linear-gradient(
@@ -388,9 +370,9 @@ body.menu-open{
 }
 
 
-/* RED ACCENT */
+/* RED BAR */
 
-.recruit-hero::after{
+.join-hero::after{
     content:"";
 
     position:absolute;
@@ -398,214 +380,158 @@ body.menu-open{
     top:0;
     right:0;
 
-    width:42%;
-    height:6px;
+    width:38%;
+    height:5px;
 
     background:var(--recruit-red);
 }
 
 
-/* HERO INNER */
+/* NUMBER */
 
-.recruit-hero .container{
+.join-hero__number{
+    position:absolute;
+
+    top:120px;
+    right:6%;
+
+    color:rgba(0,0,0,.045);
+
+    font-size:18rem;
+
+    font-weight:950;
+
+    line-height:1;
+
+    letter-spacing:-.1em;
+
+    user-select:none;
+}
+
+
+/* CONTENT */
+
+.join-hero__content{
     position:relative;
 
     z-index:2;
 
-    display:grid;
-
-    grid-template-columns:
-        minmax(0,1.2fr)
-        minmax(360px,.8fr);
-
-    gap:80px;
-
-    align-items:center;
+    max-width:1000px;
 }
 
-
-/* HERO TEXT */
-
-.recruit-hero-content{
-    max-width:800px;
-}
-
-.recruit-hero .eyebrow{
+.join-label{
     display:inline-flex;
     align-items:center;
-    gap:10px;
 
-    margin-bottom:26px;
+    gap:12px;
+
+    margin-bottom:28px;
 
     color:var(--recruit-red);
 
-    font-size:.72rem;
+    font-size:.7rem;
     font-weight:900;
 
-    letter-spacing:.22em;
+    letter-spacing:.2em;
 }
 
-.recruit-hero .eyebrow::before{
+.join-label::before{
     content:"";
 
-    width:32px;
+    width:30px;
     height:2px;
 
     background:var(--recruit-red);
 }
 
-.recruit-hero h1{
+.join-hero h1{
     margin:0;
 
     font-size:
         clamp(
             4.5rem,
-            10vw,
-            9rem
+            11vw,
+            10rem
         );
 
-    line-height:.84;
+    line-height:.82;
 
     font-weight:950;
 
-    letter-spacing:-.075em;
-
-    color:var(--recruit-black);
+    letter-spacing:-.08em;
 }
 
-.recruit-hero .lead{
-    max-width:650px;
-
-    margin:34px 0 0;
-
-    font-size:
-        clamp(
-            1rem,
-            1.5vw,
-            1.25rem
-        );
-
-    line-height:1.8;
-
-    font-weight:600;
+.join-hero h1 span{
+    color:var(--recruit-red);
 }
 
-.recruit-hero .text{
-    max-width:650px;
+.join-hero p{
+    margin:35px 0 0;
 
-    margin:18px 0 0;
+    font-size:1.1rem;
 
-    color:var(--recruit-gray);
+    font-weight:700;
 
-    font-size:.9rem;
-
-    line-height:2;
+    letter-spacing:.05em;
 }
 
 
-/* ==================================================
-   HERO STATUS PANEL
-================================================== */
+/* BOTTOM */
 
-.recruit-hero-status{
-    position:relative;
-
-    min-height:400px;
-
+.join-hero__bottom{
     display:flex;
     align-items:center;
-    justify-content:center;
+    gap:15px;
 
-    padding:40px;
-}
+    margin-top:70px;
 
-.recruit-status-box{
-    position:relative;
+    color:#777;
 
-    width:100%;
-    max-width:430px;
-
-    padding:42px;
-
-    background:var(--recruit-black);
-
-    color:#fff;
-
-    box-shadow:
-        24px 24px 0 var(--recruit-red);
-}
-
-.recruit-status-label{
-    display:block;
-
-    margin-bottom:28px;
-
-    color:#aaa;
-
-    font-size:.68rem;
+    font-size:.65rem;
     font-weight:800;
 
     letter-spacing:.18em;
 }
 
-.recruit-status{
-    display:flex;
-    align-items:center;
-    gap:12px;
+.join-hero__bottom i{
+    color:var(--recruit-red);
 
-    margin-bottom:36px;
+    font-size:1rem;
 
-    font-size:2rem;
-    font-weight:900;
+    animation:
+        heroArrow 1.8s ease-in-out infinite;
 }
 
-.recruit-status-dot{
-    width:10px;
-    height:10px;
+@keyframes heroArrow{
 
-    border-radius:50%;
+    0%,
+    100%{
+        transform:translateY(0);
+    }
 
-    background:#32d583;
+    50%{
+        transform:translateY(6px);
+    }
 
-    box-shadow:
-        0 0 0 6px rgba(50,213,131,.12);
 }
 
-.recruit-status-box p{
-    margin:0;
 
-    color:#aaa;
+/* SIDE TEXT */
 
-    font-size:.82rem;
-    line-height:1.9;
-}
+.join-hero__side{
+    position:absolute;
 
-.recruit-status-number{
-    margin-top:36px;
+    right:-25px;
+    bottom:70px;
 
-    padding-top:22px;
+    writing-mode:vertical-rl;
 
-    border-top:1px solid rgba(255,255,255,.15);
-
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-}
-
-.recruit-status-number span{
-    color:#888;
+    color:rgba(0,0,0,.08);
 
     font-size:.65rem;
-    font-weight:800;
-
-    letter-spacing:.14em;
-}
-
-.recruit-status-number strong{
-    color:#fff;
-
-    font-size:2.2rem;
     font-weight:900;
+
+    letter-spacing:.3em;
 }
 
 
@@ -613,101 +539,118 @@ body.menu-open{
    07. INTRO
 ================================================== */
 
-.recruit-intro{
-    padding:130px 0;
+.join-intro{
+    padding:140px 0;
 
-    background:var(--recruit-white);
+    background:#fff;
 }
 
-.recruit-intro .container{
+.join-intro__layout{
     display:grid;
 
     grid-template-columns:
-        .75fr
-        1.25fr;
+        .8fr
+        1.2fr;
 
     gap:100px;
 }
 
-.recruit-intro-title{
-    position:relative;
-}
-
-.recruit-intro-title h2{
+.join-intro__title h2{
     margin:0;
 
     font-size:
         clamp(
-            2.2rem,
-            4vw,
-            4rem
+            3rem,
+            6vw,
+            6rem
         );
 
-    line-height:1;
+    line-height:.85;
 
-    letter-spacing:-.05em;
+    letter-spacing:-.07em;
 }
 
-.recruit-intro-copy{
+.join-intro__title h2 span{
+    color:var(--recruit-red);
+}
+
+.join-intro__text{
     max-width:720px;
 }
 
-.recruit-intro-copy p{
+.join-intro__text p{
     margin:0 0 22px;
 
-    font-size:.95rem;
+    color:#666;
+
+    font-size:.9rem;
 
     line-height:2;
-
-    color:#555;
 }
 
-.recruit-intro-copy p:last-child{
-    margin-bottom:0;
+.join-intro__text p.large{
+    margin-bottom:30px;
+
+    color:#111;
+
+    font-size:
+        clamp(
+            1.15rem,
+            2vw,
+            1.45rem
+        );
+
+    font-weight:700;
+
+    line-height:1.7;
 }
 
 
 /* ==================================================
-   08. POSITIONS
+   08. ROLES
 ================================================== */
 
-.recruit-positions{
-    padding:130px 0;
+.roles-section{
+    padding:140px 0;
 
-    background:var(--recruit-bg);
+    background:#f5f5f3;
 }
 
-.recruit-positions-head{
+.roles-heading{
     display:flex;
     align-items:flex-end;
     justify-content:space-between;
 
-    gap:40px;
+    gap:50px;
 
-    margin-bottom:55px;
+    margin-bottom:60px;
 }
 
-.recruit-positions-head h2{
+.roles-heading h2{
     margin:0;
 
     font-size:
         clamp(
-            2.5rem,
-            5vw,
-            5rem
+            3rem,
+            6vw,
+            6rem
         );
 
-    line-height:.95;
+    line-height:.85;
 
-    letter-spacing:-.06em;
+    letter-spacing:-.07em;
 }
 
-.recruit-positions-head p{
-    max-width:460px;
+.roles-heading h2 span{
+    color:var(--recruit-red);
+}
+
+.roles-heading p{
+    max-width:420px;
 
     margin:0;
 
-    color:var(--recruit-gray);
+    color:#777;
 
     font-size:.85rem;
 
@@ -715,9 +658,11 @@ body.menu-open{
 }
 
 
-/* GRID */
+/* ==================================================
+   ROLE LIST
+================================================== */
 
-.recruit-position-grid{
+.role-list{
     display:grid;
 
     grid-template-columns:
@@ -728,20 +673,19 @@ body.menu-open{
 
 
 /* ==================================================
-   POSITION CARD
+   ROLE ITEM
 ================================================== */
 
-.recruit-position-card{
+.role-item{
     position:relative;
 
-    min-height:360px;
+    min-height:440px;
 
-    display:flex;
-    flex-direction:column;
+    display:grid;
 
-    padding:34px;
+    grid-template-columns:70px 1fr;
 
-    background:var(--recruit-white);
+    background:#fff;
 
     border:1px solid var(--recruit-line);
 
@@ -749,7 +693,7 @@ body.menu-open{
 
     opacity:0;
 
-    transform:translateY(30px);
+    transform:translateY(35px);
 
     transition:
         opacity .7s ease,
@@ -758,199 +702,248 @@ body.menu-open{
         box-shadow .35s ease;
 }
 
-.recruit-position-card.show{
+.role-item.show{
     opacity:1;
 
     transform:translateY(0);
 }
 
-.recruit-position-card:hover{
+.role-item:hover{
     border-color:var(--recruit-red);
 
     box-shadow:
-        0 24px 60px rgba(0,0,0,.08);
+        0 25px 60px rgba(0,0,0,.08);
 
     transform:translateY(-5px);
 }
 
 
-/* TOP */
+/* RED VARIANT */
 
-.recruit-position-card__top{
-    display:flex;
+.role-item--red{
+    background:#111;
 
-    align-items:center;
-    justify-content:space-between;
+    color:#fff;
 
-    padding-bottom:24px;
-
-    border-bottom:1px solid var(--recruit-line);
+    border-color:#111;
 }
 
-.recruit-position-card__number{
+.role-item--red .role-item__top{
+    border-color:rgba(255,255,255,.14);
+}
+
+.role-item--red .role-item__number{
+    border-color:rgba(255,255,255,.14);
+}
+
+.role-item--red .role-details{
+    border-color:rgba(255,255,255,.14);
+}
+
+.role-item--red .role-details strong{
+    color:#fff;
+}
+
+.role-item--red .role-details li{
+    color:#aaa;
+}
+
+.role-item--red .role-item__main > p{
+    color:#aaa;
+}
+
+
+/* NUMBER */
+
+.role-item__number{
+    display:flex;
+
+    align-items:flex-start;
+    justify-content:center;
+
+    padding-top:35px;
+
+    border-right:1px solid var(--recruit-line);
+
     color:var(--recruit-red);
 
     font-size:.7rem;
     font-weight:900;
 
+    letter-spacing:.1em;
+}
+
+
+/* MAIN */
+
+.role-item__main{
+    padding:32px;
+
+    display:flex;
+    flex-direction:column;
+}
+
+
+/* TOP */
+
+.role-item__top{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid var(--recruit-line);
+}
+
+.role-item__top span{
+    color:var(--recruit-red);
+
+    font-size:.62rem;
+    font-weight:900;
+
     letter-spacing:.16em;
 }
 
-.recruit-position-card__category{
-    padding:7px 10px;
-
-    border:1px solid var(--recruit-line);
-
-    color:#777;
-
-    font-size:.62rem;
-    font-weight:800;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-}
-
-.recruit-position-card__arrow{
+.role-item__top i{
     color:var(--recruit-red);
 
-    font-size:1.3rem;
+    font-size:1.15rem;
 
     transition:
         transform .35s var(--recruit-ease);
 }
 
-.recruit-position-card:hover
-.recruit-position-card__arrow{
-    transform:translateX(7px);
+.role-item:hover .role-item__top i{
+    transform:
+        translate(5px,-5px);
 }
 
 
-/* CONTENT */
+/* TITLE */
 
-.recruit-position-card__content{
-    position:relative;
-
-    z-index:2;
-
-    padding-top:34px;
-
-    margin-top:auto;
-}
-
-.recruit-position-card__content h3{
-    margin:0 0 14px;
+.role-item h3{
+    margin:30px 0 18px;
 
     font-size:
         clamp(
-            1.8rem,
+            2rem,
             3vw,
-            2.8rem
+            3.2rem
         );
 
-    line-height:1;
+    line-height:.9;
 
-    letter-spacing:-.05em;
+    letter-spacing:-.06em;
 }
 
-.recruit-position-card__content p{
-    max-width:520px;
-
-    margin:0;
+.role-item > .role-item__main > p{
+    margin:0 0 25px;
 
     color:#777;
 
-    font-size:.82rem;
+    font-size:.8rem;
 
-    line-height:1.9;
+    line-height:1.8;
 }
 
 
-/* BACKGROUND NUMBER / TEXT */
+/* DETAILS */
 
-.recruit-position-card__bg{
-    position:absolute;
+.role-details{
+    margin-top:auto;
 
-    right:-20px;
-    bottom:-40px;
+    padding-top:22px;
 
-    color:rgba(0,0,0,.035);
-
-    font-size:8rem;
-
-    font-weight:950;
-
-    line-height:1;
-
-    letter-spacing:-.08em;
-
-    pointer-events:none;
-
-    user-select:none;
+    border-top:1px solid var(--recruit-line);
 }
 
+.role-details strong{
+    display:block;
 
-/* RED LINE */
+    margin-bottom:10px;
 
-.recruit-position-card::before{
+    color:#222;
+
+    font-size:.62rem;
+    font-weight:900;
+
+    letter-spacing:.13em;
+}
+
+.role-details ul{
+    margin-bottom:20px;
+}
+
+.role-details li{
+    position:relative;
+
+    padding-left:15px;
+
+    margin-bottom:7px;
+
+    color:#777;
+
+    font-size:.7rem;
+
+    line-height:1.65;
+}
+
+.role-details li::before{
     content:"";
 
     position:absolute;
 
     left:0;
-    top:0;
-    bottom:0;
+    top:.65em;
 
     width:4px;
+    height:4px;
 
     background:var(--recruit-red);
-
-    transform:scaleY(0);
-
-    transform-origin:bottom;
-
-    transition:
-        transform .45s var(--recruit-ease);
-}
-
-.recruit-position-card:hover::before{
-    transform:scaleY(1);
 }
 
 
 /* ==================================================
-   09. CULTURE / PROCESS
+   09. PROCESS
 ================================================== */
 
-.recruit-culture{
-    padding:130px 0;
+.process-section{
+    padding:140px 0;
 
-    background:var(--recruit-white);
+    background:#fff;
 }
 
-.recruit-culture-head{
-    margin-bottom:65px;
+.process-heading{
+    margin-bottom:75px;
 }
 
-.recruit-culture-head h2{
+.process-heading h2{
     margin:0;
 
     font-size:
         clamp(
-            2.5rem,
-            5vw,
-            5rem
+            3rem,
+            6vw,
+            6rem
         );
 
-    line-height:.95;
+    line-height:.84;
 
-    letter-spacing:-.06em;
+    letter-spacing:-.07em;
+}
+
+.process-heading h2 span{
+    color:var(--recruit-red);
 }
 
 
-/* CULTURE GRID */
+/* PROCESS LINE */
 
-.recruit-culture-grid{
+.process-line{
+    position:relative;
+
     display:grid;
 
     grid-template-columns:
@@ -963,99 +956,158 @@ body.menu-open{
     border:1px solid var(--recruit-line);
 }
 
+.process-line::before{
+    content:"";
 
-/* CULTURE CARD */
+    position:absolute;
 
-.culture-card{
+    left:10%;
+    right:10%;
+    top:66px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--recruit-red),
+            var(--recruit-line)
+        );
+
+    z-index:0;
+}
+
+
+/* STEP */
+
+.process-step{
     position:relative;
 
-    min-height:300px;
+    min-height:330px;
 
-    padding:34px;
+    padding:35px;
 
-    background:var(--recruit-white);
+    background:#fff;
+
+    z-index:1;
+
+    opacity:0;
+
+    transform:translateY(30px);
 
     transition:
-        background .35s ease,
-        color .35s ease;
+        opacity .7s ease,
+        transform .7s var(--recruit-ease);
 }
 
-.culture-card:hover{
-    background:var(--recruit-black);
+.process-step.show{
+    opacity:1;
 
-    color:#fff;
+    transform:translateY(0);
 }
 
-.culture-card__number{
+.process-step > span{
     display:block;
 
-    margin-bottom:60px;
+    margin-bottom:32px;
 
     color:var(--recruit-red);
 
-    font-size:.72rem;
+    font-size:.7rem;
     font-weight:900;
 
     letter-spacing:.15em;
 }
 
-.culture-card h3{
-    margin:0 0 14px;
+.process-step > i{
+    display:flex;
 
-    font-size:1.5rem;
+    width:64px;
+    height:64px;
 
-    letter-spacing:-.03em;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:35px;
+
+    background:#111;
+
+    color:#fff;
+
+    font-size:1.3rem;
 }
 
-.culture-card p{
+.process-step h3{
+    margin:0 0 12px;
+
+    font-size:1.4rem;
+
+    letter-spacing:.02em;
+}
+
+.process-step p{
+    max-width:300px;
+
     margin:0;
 
     color:#777;
 
-    font-size:.8rem;
+    font-size:.78rem;
 
     line-height:1.9;
-
-    transition:
-        color .35s ease;
-}
-
-.culture-card:hover p{
-    color:#aaa;
 }
 
 
 /* ==================================================
-   10. MESSAGE
+   10. FINAL JOIN
 ================================================== */
 
-.recruit-message{
-    padding:100px 0;
-
-    background:var(--recruit-black);
-
-    color:#fff;
-}
-
-.recruit-message .container{
+.final-join{
     position:relative;
 
-    display:flex;
+    padding:130px 0;
 
-    align-items:center;
-    justify-content:space-between;
+    background:#111;
 
-    gap:60px;
+    color:#fff;
+
+    overflow:hidden;
 }
 
-.recruit-message-content{
-    max-width:800px;
+.final-join__bg{
+    position:absolute;
+
+    right:-30px;
+    bottom:-70px;
+
+    color:rgba(255,255,255,.035);
+
+    font-size:
+        clamp(
+            12rem,
+            30vw,
+            30rem
+        );
+
+    font-weight:950;
+
+    line-height:.7;
+
+    letter-spacing:-.1em;
+
+    user-select:none;
 }
 
-.recruit-message .eyebrow{
+.final-join__content{
+    position:relative;
+
+    z-index:2;
+}
+
+.final-join__content > span{
     display:block;
 
-    margin-bottom:20px;
+    margin-bottom:25px;
 
     color:var(--recruit-red);
 
@@ -1065,60 +1117,56 @@ body.menu-open{
     letter-spacing:.2em;
 }
 
-.recruit-message h2{
+.final-join h2{
     margin:0;
 
     font-size:
         clamp(
-            2.5rem,
-            5vw,
-            5rem
+            5rem,
+            13vw,
+            12rem
         );
 
-    line-height:.95;
+    line-height:.75;
 
-    letter-spacing:-.06em;
+    letter-spacing:-.09em;
 }
 
-.recruit-message p{
-    max-width:650px;
+.final-join p{
+    margin:35px 0 40px;
 
-    margin:24px 0 0;
+    color:#aaa;
 
-    color:#999;
-
-    font-size:.85rem;
-
-    line-height:1.9;
+    font-size:1rem;
 }
 
 
-/* BUTTON AREA */
+/* BUTTONS */
 
-.recruit-message-buttons{
+.final-join__buttons{
     display:flex;
-
-    flex-shrink:0;
 
     gap:12px;
 }
 
-.recruit-message .button{
+.final-button{
     display:inline-flex;
 
     align-items:center;
     justify-content:center;
 
-    min-width:170px;
+    gap:20px;
 
-    padding:17px 24px;
+    min-width:190px;
+
+    padding:18px 24px;
 
     border:1px solid rgba(255,255,255,.25);
 
-    font-size:.72rem;
+    font-size:.7rem;
     font-weight:900;
 
-    letter-spacing:.1em;
+    letter-spacing:.08em;
 
     transition:
         background .35s ease,
@@ -1127,11 +1175,11 @@ body.menu-open{
         transform .35s var(--recruit-ease);
 }
 
-.recruit-message .button:hover{
+.final-button:hover{
     transform:translateY(-4px);
 }
 
-.recruit-message .button.primary{
+.final-button--main{
     background:var(--recruit-red);
 
     border-color:var(--recruit-red);
@@ -1139,24 +1187,26 @@ body.menu-open{
     color:#fff;
 }
 
-.recruit-message .button.primary:hover{
+.final-button--main:hover{
     background:#fff;
 
     border-color:#fff;
 
-    color:var(--recruit-black);
+    color:#111;
 }
 
-.recruit-message .button.secondary{
+.final-button--sub{
+    background:transparent;
+
     color:#fff;
 }
 
-.recruit-message .button.secondary:hover{
+.final-button--sub:hover{
     background:#fff;
 
     border-color:#fff;
 
-    color:var(--recruit-black);
+    color:#111;
 }
 
 
@@ -1190,7 +1240,7 @@ body.menu-open{
 
     color:#fff;
 
-    border-top:1px solid #252525;
+    border-top:1px solid #282828;
 }
 
 .recruit-page .footer a{
@@ -1203,49 +1253,35 @@ body.menu-open{
 
 
 /* ==================================================
-   13. RESPONSIVE
+   13. TABLET
 ================================================== */
 
 @media(max-width:1100px){
 
-    .recruit-hero .container{
+    .join-intro__layout{
         grid-template-columns:1fr;
 
-        gap:60px;
+        gap:50px;
     }
 
-    .recruit-hero{
-        background:#fff;
+    .roles-heading{
+        display:block;
     }
 
-    .recruit-hero-status{
-        justify-content:flex-start;
-
-        padding:0;
+    .roles-heading p{
+        margin-top:25px;
     }
 
-    .recruit-status-box{
-        max-width:520px;
-    }
-
-    .recruit-intro .container{
+    .role-list{
         grid-template-columns:1fr;
-
-        gap:45px;
-    }
-
-    .recruit-culture-grid{
-        grid-template-columns:1fr;
-    }
-
-    .recruit-message .container{
-        flex-direction:column;
-
-        align-items:flex-start;
     }
 
 }
 
+
+/* ==================================================
+   14. MOBILE
+================================================== */
 
 @media(max-width:900px){
 
@@ -1257,154 +1293,188 @@ body.menu-open{
         display:flex;
     }
 
-    .recruit-hero{
+    .join-hero{
         min-height:auto;
 
-        padding-top:150px;
-        padding-bottom:90px;
+        padding-top:145px;
+        padding-bottom:80px;
     }
 
-    .recruit-hero h1{
-        font-size:
-            clamp(
-                4rem,
-                15vw,
-                7rem
-            );
+    .join-hero__number{
+        top:100px;
+
+        right:-20px;
+
+        font-size:12rem;
     }
 
-    .recruit-position-grid{
+    .process-line{
         grid-template-columns:1fr;
     }
 
-    .recruit-positions-head{
-        display:block;
+    .process-line::before{
+        display:none;
     }
 
-    .recruit-positions-head p{
-        margin-top:25px;
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .recruit-page .container{
-        width:90%;
-    }
-
-    .recruit-header{
-        height:70px;
-    }
-
-    .recruit-mobile-menu{
-        top:70px;
-    }
-
-    .recruit-logo img{
-        height:32px;
-    }
-
-    .recruit-hero{
-        padding-top:125px;
-        padding-bottom:70px;
-    }
-
-    .recruit-hero h1{
-        font-size:
-            clamp(
-                3.5rem,
-                19vw,
-                5rem
-            );
-    }
-
-    .recruit-hero .lead{
-        font-size:.95rem;
-    }
-
-    .recruit-hero .text{
-        font-size:.78rem;
-    }
-
-    .recruit-status-box{
-        padding:30px;
-
-        box-shadow:
-            12px 12px 0 var(--recruit-red);
-    }
-
-    .recruit-status{
-        font-size:1.6rem;
-    }
-
-    .recruit-intro,
-    .recruit-positions,
-    .recruit-culture{
-        padding:90px 0;
-    }
-
-    .recruit-position-card{
-        min-height:320px;
-
-        padding:26px;
-    }
-
-    .recruit-position-card__content h3{
-        font-size:2rem;
-    }
-
-    .culture-card{
+    .process-step{
         min-height:260px;
 
-        padding:26px;
+        border-bottom:1px solid var(--recruit-line);
     }
 
-    .recruit-message{
-        padding:80px 0;
-    }
-
-    .recruit-message h2{
-        font-size:2.6rem;
-    }
-
-    .recruit-message-buttons{
-        width:100%;
-
-        flex-direction:column;
-    }
-
-    .recruit-message .button{
-        width:100%;
-    }
-
-}
-
-
-@media(max-width:400px){
-
-    .recruit-page .container{
-        width:92%;
-    }
-
-    .recruit-hero h1{
-        font-size:3.3rem;
-    }
-
-    .recruit-status-box{
-        padding:25px;
-    }
-
-    .recruit-position-card{
-        padding:22px;
+    .process-step:last-child{
+        border-bottom:0;
     }
 
 }
 
 
 /* ==================================================
-   14. REDUCED MOTION
+   15. SMALL MOBILE
+================================================== */
+
+@media(max-width:600px){
+
+    :root{
+        --recruit-header:70px;
+    }
+
+    .recruit-container{
+        width:90%;
+    }
+
+    .recruit-header__inner{
+        width:90%;
+    }
+
+    .recruit-logo img{
+        height:32px;
+    }
+
+    .recruit-mobile-menu{
+        top:70px;
+    }
+
+    .join-hero{
+        padding-top:120px;
+        padding-bottom:70px;
+    }
+
+    .join-hero h1{
+        font-size:
+            clamp(
+                3.5rem,
+                19vw,
+                5.5rem
+            );
+    }
+
+    .join-hero p{
+        font-size:.9rem;
+    }
+
+    .join-hero__bottom{
+        margin-top:55px;
+    }
+
+    .join-hero__side{
+        display:none;
+    }
+
+    .join-intro,
+    .roles-section,
+    .process-section{
+        padding:90px 0;
+    }
+
+    .section-index{
+        margin-bottom:40px;
+    }
+
+    .join-intro__title h2,
+    .roles-heading h2,
+    .process-heading h2{
+        font-size:3.4rem;
+    }
+
+    .role-item{
+        grid-template-columns:52px 1fr;
+
+        min-height:auto;
+    }
+
+    .role-item__number{
+        padding-top:27px;
+    }
+
+    .role-item__main{
+        padding:26px 22px;
+    }
+
+    .role-item h3{
+        font-size:2.2rem;
+    }
+
+    .role-details li{
+        font-size:.68rem;
+    }
+
+    .process-step{
+        padding:28px;
+    }
+
+    .final-join{
+        padding:90px 0;
+    }
+
+    .final-join h2{
+        font-size:5.5rem;
+    }
+
+    .final-join__buttons{
+        flex-direction:column;
+
+        width:100%;
+    }
+
+    .final-button{
+        width:100%;
+    }
+
+}
+
+
+/* ==================================================
+   16. VERY SMALL
+================================================== */
+
+@media(max-width:400px){
+
+    .recruit-container{
+        width:92%;
+    }
+
+    .join-hero h1{
+        font-size:3.2rem;
+    }
+
+    .role-item__main{
+        padding:24px 18px;
+    }
+
+    .role-item h3{
+        font-size:1.9rem;
+    }
+
+    .final-join h2{
+        font-size:4.5rem;
+    }
+
+}
+
+
+/* ==================================================
+   17. REDUCED MOTION
 ================================================== */
 
 @media(prefers-reduced-motion:reduce){
@@ -1415,12 +1485,11 @@ body.menu-open{
         animation:none !important;
 
         transition:none !important;
-
-        scroll-behavior:auto !important;
     }
 
     .reveal,
-    .recruit-position-card{
+    .role-item,
+    .process-step{
         opacity:1 !important;
 
         transform:none !important;
