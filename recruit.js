@@ -170,9 +170,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ================================================== */
 
     const positionCards =
-        document.querySelectorAll(
-            ".recruit-position-card"
-        );
+    document.querySelectorAll(
+        ".role-item"
+    );
 
     if (
         "IntersectionObserver" in window &&
