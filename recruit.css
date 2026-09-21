@@ -1420,3 +1420,21 @@
     }
 
 }
+
+/* ==================================================
+   POSITION CARD ANIMATION
+================================================== */
+
+.recruit-position-card{
+    opacity:0;
+    transform:translateY(30px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.16,1,.3,1);
+}
+
+.recruit-position-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
