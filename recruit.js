@@ -8,12 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
        MOBILE MENU
     ================================================== */
 
-    const menuButton =
-        document.querySelector(".recruit-menu");
-
-    const mobileMenu =
-        document.querySelector(".recruit-mobile-menu");
-
     if (menuButton && mobileMenu) {
 
         const icon =
