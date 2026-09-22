@@ -120,115 +120,122 @@
    04. HEADER
 ================================================== */
 
-.recruit-header{
+.header{
+
     position:fixed;
 
-    top:0;
-    left:0;
-    right:0;
+    inset:0 0 auto 0;
 
-    height:var(--recruit-header);
+    height:95px;
 
     z-index:1000;
 
-    background:rgba(255,255,255,.94);
+    transition:var(--transition);
 
-    border-bottom:1px solid transparent;
-
-    backdrop-filter:blur(18px);
-
-    transition:
-        background .4s ease,
-        box-shadow .4s ease,
-        border-color .4s ease;
 }
 
-.recruit-header.scrolled{
-    background:rgba(255,255,255,.97);
+.header.active{
 
-    border-color:var(--recruit-line);
+    background:
+
+    rgba(255,255,255,.88);
+
+    backdrop-filter:blur(24px);
 
     box-shadow:
-        0 10px 40px rgba(0,0,0,.06);
+
+    0 10px 40px rgba(0,0,0,.05);
+
 }
 
-
-/* HEADER INNER */
-
-.recruit-header__inner{
-    width:min(
-        var(--recruit-container),
-        90%
-    );
+.header .container{
 
     height:100%;
 
-    margin-inline:auto;
-
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
 }
 
+.logo img{
 
-/* LOGO */
+    height:50px;
 
-.recruit-logo{
-    display:flex;
-    align-items:center;
-}
-
-.recruit-logo img{
     width:auto;
-    height:38px;
+
 }
 
+.nav__list{
 
-/* NAV */
-
-.recruit-nav{
     display:flex;
-    align-items:center;
-    gap:36px;
+
+    gap:52px;
+
 }
 
-.recruit-nav a{
+.nav__list a{
+
     position:relative;
 
-    font-size:.72rem;
-    font-weight:800;
+    font-size:15px;
 
-    letter-spacing:.08em;
+    font-weight:600;
 
-    transition:
-        color .3s ease;
 }
 
-.recruit-nav a::after{
+.nav__list a::after{
+
     content:"";
 
     position:absolute;
 
     left:0;
+
     bottom:-8px;
 
     width:0;
+
     height:2px;
 
-    background:var(--recruit-red);
+    background:var(--blue);
 
-    transition:
-        width .35s var(--recruit-ease);
+    transition:var(--transition);
+
 }
 
-.recruit-nav a:hover,
-.recruit-nav a.active{
-    color:var(--recruit-red);
-}
+.nav__list a:hover::after{
 
-.recruit-nav a:hover::after,
-.recruit-nav a.active::after{
     width:100%;
+
+}
+
+.header__button{
+
+    background:var(--black);
+
+    color:white;
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    transition:var(--transition);
+
+}
+
+.header__button:hover{
+
+    background:var(--blue);
+
+}
+
+.menu{
+
+    display:none;
+
 }
 
 
