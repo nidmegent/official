@@ -3,7 +3,9 @@
 
 <head>
 
-    <!-- ==================== META ==================== -->
+    <!-- ==================================================
+    META
+    ================================================== -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,10 +20,17 @@
     <meta name="theme-color" content="#ffffff">
 
 
-    <!-- ==================== FONT ==================== -->
+    <!-- ==================================================
+    FONT
+    ================================================== -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -29,7 +38,9 @@
     >
 
 
-    <!-- ==================== ICON ==================== -->
+    <!-- ==================================================
+    REMIX ICON
+    ================================================== -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
@@ -37,9 +48,14 @@
     >
 
 
-    <!-- ==================== CSS ==================== -->
+    <!-- ==================================================
+    CSS
+    ================================================== -->
 
+    <!-- 共通CSS -->
     <link rel="stylesheet" href="../style.css">
+
+    <!-- STORY専用CSS -->
     <link rel="stylesheet" href="../story.css">
 
 </head>
@@ -57,51 +73,85 @@ HEADER
     <div class="container">
 
         <a href="../index.html" class="logo">
+
             <img
                 src="../logo/logo-back.png"
                 alt="Nidmegent Logo"
             >
+
         </a>
+
 
         <nav class="nav">
 
             <ul class="nav__list">
 
                 <li>
-                    <a href="../about.html">ABOUT</a>
+                    <a href="../about.html">
+                        ABOUT
+                    </a>
                 </li>
 
                 <li>
-                    <a href="../players.html">PLAYERS</a>
+                    <a href="../players.html">
+                        PLAYERS
+                    </a>
                 </li>
 
                 <li>
-                    <a href="../news.html">NEWS</a>
+                    <a href="../news.html">
+                        NEWS
+                    </a>
                 </li>
 
                 <li>
-                    <a href="../stories.html">STORIES</a>
+                    <a href="../stories.html">
+                        STORIES
+                    </a>
                 </li>
 
                 <li>
-                    <a href="../sponsor.html">SPONSORS</a>
+                    <a href="../sponsor.html">
+                        SPONSORS
+                    </a>
                 </li>
 
                 <li>
-                    <a href="../recruit.html">RECRUIT</a>
+                    <a href="../recruit.html">
+                        RECRUIT
+                    </a>
                 </li>
 
                 <li>
-                    <a href="../contact.html">CONTACT</a>
+                    <a href="../contact.html">
+                        CONTACT
+                    </a>
                 </li>
 
             </ul>
 
         </nav>
 
+
+        <!-- モバイルメニュー -->
+
+        <button
+            class="menu"
+            type="button"
+            aria-label="メニューを開く"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
     </div>
 
 </header>
+
 
 
 <!-- ==================================================
@@ -112,61 +162,92 @@ MAIN
 
 
 <!-- ==================================================
-STORY HERO
+ARTICLE HERO
 ================================================== -->
 
 <section class="story-hero">
 
+
+    <!-- STORY NUMBER -->
+
     <div class="story-hero__number">
 
-        <span>STORY</span>
+        <span>
+            NID STORIES
+        </span>
 
-        <strong>#001</strong>
+        <strong>
+            #001
+        </strong>
 
     </div>
 
 
+
+    <!-- HERO CONTENT -->
+
     <div class="story-hero__content">
+
 
         <div class="story-label">
             MEMBER STORY
         </div>
+
+
+        <p class="story-hero__date">
+            2026.09.XX
+        </p>
+
 
         <h1>
             挑戦を、<br>
             もう一度。
         </h1>
 
+
         <p class="story-hero__lead">
-            Nidmegentに関わる人たちの<br>
+            Nidmegentに関わる人たちの
+            <br class="pc-only">
             「これまで」と「これから」。
         </p>
 
+
+    </div>
+
+
+
+    <!-- HERO PERSON -->
+
+    <div class="story-hero__person">
+
+        <span>
+            INTERVIEW
+        </span>
+
+        <strong>
+            M1yuN
+        </strong>
+
+        <small>
+            CREATOR
+        </small>
+
     </div>
 
 
-    <div class="story-hero__bottom">
 
-        <div class="story-person">
+    <!-- SCROLL -->
 
-            <span>INTERVIEW</span>
+    <div class="story-hero__scroll">
 
-            <strong>M1yuN</strong>
+        <span>
+            SCROLL
+        </span>
 
-            <small>CREATOR</small>
-
-        </div>
-
-
-        <div class="story-scroll">
-
-            <span>SCROLL</span>
-
-            <i class="ri-arrow-down-line"></i>
-
-        </div>
+        <i class="ri-arrow-down-line"></i>
 
     </div>
+
 
 </section>
 
@@ -182,8 +263,116 @@ MAIN VISUAL
 
         <img
             src="../images/stories/story-001.jpg"
+            alt="M1yuN | NID STORIES #001"
+        >
+
+    </div>
+
+
+    <div class="story-cover__caption">
+
+        <span>
+            NID STORIES / #001
+        </span>
+
+        <span>
+            MEMBER STORY
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+ARTICLE INTRO
+================================================== -->
+
+<section class="story-intro">
+
+    <div class="story-intro__label">
+
+        <span>
+            STORY #001
+        </span>
+
+        <span>
+            M1yuN / CREATOR
+        </span>
+
+    </div>
+
+
+    <div class="story-intro__content">
+
+        <p class="story-intro__lead">
+            誰かにとっては、
+            ただの一歩だったかもしれない。
+            <br>
+            でも、その一歩が
+            次の挑戦につながっていく。
+        </p>
+
+
+        <p>
+            NID STORIESは、
+            Nidmegentに関わる人たちの
+            「これまで」と「これから」を届ける
+            インタビューシリーズです。
+        </p>
+
+
+        <p>
+            第1回となる今回は、
+            CREATORとしてNidmegentに関わる
+            M1yuNさんに話を聞きました。
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+PROFILE MINI
+================================================== -->
+
+<section class="story-profile-mini">
+
+    <div class="story-profile-mini__image">
+
+        <img
+            src="../images/players/m1yun.png"
             alt="M1yuN"
         >
+
+    </div>
+
+
+    <div class="story-profile-mini__info">
+
+        <span>
+            INTERVIEWEE
+        </span>
+
+        <h2>
+            M1yuN
+        </h2>
+
+        <p>
+            CREATOR
+        </p>
+
+        <a
+            href="https://x.com/komuhana1216"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <i class="ri-twitter-x-line"></i>
+            VIEW X
+        </a>
 
     </div>
 
@@ -198,272 +387,406 @@ ARTICLE
 <article class="story-article">
 
 
-<!-- ==================== INTRO ==================== -->
+    <!-- ==================================================
+    01 / ORIGIN
+    ================================================== -->
 
-<section class="story-section">
-
-    <div class="story-section__number">
-        01
-    </div>
-
-    <div class="story-section__content">
-
-        <span class="story-section__label">
-            INTRO
-        </span>
-
-        <h2>
-            まずは、<br>
-            その人の物語から。
-        </h2>
-
-        <p>
-            Nidmegentには、さまざまな場所から集まった
-            「挑戦する人たち」がいます。
-        </p>
-
-        <p>
-            プレイヤー、クリエイター、ストリーマー、
-            スタッフ。
-            それぞれが違う場所で、それぞれの理由で
-            挑戦を続けています。
-        </p>
-
-        <p>
-            今回のNID STORIESでは、
-            M1yuNさんにこれまでの活動、
-            Nidmegentとの出会い、
-            そしてこれからについて話を聞きました。
-        </p>
-
-    </div>
-
-</section>
+    <section class="story-content-section">
 
 
+        <div class="story-content-section__side">
 
-<!-- ==================== ORIGIN ==================== -->
+            <span>
+                01
+            </span>
 
-<section class="story-section">
+            <small>
+                ORIGIN
+            </small>
 
-    <div class="story-section__number">
-        02
-    </div>
-
-    <div class="story-section__content">
-
-        <span class="story-section__label">
-            ORIGIN
-        </span>
-
-        <h2>
-            すべての始まり。
-        </h2>
-
-        <div class="story-question">
-            ―― ゲームや活動を始めたきっかけは？
         </div>
 
-        <p>
-            ここにはインタビューで聞いた内容を
-            入れていきます。
-        </p>
 
-        <p>
-            例えば、最初にゲームを始めたきっかけや、
-            そこからどのように活動へ繋がっていったのか。
-        </p>
+        <div class="story-content-section__body">
 
-        <blockquote>
-            「最初はただ楽しくてやっていただけだった。」
-        </blockquote>
-
-    </div>
-
-</section>
+            <div class="story-content-section__label">
+                ORIGIN
+            </div>
 
 
+            <h2>
+                すべての始まり。
+            </h2>
 
-<!-- ==================== NIDMEGENT ==================== -->
 
-<section class="story-section story-section--gray">
+            <div class="story-question">
+                ―― ゲームや活動を始めたきっかけは？
+            </div>
 
-    <div class="story-section__number">
-        03
-    </div>
 
-    <div class="story-section__content">
+            <div class="story-answer">
 
-        <span class="story-section__label">
-            NIDMEGENT
-        </span>
+                <p>
+                    ここに実際のインタビュー回答を
+                    入れていきます。
+                </p>
 
-        <h2>
-            なぜ、<br>
-            Nidmegentだったのか。
-        </h2>
+                <p>
+                    ゲームを始めたきっかけや、
+                    最初に感じた楽しさ、
+                    そこから活動へとつながっていった
+                    過程などを掲載します。
+                </p>
 
-        <div class="story-question">
-            ―― Nidmegentに関わろうと思った理由は？
+            </div>
+
+
+            <blockquote>
+
+                「最初はただ楽しくて
+                やっていただけだった。」
+
+            </blockquote>
+
+
         </div>
 
-        <p>
-            ここにはNidmegentとの出会いや、
-            参加することになったきっかけを掲載します。
-        </p>
-
-        <p>
-            「なぜこの場所を選んだのか」という部分は、
-            NID STORIESの中でも特に大切な部分です。
-        </p>
-
-        <blockquote>
-            「ここなら、自分ももう一度挑戦できると思った。」
-        </blockquote>
-
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- ==================== MEMORY ==================== -->
+    <!-- ==================================================
+    IMAGE
+    ================================================== -->
 
-<section class="story-section">
+    <section class="story-image-break">
 
-    <div class="story-section__number">
-        04
-    </div>
-
-    <div class="story-section__content">
-
-        <span class="story-section__label">
-            MEMORY
-        </span>
-
-        <h2>
-            忘れられない瞬間。
-        </h2>
-
-        <div class="story-question">
-            ―― Nidmegentで印象に残っている出来事は？
-        </div>
-
-        <p>
-            活動の中で印象に残っている出来事、
-            仲間との思い出、
-            大きな挑戦などを掲載します。
-        </p>
-
-        <div class="story-photo">
+        <figure>
 
             <img
-                src="images/stories/story-001-memory.jpg"
+                src="../images/stories/story-001-memory.jpg"
                 alt=""
             >
 
+            <figcaption>
+                M1yuN / NIDMEGENT
+            </figcaption>
+
+        </figure>
+
+    </section>
+
+
+
+    <!-- ==================================================
+    02 / NIDMEGENT
+    ================================================== -->
+
+    <section class="story-content-section story-content-section--gray">
+
+
+        <div class="story-content-section__side">
+
+            <span>
+                02
+            </span>
+
+            <small>
+                NIDMEGENT
+            </small>
+
         </div>
 
-    </div>
 
-</section>
+        <div class="story-content-section__body">
+
+            <div class="story-content-section__label">
+                NIDMEGENT
+            </div>
 
 
+            <h2>
+                なぜ、<br>
+                Nidmegentだったのか。
+            </h2>
 
-<!-- ==================== NEXT ==================== -->
 
-<section class="story-section story-section--dark">
+            <div class="story-question">
+                ―― Nidmegentに関わろうと思った理由は？
+            </div>
 
-    <div class="story-section__number">
-        05
-    </div>
 
-    <div class="story-section__content">
+            <div class="story-answer">
 
-        <span class="story-section__label">
-            NEXT
-        </span>
+                <p>
+                    ここにはNidmegentとの出会いや、
+                    関わることになったきっかけを
+                    掲載します。
+                </p>
 
-        <h2>
-            これから、<br>
-            どこへ向かうのか。
-        </h2>
+                <p>
+                    「なぜこの場所だったのか。」
+                    「何を感じたのか。」
+                    という部分を、
+                    本人の言葉を中心にまとめます。
+                </p>
 
-        <div class="story-question">
-            ―― これから挑戦したいことは？
+            </div>
+
+
+            <blockquote>
+
+                「ここなら、
+                もう一度挑戦できると思った。」
+
+            </blockquote>
+
+
         </div>
 
-        <p>
-            今後の目標や夢、
-            Nidmegentでやってみたいことなどを
-            掲載します。
-        </p>
-
-        <p>
-            過去の話だけではなく、
-            「これから」を届けることも
-            NID STORIESの大切なテーマです。
-        </p>
-
-    </div>
-
-</section>
+    </section>
 
 
 
-<!-- ==================== ONE QUESTION ==================== -->
+    <!-- ==================================================
+    03 / MEMORY
+    ================================================== -->
 
-<section class="story-question-section">
-
-    <div class="story-question-section__inner">
-
-        <span>
-            ONE QUESTION
-        </span>
-
-        <h2>
-            あなたにとって、<br>
-            「もう一度挑戦する」とは？
-        </h2>
-
-        <p>
-            ―― M1yuN
-        </p>
-
-    </div>
-
-</section>
+    <section class="story-content-section">
 
 
+        <div class="story-content-section__side">
 
-<!-- ==================== MESSAGE ==================== -->
+            <span>
+                03
+            </span>
 
-<section class="story-section">
+            <small>
+                MEMORY
+            </small>
 
-    <div class="story-section__number">
-        06
-    </div>
+        </div>
 
-    <div class="story-section__content">
 
-        <span class="story-section__label">
-            MESSAGE
-        </span>
+        <div class="story-content-section__body">
 
-        <h2>
-            最後に、<br>
-            読んでくれたあなたへ。
-        </h2>
+            <div class="story-content-section__label">
+                MEMORY
+            </div>
 
-        <p>
-            ここにはインタビューを受けた本人から、
-            NID STORIESを読んでくれた人への
-            メッセージを掲載します。
-        </p>
 
-    </div>
+            <h2>
+                忘れられない瞬間。
+            </h2>
 
-</section>
+
+            <div class="story-question">
+                ―― Nidmegentで印象に残っている出来事は？
+            </div>
+
+
+            <div class="story-answer">
+
+                <p>
+                    活動の中で印象に残っている出来事、
+                    仲間との思い出、
+                    大きな挑戦などを掲載します。
+                </p>
+
+                <p>
+                    読んでいる人がその場面を
+                    想像できるように、
+                    エピソードを具体的に
+                    書いていきます。
+                </p>
+
+            </div>
+
+
+            <blockquote>
+
+                「あの瞬間は、
+                今でも忘れられない。」
+
+            </blockquote>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+    04 / NEXT
+    ================================================== -->
+
+    <section class="story-content-section story-content-section--dark">
+
+
+        <div class="story-content-section__side">
+
+            <span>
+                04
+            </span>
+
+            <small>
+                NEXT
+            </small>
+
+        </div>
+
+
+        <div class="story-content-section__body">
+
+            <div class="story-content-section__label">
+                NEXT
+            </div>
+
+
+            <h2>
+                これから、<br>
+                どこへ向かうのか。
+            </h2>
+
+
+            <div class="story-question">
+                ―― これから挑戦したいことは？
+            </div>
+
+
+            <div class="story-answer">
+
+                <p>
+                    これからの目標や夢、
+                    Nidmegentで挑戦したいことを
+                    掲載します。
+                </p>
+
+                <p>
+                    NID STORIESでは、
+                    過去だけではなく、
+                    その人がこれから向かう場所も
+                    大切にします。
+                </p>
+
+            </div>
+
+
+            <blockquote>
+
+                「まだ、ここから。」
+
+            </blockquote>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+    ONE QUESTION
+    ================================================== -->
+
+    <section class="story-one-question">
+
+        <div class="story-one-question__inner">
+
+
+            <span>
+                ONE QUESTION
+            </span>
+
+
+            <h2>
+                あなたにとって、<br>
+                「もう一度挑戦する」とは？
+            </h2>
+
+
+            <div class="story-one-question__answer">
+
+                <p>
+                    ここにM1yuNさん本人の
+                    回答を掲載します。
+                </p>
+
+            </div>
+
+
+            <div class="story-one-question__name">
+
+                <strong>
+                    M1yuN
+                </strong>
+
+                <span>
+                    CREATOR
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+    05 / MESSAGE
+    ================================================== -->
+
+    <section class="story-content-section">
+
+
+        <div class="story-content-section__side">
+
+            <span>
+                05
+            </span>
+
+            <small>
+                MESSAGE
+            </small>
+
+        </div>
+
+
+        <div class="story-content-section__body">
+
+            <div class="story-content-section__label">
+                MESSAGE
+            </div>
+
+
+            <h2>
+                最後に、<br>
+                読んでくれたあなたへ。
+            </h2>
+
+
+            <div class="story-question">
+                ―― NID STORIESを読んでくれた人へ
+            </div>
+
+
+            <div class="story-answer">
+
+                <p>
+                    ここにはインタビューを受けた
+                    M1yuNさんから、
+                    読者へのメッセージを掲載します。
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 
 </article>
@@ -478,7 +801,8 @@ PROFILE
 
     <div class="container">
 
-        <div class="story-profile__heading">
+
+        <div class="story-profile__header">
 
             <span>
                 PROFILE
@@ -491,7 +815,8 @@ PROFILE
         </div>
 
 
-        <div class="story-profile__body">
+        <div class="story-profile__grid">
+
 
             <div class="story-profile__image">
 
@@ -505,27 +830,35 @@ PROFILE
 
             <div class="story-profile__info">
 
+
                 <span class="story-profile__role">
                     CREATOR
                 </span>
+
 
                 <h3>
                     M1yuN
                 </h3>
 
+
                 <p>
-                    Nidmegent Esports CREATOR
+                    Nidmegent Esports / CREATOR
                 </p>
 
-                <a
-                    href="https://x.com/komuhana1216"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="story-profile__x"
-                >
-                    <i class="ri-twitter-x-line"></i>
-                    VIEW X
-                </a>
+
+                <div class="story-profile__links">
+
+                    <a
+                        href="https://x.com/komuhana1216"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <i class="ri-twitter-x-line"></i>
+                        X
+                    </a>
+
+                </div>
+
 
             </div>
 
@@ -545,7 +878,8 @@ OTHER STORIES
 
     <div class="container">
 
-        <div class="other-stories__heading">
+
+        <div class="other-stories__header">
 
             <span>
                 NID STORIES
@@ -561,36 +895,51 @@ OTHER STORIES
         <div class="other-stories__grid">
 
 
+            <!-- STORY 002 -->
+
             <a
-                href="../story-002.html"
+                href="002.html"
                 class="other-story-card"
             >
 
-                <span>
-                    STORY #002
-                </span>
+                <div>
 
-                <h3>
-                    COMING SOON
-                </h3>
+                    <span>
+                        STORY #002
+                    </span>
+
+                    <h3>
+                        COMING SOON
+                    </h3>
+
+                </div>
+
 
                 <i class="ri-arrow-right-up-line"></i>
 
             </a>
 
 
+
+            <!-- STORY 003 -->
+
             <a
-                href="../story-003.html"
+                href="003.html"
                 class="other-story-card"
             >
 
-                <span>
-                    STORY #003
-                </span>
+                <div>
 
-                <h3>
-                    COMING SOON
-                </h3>
+                    <span>
+                        STORY #003
+                    </span>
+
+                    <h3>
+                        COMING SOON
+                    </h3>
+
+                </div>
+
 
                 <i class="ri-arrow-right-up-line"></i>
 
@@ -606,29 +955,42 @@ OTHER STORIES
 
 
 <!-- ==================================================
-FINAL CTA
+BACK TO STORIES
 ================================================== -->
 
 <section class="story-final">
 
     <div class="story-final__inner">
 
+
         <span>
             NID STORIES
         </span>
+
 
         <h2>
             EVERYONE HAS<br>
             A STORY.
         </h2>
 
+
+        <p>
+            Nidmegentに関わる人たちの
+            物語をもっと見る。
+        </p>
+
+
         <a
-            href="stories.html"
+            href="../stories.html"
             class="story-final__button"
         >
+
             BACK TO STORIES
+
             <i class="ri-arrow-right-line"></i>
+
         </a>
+
 
     </div>
 
@@ -647,8 +1009,11 @@ FOOTER
 
     <div class="container">
 
+
         <div class="footer__top">
 
+
+            <!-- BRAND -->
 
             <div class="footer__brand">
 
@@ -664,27 +1029,57 @@ FOOTER
             </div>
 
 
+
+            <!-- MENU -->
+
             <div class="footer__menu">
 
 
                 <div>
 
-                    <h4>MENU</h4>
+                    <h4>
+                        MENU
+                    </h4>
 
-                    <a href="../about.html">ABOUT</a>
-                    <a href="../players.html">PLAYERS</a>
-                    <a href="../news.html">NEWS</a>
-                    <a href="../stories.html">STORIES</a>
-                    <a href="../sponsor.html">SPONSORS</a>
-                    <a href="../recruit.html">RECRUIT</a>
-                    <a href="../contact.html">CONTACT</a>
+                    <a href="../about.html">
+                        ABOUT
+                    </a>
+
+                    <a href="../players.html">
+                        PLAYERS
+                    </a>
+
+                    <a href="../news.html">
+                        NEWS
+                    </a>
+
+                    <a href="../stories.html">
+                        STORIES
+                    </a>
+
+                    <a href="../sponsor.html">
+                        SPONSORS
+                    </a>
+
+                    <a href="../recruit.html">
+                        RECRUIT
+                    </a>
+
+                    <a href="../contact.html">
+                        CONTACT
+                    </a>
 
                 </div>
 
 
+
+                <!-- COMPANY -->
+
                 <div>
 
-                    <h4>COMPANY</h4>
+                    <h4>
+                        COMPANY
+                    </h4>
 
                     <a
                         href="https://mellenastudio.github.io/official/"
@@ -697,9 +1092,14 @@ FOOTER
                 </div>
 
 
+
+                <!-- SOCIAL -->
+
                 <div>
 
-                    <h4>SOCIAL</h4>
+                    <h4>
+                        SOCIAL
+                    </h4>
 
                     <a
                         href="https://x.com/Nidmegent"
@@ -733,6 +1133,9 @@ FOOTER
         </div>
 
 
+
+        <!-- FOOTER BOTTOM -->
+
         <div class="footer__bottom">
 
             <span>
@@ -741,6 +1144,7 @@ FOOTER
 
         </div>
 
+
     </div>
 
 </footer>
@@ -748,11 +1152,13 @@ FOOTER
 
 
 <!-- ==================================================
-SCRIPT
+JAVASCRIPT
 ================================================== -->
 
 <script src="../script.js"></script>
+
 <script src="../story.js"></script>
+
 
 </body>
 
