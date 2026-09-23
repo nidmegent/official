@@ -1941,3 +1941,104 @@
     }
 
 }
+
+/* =========================================================
+   JS REVEAL ANIMATION
+========================================================= */
+
+.stories-reveal{
+    opacity:0;
+
+    transform:
+        translateY(45px);
+
+    transition:
+        opacity .9s cubic-bezier(.16,1,.3,1),
+        transform .9s cubic-bezier(.16,1,.3,1);
+
+    transition-delay:
+        calc(var(--story-index, 0) * .08s);
+}
+
+.stories-reveal.is-visible{
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* Hero */
+
+.stories-hero__content{
+    opacity:0;
+
+    transform:
+        translateY(30px);
+
+    transition:
+        opacity 1s cubic-bezier(.16,1,.3,1),
+        transform 1s cubic-bezier(.16,1,.3,1);
+}
+
+.stories-hero.is-visible .stories-hero__content{
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+.stories-hero__bottom{
+    opacity:0;
+
+    transform:
+        translateY(15px);
+
+    transition:
+        opacity 1s ease .45s,
+        transform 1s cubic-bezier(.16,1,.3,1) .45s;
+}
+
+.stories-hero.is-visible .stories-hero__bottom{
+    opacity:1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:768px){
+
+    .stories-reveal{
+        transform:translateY(30px);
+
+        transition:
+            opacity .7s ease,
+            transform .7s cubic-bezier(.16,1,.3,1);
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    .stories-reveal,
+    .stories-hero__content,
+    .stories-hero__bottom{
+        opacity:1 !important;
+
+        transform:none !important;
+
+        transition:none !important;
+    }
+
+}
