@@ -11,12 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const body = document.body;
 
-    const header = document.querySelector(".header");
-
-    const menuButton = document.querySelector(".menu");
-
-    const nav = document.querySelector(".nav");
-
     const hero = document.querySelector(".stories-hero");
 
     const heroBackground =
