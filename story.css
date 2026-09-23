@@ -1164,3 +1164,22 @@ STORY ARTICLE
     }
 
 }
+
+/* ==================================================
+JS REVEAL
+================================================== */
+
+.story-reveal{
+    opacity:0;
+    transform:translateY(35px);
+
+    transition:
+        opacity .9s ease,
+        transform .9s cubic-bezier(.16,1,.3,1);
+}
+
+
+.story-reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
