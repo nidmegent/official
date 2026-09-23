@@ -2042,3 +2042,19 @@
     }
 
 }
+
+/* =========================================
+   STORIES VISIBILITY FIX
+   ========================================= */
+
+.stories-hero,
+.stories-hero *{
+    visibility:visible;
+}
+
+.stories-hero__content,
+.stories-hero__content *{
+    opacity:1 !important;
+    visibility:visible !important;
+    transform:none;
+}
