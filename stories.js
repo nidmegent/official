@@ -4,17 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!header) return;
 
-    const handleScroll = () => {
+    const updateHeader = () => {
+
         if (window.scrollY > 40) {
             header.classList.add("active");
         } else {
             header.classList.remove("active");
         }
+
     };
 
-    handleScroll();
+    updateHeader();
 
-    window.addEventListener("scroll", handleScroll, {
+    window.addEventListener("scroll", updateHeader, {
         passive: true
     });
 
