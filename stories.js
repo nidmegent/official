@@ -1,440 +1,121 @@
-/* =========================================================
-   NID STORIES
-   stories.js
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
 
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
+    /* =========================================
+       STORIES PAGE
+       ========================================= */
 
-    const body = document.body;
+    const header = document.querySelector(".header");
 
-    const hero = document.querySelector(".stories-hero");
-
-    const heroBackground =
-        document.querySelector(".stories-hero__background");
-
-    const revealElements = document.querySelectorAll(
-        ".stories-intro__grid > div, " +
-        ".stories-section-head, " +
-        ".featured-story, " +
-        ".story-card, " +
-        ".difference-box, " +
-        ".stories-final .container"
-    );
-
-
-    /* =====================================================
-       REDUCED MOTION
-    ===================================================== */
-
-    const reduceMotion = window.matchMedia(
-        "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
+    /* -----------------------------------------
+       Header Scroll
+       ----------------------------------------- */
 
     if (header) {
-
         const updateHeader = () => {
-
-            if (window.scrollY > 30) {
+            if (window.scrollY > 40) {
                 header.classList.add("active");
             } else {
                 header.classList.remove("active");
             }
-
         };
 
         updateHeader();
-
-        window.addEventListener(
-            "scroll",
-            updateHeader,
-            { passive: true }
-        );
-
-    };
-
-
-    /* =====================================================
-       MOBILE MENU
-    ===================================================== */
-
-    if (menuButton && nav) {
-
-        menuButton.addEventListener("click", () => {
-
-            const isOpen =
-                nav.classList.toggle("active");
-
-            menuButton.classList.toggle(
-                "active",
-                isOpen
-            );
-
-            body.classList.toggle(
-                "menu-open",
-                isOpen
-            );
-
-            menuButton.setAttribute(
-                "aria-expanded",
-                isOpen ? "true" : "false"
-            );
-
+        window.addEventListener("scroll", updateHeader, {
+            passive: true
         });
+    }
 
 
-        /* ---------------------------------------------
-           CLOSE MENU WHEN LINK IS CLICKED
-        --------------------------------------------- */
+    /* -----------------------------------------
+       Scroll Reveal
+       ----------------------------------------- */
 
-        const navLinks =
-            nav.querySelectorAll("a");
+    const revealItems = document.querySelectorAll(
+        ".stories-intro, .story-card, .stories-difference, .stories-final, .stories-section"
+    );
 
-        navLinks.forEach(link => {
+    if (revealItems.length) {
 
-            link.addEventListener("click", () => {
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
 
-                nav.classList.remove("active");
+                entries.forEach(entry => {
 
-                menuButton.classList.remove("active");
+                    if (!entry.isIntersecting) return;
 
-                body.classList.remove("menu-open");
+                    entry.target.classList.add("is-visible");
 
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                    observer.unobserve(entry.target);
 
-            });
+                });
 
-        });
-
-
-        /* ---------------------------------------------
-           CLOSE MENU WITH ESC
-        --------------------------------------------- */
-
-        document.addEventListener("keydown", event => {
-
-            if (
-                event.key === "Escape" &&
-                nav.classList.contains("active")
-            ) {
-
-                nav.classList.remove("active");
-
-                menuButton.classList.remove("active");
-
-                body.classList.remove("menu-open");
-
-                menuButton.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -60px 0px"
             }
-
-        });
-
-    }
-
-
-    /* =====================================================
-       HERO INTRO ANIMATION
-    ===================================================== */
-
-    if (hero) {
-
-        hero.classList.add("is-ready");
-
-        if (!reduceMotion) {
-
-            requestAnimationFrame(() => {
-
-                setTimeout(() => {
-
-                    hero.classList.add("is-visible");
-
-                }, 120);
-
-            });
-
-        } else {
-
-            hero.classList.add("is-visible");
-
-        }
-
-    }
-
-
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
-
-    if (
-        "IntersectionObserver" in window &&
-        !reduceMotion
-    ) {
-
-        const observer =
-            new IntersectionObserver(
-                (entries, observerInstance) => {
-
-                    entries.forEach(entry => {
-
-                        if (!entry.isIntersecting) {
-                            return;
-                        }
-
-                        entry.target.classList.add(
-                            "is-visible"
-                        );
-
-                        observerInstance.unobserve(
-                            entry.target
-                        );
-
-                    });
-
-                },
-                {
-                    threshold:0.12,
-                    rootMargin:"0px 0px -70px 0px"
-                }
-            );
-
-
-        revealElements.forEach(element => {
-
-            element.classList.add(
-                "stories-reveal"
-            );
-
-            observer.observe(element);
-
-        });
-
-    } else {
-
-        revealElements.forEach(element => {
-
-            element.classList.add(
-                "is-visible"
-            );
-
-        });
-
-    }
-
-
-    /* =====================================================
-       STORY CARD STAGGER
-    ===================================================== */
-
-    const storyCards =
-        document.querySelectorAll(".story-card");
-
-    storyCards.forEach((card, index) => {
-
-        card.style.setProperty(
-            "--story-index",
-            index
         );
+
+        revealItems.forEach(item => {
+            item.classList.add("reveal");
+            observer.observe(item);
+        });
+    }
+
+
+    /* -----------------------------------------
+       Story Card Hover
+       ----------------------------------------- */
+
+    const storyCards = document.querySelectorAll(".story-card");
+
+    storyCards.forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+            card.classList.add("is-hover");
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.classList.remove("is-hover");
+        });
 
     });
 
 
-    /* =====================================================
-       FEATURED STORY IMAGE PARALLAX
-    ===================================================== */
+    /* -----------------------------------------
+       Smooth Anchor Scroll
+       ----------------------------------------- */
 
-    const featuredImage =
-        document.querySelector(
-            ".featured-story__image img"
-        );
+    const anchorLinks = document.querySelectorAll(
+        'a[href^="#"]'
+    );
 
-    if (
-        featuredImage &&
-        !reduceMotion &&
-        window.innerWidth > 768
-    ) {
-
-        let ticking = false;
-
-        const updateParallax = () => {
-
-            if (!hero) {
-                ticking = false;
-                return;
-            }
-
-            const rect =
-                featuredImage.getBoundingClientRect();
-
-            const windowHeight =
-                window.innerHeight;
-
-            if (
-                rect.bottom > 0 &&
-                rect.top < windowHeight
-            ) {
-
-                const progress =
-                    (
-                        windowHeight - rect.top
-                    ) /
-                    (
-                        windowHeight + rect.height
-                    );
-
-                const offset =
-                    (progress - 0.5) * 20;
-
-                featuredImage.style.transform =
-                    `scale(1.03) translateY(${offset}px)`;
-
-            }
-
-            ticking = false;
-
-        };
-
-
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                if (!ticking) {
-
-                    window.requestAnimationFrame(
-                        updateParallax
-                    );
-
-                    ticking = true;
-
-                }
-
-            },
-            { passive:true }
-        );
-
-    }
-
-
-    /* =====================================================
-       HERO BACKGROUND PARALLAX
-    ===================================================== */
-
-    if (
-        heroBackground &&
-        !reduceMotion &&
-        window.innerWidth > 768
-    ) {
-
-        let heroTicking = false;
-
-        const updateHeroParallax = () => {
-
-            const scrollY =
-                window.scrollY;
-
-            if (scrollY <= window.innerHeight) {
-
-                const offset =
-                    scrollY * 0.12;
-
-                heroBackground.style.transform =
-                    `translateY(${offset}px)`;
-
-            }
-
-            heroTicking = false;
-
-        };
-
-
-        window.addEventListener(
-            "scroll",
-            () => {
-
-                if (!heroTicking) {
-
-                    window.requestAnimationFrame(
-                        updateHeroParallax
-                    );
-
-                    heroTicking = true;
-
-                }
-
-            },
-            { passive:true }
-        );
-
-    }
-
-
-    /* =====================================================
-       SMOOTH ANCHOR SCROLL
-    ===================================================== */
-
-    const internalLinks =
-        document.querySelectorAll(
-            'a[href^="#"]'
-        );
-
-    internalLinks.forEach(link => {
+    anchorLinks.forEach(link => {
 
         link.addEventListener("click", event => {
 
-            const targetId =
-                link.getAttribute("href");
+            const targetId = link.getAttribute("href");
 
-            if (
-                !targetId ||
-                targetId === "#"
-            ) {
-                return;
-            }
+            if (!targetId || targetId === "#") return;
 
-            const target =
-                document.querySelector(targetId);
+            const target = document.querySelector(targetId);
 
-            if (!target) {
-                return;
-            }
+            if (!target) return;
 
             event.preventDefault();
 
-            const headerHeight =
-                header
-                    ? header.offsetHeight
-                    : 0;
+            const headerHeight = header
+                ? header.offsetHeight
+                : 0;
 
             const targetPosition =
                 target.getBoundingClientRect().top +
                 window.scrollY -
-                headerHeight -
-                20;
+                headerHeight;
 
             window.scrollTo({
-
-                top:targetPosition,
-
-                behavior:
-                    reduceMotion
-                        ? "auto"
-                        : "smooth"
-
+                top: targetPosition,
+                behavior: "smooth"
             });
 
         });
@@ -442,100 +123,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       STORY CARD HOVER
-    ===================================================== */
+    /* -----------------------------------------
+       Story Image Loading
+       ----------------------------------------- */
 
-    if (!reduceMotion) {
+    const storyImages = document.querySelectorAll(
+        ".story-card img"
+    );
 
-        storyCards.forEach(card => {
+    storyImages.forEach(img => {
 
-            const arrow =
-                card.querySelector(
-                    ".story-card__arrow"
-                );
-
-            if (!arrow) {
-                return;
-            }
-
-            card.addEventListener(
-                "mouseenter",
-                () => {
-
-                    arrow.style.transform =
-                        "translateX(5px)";
-
-                }
-            );
-
-            card.addEventListener(
-                "mouseleave",
-                () => {
-
-                    arrow.style.transform =
-                        "translateX(0)";
-
-                }
-            );
-
+        img.addEventListener("load", () => {
+            img.classList.add("loaded");
         });
 
-    }
+        img.addEventListener("error", () => {
+            img.classList.add("image-error");
+        });
 
+        if (img.complete) {
 
-    /* =====================================================
-       FEATURED STORY HOVER
-    ===================================================== */
-
-    const featuredStory =
-        document.querySelector(
-            ".featured-story"
-        );
-
-    if (
-        featuredStory &&
-        !reduceMotion
-    ) {
-
-        featuredStory.addEventListener(
-            "mouseenter",
-            () => {
-
-                featuredStory.classList.add(
-                    "story-hover"
-                );
-
+            if (img.naturalWidth > 0) {
+                img.classList.add("loaded");
+            } else {
+                img.classList.add("image-error");
             }
-        );
-
-        featuredStory.addEventListener(
-            "mouseleave",
-            () => {
-
-                featuredStory.classList.remove(
-                    "story-hover"
-                );
-
-            }
-        );
-
-    }
-
-
-    /* =====================================================
-       PAGE LOAD
-    ===================================================== */
-
-    window.addEventListener(
-        "load",
-        () => {
-
-            document.documentElement.classList.add(
-                "stories-loaded"
-            );
 
         }
-    );
+
+    });
+
+
+    /* -----------------------------------------
+       Current Page
+       ----------------------------------------- */
+
+    const currentPath =
+        window.location.pathname;
+
+    const storyLinks =
+        document.querySelectorAll(".story-card a");
+
+    storyLinks.forEach(link => {
+
+        const linkPath =
+            new URL(link.href, window.location.origin)
+                .pathname;
+
+        if (linkPath === currentPath) {
+            link.classList.add("current");
+        }
+
+    });
 
 });
