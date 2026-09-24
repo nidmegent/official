@@ -2058,3 +2058,7 @@
     visibility:visible !important;
     transform:none;
 }
+
+.stories-intro h3{
+    font-size: 2rem;
+}
