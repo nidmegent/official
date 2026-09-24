@@ -2060,6 +2060,11 @@
 }
 
 
-.stories-intro h3{
-    font-size: 1.6rem;
+/* =========================================
+   LATEST STORY TITLE
+========================================= */
+
+.latest-story h3{
+    font-size: 1.5rem !important;
+    line-height: 1.25;
 }
