@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const EMAILJS_SERVICE_ID = "service_xcdqqfc";
 
-    const EMAILJS_TEMPLATE_ID = "template_3em57wc";
+    const EMAILJS_TEMPLATE_ID = "template_y3czbck";
 
 
     /* =====================================================
