@@ -1,17 +1,11 @@
-/* =========================================================
-   NIDMEGENT FAN LETTER
-   fanletter.js
-========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* =====================================================
-       ELEMENTS
-    ===================================================== */
 
     const form = document.getElementById("fanLetterForm");
 
-    if (!form) return;
+    if (!form) {
+        console.error("fanLetterForm が見つかりません");
+        return;
+    }
 
     const recipient = document.getElementById("recipient");
     const name = document.getElementById("name");
@@ -20,29 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const agree = document.getElementById("agree");
 
     const characterCount = document.getElementById("characterCount");
-
     const submitButton = document.getElementById("submitButton");
-
     const formStatus = document.getElementById("formStatus");
-
     const thankYou = document.getElementById("thankYou");
 
 
-
-    /* =====================================================
-       EMAILJS SETTINGS
-    ===================================================== */
+    /* ================================
+       EmailJS
+    ================================= */
 
     const EMAILJS_PUBLIC_KEY = "WeWC6-HJ6YzhiZ5Rv";
-
     const EMAILJS_SERVICE_ID = "service_xcdqqfc";
+    const EMAILJS_TEMPLATE_ID = "template_3em57wc";
 
-    const EMAILJS_TEMPLATE_ID = "template_y3czbck";
-
-
-    /* =====================================================
-       EMAILJS INITIALIZE
-    ===================================================== */
 
     if (typeof emailjs !== "undefined") {
 
@@ -50,62 +34,64 @@ document.addEventListener("DOMContentLoaded", () => {
             publicKey: EMAILJS_PUBLIC_KEY
         });
 
+        console.log("EmailJS initialized");
+
     } else {
 
-        console.error("EmailJS could not be loaded.");
+        console.error("EmailJSが読み込まれていません");
 
     }
 
 
+    /* ================================
+       文字数
+    ================================= */
 
-    /* =====================================================
-       CHARACTER COUNT
-    ===================================================== */
+    function updateCharacterCount() {
 
-    const updateCharacterCount = () => {
+        if (!characterCount || !message) return;
 
-        const length = message.value.length;
+        characterCount.textContent = message.value.length;
 
-        characterCount.textContent = length;
+    }
 
-    };
+    if (message) {
 
+        message.addEventListener("input", updateCharacterCount);
 
-    message.addEventListener(
-        "input",
-        updateCharacterCount
-    );
+        updateCharacterCount();
 
-
-    updateCharacterCount();
+    }
 
 
+    /* ================================
+       ステータス
+    ================================= */
 
-    /* =====================================================
-       STATUS
-    ===================================================== */
+    function showStatus(text, type = "") {
 
-    const showStatus = (text, type = "") => {
+        if (!formStatus) return;
 
         formStatus.textContent = text;
 
         formStatus.className = "form-status";
 
         if (type) {
+
             formStatus.classList.add(type);
+
         }
 
-    };
+    }
 
 
-    /* =====================================================
-       VALIDATION
-    ===================================================== */
+    /* ================================
+       バリデーション
+    ================================= */
 
-    const validateForm = () => {
+    function validateForm() {
 
         showStatus("");
-
 
         if (!recipient.value) {
 
@@ -145,8 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
             return false;
         }
 
-
-        /* Email format */
 
         const emailPattern =
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -219,20 +203,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
         return true;
 
-    };
+    }
 
 
+    /* ================================
+       ボタン状態
+    ================================= */
 
-    /* =====================================================
-       LOADING STATE
-    ===================================================== */
+    function setLoading(loading) {
 
-    const setLoading = (loading) => {
-
-        submitButton.disabled = loading;
-
+        if (!submitButton) return;
 
         if (loading) {
+
+            submitButton.classList.add("is-loading");
+
+            submitButton.setAttribute(
+                "aria-disabled",
+                "true"
+            );
 
             submitButton.querySelector("span").textContent =
                 "SENDING...";
@@ -242,6 +231,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         } else {
 
+            submitButton.classList.remove("is-loading");
+
+            submitButton.removeAttribute(
+                "aria-disabled"
+            );
+
             submitButton.querySelector("span").textContent =
                 "SEND YOUR LETTER";
 
@@ -250,27 +245,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-    };
+    }
 
 
-
-    /* =====================================================
-       FORM SUBMIT
-    ===================================================== */
+    /* ================================
+       送信
+    ================================= */
 
     form.addEventListener("submit", async (event) => {
 
         event.preventDefault();
 
-
-        /* Validate */
+        console.log("FAN LETTER submit");
 
         if (!validateForm()) {
+
             return;
+
         }
 
 
-        /* Check EmailJS */
+        /* EmailJSチェック */
 
         if (typeof emailjs === "undefined") {
 
@@ -279,11 +274,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 "error"
             );
 
+            console.error(
+                "EmailJS is undefined"
+            );
+
             return;
+
         }
 
-
-        /* Loading */
 
         setLoading(true);
 
@@ -291,10 +289,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "ファンレターを送信しています..."
         );
 
-
-        /* =================================================
-           TEMPLATE PARAMETERS
-        ================================================= */
 
         const templateParams = {
 
@@ -324,22 +318,26 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
 
+        console.log(
+            "Sending:",
+            templateParams
+        );
+
+
         try {
 
-            /* =============================================
-               SEND
-            ============================================= */
-
-            await emailjs.send(
+            const result = await emailjs.send(
                 EMAILJS_SERVICE_ID,
                 EMAILJS_TEMPLATE_ID,
                 templateParams
             );
 
 
-            /* =============================================
-               SUCCESS
-            ============================================= */
+            console.log(
+                "EmailJS success:",
+                result
+            );
+
 
             showStatus(
                 "ファンレターを送信しました。",
@@ -352,10 +350,6 @@ document.addEventListener("DOMContentLoaded", () => {
             updateCharacterCount();
 
 
-            /* =============================================
-               SHOW THANK YOU
-            ============================================= */
-
             setTimeout(() => {
 
                 const formSection =
@@ -363,10 +357,10 @@ document.addEventListener("DOMContentLoaded", () => {
                         ".fanletter-form-section"
                     );
 
-
                 if (formSection) {
 
-                    formSection.style.display = "none";
+                    formSection.style.display =
+                        "none";
 
                 }
 
@@ -382,8 +376,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         "false"
                     );
 
-
-                    /* Scroll */
 
                     setTimeout(() => {
 
@@ -408,7 +400,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             showStatus(
-                "送信に失敗しました。時間を置いてもう一度お試しください。",
+                "送信に失敗しました。送信設定を確認してください。",
                 "error"
             );
 
@@ -421,10 +413,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-
-    /* =====================================================
-       INPUT ERROR CLEAR
-    ===================================================== */
+    /* ================================
+       入力時エラー解除
+    ================================= */
 
     [
         recipient,
@@ -433,14 +424,15 @@ document.addEventListener("DOMContentLoaded", () => {
         message
     ].forEach((element) => {
 
+        if (!element) return;
+
         element.addEventListener(
             "input",
             () => {
 
                 if (
-                    formStatus.classList.contains(
-                        "error"
-                    )
+                    formStatus &&
+                    formStatus.classList.contains("error")
                 ) {
 
                     showStatus("");
@@ -453,40 +445,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    recipient.addEventListener(
-        "change",
-        () => {
+    if (recipient) {
 
-            if (
-                formStatus.classList.contains(
-                    "error"
-                )
-            ) {
+        recipient.addEventListener(
+            "change",
+            () => {
 
-                showStatus("");
+                if (
+                    formStatus &&
+                    formStatus.classList.contains("error")
+                ) {
 
-            }
+                    showStatus("");
 
-        }
-    );
-
-
-    agree.addEventListener(
-        "change",
-        () => {
-
-            if (
-                formStatus.classList.contains(
-                    "error"
-                )
-            ) {
-
-                showStatus("");
+                }
 
             }
+        );
 
-        }
-    );
+    }
+
+
+    if (agree) {
+
+        agree.addEventListener(
+            "change",
+            () => {
+
+                if (
+                    formStatus &&
+                    formStatus.classList.contains("error")
+                ) {
+
+                    showStatus("");
+
+                }
+
+            }
+        );
+
+    }
 
 
 });
