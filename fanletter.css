@@ -1184,3 +1184,14 @@
     }
 
 }
+
+.fanletter-submit{
+    position:relative;
+    z-index:10;
+    pointer-events:auto !important;
+    cursor:pointer;
+}
+
+.fanletter-submit.is-loading{
+    pointer-events:none;
+}
