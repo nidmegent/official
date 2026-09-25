@@ -1,0 +1,1186 @@
+/* =========================================================
+   NIDMEGENT FAN LETTER
+   fanletter.css
+========================================================= */
+
+.fanletter-page{
+    --fan-red:#e6002f;
+    --fan-black:#111111;
+    --fan-white:#ffffff;
+    --fan-gray:#6f6f6f;
+    --fan-light:#f7f8fa;
+    --fan-line:#e7e8eb;
+    --fan-transition:.45s cubic-bezier(.16,1,.3,1);
+
+    background:#fff;
+    color:var(--fan-black);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fanletter-page .header{
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+}
+
+.fanletter-page .header .nav__list a{
+    color:#111;
+}
+
+.fanletter-page .header .nav__list a:hover{
+    color:var(--fan-red);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.fanletter-hero{
+    position:relative;
+    min-height:calc(100vh - 95px);
+
+    display:flex;
+    align-items:center;
+
+    padding:150px 0 100px;
+
+    overflow:hidden;
+
+    background:#f7f8fa;
+}
+
+
+.fanletter-hero__bg{
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(230,0,47,.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            transparent 0%,
+            rgba(0,0,0,.025) 50%,
+            transparent 100%
+        );
+}
+
+
+/* giant background text */
+
+.fanletter-hero::after{
+    content:"LETTER";
+
+    position:absolute;
+
+    right:-5%;
+    bottom:-8%;
+
+    font-size:clamp(10rem,22vw,24rem);
+    font-weight:900;
+    line-height:.8;
+
+    letter-spacing:-.08em;
+
+    color:rgba(0,0,0,.025);
+
+    pointer-events:none;
+}
+
+
+/* container */
+
+.fanletter-hero .container{
+    position:relative;
+    z-index:2;
+
+    min-height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+/* content */
+
+.fanletter-hero__content{
+    max-width:1000px;
+}
+
+
+.fanletter-eyebrow{
+    display:block;
+
+    margin-bottom:25px;
+
+    color:var(--fan-red);
+
+    font-size:.72rem;
+    font-weight:800;
+
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+
+
+.fanletter-hero h1{
+    margin:0;
+
+    font-size:clamp(5rem,12vw,11rem);
+    font-weight:900;
+
+    line-height:.82;
+    letter-spacing:-.075em;
+}
+
+
+.fanletter-hero h1 span{
+    color:var(--fan-red);
+}
+
+
+.fanletter-hero__lead{
+    margin:45px 0 8px;
+
+    font-size:clamp(1.1rem,2vw,1.6rem);
+    font-weight:800;
+
+    letter-spacing:.04em;
+}
+
+
+.fanletter-hero__description{
+    margin:0;
+
+    color:var(--fan-gray);
+
+    font-size:1rem;
+    line-height:1.9;
+}
+
+
+/* hero bottom */
+
+.fanletter-hero__bottom{
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:35px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    color:#999;
+
+    font-size:.65rem;
+    font-weight:800;
+
+    letter-spacing:.18em;
+}
+
+
+.fanletter-scroll{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+
+.fanletter-scroll i{
+    position:relative;
+
+    display:block;
+
+    width:45px;
+    height:1px;
+
+    background:#bbb;
+}
+
+
+.fanletter-scroll i::after{
+    content:"";
+
+    position:absolute;
+
+    right:0;
+    top:-2px;
+
+    width:5px;
+    height:5px;
+
+    border-right:1px solid #999;
+    border-bottom:1px solid #999;
+
+    transform:rotate(-45deg);
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.fanletter-section-label{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    margin-bottom:80px;
+
+    border-bottom:1px solid var(--fan-line);
+
+    padding-bottom:18px;
+}
+
+
+.fanletter-section-label span{
+    color:var(--fan-red);
+
+    font-size:.7rem;
+    font-weight:800;
+
+    letter-spacing:.15em;
+}
+
+
+.fanletter-section-label p{
+    margin:0;
+
+    color:#777;
+
+    font-size:.7rem;
+    font-weight:800;
+
+    letter-spacing:.18em;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.fanletter-message{
+    padding:150px 0;
+    background:#fff;
+}
+
+
+.fanletter-message__grid{
+    display:grid;
+
+    grid-template-columns:.8fr 1.5fr;
+
+    gap:100px;
+}
+
+
+.fanletter-message__small{
+    display:block;
+
+    max-width:260px;
+
+    color:#999;
+
+    font-size:.65rem;
+    font-weight:800;
+
+    line-height:1.8;
+
+    letter-spacing:.14em;
+}
+
+
+.fanletter-message__grid h2{
+    margin:0 0 40px;
+
+    font-size:clamp(2.5rem,5vw,5.2rem);
+    font-weight:900;
+
+    line-height:1.05;
+    letter-spacing:-.06em;
+}
+
+
+.fanletter-message__grid h2 span{
+    color:var(--fan-red);
+}
+
+
+.fanletter-message__grid p{
+    max-width:650px;
+
+    margin:0 0 20px;
+
+    color:#666;
+
+    font-size:.95rem;
+    line-height:2;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.fanletter-form-section{
+    padding:150px 0;
+
+    background:#f7f8fa;
+}
+
+
+.fanletter-form-wrapper{
+    display:grid;
+
+    grid-template-columns:.75fr 1.25fr;
+
+    gap:100px;
+}
+
+
+/* heading */
+
+.fanletter-form-heading{
+    position:sticky;
+    top:140px;
+
+    align-self:start;
+}
+
+
+.fanletter-form-heading > span{
+    display:block;
+
+    margin-bottom:25px;
+
+    color:var(--fan-red);
+
+    font-size:.7rem;
+    font-weight:800;
+
+    letter-spacing:.18em;
+}
+
+
+.fanletter-form-heading h2{
+    margin:0 0 30px;
+
+    font-size:clamp(3rem,5vw,5.5rem);
+    font-weight:900;
+
+    line-height:.88;
+    letter-spacing:-.07em;
+}
+
+
+.fanletter-form-heading h2 span{
+    color:var(--fan-red);
+}
+
+
+.fanletter-form-heading p{
+    color:#777;
+
+    font-size:.9rem;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.fanletter-form{
+    width:100%;
+}
+
+
+.form-group{
+    position:relative;
+
+    margin-bottom:48px;
+}
+
+
+.form-group label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:15px;
+
+    color:#111;
+
+    font-size:.7rem;
+    font-weight:800;
+
+    letter-spacing:.16em;
+}
+
+
+.form-group label span{
+    color:var(--fan-red);
+
+    font-size:.65rem;
+}
+
+
+/* input / select / textarea */
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    display:block;
+
+    width:100%;
+
+    border:0;
+    border-bottom:1px solid #cfd1d5;
+
+    border-radius:0;
+
+    background:transparent;
+
+    padding:18px 5px;
+
+    color:#111;
+
+    font-family:inherit;
+    font-size:1rem;
+
+    outline:none;
+
+    transition:
+        border-color .3s ease,
+        background .3s ease;
+}
+
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+    color:#aaa;
+}
+
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--fan-red);
+}
+
+
+/* select */
+
+.select-wrap{
+    position:relative;
+}
+
+
+.select-wrap select{
+    appearance:none;
+    -webkit-appearance:none;
+
+    cursor:pointer;
+
+    padding-right:40px;
+}
+
+
+.select-wrap i{
+    position:absolute;
+
+    right:5px;
+    bottom:18px;
+
+    color:#888;
+
+    font-size:1.1rem;
+
+    pointer-events:none;
+}
+
+
+/* textarea */
+
+.form-group textarea{
+    min-height:230px;
+
+    resize:vertical;
+
+    line-height:1.9;
+}
+
+
+/* character count */
+
+.character-count{
+    margin-top:8px;
+
+    text-align:right;
+
+    color:#999;
+
+    font-size:.65rem;
+    font-weight:700;
+
+    letter-spacing:.08em;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.fanletter-notice{
+    display:flex;
+    gap:18px;
+
+    margin:10px 0 30px;
+
+    padding:24px;
+
+    border:1px solid var(--fan-line);
+
+    background:#fff;
+}
+
+
+.fanletter-notice__icon{
+    flex:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:38px;
+    height:38px;
+
+    background:#111;
+    color:#fff;
+
+    font-size:1rem;
+}
+
+
+.fanletter-notice strong{
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:.65rem;
+    font-weight:800;
+
+    letter-spacing:.15em;
+}
+
+
+.fanletter-notice p{
+    margin:0;
+
+    color:#777;
+
+    font-size:.75rem;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   CHECKBOX
+========================================================= */
+
+.fanletter-check{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    cursor:pointer;
+
+    margin-bottom:30px;
+}
+
+
+.fanletter-check input{
+    position:absolute;
+
+    opacity:0;
+
+    pointer-events:none;
+}
+
+
+.fanletter-check__box{
+    flex:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:20px;
+    height:20px;
+
+    border:1px solid #bbb;
+
+    background:#fff;
+
+    transition:var(--fan-transition);
+}
+
+
+.fanletter-check__box i{
+    opacity:0;
+
+    color:#fff;
+
+    font-size:13px;
+
+    transition:.25s ease;
+}
+
+
+.fanletter-check input:checked + .fanletter-check__box{
+    border-color:var(--fan-red);
+
+    background:var(--fan-red);
+}
+
+
+.fanletter-check input:checked + .fanletter-check__box i{
+    opacity:1;
+}
+
+
+.fanletter-check__text{
+    color:#666;
+
+    font-size:.72rem;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   FORM STATUS
+========================================================= */
+
+.form-status{
+    min-height:20px;
+
+    margin-bottom:20px;
+
+    font-size:.75rem;
+    font-weight:700;
+}
+
+
+.form-status.success{
+    color:#16834b;
+}
+
+
+.form-status.error{
+    color:#d0002b;
+}
+
+
+/* =========================================================
+   SUBMIT
+========================================================= */
+
+.fanletter-submit{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    width:100%;
+
+    min-height:72px;
+
+    border:0;
+
+    padding:0 28px;
+
+    background:#111;
+    color:#fff;
+
+    cursor:pointer;
+
+    font-family:inherit;
+    font-size:.75rem;
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    overflow:hidden;
+
+    transition:
+        background .4s ease,
+        transform .4s ease;
+}
+
+
+.fanletter-submit::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--fan-red);
+
+    transform:translateX(-101%);
+
+    transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+
+
+.fanletter-submit span,
+.fanletter-submit b{
+    position:relative;
+    z-index:2;
+}
+
+
+.fanletter-submit b{
+    font-size:1.4rem;
+    font-weight:400;
+
+    transition:transform .4s ease;
+}
+
+
+.fanletter-submit:hover{
+    transform:translateY(-3px);
+}
+
+
+.fanletter-submit:hover::before{
+    transform:translateX(0);
+}
+
+
+.fanletter-submit:hover b{
+    transform:translateX(8px);
+}
+
+
+.fanletter-submit:disabled{
+    opacity:.55;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+
+/* =========================================================
+   THANK YOU
+========================================================= */
+
+.fanletter-thanks{
+    position:relative;
+
+    display:none;
+
+    min-height:85vh;
+
+    align-items:center;
+
+    padding:150px 0;
+
+    overflow:hidden;
+
+    background:#111;
+    color:#fff;
+}
+
+
+.fanletter-thanks.is-visible{
+    display:flex;
+}
+
+
+.fanletter-thanks__bg{
+    position:absolute;
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 75% 40%,
+            rgba(230,0,47,.25),
+            transparent 30%
+        );
+}
+
+
+.fanletter-thanks::after{
+    content:"THANK YOU";
+
+    position:absolute;
+
+    right:-4%;
+    bottom:-8%;
+
+    font-size:clamp(7rem,18vw,20rem);
+    font-weight:900;
+
+    line-height:.8;
+
+    letter-spacing:-.08em;
+
+    color:rgba(255,255,255,.035);
+
+    pointer-events:none;
+}
+
+
+.fanletter-thanks .container{
+    position:relative;
+    z-index:2;
+}
+
+
+.fanletter-thanks .container > span{
+    display:block;
+
+    margin-bottom:25px;
+
+    color:#aaa;
+
+    font-size:.7rem;
+    font-weight:800;
+
+    letter-spacing:.18em;
+}
+
+
+.fanletter-thanks h2{
+    margin:0 0 40px;
+
+    font-size:clamp(5rem,12vw,12rem);
+    font-weight:900;
+
+    line-height:.8;
+    letter-spacing:-.08em;
+}
+
+
+.fanletter-thanks h2 span{
+    color:var(--fan-red);
+}
+
+
+.fanletter-thanks p{
+    margin:0 0 10px;
+
+    font-size:1rem;
+}
+
+
+.fanletter-thanks__sub{
+    color:#888 !important;
+
+    font-size:.8rem !important;
+}
+
+
+.fanletter-thanks__button{
+    display:inline-flex;
+    align-items:center;
+    gap:25px;
+
+    margin-top:45px;
+
+    padding:17px 24px;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    color:#fff;
+
+    font-size:.7rem;
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    transition:var(--fan-transition);
+}
+
+
+.fanletter-thanks__button b{
+    font-size:1.2rem;
+    font-weight:400;
+
+    transition:.4s ease;
+}
+
+
+.fanletter-thanks__button:hover{
+    border-color:var(--fan-red);
+
+    background:var(--fan-red);
+}
+
+
+.fanletter-thanks__button:hover b{
+    transform:translateX(6px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1100px){
+
+    .fanletter-message__grid{
+        grid-template-columns:1fr 1.6fr;
+
+        gap:60px;
+    }
+
+
+    .fanletter-form-wrapper{
+        grid-template-columns:1fr;
+
+        gap:70px;
+    }
+
+
+    .fanletter-form-heading{
+        position:relative;
+        top:auto;
+    }
+
+
+    .fanletter-form-heading h2{
+        font-size:clamp(3.5rem,9vw,6rem);
+    }
+
+}
+
+
+@media(max-width:768px){
+
+    /* HERO */
+
+    .fanletter-hero{
+        min-height:calc(100vh - 92px);
+
+        padding:120px 0 90px;
+    }
+
+
+    .fanletter-hero h1{
+        font-size:clamp(4rem,19vw,7rem);
+    }
+
+
+    .fanletter-hero__lead{
+        margin-top:35px;
+
+        font-size:1rem;
+    }
+
+
+    .fanletter-hero__description{
+        font-size:.85rem;
+    }
+
+
+    .fanletter-hero__bottom{
+        bottom:25px;
+
+        font-size:.58rem;
+    }
+
+
+    /* SECTION */
+
+    .fanletter-message,
+    .fanletter-form-section{
+        padding:100px 0;
+    }
+
+
+    .fanletter-section-label{
+        margin-bottom:55px;
+    }
+
+
+    /* MESSAGE */
+
+    .fanletter-message__grid{
+        grid-template-columns:1fr;
+
+        gap:45px;
+    }
+
+
+    .fanletter-message__small{
+        max-width:none;
+    }
+
+
+    .fanletter-message__grid h2{
+        font-size:clamp(2.3rem,9vw,4rem);
+    }
+
+
+    .fanletter-message__grid p{
+        font-size:.85rem;
+    }
+
+
+    /* FORM */
+
+    .fanletter-form-wrapper{
+        gap:55px;
+    }
+
+
+    .fanletter-form-heading h2{
+        font-size:clamp(3rem,15vw,5.5rem);
+    }
+
+
+    .form-group{
+        margin-bottom:38px;
+    }
+
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea{
+        font-size:.9rem;
+    }
+
+
+    .fanletter-notice{
+        padding:18px;
+
+        gap:14px;
+    }
+
+
+    .fanletter-notice p{
+        font-size:.7rem;
+    }
+
+
+    /* THANK YOU */
+
+    .fanletter-thanks{
+        min-height:80vh;
+
+        padding:110px 0;
+    }
+
+
+    .fanletter-thanks h2{
+        font-size:clamp(4.5rem,20vw,8rem);
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .fanletter-hero{
+        padding-top:100px;
+        padding-bottom:80px;
+    }
+
+
+    .fanletter-hero h1{
+        font-size:clamp(3.5rem,20vw,5.5rem);
+
+        letter-spacing:-.08em;
+    }
+
+
+    .fanletter-eyebrow{
+        font-size:.6rem;
+    }
+
+
+    .fanletter-hero__lead{
+        margin-top:30px;
+
+        font-size:.9rem;
+    }
+
+
+    .fanletter-hero__description{
+        font-size:.78rem;
+    }
+
+
+    .fanletter-hero__bottom > span:first-child{
+        display:none;
+    }
+
+
+    .fanletter-message,
+    .fanletter-form-section{
+        padding:80px 0;
+    }
+
+
+    .fanletter-section-label{
+        margin-bottom:45px;
+    }
+
+
+    .fanletter-message__grid h2{
+        font-size:2.25rem;
+    }
+
+
+    .fanletter-form-heading h2{
+        font-size:3.4rem;
+    }
+
+
+    .fanletter-notice{
+        align-items:flex-start;
+    }
+
+
+    .fanletter-notice__icon{
+        width:32px;
+        height:32px;
+
+        font-size:.85rem;
+    }
+
+
+    .fanletter-check{
+        align-items:flex-start;
+    }
+
+
+    .fanletter-submit{
+        min-height:64px;
+
+        padding:0 22px;
+    }
+
+
+    .fanletter-thanks h2{
+        font-size:4.5rem;
+    }
+
+}
