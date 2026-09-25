@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAN LETTER | Nidmegent Esports</title>
+
+    <meta
+        name="description"
+        content="Nidmegent Esportsへのファンレターを送るページ。あなたの想いを、Nidmegentへ。"
+    >
+
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Remix Icon -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
+
+    <!-- Global -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- FAN LETTER -->
+    <link rel="stylesheet" href="fanletter.css">
+</head>
+
+
+<body class="fanletter-page">
+
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<header class="header">
+
+    <div class="container">
+
+        <a href="index.html" class="logo">
+            <img
+                src="logo/logo-back.png"
+                alt="Nidmegent Logo"
+            >
+        </a>
+
+        <nav class="nav">
+
+            <ul class="nav__list">
+
+                <li>
+                    <a href="about.html">ABOUT</a>
+                </li>
+
+                <li>
+                    <a href="players.html">PLAYERS</a>
+                </li>
+
+                <li>
+                    <a href="news.html">NEWS</a>
+                </li>
+
+                <li>
+                    <a href="stories.html">STORIES</a>
+                </li>
+
+                <li>
+                    <a href="sponsor.html">SPONSORS</a>
+                </li>
+
+                <li>
+                    <a href="recruit.html">RECRUIT</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">CONTACT</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==================================================
+     MAIN
+================================================== -->
+
+<main>
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
+<section class="fanletter-hero">
+
+    <div class="fanletter-hero__bg"></div>
+
+    <div class="container">
+
+        <div class="fanletter-hero__content">
+
+            <span class="fanletter-eyebrow">
+                NIDMEGENT / FAN LETTER
+            </span>
+
+            <h1>
+                FAN<br>
+                LETTER<span>.</span>
+            </h1>
+
+            <p class="fanletter-hero__lead">
+                SEND YOUR MESSAGE.
+            </p>
+
+            <p class="fanletter-hero__description">
+                あなたの想いを、Nidmegentへ。
+            </p>
+
+        </div>
+
+
+        <div class="fanletter-hero__bottom">
+
+            <span>
+                YOUR WORDS MATTER
+            </span>
+
+            <span class="fanletter-scroll">
+                SCROLL
+                <i></i>
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     MESSAGE
+================================================== -->
+
+<section class="fanletter-message">
+
+    <div class="container">
+
+        <div class="fanletter-section-label">
+            <span>01</span>
+            <p>YOUR MESSAGE</p>
+        </div>
+
+
+        <div class="fanletter-message__grid">
+
+            <div>
+
+                <span class="fanletter-message__small">
+                    TO THE PEOPLE WHO KEEP PUSHING FORWARD.
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    あなたの言葉が、<br>
+                    誰かの<span>次の挑戦</span>になる。
+                </h2>
+
+                <p>
+                    いつも応援していること。
+                    心に残った瞬間。
+                    これからも頑張ってほしいという気持ち。
+                </p>
+
+                <p>
+                    Nidmegentに関わる人たちへ、
+                    あなたの想いを届けてください。
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     FAN LETTER FORM
+================================================== -->
+
+<section class="fanletter-form-section">
+
+    <div class="container">
+
+        <div class="fanletter-section-label">
+            <span>02</span>
+            <p>SEND YOUR LETTER</p>
+        </div>
+
+
+        <div class="fanletter-form-wrapper">
+
+            <div class="fanletter-form-heading">
+
+                <span>
+                    WRITE YOUR MESSAGE
+                </span>
+
+                <h2>
+                    SEND<br>
+                    YOUR LETTER<span>.</span>
+                </h2>
+
+                <p>
+                    必要事項を入力して送信してください。
+                </p>
+
+            </div>
+
+
+            <!-- ======================================
+                 FORM
+            ======================================= -->
+
+            <form
+                id="fanLetterForm"
+                class="fanletter-form"
+                novalidate
+            >
+
+
+                <!-- DESTINATION -->
+
+                <div class="form-group">
+
+                    <label for="recipient">
+                        <span>01</span>
+                        LETTER TO
+                    </label>
+
+                    <div class="select-wrap">
+
+                        <select
+                            id="recipient"
+                            name="recipient"
+                            required
+                        >
+
+                            <option value="">
+                                選択してください
+                            </option>
+
+                            <option value="Nidmegent Esports">
+                                Nidmegent Esports
+                            </option>
+
+                            <option value="YamakazeNagi">
+                                YamakazeNagi
+                            </option>
+
+                            <option value="CREATOR">
+                                CREATOR
+                            </option>
+
+                            <option value="STREAMER">
+                                STREAMER
+                            </option>
+
+                            <option value="STAFF">
+                                STAFF
+                            </option>
+
+                            <option value="その他">
+                                その他
+                            </option>
+
+                        </select>
+
+                        <i class="ri-arrow-down-s-line"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        <span>02</span>
+                        YOUR NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="ハンドルネーム"
+                        autocomplete="name"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        <span>03</span>
+                        EMAIL ADDRESS
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@example.com"
+                        autocomplete="email"
+                        required
+                    >
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="form-group">
+
+                    <label for="message">
+                        <span>04</span>
+                        YOUR LETTER
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="9"
+                        maxlength="2000"
+                        placeholder="Nidmegentへのファンレターを書いてください。"
+                        required
+                    ></textarea>
+
+                    <div class="character-count">
+                        <span id="characterCount">0</span> / 2000
+                    </div>
+
+                </div>
+
+
+
+                <!-- NOTICE -->
+
+                <div class="fanletter-notice">
+
+                    <div class="fanletter-notice__icon">
+                        <i class="ri-information-line"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            FAN LETTER NOTICE
+                        </strong>
+
+                        <p>
+                            送信されたファンレターは、
+                            Nidmegent運営が確認します。
+                            必要に応じて内容を確認・管理する場合があります。
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CHECK -->
+
+                <label class="fanletter-check">
+
+                    <input
+                        type="checkbox"
+                        id="agree"
+                        name="agree"
+                        required
+                    >
+
+                    <span class="fanletter-check__box">
+                        <i class="ri-check-line"></i>
+                    </span>
+
+                    <span class="fanletter-check__text">
+                        注意事項を確認し、内容に同意して送信します。
+                    </span>
+
+                </label>
+
+
+
+                <!-- STATUS -->
+
+                <div
+                    id="formStatus"
+                    class="form-status"
+                    aria-live="polite"
+                ></div>
+
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="fanletter-submit"
+                    id="submitButton"
+                >
+
+                    <span>
+                        SEND YOUR LETTER
+                    </span>
+
+                    <b>
+                        →
+                    </b>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==================================================
+     THANK YOU
+================================================== -->
+
+<section
+    class="fanletter-thanks"
+    id="thankYou"
+    aria-hidden="true"
+>
+
+    <div class="fanletter-thanks__bg"></div>
+
+    <div class="container">
+
+        <span>
+            NIDMEGENT / FAN LETTER
+        </span>
+
+        <h2>
+            THANK<br>
+            YOU<span>.</span>
+        </h2>
+
+        <p>
+            あなたの想いを受け取りました。
+        </p>
+
+        <p class="fanletter-thanks__sub">
+            あなたの言葉が、誰かの次の挑戦になります。
+        </p>
+
+        <a
+            href="index.html"
+            class="fanletter-thanks__button"
+        >
+            BACK TO HOME
+            <b>→</b>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer__top">
+
+            <div class="footer__brand">
+
+                <img
+                    src="logo/logo-back.png"
+                    alt="Nidmegent Logo"
+                >
+
+                <p>
+                    Keep Pushing Forward. Claim the Top.
+                </p>
+
+            </div>
+
+
+            <div class="footer__menu">
+
+                <div>
+
+                    <h4>MENU</h4>
+
+                    <a href="about.html">ABOUT</a>
+                    <a href="players.html">PLAYERS</a>
+                    <a href="news.html">NEWS</a>
+                    <a href="stories.html">STORIES</a>
+                    <a href="sponsor.html">SPONSORS</a>
+                    <a href="recruit.html">RECRUIT</a>
+                    <a href="contact.html">CONTACT</a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>COMPANY</h4>
+
+                    <a href="https://mellenastudio.github.io/official/">
+                        Mellena Studio
+                    </a>
+
+                </div>
+
+
+                <div>
+
+                    <h4>SOCIAL</h4>
+
+                    <a href="https://x.com/Nidmegent">
+                        X
+                    </a>
+
+                    <a href="https://www.youtube.com/@Nidmegent">
+                        YouTube
+                    </a>
+
+                    <a href="https://discord.com/invite/t7JfJrfwGf">
+                        Discord
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer__bottom">
+
+            <span>
+                © 2026 Nidmegent Esports. All Rights Reserved.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ==================================================
+     EMAILJS
+================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+
+<!-- GSAP -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js">
+</script>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js">
+</script>
+
+
+<!-- GLOBAL -->
+
+<script src="script.js"></script>
+
+<!-- FAN LETTER -->
+
+<script src="fanletter.js"></script>
+
+
+</body>
+</html>
