@@ -175,7 +175,7 @@ TITLE
 
     margin-top:50px;
 
-    background:#2962FF;
+    background:#e6002f;
 
     border-radius:999px;
 
@@ -257,7 +257,7 @@ ARTICLE BODY
 
     padding-left:22px;
 
-    border-left:4px solid #2962FF;
+    border-left:4px solid #e6002f;
 
     font-size:2rem;
 
@@ -481,9 +481,9 @@ SHARE
 
 .article-share__links button:hover{
 
-    background:#2962FF;
+    background:#e6002f;
 
-    border-color:#2962FF;
+    border-color:#e6002f;
 
     color:#fff;
 
@@ -675,7 +675,7 @@ ARTICLE NAVIGATION
 
     font-size:1.4rem;
 
-    color:#2962FF;
+    color:#e6002f;
 
 }
 
