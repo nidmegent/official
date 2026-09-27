@@ -263,6 +263,32 @@ description: "",
 results: [
 {date: "大会運営：",title: "STELLA CUP",rank: ""}
 ]},
+
+ruru: {
+role: "APEXLEGENDS",
+name: "ru²",
+realName: "JOIND：2026.9",
+birthday: "BIRTHDAY：03/18",
+image: "player/comingsoon.png",
+x: "#",
+youtube: "#",
+twitch: "#",
+description: "",
+results: [
+]},
+
+yuugetu: {
+role: "APEXLEGENDS",
+name: "YorunoYuugetu",
+realName: "JOIND：2026.9",
+birthday: "BIRTHDAY：07/17",
+image: "player/comingsoon.png",
+x: "https://x.com/Yoruno_Yuuduki",
+youtube: "https://www.youtube.com/@%E5%A4%9C%E4%B9%8B%E5%B9%BD%E6%9C%88",
+twitch: "https://www.twitch.tv/yoruno_yuugetu",
+description: "",
+results: [
+]},
     
 }; // playerstats end
 
