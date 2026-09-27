@@ -273,7 +273,7 @@ image: "player/comingsoon.png",
 x: "#",
 youtube: "#",
 twitch: "#",
-description: "",
+description: "SuPporTed Player",
 results: [
 ]},
 
@@ -286,7 +286,7 @@ image: "player/comingsoon.png",
 x: "https://x.com/Yoruno_Yuuduki",
 youtube: "https://www.youtube.com/@%E5%A4%9C%E4%B9%8B%E5%B9%BD%E6%9C%88",
 twitch: "https://www.twitch.tv/yoruno_yuugetu",
-description: "",
+description: "SuPporTed Player",
 results: [
 ]},
     
