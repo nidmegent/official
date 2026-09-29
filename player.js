@@ -125,7 +125,8 @@ results: [
 {date: "PREMIER：",title: "V25 Act6 INTERMEDIATE4",rank: "81位"},
 {date: "PREMIER：",title: "V26 Act1 INTERMEDIATE4",rank: "Playoff敗退"},
 {date: "PREMIER：",title: "V26 Act3 INTERMEDIATE2",rank: "117位"},
-{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"}
+{date: "PREMIER：",title: "V26 Act4 ADVANCE2",rank: "101位"},
+{date: "Scrims：",title: "ECSL ApexLegends CL Scrims",rank: "Group7"}
 ]},
 
 arufu: {
@@ -275,6 +276,7 @@ youtube: "#",
 twitch: "#",
 description: "SuPporTed Player",
 results: [
+{date: "Scrims：",title: "ECSL ApexLegends CL Scrims",rank: "Group7"}
 ]},
 
 yuugetu: {
@@ -288,6 +290,7 @@ youtube: "https://www.youtube.com/@%E5%A4%9C%E4%B9%8B%E5%B9%BD%E6%9C%88",
 twitch: "https://www.twitch.tv/yoruno_yuugetu",
 description: "SuPporTed Player",
 results: [
+{date: "Scrims：",title: "ECSL ApexLegends CL Scrims",rank: "Group7"}
 ]},
     
 }; // playerstats end
