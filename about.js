@@ -11,7 +11,7 @@
 ===================================================== */
 
 // GASのウェブアプリURLを設定
-const GAS_API_URL = "";
+const GAS_API_URL = "https://script.google.com/macros/s/AKfycbyu9Pp9wFQf2fQbpSmnz_jNrp2J7qgBbLZN57a9FPDmmtVrptMrs3PKymGalMoR8B-L0Q/exec";
 
 
 /* =====================================================
