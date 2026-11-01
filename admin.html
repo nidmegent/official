@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Birthday Admin | Nidmegent Esports</title>
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
+
+  <style>
+    :root {
+      --red: #e6002f;
+      --black: #111111;
+      --gray: #777777;
+      --border: #e5e5e5;
+      --bg: #f5f5f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--black);
+      font-family:
+        -apple-system, BlinkMacSystemFont,
+        "Segoe UI", "Noto Sans JP", sans-serif;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .admin-header {
+      padding: 22px 20px;
+      background: #111;
+      color: #fff;
+    }
+
+    .admin-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .admin-header h1 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .admin-header h1 span {
+      display: block;
+      margin-top: 5px;
+      color: #ff506f;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+    }
+
+    .admin-header a {
+      color: #fff;
+      font-size: 0.8rem;
+      text-decoration: none;
+    }
+
+    .admin-main {
+      width: min(100% - 32px, 1100px);
+      margin: 35px auto 70px;
+    }
+
+    .admin-heading {
+      margin-bottom: 30px;
+    }
+
+    .admin-heading span {
+      color: var(--red);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+    }
+
+    .admin-heading h2 {
+      margin: 8px 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 900;
+      letter-spacing: -0.06em;
+    }
+
+    .admin-heading p {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .admin-panel {
+      margin-bottom: 25px;
+      padding: clamp(20px, 4vw, 35px);
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .admin-panel h3 {
+      margin: 0 0 24px;
+      font-size: 1.1rem;
+      font-weight: 900;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .form-field {
+      display: grid;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .form-field--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .form-field input {
+      width: 100%;
+      min-width: 0;
+      padding: 13px 14px;
+      border: 1px solid #d8d8d8;
+      border-radius: 0;
+      outline: none;
+      background: #fff;
+    }
+
+    .form-field input:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(230, 0, 47, 0.08);
+    }
+
+    .form-help {
+      color: #777;
+      font-size: 0.72rem;
+      line-height: 1.6;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+    }
+
+    .checkbox-row input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--red);
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 12px 20px;
+      border: 1px solid transparent;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .button--primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .button--primary:hover {
+      background: #bf0027;
+    }
+
+    .button--secondary {
+      border-color: #d8d8d8;
+      background: #fff;
+      color: var(--black);
+    }
+
+    .button--danger {
+      border-color: #f0c4cc;
+      background: #fff4f6;
+      color: #b90025;
+    }
+
+    .admin-message {
+      display: none;
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #d7d7d7;
+      background: #fff;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .admin-message.is-visible {
+      display: block;
+    }
+
+    .admin-message.is-error {
+      border-color: #e8a8b5;
+      background: #fff3f5;
+      color: #a30022;
+    }
+
+    .admin-message.is-success {
+      border-color: #b6dfc3;
+      background: #f1fff5;
+      color: #1e7040;
+    }
+
+    .birthday-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .birthday-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .birthday-row__name {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+
+    .birthday-row__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 15px;
+      color: var(--gray);
+      font-size: 0.78rem;
+      line-height: 1.6;
+    }
+
+    .birthday-row__date {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .birthday-row__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .birthday-row__actions button {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      background: #fff;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    .birthday-row__actions button:hover {
+      border-color: var(--red);
+      color: var(--red);
+    }
+
+    .birthday-row__actions .delete-button {
+      color: #b90025;
+    }
+
+    .admin-empty {
+      padding: 35px 20px;
+      color: var(--gray);
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    .admin-footer {
+      padding: 25px 15px;
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 650px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field--full {
+        grid-column: auto;
+      }
+
+      .birthday-row {
+        grid-template-columns: 1fr;
+      }
+
+      .birthday-row__actions button {
+        flex: 1;
+      }
+
+      .admin-header__inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="admin-header">
+    <div class="admin-header__inner">
+      <h1>
+        NIDMEGENT ESPORTS
+        <span>BIRTHDAY MANAGEMENT SYSTEM</span>
+      </h1>
+
+      <a href="about.html">
+        <i class="ri-arrow-left-line"></i>
+        ABOUT PAGE
+      </a>
+    </div>
+  </header>
+
+
+  <main class="admin-main">
+
+    <div class="admin-heading">
+      <span>ADMINISTRATION</span>
+      <h2>Birthday Manager<span style="color:#e6002f">.</span></h2>
+      <p>
+        メンバーの誕生日情報を管理します。<br>
+        登録した情報はGoogleスプレッドシートに保存されます。
+      </p>
+    </div>
+
+
+    <div id="admin-message"
+      class="admin-message"
+      role="status"
+      aria-live="polite"></div>
+
+
+    <!-- PIN -->
+    <section class="admin-panel">
+      <h3>
+        <i class="ri-lock-line"></i>
+        管理者認証
+      </h3>
+
+      <div class="form-field">
+        <label for="admin-pin">管理者PIN</label>
+
+        <input
+          id="admin-pin"
+          type="password"
+          inputmode="numeric"
+          autocomplete="current-password"
+          placeholder="管理者PINを入力"
+        >
+
+        <span class="form-help">
+          GASで設定した管理者PINを入力してください。
+        </span>
+      </div>
+
+      <div class="button-row">
+        <button class="button button--primary"
+          type="button" id="load-button">
+          <i class="ri-login-box-line"></i>
+          認証して一覧を読み込む
+        </button>
+      </div>
+    </section>
+
+
+    <!-- FORM -->
+    <section class="admin-panel">
+      <h3 id="form-heading">
+        <i class="ri-user-add-line"></i>
+        メンバー登録
+      </h3>
+
+      <form id="birthday-form">
+
+        <input type="hidden" id="member-id">
+
+        <div class="form-grid">
+
+          <div class="form-field">
+            <label for="member-name">メンバー名 *</label>
+            <input
+              id="member-name"
+              type="text"
+              maxlength="80"
+              required
+              placeholder="例：Nagi"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="member-birthday">誕生日 *</label>
+            <input
+              id="member-birthday"
+              type="text"
+              inputmode="numeric"
+              pattern="(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])"
+              required
+              placeholder="05-12"
+            >
+
+            <span class="form-help">
+              月-日形式で入力。例：05-12
+            </span>
+          </div>
+
+          <div class="form-field">
+            <label for="member-division">所属部門</label>
+            <input
+              id="member-division"
+              type="text"
+              maxlength="80"
+              placeholder="例：LYXEN DIVISION"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="member-role">役割</label>
+            <input
+              id="member-role"
+              type="text"
+              maxlength="80"
+              placeholder="例：PLAYER"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="member-order">表示順</label>
+            <input
+              id="member-order"
+              type="number"
+              min="0"
+              max="9999"
+              value="0"
+            >
+          </div>
+
+          <div class="form-field">
+            <label>公開設定</label>
+
+            <label class="checkbox-row">
+              <input id="member-active" type="checkbox" checked>
+              ABOUTページに表示する
+            </label>
+          </div>
+
+        </div>
+
+        <div class="button-row">
+          <button class="button button--primary"
+            type="submit" id="save-button">
+            <i class="ri-save-line"></i>
+            保存する
+          </button>
+
+          <button class="button button--secondary"
+            type="button" id="reset-button">
+            入力をリセット
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <!-- LIST -->
+    <section class="admin-panel">
+      <h3>
+        <i class="ri-team-line"></i>
+        登録済みメンバー
+      </h3>
+
+      <div id="birthday-list" class="birthday-list">
+        <div class="admin-empty">
+          管理者認証後に一覧が表示されます。
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="admin-footer">
+    © 2026 Nidmegent Esports. Birthday Management System.
+  </footer>
+
+
+  <script>
+    "use strict";
+
+    /*
+     * GASのウェブアプリURLを設定する。
+     * 例：https://script.google.com/macros/s/xxxxx/exec
+     */
+    const GAS_API_URL = "https://script.google.com/macros/s/AKfycbyu9Pp9wFQf2fQbpSmnz_jNrp2J7qgBbLZN57a9FPDmmtVrptMrs3PKymGalMoR8B-L0Q/exec";
+
+    let birthdays = [];
+    let isAuthenticated = false;
+    let isBusy = false;
+
+    const $ = id => document.getElementById(id);
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+      $("load-button").addEventListener("click", loadBirthdays);
+
+      $("birthday-form").addEventListener("submit", saveBirthday);
+
+      $("reset-button").addEventListener("click", resetForm);
+
+      $("birthday-list").addEventListener("click", handleListAction);
+    });
+
+
+    /* =================================================
+       JSONP REQUEST
+    ================================================= */
+
+    function apiRequest(params) {
+      return new Promise((resolve, reject) => {
+        if (!GAS_API_URL) {
+          reject(new Error("GAS_API_URLが設定されていません。"));
+          return;
+        }
+
+        const callbackName =
+          "nidAdminCallback_" + Date.now() + "_"
+          + Math.random().toString(36).slice(2);
+
+        const script = document.createElement("script");
+
+        const timeout = setTimeout(() => {
+          cleanup();
+
+          reject(new Error(
+            "GASへの接続がタイムアウトしました。"
+          ));
+        }, 15000);
+
+        function cleanup() {
+          clearTimeout(timeout);
+          script.remove();
+
+          try {
+            delete window[callbackName];
+          } catch (_) {
+            window[callbackName] = undefined;
+          }
+        }
+
+        window[callbackName] = data => {
+          cleanup();
+
+          if (!data || data.success !== true) {
+            reject(new Error(
+              data?.message || "処理に失敗しました。"
+            ));
+
+            return;
+          }
+
+          resolve(data);
+        };
+
+        script.onerror = () => {
+          cleanup();
+
+          reject(new Error(
+            "GASに接続できませんでした。"
+          ));
+        };
+
+        const url = new URL(GAS_API_URL);
+
+        Object.entries(params).forEach(([key, value]) => {
+          url.searchParams.set(key, String(value));
+        });
+
+        url.searchParams.set("callback", callbackName);
+
+        script.src = url.toString();
+
+        document.head.appendChild(script);
+      });
+    }
+
+
+    /* =================================================
+       AUTH / LOAD
+    ================================================= */
+
+    async function loadBirthdays() {
+      const pin = $("admin-pin").value.trim();
+
+      if (!pin) {
+        showMessage("管理者PINを入力してください。", "error");
+        return;
+      }
+
+      if (isBusy) return;
+
+      setBusy(true);
+
+      try {
+        const result = await apiRequest({
+          action: "list"
+        });
+
+        birthdays = Array.isArray(result.birthdays)
+          ? result.birthdays
+          : [];
+
+        isAuthenticated = true;
+
+        renderList();
+
+        showMessage(
+          "一覧を読み込みました。保存・編集・削除を行えます。",
+          "success"
+        );
+      } catch (error) {
+        isAuthenticated = false;
+
+        showMessage(error.message, "error");
+      } finally {
+        setBusy(false);
+      }
+    }
+
+
+    /* =================================================
+       SAVE
+    ================================================= */
+
+    async function saveBirthday(event) {
+      event.preventDefault();
+
+      if (!isAuthenticated) {
+        showMessage(
+          "先に管理者認証を行ってください。",
+          "error"
+        );
+
+        return;
+      }
+
+      if (isBusy) return;
+
+      const pin = $("admin-pin").value.trim();
+
+      const data = {
+        id: $("member-id").value.trim(),
+        name: $("member-name").value.trim(),
+        birthday: normalizeInputBirthday(
+          $("member-birthday").value
+        ),
+        division: $("member-division").value.trim(),
+        role: $("member-role").value.trim(),
+        displayOrder: Number($("member-order").value) || 0,
+        active: $("member-active").checked
+      };
+
+      if (!data.name || !data.birthday) {
+        showMessage(
+          "メンバー名と誕生日を入力してください。",
+          "error"
+        );
+
+        return;
+      }
+
+      setBusy(true);
+
+      try {
+        const result = await apiRequest({
+          action: "save",
+          pin,
+          data: JSON.stringify(data)
+        });
+
+        showMessage(
+          result.message || "保存しました。",
+          "success"
+        );
+
+        resetForm();
+
+        await loadBirthdays();
+      } catch (error) {
+        showMessage(error.message, "error");
+      } finally {
+        setBusy(false);
+      }
+    }
+
+
+    /* =================================================
+       EDIT / DELETE
+    ================================================= */
+
+    async function handleListAction(event) {
+      const button = event.target.closest("button[data-action]");
+
+      if (!button || isBusy) return;
+
+      const id = button.dataset.id;
+      const action = button.dataset.action;
+
+      const item = birthdays.find(
+        birthday => birthday.id === id
+      );
+
+      if (!item) {
+        showMessage(
+          "対象のメンバーが見つかりません。再読み込みしてください。",
+          "error"
+        );
+
+        return;
+      }
+
+      if (action === "edit") {
+        $("member-id").value = item.id;
+        $("member-name").value = item.name;
+        $("member-birthday").value = item.birthday;
+        $("member-division").value = item.division || "";
+        $("member-role").value = item.role || "";
+        $("member-order").value = item.displayOrder || 0;
+        $("member-active").checked = item.active;
+
+        $("form-heading").innerHTML =
+          '<i class="ri-edit-line"></i> メンバー編集';
+
+        $("save-button").innerHTML =
+          '<i class="ri-save-line"></i> 変更を保存';
+
+        $("birthday-form").scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+
+        return;
+      }
+
+      if (action === "delete") {
+        const confirmed = window.confirm(
+          `${item.name} さんの誕生日情報を削除しますか？\n`
+          + "この操作は取り消せません。"
+        );
+
+        if (!confirmed) return;
+
+        setBusy(true);
+
+        try {
+          const result = await apiRequest({
+            action: "delete",
+            pin: $("admin-pin").value.trim(),
+            id: item.id
+          });
+
+          showMessage(
+            result.message || "削除しました。",
+            "success"
+          );
+
+          await loadBirthdays();
+        } catch (error) {
+          showMessage(error.message, "error");
+        } finally {
+          setBusy(false);
+        }
+      }
+    }
+
+
+    /* =================================================
+       RENDER
+    ================================================= */
+
+    function renderList() {
+      const list = $("birthday-list");
+
+      list.replaceChildren();
+
+      if (!birthdays.length) {
+        const empty = document.createElement("div");
+
+        empty.className = "admin-empty";
+        empty.textContent = "登録済みのメンバーはいません。";
+
+        list.appendChild(empty);
+
+        return;
+      }
+
+      birthdays.forEach(item => {
+        const row = document.createElement("article");
+        row.className = "birthday-row";
+
+        const content = document.createElement("div");
+
+        const name = document.createElement("h4");
+        name.className = "birthday-row__name";
+        name.textContent = item.name;
+
+        const meta = document.createElement("div");
+        meta.className = "birthday-row__meta";
+
+        const date = document.createElement("span");
+        date.className = "birthday-row__date";
+        date.textContent = formatBirthday(item.birthday);
+
+        meta.appendChild(date);
+
+        if (item.division) {
+          const division = document.createElement("span");
+          division.textContent = item.division;
+          meta.appendChild(division);
+        }
+
+        if (item.role) {
+          const role = document.createElement("span");
+          role.textContent = item.role;
+          meta.appendChild(role);
+        }
+
+        const visibility = document.createElement("span");
+        visibility.textContent = item.active
+          ? "公開中"
+          : "非公開";
+
+        meta.appendChild(visibility);
+
+        content.appendChild(name);
+        content.appendChild(meta);
+
+        const actions = document.createElement("div");
+        actions.className = "birthday-row__actions";
+
+        const edit = document.createElement("button");
+        edit.type = "button";
+        edit.dataset.action = "edit";
+        edit.dataset.id = item.id;
+        edit.textContent = "編集";
+
+        const remove = document.createElement("button");
+        remove.type = "button";
+        remove.className = "delete-button";
+        remove.dataset.action = "delete";
+        remove.dataset.id = item.id;
+        remove.textContent = "削除";
+
+        actions.appendChild(edit);
+        actions.appendChild(remove);
+
+        row.appendChild(content);
+        row.appendChild(actions);
+
+        list.appendChild(row);
+      });
+    }
+
+
+    /* =================================================
+       FORM HELPERS
+    ================================================= */
+
+    function normalizeInputBirthday(value) {
+      const match = String(value || "")
+        .trim()
+        .match(/^(\d{1,2})-(\d{1,2})$/);
+
+      if (!match) return "";
+
+      const month = Number(match[1]);
+      const day = Number(match[2]);
+
+      const check = new Date(
+        Date.UTC(2000, month - 1, day)
+      );
+
+      if (
+        check.getUTCMonth() !== month - 1
+        || check.getUTCDate() !== day
+      ) {
+        return "";
+      }
+
+      return String(month).padStart(2, "0")
+        + "-"
+        + String(day).padStart(2, "0");
+    }
+
+
+    function formatBirthday(value) {
+      const match = String(value || "")
+        .match(/^(\d{2})-(\d{2})$/);
+
+      if (!match) return value || "";
+
+      return `${Number(match[1])}月${Number(match[2])}日`;
+    }
+
+
+    function resetForm() {
+      $("birthday-form").reset();
+
+      $("member-id").value = "";
+      $("member-order").value = "0";
+      $("member-active").checked = true;
+
+      $("form-heading").innerHTML =
+        '<i class="ri-user-add-line"></i> メンバー登録';
+
+      $("save-button").innerHTML =
+        '<i class="ri-save-line"></i> 保存する';
+    }
+
+
+    /* =================================================
+       UI HELPERS
+    ================================================= */
+
+    function showMessage(message, type) {
+      const element = $("admin-message");
+
+      element.textContent = message;
+      element.className =
+        "admin-message is-visible"
+        + (type ? " is-" + type : "");
+    }
+
+
+    function setBusy(busy) {
+      isBusy = busy;
+
+      $("load-button").disabled = busy;
+      $("save-button").disabled = busy;
+
+      $("load-button").style.opacity = busy ? "0.6" : "1";
+      $("save-button").style.opacity = busy ? "0.6" : "1";
+    }
+  </script>
+
+</body>
+</html>
