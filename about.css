@@ -1386,3 +1386,34 @@
 .about-page .birthday-card:hover .birthday-card__role {
   color: #e0e0e0 !important;
 }
+
+/* ========================================
+   BIRTHDAY CARD - READABILITY FIX
+======================================== */
+
+/* 通常表示：カードの名前を黒色に */
+.about-page .birthday-card-name {
+  color: #171717 !important;
+}
+
+/* 通常表示：所属・役職を濃いグレーに */
+.about-page .birthday-card-division,
+.about-page .birthday-card-role {
+  color: #555555 !important;
+}
+
+/* ホバー時：黒い背景に合わせて白文字に */
+.about-page .birthday-card:hover .birthday-card-name {
+  color: #ffffff !important;
+}
+
+.about-page .birthday-card:hover .birthday-card-division,
+.about-page .birthday-card:hover .birthday-card-role {
+  color: #e0e0e0 !important;
+}
+
+/* 日付部分の文字は白色を維持 */
+.about-page .birthday-card-date,
+.about-page .birthday-card-date * {
+  color: #ffffff !important;
+}
