@@ -1357,16 +1357,34 @@
    BIRTHDAY CARD TEXT FIX
 ======================================== */
 
-/* 通常表示の誕生日カード：名前を黒文字に */
 .birthday-card,
 .birthday-card h3,
 .birthday-card .birthday-card__name {
   color: #171717;
 }
 
-/* カード内の役職・所属など */
 .birthday-card p,
 .birthday-card .birthday-card__role,
 .birthday-card .birthday-card__division {
   color: #555555;
+}
+
+/* ========================================
+   BIRTHDAY CARD HOVER TEXT FIX
+======================================== */
+
+.birthday-card h3,
+.birthday-card:hover h3,
+.birthday-card .birthday-card__name,
+.birthday-card:hover .birthday-card__name {
+  color: #171717 !important;
+}
+
+.birthday-card p,
+.birthday-card:hover p,
+.birthday-card .birthday-card__role,
+.birthday-card:hover .birthday-card__role,
+.birthday-card .birthday-card__division,
+.birthday-card:hover .birthday-card__division {
+  color: #555555 !important;
 }
