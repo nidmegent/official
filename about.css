@@ -1354,37 +1354,35 @@
 }
 
 /* ========================================
-   BIRTHDAY CARD TEXT FIX
+   BIRTHDAY CARD TEXT COLOR FIX
 ======================================== */
 
-.birthday-card,
-.birthday-card h3,
-.birthday-card .birthday-card__name {
-  color: #171717;
+/* 通常時：黒い背景に白文字 */
+.about-page .birthday-card .birthday-card-name,
+.about-page .birthday-card .birthday-card__name,
+.about-page .birthday-card h3 {
+  color: #ffffff !important;
 }
 
-.birthday-card p,
-.birthday-card .birthday-card__role,
-.birthday-card .birthday-card__division {
-  color: #555555;
+/* 通常時：役職・所属も白系の文字 */
+.about-page .birthday-card .birthday-card-division,
+.about-page .birthday-card .birthday-card-role,
+.about-page .birthday-card .birthday-card__division,
+.about-page .birthday-card .birthday-card__role {
+  color: #c7c7c7 !important;
 }
 
-/* ========================================
-   BIRTHDAY CARD HOVER TEXT FIX
-======================================== */
-
-.birthday-card h3,
-.birthday-card:hover h3,
-.birthday-card .birthday-card__name,
-.birthday-card:hover .birthday-card__name {
-  color: #171717 !important;
+/* ホバー時：名前は白文字のまま維持 */
+.about-page .birthday-card:hover .birthday-card-name,
+.about-page .birthday-card:hover .birthday-card__name,
+.about-page .birthday-card:hover h3 {
+  color: #ffffff !important;
 }
 
-.birthday-card p,
-.birthday-card:hover p,
-.birthday-card .birthday-card__role,
-.birthday-card:hover .birthday-card__role,
-.birthday-card .birthday-card__division,
-.birthday-card:hover .birthday-card__division {
-  color: #555555 !important;
+/* ホバー時：役職・所属も読みやすく */
+.about-page .birthday-card:hover .birthday-card-division,
+.about-page .birthday-card:hover .birthday-card-role,
+.about-page .birthday-card:hover .birthday-card__division,
+.about-page .birthday-card:hover .birthday-card__role {
+  color: #e0e0e0 !important;
 }
