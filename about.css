@@ -1215,7 +1215,7 @@
   min-width: 0;
   padding: 24px;
 
-  color: #080808;
+  color: #fff;
   background: linear-gradient(
     135deg,
     #171717 0%,
@@ -1351,4 +1351,22 @@
   .birthday-card-name {
     font-size: 1.05rem;
   }
+}
+
+/* ========================================
+   BIRTHDAY CARD TEXT FIX
+======================================== */
+
+/* 通常表示の誕生日カード：名前を黒文字に */
+.birthday-card,
+.birthday-card h3,
+.birthday-card .birthday-card__name {
+  color: #171717;
+}
+
+/* カード内の役職・所属など */
+.birthday-card p,
+.birthday-card .birthday-card__role,
+.birthday-card .birthday-card__division {
+  color: #555555;
 }
